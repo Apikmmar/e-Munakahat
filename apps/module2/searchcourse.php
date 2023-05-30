@@ -71,14 +71,16 @@
                 </div>
                 <div>
                     <table id="searchcoursetable">
-                        <th>Bil.</th>
-                        <th>Anjuran</th>
-                        <th>Tempat</th>
-                        <th>Tarikh</th>
-                        <th>Kapasiti Peserta</th>
-                        <th>Kekosongan</th>
-                        <th>Papar Lanjut</th>
-                        <th>Daftar Penyertaan</th>
+                        <tr>
+                            <th>Bil.</th>
+                            <th>Anjuran</th>
+                            <th>Tempat</th>
+                            <th>Tarikh</th>
+                            <th>Kapasiti Peserta</th>
+                            <th>Kekosongan</th>
+                            <th>Papar Lanjut</th>
+                            <th>Daftar Penyertaan</th>
+                        </tr>
                         <tr>
                             <td>tre</td>
                             <td>weqr</td>

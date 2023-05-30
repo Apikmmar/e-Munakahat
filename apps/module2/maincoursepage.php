@@ -73,6 +73,7 @@
                         <li>Peserta hendaklah <b>menjaga adab dan tingkahlaku</b> serta tidak menimbulkan suasana tidak tenteram sepanjang masa kursus ini berjalan.</li>
                         <li>Peserta yang hadir ke kursus juga hendaklah mematuhi langkah-langkah keselamatan yang telah ditetapkan oleh pihak penganjur dan Pejabat Agama Islam Daerah.</li>
                         <li>Sebarang masalah hendaklah berkaitan kursus, <b>sila rujuk/maklum kepada urusetia bertugas</b>. Peserta hendaklah mematuhi segala peraturan dan arahan dari semmasa ke semasa oleh urusetia.</li>
+                        <br><br>
                     </ol>
                 </div>
             </div>

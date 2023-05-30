@@ -64,7 +64,9 @@ $(document).ready(function() {
         window.location.href = 'applycourse.php';
     });
 
-    
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd'
+    });
 });
 
 //javascript do here

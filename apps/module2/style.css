@@ -119,6 +119,17 @@ body {
     margin-right: auto;
 }
 
+#vcdlabeldiv {
+    padding-top: 30px;
+    padding-left: 80px;
+}
+
+.vcdlabel {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 15px;
+}
+
 .imgflaticon {
     width: 40px;
     height: auto;
@@ -137,7 +148,7 @@ body {
 }
 
 #alamatstyle {
-    width: 500px;
+    width: 600px;
 }
 
 #inputboxstyle {

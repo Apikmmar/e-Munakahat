@@ -57,28 +57,51 @@
                 <span class="h6 text-uppercase">DAFTAR KURSUS >> PAPAR LANJUT</span>
             </div>
             <div class="content-of-module">
-                <div>
-                    <br>
-                    <label>Anjuran:</label>
-                    <br>
-                    <label>Tempat:</label>
-                    <br>
-                    <label>Tarikh:</label>
-                    <br>
-                    <label>Masa:</label>
-                    <br>
-                    <label>Kapasiti Peserta:</label>
-                    <br>
-                    <label>Siri Taklimat:</label>
-                    <br>
-                    <label>Pegawai Dihubungi:</label>
-                    <br>
-                    <label>No Telefon:</label>
-                    <br>
-                    <button class="btn btn-primary" id="backtosearchkursus">Kembali</button>
-                    <br>
-                    <br>
+                <div class="d-flex flex-row">
+                    <div id="vcdlabeldiv">
+                        <p class="vcdlabel">Anjuran</p>
+                        <br>
+                        <p class="vcdlabel">Tempat</p>
+                        <br>
+                        <p class="vcdlabel">Tarikh</p>
+                        <br>
+                        <p class="vcdlabel">Masa</p>
+                        <br>
+                        <p class="vcdlabel">Kapasiti Peserta</p>
+                        <br>
+                        <p class="vcdlabel">Siri Taklimat</p>
+                        <br>
+                        <p class="vcdlabel">Pegawai Dihubungi</p>
+                        <br>
+                        <p class="vcdlabel">No Telefon</p>
+                        <br>
+                    </div>
+                    <div id="vcdlabeldiv" style="padding-left: 0px;">
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                    </div>
                 </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <div style="padding-left: 150px;">
+                        <button class="btn btn-primary" id="backtosearchkursus">Kembali</button>
+                    </div>
+                </div>
+                <br>
             </div>
         </div>
     </div>
