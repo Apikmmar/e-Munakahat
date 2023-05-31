@@ -30,12 +30,12 @@ $(document).ready(function() {
         alert("Call this number 0107730425");
     });
 
-    $('.datepicker').datepicker({
+    $(".datepicker").datepicker({
         format: 'yyyy-mm-dd'
     });
 
     //MODULE 2 by afiq
-    // preparation course
+    // preparation course-user
     $(document).on("click", "#userprepcoursemainpage", function() {
         window.location.href = 'maincoursepage.php';
     });
@@ -68,10 +68,22 @@ $(document).ready(function() {
         window.location.href = 'applycourse.php';
     });
 
-    
+    // preparation course-staff
+    $(document).on("click", "#staffprepcoursemainpage", function() {
+        window.location.href = 'maincoursepagestaff.php';
+    });
+
+    $(document).on("click", "#regcourseven", function() {
+        window.location.href = 'registercoursevenuestaff.php';
+    });
+
+    $(document).on("click", "#appcourseapp", function() {
+        window.location.href = '';
+    });
+
+    $(document).on("click", "#staffmainpage", function() {
+        window.location.href = '';
+    });
 });
 
 //javascript do here
-document.getElementById("userprepcoursemainpage").addEventListener("click", function() {
-  window.location.href = 'maincoursepage.php';
-});

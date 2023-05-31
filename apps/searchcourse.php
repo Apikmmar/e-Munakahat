@@ -70,18 +70,21 @@
                     <button class="btn btn-primary">Cari</button>
                 </div>
                 <div>
-                    <table id="searchcoursetable">
-                        <tr>
-                            <th>Bil.</th>
-                            <th>Anjuran</th>
-                            <th>Tempat</th>
-                            <th>Tarikh</th>
-                            <th>Kapasiti Peserta</th>
-                            <th>Kekosongan</th>
-                            <th>Papar Lanjut</th>
-                            <th>Daftar Penyertaan</th>
+                <table class="table table-bordered" id="searchcoursetable" style="">
+                    <thead>
+                        <tr style="background-color: #D3D3D3;">
+                            <th scope="col">Bil.</th>
+                            <th scope="col">Anjuran</th>
+                            <th scope="col">Tempat</th>
+                            <th scope="col">Tarikh</th>
+                            <th scope="col">Kapasiti Peserta</th>
+                            <th scope="col">Kekosongan</th>
+                            <th scope="col">Papar Lanjut</th>
+                            <th scope="col">Daftar Penyertaan</th>
                         </tr>
-                        <tr>
+                    </thead>
+                        <tbody>
+                            <tr>
                             <td>tre</td>
                             <td>weqr</td>
                             <td>wqe</td>
@@ -90,7 +93,8 @@
                             <td>wqe</td>
                             <td><img src="img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
                             <td><img src="img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
-                        </tr>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             <br><br>
