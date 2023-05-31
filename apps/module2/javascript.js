@@ -30,7 +30,7 @@ $(document).ready(function() {
         alert("Call this number 0107730425");
     });
 
-    //MODULE 3 by afiq
+    //MODULE 2 by afiq
     // prep course
     $("#userprepcoursemainpage").on("click", function() {
         window.location.href = 'abby1.php';
