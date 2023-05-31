@@ -123,6 +123,11 @@ body {
     padding-top: 30px;
     padding-left: 80px;
 }
+#vcdlabeldiv1 {
+    width: 500px;
+    padding-top: 30px;
+    padding-left: 80px;
+}
 
 .vcdlabel {
     display: inline-block;
