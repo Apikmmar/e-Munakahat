@@ -33,7 +33,7 @@ $(document).ready(function() {
     //MODULE 3 by afiq
     // prep course
     $("#userprepcoursemainpage").on("click", function() {
-        window.location.href = 'maincoursepage.php';
+        window.location.href = 'abby1.php';
     });
 
     $("#daftarcourse").on("click", function() {
