@@ -56,7 +56,26 @@
             <div class="p-2 mb-2 bg-primary text-white">
                 <span class="h6 text-uppercase">TANGGUH KURSUS</span>
             </div>
-            <div class="content-of-module"></div>
+            <div class="content-of-module">
+                <div id="custalign">
+                    <div id="inputformpadding">
+                        <h6 class="custcolor">Anjuran :</h6>
+                        <h6 class="custcolor">Tempat dan Tarikh :</h6>
+                    </div>
+                    <form action="" method="post">
+                        <div id="inputformpadding">
+                            <label>Resit pembayaran(RM80.00):</label>
+                            <em>jika tangguh kurang daripada seminggu</em>
+                            <br>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                        </div>
+                        <div class="d-flex justify-content-around" style="width: 300px; margin-top: 30px;">
+                            <button type="submit" class="btn btn-primary">Tangguh</button>
+                            <button type="btn" class="btn btn-primary" id="userprepcoursemainpage">Kembali</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -54,9 +54,55 @@
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">CETAK SLIP PERMOHONAN</span>
+                <span class="h6 text-uppercase">DAFTAR KURSUS >> PAPAR LANJUT</span>
             </div>
-            <div class="content-of-module"></div>
+            <div class="content-of-module">
+                <div class="d-flex flex-row">
+                    <div id="vcdlabeldiv">
+                        <p class="vcdlabel">Anjuran</p>
+                        <br>
+                        <p class="vcdlabel">Tempat</p>
+                        <br>
+                        <p class="vcdlabel">Tarikh</p>
+                        <br>
+                        <p class="vcdlabel">Masa</p>
+                        <br>
+                        <p class="vcdlabel">Kapasiti Peserta</p>
+                        <br>
+                        <p class="vcdlabel">Siri Taklimat</p>
+                        <br>
+                        <p class="vcdlabel">Pegawai Dihubungi</p>
+                        <br>
+                        <p class="vcdlabel">No Telefon</p>
+                        <br>
+                    </div>
+                    <div id="vcdlabeldiv" style="padding-left: 0px;">
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                        <p class="vcdlabel">:</p>
+                        <br>
+                    </div>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <div style="padding-left: 150px;">
+                        <button class="btn btn-primary" id="userprepcoursemainpage">Kembali</button>
+                    </div>
+                </div>
+                <br>
+            </div>
         </div>
     </div>
 
