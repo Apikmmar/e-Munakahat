@@ -31,36 +31,36 @@ $(document).ready(function() {
     });
 
     //MODULE 2 by afiq
-    // prep course
-    $("#userprepcoursemainpage").on("click", function() {
-        window.location.href = 'abby1.php';
+    // preparation course
+    $(document).on("click", "#userprepcoursemainpage", function() {
+        window.location.href = 'maincoursepage.php';
     });
 
-    $("#daftarcourse").on("click", function() {
+    $(document).on("click", "#daftarcourse", function() {
         window.location.href = 'searchcourse.php';
     });
 
-    $("#tangguhkursus").on("click", function() {
+    $(document).on("click", "#tangguhkursus", function() {
         window.location.href = 'reschedulecourse.php';
     });
 
-    $("#printslippermohonan").on("click", function() {
+    $(document).on("click", "#printslippermohonan", function() {
         window.location.href = 'downloadapplicationslip.php';
     });
 
-    $("#usermainpage").on("click", function() {
+    $(document).on("click", "#usermainpage", function() {
         window.location.href = '';
     });
 
-    $("#viewcourse").on("click", function() {
+    $(document).on("click", "#viewcourse", function() {
         window.location.href = 'viewcoursedetail.php';
     });
 
-    $("#backtosearchkursus").on("click", function() {
+    $(document).on("click", "#backtosearchkursus", function() {
         window.location.href = 'searchcourse.php';
     });
 
-    $("#regcourse").on("click", function() {
+    $(document).on("click", "#regcourse", function() {
         window.location.href = 'applycourse.php';
     });
 
