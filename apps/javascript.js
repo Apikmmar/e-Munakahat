@@ -30,6 +30,10 @@ $(document).ready(function() {
         alert("Call this number 0107730425");
     });
 
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+
     //MODULE 2 by afiq
     // preparation course
     $(document).on("click", "#userprepcoursemainpage", function() {
@@ -64,9 +68,7 @@ $(document).ready(function() {
         window.location.href = 'applycourse.php';
     });
 
-    $('.datepicker').datepicker({
-        format: 'yyyy-mm-dd'
-    });
+    
 });
 
 //javascript do here
