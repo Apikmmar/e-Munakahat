@@ -27,7 +27,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
                         <button class="btn btn-primary h6">Profil</button>
-                        <button class="btn btn-primary h6">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="marriageapply">Permohonan Berkahwin</button>
                         <button class="btn btn-primary h6">Pendaftaran Perkahwinan</button>
                         <button class="btn btn-primary h6">Khidmat Nasihat</button>
                         <button class="btn btn-primary h6">Insentif Khas Pasangan Pengantin</button>
@@ -61,7 +61,7 @@
             <div class="content-of-module">
                 <br>
                 <div class="d-flex justify-content-center">
-                    <h6 style="margin-top: 5px;">Daftar Perkahwinan:</h6>
+                    <h6 style="margin-top: 5px;" id="daftarkahwin">Daftar Perkahwinan:</h6>
                     &nbsp;&nbsp;
                     <button type="submit" class="btn btn-primary">Daftar</button>
                 </div>
@@ -86,13 +86,13 @@
                             <td>Mark</td>
                             <td>Mark</td>
                             <td>
-                                <img src="assets/img/update.png" alt="logopapar" class="imgflaticon" id="viewcourse">
+                                <img src="assets/img/update.png" alt="logopapar" class="imgflaticon">
                             </td>
                             <td>
-                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon" id="regcourse">
+                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon">
                             </td>
                             <td>
-                                <img src="assets/img/delete.png" alt="logodaftar" class="imgflaticon" id="regcourse">
+                                <img src="assets/img/delete.png" alt="logodaftar" class="imgflaticon">
                             </td>
                         </tr>
                     </tbody>

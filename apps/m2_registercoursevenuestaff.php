@@ -122,7 +122,7 @@
                     &nbsp;&nbsp;
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     &nbsp;&nbsp;
-                    <button type="btn" id="" class="btn btn-primary">Kembali</button>
+                    <button type="btn" id="" class="btn btn-primary" id="backbuttonstaff">Kembali</button>
                 </div>
                 <br>
                 <div>

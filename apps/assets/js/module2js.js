@@ -16,19 +16,19 @@ $(document).ready(function() {
 
     // preparation course-user
     $(document).on("click", "#userprepcoursemainpage", function() {
-        window.location.href = 'maincoursepage.php';
+        window.location.href = 'm2_maincoursepage.php';
     });
 
     $(document).on("click", "#daftarcourse", function() {
-        window.location.href = 'searchcourse.php';
+        window.location.href = 'm2_searchcourse.php';
     });
 
     $(document).on("click", "#tangguhkursus", function() {
-        window.location.href = 'reschedulecourse.php';
+        window.location.href = 'm2_reschedulecourse.php';
     });
 
     $(document).on("click", "#printslippermohonan", function() {
-        window.location.href = 'downloadapplicationslip.php';
+        window.location.href = 'm2_downloadapplicationslip.php';
     });
 
     $(document).on("click", "#usermainpage", function() {
@@ -36,31 +36,44 @@ $(document).ready(function() {
     });
 
     $(document).on("click", "#viewcourse", function() {
-        window.location.href = 'viewcoursedetail.php';
+        window.location.href = 'm2_viewcoursedetail.php';
     });
 
     $(document).on("click", "#backtosearchkursus", function() {
-        window.location.href = 'searchcourse.php';
+        window.location.href = 'm2_searchcourse.php';
     });
 
     $(document).on("click", "#regcourse", function() {
-        window.location.href = 'applycourse.php';
+        window.location.href = 'm2_applycourse.php';
     });
 
     // preparation course-staff
     $(document).on("click", "#staffprepcoursemainpage", function() {
-        window.location.href = 'maincoursepagestaff.php';
+        window.location.href = 'm2_maincoursepagestaff.php';
     });
 
     $(document).on("click", "#regcourseven", function() {
-        window.location.href = 'registercoursevenuestaff.php';
+        window.location.href = 'm2_registercoursevenuestaff.php';
     });
 
     $(document).on("click", "#appcourseapp", function() {
-        window.location.href = '';
+        window.location.href = 'm2_courseapplicationdetailstaff.php';
     });
 
     $(document).on("click", "#staffmainpage", function() {
         window.location.href = '';
+    });
+
+    $(document).on("click", "#backbuttonstaff", function() {
+        window.location.href = 'm2_maincoursepagestaff.php';
+    });
+
+    //apply marriage-user
+    $(document).on("click", "#marriageapply", function() {
+        window.location.href = "m2_homepage.php"
+    });
+
+    $(document).on("click", "#daftarkahwin", function() {
+        window.location.href = "m2_userinputinformation.php"
     });
 });
