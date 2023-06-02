@@ -12,29 +12,8 @@ $(document).on("click", "button", function() {
 });
 */
 $(document).ready(function() {
-    console.log("jquery is fire");
-    //DEFAULT
-    // daytime
-    setInterval(function() {
-        var DateTime = luxon.DateTime;
-        var currentDate = DateTime.now().setLocale('ms');
-        var date = currentDate.toLocaleString(DateTime.DATE_HUGE);
-        var time = currentDate.toLocaleString(DateTime.TIME_SIMPLE);
+    console.log("module2 jquery is on");
 
-        $('#date').text(date);
-        $('#time').text(time);
-    }, 1000);
-
-    //close navbar - not working bodo punya default designer
-    $("#hey").on("click", function() {
-        alert("Call this number 0107730425");
-    });
-
-    $(".datepicker").datepicker({
-        format: 'yyyy-mm-dd'
-    });
-
-    //MODULE 2 by afiq
     // preparation course-user
     $(document).on("click", "#userprepcoursemainpage", function() {
         window.location.href = 'maincoursepage.php';
@@ -85,5 +64,3 @@ $(document).ready(function() {
         window.location.href = '';
     });
 });
-
-//javascript do here
