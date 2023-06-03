@@ -19,7 +19,7 @@
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
                         <span>ID :<p></p></span>
-                        <span>Nama : Izzan<p></p></span>
+                        <span>Nama :<p></p></span>
                     </div>
                 </div>
                 <br><br>
