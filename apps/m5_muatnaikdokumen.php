@@ -64,26 +64,26 @@
                     <form action="" method="post">
                         <div>
                             <div id="inputformpadding">
-                                <em>Ruangan yang bertanda [*] adalah WAJIB diisi</em>
+                                <em>Ruangan yang bertanda <span class="red-asterisk">*</span> adalah WAJIB diisi</em>
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
 
                                     <div id="inputformpadding">
-                                        <label>Salinan Kad Pengenalan pemohon (depan dan belakang) *:</label><br>
+                                        <label>Salinan Kad Pengenalan pemohon (depan dan belakang) <span class="red-asterisk">*</span>:</label><br>
                                         <input class="form-control form-control-sm" id="formFileSm" type="file"
                                             required>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div id="inputformpadding">
-                                            <label>Salinan catatan akad nikah pemohon *:</label><br>
+                                            <label>Salinan catatan akad nikah pemohon <span class="red-asterisk">*</span>:</label><br>
                                             <input class="form-control form-control-sm" id="formFileSm" type="file"
                                                 required>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div id="inputformpadding">
-                                            <label>Salinan penyata akaun bank pemohon *:</label><br>
+                                            <label>Salinan penyata akaun bank pemohon <span class="red-asterisk">*</span>:</label><br>
                                             <input class="form-control form-control-sm" id="formFileSm" type="file"
                                                 required>
                                         </div>
@@ -98,12 +98,6 @@
                                 </div>
                             </div>
                             <br>
-                            <div>
-                                <input type="checkbox" value="agree" required>
-                                <p style="display: inline;">Saya telah membaca dan faham terma dan peraturan yang telah
-                                    ditetapkan, dan bersetuju untuk menyertai <b>kursus Pra-Perkahwinan Islam Pahang</b>
-                                    ini.</p>
-                            </div>
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
