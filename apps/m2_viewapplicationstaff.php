@@ -14,23 +14,28 @@
 <body>
     <div class="overlay">
         <!-- Sidebar -->
-        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white justify-content-center">
+        <nav class="collapse d-lg-block sidebar collapse bg-white justify-content-center">
             <div class="position-sticky">
                 <br>
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
                         <span>ID :<p></p></span>
                         <span>Nama :<p></p></span>
+                        <span>Akses :<p></p></span>
+                        <span>Jabatan :<p></p></span>
                     </div>
                 </div>
-                <br><br>
+                <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6">Profil</button>
-                        <button class="btn btn-primary h6" id="marriageapply">Permohonan Berkahwin</button>
-                        <button class="btn btn-primary h6">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-primary h6">Khidmat Nasihat</button>
-                        <button class="btn btn-primary h6">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-secondary h6">Laman Utama</button>
+                        <button class="btn btn-success h6">Profil</button>
+                        <button class="btn btn-success h6">Permohonan Berkahwin</button>
+                        <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-success h6">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-success h6">Laporan</button>
+                        <button class="btn btn-success h6">Pengguna</button>
                         <button class="btn btn-dark h6">Keluar</button>
                     </div>
                 </div>
@@ -54,51 +59,16 @@
         </nav>
 
         <!-- content -->
-        <div class="content">
-            <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">PERMOHONAN BERKAHWIN</span>
+        <div class="content-admin">
+            <div class="p-2 mb-2 bg-success text-white">
+                <span class="h6 text-uppercase">content</span>
             </div>
-            <div class="content-of-module">
+            <div class="content-of-module-admin">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusamus doloribus deserunt magnam dolores! Iste quam nostrum, quidem nesciunt nisi ipsa atque facere! Corporis quas sed natus exercitationem earum itaque.
                 <br>
-                <div class="d-flex justify-content-center">
-                    <h6 style="margin-top: 5px;" id="daftarkahwin">Daftar Perkahwinan:</h6>
-                    &nbsp;&nbsp;
-                    <button type="submit" class="btn btn-primary" id="daftarkahwin">Daftar</button>
-                </div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, fugit esse voluptatibus ullam iusto modi nesciunt perferendis adipisci enim animi tempora eaque? Excepturi tempore architecto reiciendis asperiores quae laudantium aperiam!
                 <br>
-                <div>
-                    <table class="table table-bordered" id="searchcoursetable">
-                    <thead>
-                        <tr style="background-color: #D3D3D3;">
-                            <th scope="col">Bil</th>
-                            <th scope="col">KP / Nama Pasangan</th>
-                            <th scope="col">No. Slip Permohonan</th>
-                            <th scope="col">Tarikh Mohon</th>
-                            <th scope="col">Status</th>
-                            <th scope="col" colspan="3">Operasi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>
-                                <img src="assets/img/update.png" alt="logopapar" class="imgflaticon">
-                            </td>
-                            <td>
-                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon">
-                            </td>
-                            <td>
-                                <img src="assets/img/delete.png" alt="logodaftar" class="imgflaticon">
-                            </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus accusantium perspiciatis ab facere ad eum omnis mollitia debitis ipsa! Soluta repellendus sunt dolorum magnam voluptatibus itaque, labore commodi magni?
             </div>
         </div>
     </div>

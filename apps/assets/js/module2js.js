@@ -83,5 +83,16 @@ $(document).ready(function() {
 
     $(document).on("click", "#gotomarriageinfo", function() {
         window.location.href = "m2_usermarriageinformation.php";
-    })
+    });
+
+    $(document).on("click", "#backtomainpage", function() {
+        window.location.href = "m2_homepage.php";
+    });
+
+    $(document).on("click", "#registermarriage", function() {
+        alert("PENDAFTARAN PERKAHWINAN BERJAYA!!!");
+    });
+
+    //apply marriage-staff
+    
 });
