@@ -57,50 +57,55 @@
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">Bantuan Insentif Khas</span>
+                <span class="h6 text-uppercase">DAFTAR KURSUS</span>
             </div>
             <div class="content-of-module">
-                <br>
-                <div class="text-center h6">
-                    <p>SYARAT KELAYAKAN INSENTIF KHAS PASANGAN PENGANTIN YANG BERDAFTAR DI NEGERI PAHANG<br>JABATAN
-                        AGAMA ISLAM PAHANG</p>
-                </div>
-                <div>
-                    <ol>
-                        <li>Insentif ini disediakan untuk pasangan yang <b>pengantin lelakinya berpendapatan RM5000.00
-                                dan
-                                ke bawah</b> tertakluk kepada syarat-syarat dan garis panduan yang ditentukan.</li>
-                        <li>Hanya <b>anak-anak Pahang sahaja</b> yang layak menerima insentif ini.</li>
-                        <li>Samada pengantin lelaki atau perempuan mestilah <b>anak kelahiran Negeri Pahang.</b></li>
-                        <li>Pasangan pengantin yang mana pengantin lelaki sahaja <b>berpendapatan RM5000.00 dan ke bawah
-                                layak menerima insentif</li>
-                        <li>Bagi perkahwinan di luar negeri Pahang, pengantin lelaki mestilah <b>anak kelahiran
-                                Pahang</b>.</li>
-                        <li>Perkahwinan ini mestilah <b>didaftarkan di Negeri Pahang</b> dengan Kebenaran Pejabat Agama
-                            Islam
-                            Daerah.</li>
-                        <li>Perkahwinan anak Pahang yang didaftarkan di luar negeri Pahang,pengantin perlu membuat
-                            permohonan dan pengesahan di Pejabat Agama Islam (dimana tempat permohonan).</li>
-                        <li>Bagi pemastautin di negeri Pahang sekurang-kurangnya 10 tahun atau lebih, perlu mendapatkan
-                            <b>pengesahan dari Penghulu/ADUN Kawasan/pengurus FELDA/Imam Qaryah atau Penyelaras</b>.
-                        </li>
-                        <li>Duda atau Janda atau salah seorang yang mana pasangannya adalah anak negeri Pahang dan
-                            berkelayakan, perkahwinan kali pertama dengan pasangan yang lain, layak untuk menerima
-                            insentif.</li>
-                    </ol>
-                </div>
-                <div class="text-center h6">
-                    <p>ANDA TIDAK LAYAK SEKIRANYA :</p>
-                </div>
-                <div>
-                    <ol>
-                        <li>Poligomi</li>
-                        <li>Nikah semula ( pasangan yang sama selepas tamat tempoh iddah )</li>
-                        <li>Nikah tanpa kebenaran</li>
-                        <li>Kedua pasangan bukan asal Pahang</li>
-                        <li>Pendapatan lelaki melebihi RM5,000.00</li>
+                <div id="custalign">
+                    <form action="" method="post">
+                        <div>
+                            <div id="inputformpadding">
+                                <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
+                            </div>
+                            <div class="d-flex flex-row">
+                                <div>
+
+                                    <div id="inputformpadding">
+                                        <label>Salinan Kad Pengenalan pemohon (depan dan belakang) <span class="red-asterisk">*</span>:</label><br>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file"
+                                            required>
+                                    </div>
+                                    <div class="d-flex justify-content-between" id="inputformpadding">
+                                        <div id="inputformpadding">
+                                            <label>Salinan catatan akad nikah pemohon <span class="red-asterisk">*</span>:</label><br>
+                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between" id="inputformpadding">
+                                        <div id="inputformpadding">
+                                            <label>Salinan penyata akaun bank pemohon <span class="red-asterisk">*</span>:</label><br>
+                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between" id="inputformpadding">
+                                        <div id="inputformpadding">
+                                            <label>Dokumen sokongan (jika perlu):</label><br>
+                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
                         <br>
-                    </ol>
+                        <div class="d-flex justify-content-around" style="width: 300px;">
+                            <button type="reset" class="btn btn-danger">Reset</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="btn" id="backtosearchkursus" class="btn btn-primary">Kembali</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -109,6 +114,7 @@
     <script src="javascript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>

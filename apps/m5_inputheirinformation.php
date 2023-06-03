@@ -57,47 +57,61 @@
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">DAFTAR KURSUS</span>
+                <span class="h6 text-uppercase">Mohon Bantuan Insentif (Maklumat lain-lain)</span>
             </div>
             <div class="content-of-module">
                 <div id="custalign">
                     <form action="" method="post">
                         <div>
                             <div id="inputformpadding">
-                                <em>Ruangan yang bertanda <span class="red-asterisk">*</span> adalah WAJIB diisi</em>
+                                <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
-
                                     <div id="inputformpadding">
-                                        <label>Salinan Kad Pengenalan pemohon (depan dan belakang) <span class="red-asterisk">*</span>:</label><br>
-                                        <input class="form-control form-control-sm" id="formFileSm" type="file"
-                                            required>
+                                        <label>Perkerjaan Pemohon <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
+                                            placeholder="Masukkan alamat" required>
+                                    </div>
+                                    <div id="inputformpadding">
+                                        <label>Jenis Pekerjaan <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
+                                            placeholder="Masukkan alamat" required>
+                                    </div>
+                                    <div id="inputformpadding">
+                                        <label>Pendapatan Pemohon <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
+                                            placeholder="Masukkan alamat" required>
+                                    </div>
+                                    <div id="inputformpadding">
+                                        <label>Alamat & alamat Majikan/Premis Perniagaan <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
+                                            placeholder="Masukkan alamat" required>
+                                    </div>
+                                    <div id="inputformpadding">
+                                        <label>Nama Waris <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
+                                            placeholder="Masukkan alamat" required>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
-                                        <div id="inputformpadding">
-                                            <label>Salinan catatan akad nikah pemohon <span class="red-asterisk">*</span>:</label><br>
-                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
-                                                required>
+                                        <div>
+                                            <label>Hubungan <span class="red-asterisk">*</span>:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
+                                                placeholder="Masukkan negeri" required>
                                         </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between" id="inputformpadding">
-                                        <div id="inputformpadding">
-                                            <label>Salinan penyata akaun bank pemohon <span class="red-asterisk">*</span>:</label><br>
-                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between" id="inputformpadding">
-                                        <div id="inputformpadding">
-                                            <label>Dokumen sokongan (jika perlu):</label><br>
-                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
-                                                required>
+                                        <div>
+                                            <label>No Tel Waris <span class="red-asterisk">*</span>:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
+                                                placeholder="Masukkan daerah" required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <br>
+                            <div>
+                                <input type="checkbox" value="agree" required>
+                                <p style="display: inline;">Saya mengaku dengan nama Allah S.W.T bahawa saya telah bermastautin di Negeri Pahang lebih 10 TAHUN dan semua keterangan yang telah diberikan adalah benar. Pihak kerajaan Negeri Atau Jabatan Agama Islam Pahang berhak menolah permohonan saya ini sekiranya maklumat/keterangan yang diberikan adalah TIDAK BENAR.</p>
+                            </div>
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
