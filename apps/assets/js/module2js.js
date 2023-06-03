@@ -76,4 +76,12 @@ $(document).ready(function() {
     $(document).on("click", "#daftarkahwin", function() {
         window.location.href = "m2_userinputinformation.php"
     });
+
+    $(document).on("click", "#tambahpasangan", function() {
+        alert("Permintaan menambah sebagai pasangan dihantar...Menunggu diluluskan");
+    });
+
+    $(document).on("click", "#gotomarriageinfo", function() {
+        window.location.href = "m2_usermarriageinformation.php";
+    })
 });

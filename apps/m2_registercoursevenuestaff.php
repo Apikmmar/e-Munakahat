@@ -63,7 +63,7 @@
                     <em>[*] adalah wajib diisi</em>
                 </div>
                 <div class="d-flex flex-row">
-                    <div style="padding-left: 30px; padding-top: 10px;">
+                    <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
                         <div>
                             <label class="vcdlabel">Tarikh Mula :</label>
                             <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
@@ -90,8 +90,7 @@
                             <textarea type="textarea" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan catatan" required></textarea>
                         </div>
                     </div>
-                    <div style="width: 100px;"></div>
-                    <div style="padding-left: 30px; padding-top: 10px;">
+                    <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
                         <div>
                             <label class="vcdlabel">Tarikh Tamat :</label>
                             <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>

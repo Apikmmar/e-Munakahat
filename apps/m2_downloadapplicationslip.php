@@ -42,7 +42,7 @@
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
                 <img src="assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>

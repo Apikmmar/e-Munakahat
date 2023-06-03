@@ -69,7 +69,7 @@
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
-                                    <div style="padding-top: 15px;">
+                                    <div style="padding-top: 15px; width: 600px;">
                                         <div>
                                             <label>No Kad Pengenalan:</label>
                                             <p style="margin: 0; display: inline;">no ic</p>
@@ -97,16 +97,16 @@
                                         <div id="inputformpadding">
                                             <div>
                                                 <label>Status Kahwin:</label><br>
-                                                    <select class="form-select" aria-label="Default select example" required>
-                                                    <option>Pilih status perkahwinan</option>
-                                                    <option value="bujang">Bujang</option>
-                                                    <option value="telah berkahwin">Sudah Berkahwin</option>
+                                                    <select class="form-select" aria-label="Default select example" id="inputboxstyle" required>
+                                                        <option>Pilih status perkahwinan</option>
+                                                        <option value="bujang">Bujang</option>
+                                                        <option value="telah berkahwin">Sudah Berkahwin</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="padding-left: 200px;">
+                                <div style=" width: 600px;">
                                     <div style="padding-top: 15px;">
                                         <div>
                                             <label>Jantina:</label>
@@ -135,10 +135,10 @@
                                         <div id="inputformpadding">
                                             <div>
                                                 <label>Status Islam:</label><br>
-                                                    <select class="form-select" aria-label="Default select example" required>
-                                                    <option>Pilih status islam</option>
-                                                    <option value="saudara baru">Saudara baru</option>
-                                                    <option value="saudara lama">Bukan saudara baru</option>
+                                                    <select class="form-select" aria-label="Default select example" id="inputboxstyle" required>
+                                                        <option>Pilih status islam</option>
+                                                        <option value="saudara baru">Saudara baru</option>
+                                                        <option value="saudara lama">Bukan saudara baru</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -150,21 +150,99 @@
                                 <h5>Maklumat Pasangan</h5>
                                 <div>
                                     <h6>Masukkan IC Pasangan</h6>
-                                    <div style="padding-top: 10px;">
-                                        <label>IC Pasangan:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan IC" required>
-                                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Cari</button>
+                                    <div>
+                                        <div class="d-flex justify-content-start" style="margin-top: 10px;">
+                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan IC" required>
+                                            <button type="submit" class="btn btn-primary" style="margin-left: 20px;">Cari</button>
+                                        </div>
+                                        <div style="padding-top: 10px;">
+                                            <table class="table table-bordered" id="searchcoursetable">
+                                            <thead>
+                                                <tr style="background-color: #D3D3D3;">
+                                                    <th scope="col">No KP Pasangan</th>
+                                                    <th scope="col">Nama</th>
+                                                    <th scope="col">Tambah Sebagai Pasangan</th>
+                                                    <th scope="col">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Mark</td>
+                                                    <td>Mark</td>
+                                                    <td>
+                                                        <img src="assets/img/add-user.png" alt="tambah_pasangan" class="imgflaticon" id="tambahpasangan">
+                                                    </td>
+                                                    <td>Mark</td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div>
+                                <h5>Maklumat HIV</h5>
+                                <div>
+                                    <em>Sila cetak borang dan bawa ke klinik kesihatan untuk lakukan check up sebelum masukkan data</em>&nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-secondary">Cetak</button>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div style="width: 600px;">
+                                        <div style="padding-top: 10px;">
+                                            <div id="inputformpadding">
+                                                <label>Nama Klinik:</label>
+                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
+                                            </div>
+                                        </div>
+                                        <div style="padding-top: 10px;">
+                                            <div id="inputformpadding">
+                                                <label>Posisi/Jawatan Pegawai Perubatan:</label>
+                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
+                                            </div>
+                                        </div>
+                                        <div style="padding-top: 10px;">
+                                            <div id="inputformpadding">
+                                                <div>
+                                                    <label>Status HIV:</label><br>
+                                                        <select class="form-select" aria-label="Default select example" id="inputboxstyle" required>
+                                                            <option>Masukkan Status</option>
+                                                            <option value="positif hiv">Poitif HIV</option>
+                                                            <option value="negatif hiv">NegatifHIV</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 600px;">
+                                        <div style="padding-top: 10px;">
+                                            <div id="inputformpadding">
+                                                <label>Nama Pegawai Perubatan:</label>
+                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
+                                            </div>
+                                        </div>
+                                        <div style="padding-top: 10px;">
+                                            <div id="inputformpadding">
+                                                <label>Tarikh:</label>
+                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="submit" class="btn btn-primary" id="gotomarriageinfo">Seterusnya</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="submit" class="btn btn-secondary" id="">Kembali</button>
+                            </div>
+                            <br>
                         </form>
                     </div>
                 </div>
-                <br>
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Daftar</button>
-                </div>
-                <br>
             </div>
         </div>
     </div>
