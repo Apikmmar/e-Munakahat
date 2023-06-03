@@ -1,6 +1,8 @@
 body {
     background-image: url('img/agama1.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .overlay {

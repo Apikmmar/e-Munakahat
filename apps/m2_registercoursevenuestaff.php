@@ -147,13 +147,13 @@
                             <td>Mark</td>
                             <td>Mark</td>
                             <td>
-                                <img src="assets/img/delete.png" alt="logopapar" class="imgflaticon" id="viewcourse">
+                                <img src="assets/img/delete.png" alt="logopapar" class="imgflaticon" id="">
                             </td>
                             <td>
-                                <img src="assets/img/update.png" alt="logodaftar" class="imgflaticon" id="regcourse">
+                                <img src="assets/img/update.png" alt="logodaftar" class="imgflaticon" id="">
                             </td>
                             <td>
-                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon" id="regcourse">
+                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon" id="">
                             </td>
                         </tr>
                     </tbody>
