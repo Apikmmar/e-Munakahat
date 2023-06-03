@@ -67,10 +67,10 @@
                 </div>
                 <div>
                     <ol>
-                        <li>Insentif ini disediakan untuk pasangan yang <b>pengantin lelakinya berpendapatan RM5000.00</b> dan
-                            ke bawah tertakluk kepada syarat-syarat dan garis panduan yang ditentukan.</li>
-                        <li>Hanya anak-anak Pahang sahaja yang layak menerima insentif ini.</li>
-                        <li>Samada pengantin lelaki atau perempuan mestilah anak kelahiran Negeri Pahang.</li>
+                        <li>Insentif ini disediakan untuk pasangan yang <b>pengantin lelakinya berpendapatan RM5000.00 dan
+                            ke bawah</b> tertakluk kepada syarat-syarat dan garis panduan yang ditentukan.</li>
+                        <li>Hanya <b>anak-anak Pahang sahaja</b> yang layak menerima insentif ini.</li>
+                        <li>Samada pengantin lelaki atau perempuan mestilah <b>anak kelahiran Negeri Pahang.</b></li>
                         <li>Pasangan pengantin yang mana pengantin lelaki sahaja berpendapatan RM5000.00 dan ke bawah
                             layak menerima insentif</li>
                         <li>Bagi perkahwinan di luar negeri Pahang, pengantin lelaki mestilah anak kelahiran
