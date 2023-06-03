@@ -196,6 +196,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div style="padding-top: 20px;">
+                            <input type="checkbox" value="agree" required>
+                            <p style="display: inline;"><strong>Saya bersumpah bahawasanya segala maklumat yang telah dimasukkan adalah benar</strong></p>
+                        </div>
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
@@ -203,9 +207,9 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button type="reset" class="btn btn-danger">Reset</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-primary" id="gotouploadmarriagedoc">Seterusnya</button>
+                        <button type="submit" class="btn btn-secondary" id="backtomainpage">Kembali</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-secondary" id="gotouserinfo">Kembali</button>
+                        <button type="submit" value="submit" class="btn btn-primary" id="gotouploadmarriagedoc" disable>Daftar Kahwin</button>
                     </div>
                     <br>
                 </form>

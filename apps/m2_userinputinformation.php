@@ -237,7 +237,7 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <button type="submit" class="btn btn-primary" id="gotomarriageinfo">Seterusnya</button>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type="submit" class="btn btn-secondary" id="">Kembali</button>
+                                <button type="submit" class="btn btn-secondary" id="backtomainpage">Kembali</button>
                             </div>
                             <br>
                         </form>
