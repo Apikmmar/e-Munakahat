@@ -93,6 +93,8 @@
                 <div class="d-flex justify-content-center">
                     <div style="padding-left: 150px;">
                         <button class="btn btn-primary" id="userprepcoursemainpage">Kembali</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-secondary">Cetak</button>
                     </div>
                 </div>
                 <br>

@@ -73,61 +73,57 @@
                                             <label>No Kad Pengenalan:</label>
                                             <p style="margin: 0; display: inline;">no ic</p>
                                         </div>
-                                        <div style="padding-top: 5px;">
+                                        <div style="padding-top: 10px;">
                                             <label>Nama Pemohon:</label>
                                             <p style="margin: 0; display: inline;">nama pemohon</p>
                                         </div>
+                                        <div style="padding-top: 10px;">
+                                            <label>Alamat Surat Menyurat:</label>
+                                            <p style="margin: 0; display: inline;">alamat pemohon</p>
+                                        </div>
+                                        <div style="padding-top: 10px;">
+                                            <label>Sektor Pekerjaan:</label>
+                                            <p style="margin: 0; display: inline;">work sector</p>
+                                        </div>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>Alamat Surat Menyurat:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamatstyle" placeholder="Masukkan alamat" required>
-                                    </div>
-                                    <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div>
                                             <label>Negeri:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
                                         </div>
-                                        <div>
+                                        <div style="padding-top: 10px;">
                                             <label>Daerah:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan daerah" required>
                                         </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between" id="inputformpadding">
-                                        <div>
-                                            <label>Sektor Pekerjaan:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan sektor" required>
-                                        </div>
-                                        <div>
-                                            <label>Tahap pendidikan:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan tahap pendidikan" required>
+                                        <div style="padding-top: 10px;">
+                                            <label>Kebenaran jabatan agama negeri:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="padding-left: 50px;">
+                                <div style="padding-left: 200px;">
                                     <div style="padding-top: 15px;">
                                         <div>
                                             <label>Jantina:</label>
                                             <p style="margin: 0; display: inline;">jantina</p>
                                         </div>
-                                        <div style="padding-top: 5px;">
+                                        <div style="padding-top: 10px;">
                                             <label>No. Telefon:</label>
                                             <p style="margin: 0; display: inline;">no fon</p>
                                         </div>
+                                        <div style="padding-top: 10px;">
+                                            <label>Tahap pendidikan:</label>
+                                            <p style="margin: 0; display: inline;">tahap pendidikan</p>
+                                        </div>
                                     </div>
-                                    <div id="inputformpadding">
+                                    <div id="inputformpadding" style="padding-top: 35px;">
                                         <label>Resit pembayaran(RM80.00):</label><br>
                                         <input class="form-control form-control-sm" id="formFileSm" type="file" required>
                                     </div>
-                                    <div class="d-flex justify-content-between" id="inputformpadding">
+                                    <div id="inputformpadding">
                                         <div>
                                             <label>Cadangan Tarikh Akad Nikah:</label><br>
                                             <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between" id="inputformpadding">
-                                        <div>
-                                            <label>Kebenaran jabatan agama negeri:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
                                         </div>
                                     </div>
                                 </div>

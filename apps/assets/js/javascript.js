@@ -31,7 +31,9 @@ $(document).ready(function() {
     });
 
     // date picker
-    $(".datepicker").datepicker({
-        format: 'yyyy-mm-dd'
+    $(".datepicker").on("click", function() {
+        $(".datepicker").datepicker({
+            format: 'yyyy-mm-dd'
+        });
     });
 });
