@@ -94,5 +94,7 @@ $(document).ready(function() {
     });
 
     //apply marriage-staff
-    
+    $(document).on("click", "#viewmarriageapplicant", function() {
+        window.location.href = "m2_viewapplicationstaff.php";
+    });
 });

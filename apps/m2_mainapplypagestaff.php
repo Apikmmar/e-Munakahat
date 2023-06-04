@@ -30,12 +30,11 @@
                     <div class="list-group" style="width: 16rem;">
                         <button class="btn btn-secondary h6">Laman Utama</button>
                         <button class="btn btn-success h6">Profil</button>
-                        <button class="btn btn-success h6">Permohonan Berkahwin</button>
-                        <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-success h6">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6">Pendaftaran Nikah</button>
                         <button class="btn btn-success h6">Khidmat Nasihat</button>
                         <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-success h6">Laporan</button>
-                        <button class="btn btn-success h6">Pengguna</button>
                         <button class="btn btn-dark h6">Keluar</button>
                     </div>
                 </div>
@@ -61,14 +60,71 @@
         <!-- content -->
         <div class="content-admin">
             <div class="p-2 mb-2 bg-success text-white">
-                <span class="h6 text-uppercase">content</span>
+                <span class="h6 text-uppercase">KEBENARAN BERKAHWIN >> SENARAI PERMOHONAN</span>
             </div>
             <div class="content-of-module-admin">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusamus doloribus deserunt magnam dolores! Iste quam nostrum, quidem nesciunt nisi ipsa atque facere! Corporis quas sed natus exercitationem earum itaque.
-                <br>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, fugit esse voluptatibus ullam iusto modi nesciunt perferendis adipisci enim animi tempora eaque? Excepturi tempore architecto reiciendis asperiores quae laudantium aperiam!
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus accusantium perspiciatis ab facere ad eum omnis mollitia debitis ipsa! Soluta repellendus sunt dolorum magnam voluptatibus itaque, labore commodi magni?
+                <div style="padding: 20px 0px 0px 20px;">
+                    <div>
+                        <div class="d-flex justify-content-around">
+                            <div id="inputformpadding" style="margin-bottom: 20px;">
+                                <label>No K/P Pemohon:</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="No K/P Pemohon" required>
+                            </div>
+                            <div id="inputformpadding">
+                                <label>Nama Pemohon:</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="nama Pemohon" required>
+                            </div>
+                            <div id="inputformpadding">
+                                <label>Tarikh Mohon:</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="Tarikh Mohon" required>
+                            </div>
+                            <div id="inputformpadding">
+                                <label>Tarikh Akad Nikah:</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="Tarikh Akad Nikah" required>
+                            </div>
+                            <div id="inputformpadding">
+                                <label>No Akuan Terima:</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="No Akuan Terima" required>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success" id="searchsenarai">Cari</button>
+                        </div>
+                    </div>
+                    <div style="padding-top: 20px;">
+                        <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
+                        <thead>
+                            <tr style="background-color: #D3D3D3;">
+                                <th scope="col">Bil</th>
+                                <th scope="col">No KP Pemohon</th>
+                                <th scope="col">Nama Pemohon</th>
+                                <th scope="col">Tarikh Mohon</th>
+                                <th scope="col">No Akuan Terima</th>
+                                <th scope="col">Tarikh Akad Nikah</th>
+                                <th scope="col">Operasi</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td class="d-flex justify-content-between">
+                                    <img src="assets/img/evaluation.png" alt="view" class="imgflaticon" id="viewmarriageapplicant">
+                                    <img src="assets/img/approved.png" alt="lulus" class="imgflaticon" id="approvemarriageapplicant">
+                                    <img src="assets/img/rejected.png" alt="tidak lulus" class="imgflaticon" id="rejectmarriageapplicant">
+                                </td>
+                                <td>Status</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <br>
+                </div>
             </div>
         </div>
     </div>

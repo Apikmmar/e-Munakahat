@@ -191,13 +191,13 @@
                                         <div style="padding-top: 10px;">
                                             <div id="inputformpadding">
                                                 <label>Nama Klinik:</label>
-                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
+                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan nama klinik" required>
                                             </div>
                                         </div>
                                         <div style="padding-top: 10px;">
                                             <div id="inputformpadding">
                                                 <label>Posisi/Jawatan Pegawai Perubatan:</label>
-                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
+                                                <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Posisi/Jawatan Pegawai Perubatan" required>
                                             </div>
                                         </div>
                                         <div style="padding-top: 10px;">
