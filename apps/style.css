@@ -14,7 +14,7 @@ body {
 
 .red-asterisk {
     color: red;
-  }
+}
 
 .img-upper-interface {
     margin-left: 40px;
@@ -72,7 +72,7 @@ body {
 
 @media (max-width: 991.98px) {
     .sidebar {
-    width: 100%;
+        width: 100%;
     }
 }
 
@@ -115,7 +115,10 @@ body {
     min-height: fit-content;
 }
 
-#searchcoursetable, td, tr, th {
+#searchcoursetable,
+td,
+tr,
+th {
     text-align: center;
     border: 2px solid black;
     width: 80%;
@@ -157,4 +160,24 @@ body {
 
 #inputboxstyle {
     width: 250px;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+tr,
+td {
+    border: none;
+    text-align: left;
+}
+
+.jata {
+    width: 8%;
+    height: 7%;
+}
+
+.view {
+    width: 10%;
 }
