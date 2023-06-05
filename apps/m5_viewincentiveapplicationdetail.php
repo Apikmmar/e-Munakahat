@@ -57,7 +57,7 @@
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">DAFTAR KURSUS</span>
+                <span class="h6 text-uppercase">PERMOHONAN BANTUAN INSENTIF KHAS</span>
             </div>
             <div class="content-of-module">
                 <div id="custalign">
@@ -74,7 +74,7 @@
                     <div class="p-1 mb-2 bg-primary text-white">
                         <span class="h6 text-uppercase">Dokumen Pemohon</span>
                     </div>
-                    <table>
+                    <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Salinan Kad Pengenalan pemohon</td>
                             <td>Example</td>
@@ -96,7 +96,7 @@
                     <div class="p-1 mb-2 bg-primary text-white">
                         <span class="h6 text-uppercase">Maklumat Pemohon</span>
                     </div>
-                    <table>
+                    <table style="table-layout: fixed;width:70%;">
                         <tr>
                             <td>No. K/Pengenalan</td>
                             <td>Example</td>
@@ -142,7 +142,7 @@
                     <div class="p-1 mb-2 bg-primary text-white">
                         <span class="h6 text-uppercase">Maklumat Pasangan</span>
                     </div>
-                    <table>
+                    <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>No. K/Pengenalan</td>
                             <td>Example</td>
@@ -184,7 +184,7 @@
                     <div class="p-1 mb-2 bg-primary text-white">
                         <span class="h6 text-uppercase">Maklumat Pekerjaan Pemohon</span>
                     </div>
-                    <table>
+                    <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Pekerjaan</td>
                             <td>Example</td>
@@ -206,7 +206,7 @@
                     <div class="p-1 mb-2 bg-primary text-white">
                         <span class="h6 text-uppercase">Maklumat Waris Terdekat Yang Boleh Dihubungi</span>
                     </div>
-                    <table>
+                    <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Nama Waris</td>
                             <td>Example</td>
@@ -217,6 +217,20 @@
                         </tr>
                         <tr>
                             <td>No. Tel</td>
+                            <td>Example</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="p-1 mb-2 bg-primary text-white">
+                        <span class="h6 text-uppercase">Maklumat Pejabat</span>
+                    </div>
+                    <table style="table-layout: fixed;width:70%">
+                        <tr>
+                            <td>Tarikh Permohonan</td>
+                            <td>Example</td>
+                        </tr>
+                        <tr>
+                            <td>Pengesahan</td>
                             <td>Example</td>
                         </tr>
                     </table>

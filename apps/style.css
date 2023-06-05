@@ -163,21 +163,16 @@ th {
 }
 
 table {
-    width: 100%;
+    width: 50%;
+    border: none;
 }
-
-table,
-tr,
-td {
+table, tr, td {
     border: none;
     text-align: left;
-}
+  }
+
 
 .jata {
     width: 8%;
     height: 7%;
-}
-
-.view {
-    width: 10%;
 }
