@@ -1,0 +1,14 @@
+table {
+    width: 50%;
+    border: none;
+}
+.viewtatable, tr, td {
+    border: none;
+    text-align: left;
+  }
+
+
+.jata {
+    width: 8%;
+    height: 7%;
+}
