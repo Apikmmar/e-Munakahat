@@ -66,7 +66,7 @@
             <div class="content-of-module">
                 <div style="padding: 20px 0px 0px 20px;">
                     <div>
-                        <form action="">
+                        <form action="m2_userinputinformation.php" method="post">
                             <div>
                                 <em>Ruang bertanda [*] wajib diisi</em>
                                 <br>

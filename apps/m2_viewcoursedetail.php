@@ -63,44 +63,46 @@
                 <span class="h6 text-uppercase">DAFTAR KURSUS >> PAPAR LANJUT</span>
             </div>
             <div class="content-of-module">
-                <div class="d-flex flex-row">
-                    <div id="vcdlabeldiv">
-                        <p class="vcdlabel">Anjuran</p>
-                        <br>
-                        <p class="vcdlabel">Tempat</p>
-                        <br>
-                        <p class="vcdlabel">Tarikh</p>
-                        <br>
-                        <p class="vcdlabel">Masa</p>
-                        <br>
-                        <p class="vcdlabel">Kapasiti Peserta</p>
-                        <br>
-                        <p class="vcdlabel">Siri Taklimat</p>
-                        <br>
-                        <p class="vcdlabel">Pegawai Dihubungi</p>
-                        <br>
-                        <p class="vcdlabel">No Telefon</p>
-                        <br>
+                <form action="m2_viewcoursedetail.php" method="post">
+                    <div class="d-flex flex-row">
+                        <div id="vcdlabeldiv">
+                            <p class="vcdlabel">Anjuran</p>
+                            <br>
+                            <p class="vcdlabel">Tempat</p>
+                            <br>
+                            <p class="vcdlabel">Tarikh</p>
+                            <br>
+                            <p class="vcdlabel">Masa</p>
+                            <br>
+                            <p class="vcdlabel">Kapasiti Peserta</p>
+                            <br>
+                            <p class="vcdlabel">Siri Taklimat</p>
+                            <br>
+                            <p class="vcdlabel">Pegawai Dihubungi</p>
+                            <br>
+                            <p class="vcdlabel">No Telefon</p>
+                            <br>
+                        </div>
+                        <div id="vcdlabeldiv" style="padding-left: 0px;">
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                        </div>
                     </div>
-                    <div id="vcdlabeldiv" style="padding-left: 0px;">
-                        <p class="vcdlabel">:</p>
-                        <br>
-                        <p class="vcdlabel">:</p>
-                        <br>
-                        <p class="vcdlabel">:</p>
-                        <br>
-                        <p class="vcdlabel">:</p>
-                        <br>
-                        <p class="vcdlabel">:</p>
-                        <br>
-                        <p class="vcdlabel">:</p>
-                        <br>
-                        <p class="vcdlabel">:</p>
-                        <br>
-                        <p class="vcdlabel">:</p>
-                        <br>
-                    </div>
-                </div>
+                </form>
                 <br>
                 <div class="d-flex justify-content-center">
                     <div style="padding-left: 150px;">
