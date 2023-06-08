@@ -166,7 +166,7 @@ table {
     width: 50%;
     border: none;
 }
-table, tr, td {
+.viewtatable, tr, td {
     border: none;
     text-align: left;
   }
