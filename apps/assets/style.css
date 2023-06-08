@@ -1,6 +1,8 @@
 body {
     background-image: url('img/agama1.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .overlay {
@@ -68,7 +70,7 @@ body {
 
 @media (max-width: 991.98px) {
     .sidebar {
-        width: 100%;
+    width: 100%;
     }
 }
 
@@ -109,51 +111,4 @@ body {
     margin-top: -8px;
     background-color: #bcfebb;
     min-height: fit-content;
-}
-
-#searchcoursetable,
-td,
-tr,
-th {
-    text-align: center;
-    border: 2px solid black;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#vcdlabeldiv {
-    padding-top: 30px;
-    padding-left: 80px;
-}
-
-.vcdlabel {
-    display: inline-block;
-    width: 150px;
-    margin-bottom: 15px;
-}
-
-.imgflaticon {
-    width: 40px;
-    height: auto;
-}
-
-#custalign {
-    padding: 10px 10px 10px 10px;
-}
-
-.custcolor {
-    color: rgb(8, 8, 172);
-}
-
-#inputformpadding {
-    margin-top: 10px;
-}
-
-#alamatstyle {
-    width: 600px;
-}
-
-#inputboxstyle {
-    width: 250px;
 }

@@ -29,47 +29,4 @@ $(document).ready(function() {
     $("#hey").on("click", function() {
         alert("Call this number 0107730425");
     });
-
-    //MODULE 2 by afiq
-    // prep course
-    $("#userprepcoursemainpage").on("click", function() {
-        window.location.href = 'abby1.php';
-    });
-
-    $("#daftarcourse").on("click", function() {
-        window.location.href = 'searchcourse.php';
-    });
-
-    $("#tangguhkursus").on("click", function() {
-        window.location.href = 'reschedulecourse.php';
-    });
-
-    $("#printslippermohonan").on("click", function() {
-        window.location.href = 'downloadapplicationslip.php';
-    });
-
-    $("#usermainpage").on("click", function() {
-        window.location.href = '';
-    });
-
-    $("#viewcourse").on("click", function() {
-        window.location.href = 'viewcoursedetail.php';
-    });
-
-    $("#backtosearchkursus").on("click", function() {
-        window.location.href = 'searchcourse.php';
-    });
-
-    $("#regcourse").on("click", function() {
-        window.location.href = 'applycourse.php';
-    });
-
-    $('.datepicker').datepicker({
-        format: 'yyyy-mm-dd'
-    });
-});
-
-//javascript do here
-document.getElementById("userprepcoursemainpage").addEventListener("click", function() {
-  window.location.href = 'maincoursepage.php';
 });
