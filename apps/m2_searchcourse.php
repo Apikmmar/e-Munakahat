@@ -64,45 +64,48 @@
             </div>
             <div class="content-of-module">
                 <br>
-                <div class="text-center h6">
-                    <p>Pilihan Anjuran:</p>
-                    <select name="pejabatagamedaerah" id="pejagamdae">
-                        <option value="PILIH PEJABAT AGAMA DAERAH">PILIH PEJABAT AGAMA DAERAH</option>
-                        <option value="PEJABAT AGAMA ISLAM KUANTAN">PEJABAT AGAMA ISLAM KUANTAN</option>
-                        <option value="PEJABAT AGAMA ISLAM PEKAN">PEJABAT AGAMA ISLAM PEKAN</option>
-                        <option value="PEJABAT AGAMA ISLAM MARAN">PEJABAT AGAMA ISLAM MARAN</option>
-                    </select>
-                    &nbsp;&nbsp;&nbsp;
-                    <button class="btn btn-primary">Cari</button>
-                </div>
-                <div>
-                <table class="table table-bordered" id="searchcoursetable" style="">
-                    <thead>
-                        <tr style="background-color: #D3D3D3;">
-                            <th scope="col">Bil.</th>
-                            <th scope="col">Anjuran</th>
-                            <th scope="col">Tempat</th>
-                            <th scope="col">Tarikh</th>
-                            <th scope="col">Kapasiti Peserta</th>
-                            <th scope="col">Kekosongan</th>
-                            <th scope="col">Papar Lanjut</th>
-                            <th scope="col">Daftar Penyertaan</th>
-                        </tr>
-                    </thead>
-                        <tbody>
-                            <tr>
-                            <td>tre</td>
-                            <td>weqr</td>
-                            <td>wqe</td>
-                            <td>wqe</td>
-                            <td>wqe</td>
-                            <td>wqe</td>
-                            <td><img src="assets/img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
-                            <td><img src="assets/img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
+                <form action="m2_searchcourse.php" method="post">
+                    <div class="text-center h6">
+                        <p>Pilihan Anjuran:</p>
+                        <select name="pejabatagamedaerah" id="pejagamdae">
+                            <option value="PILIH PEJABAT AGAMA DAERAH">PILIH PEJABAT AGAMA DAERAH</option>
+                            <option value="PEJABAT AGAMA ISLAM KUANTAN">PEJABAT AGAMA ISLAM KUANTAN</option>
+                            <option value="PEJABAT AGAMA ISLAM PEKAN">PEJABAT AGAMA ISLAM PEKAN</option>
+                            <option value="PEJABAT AGAMA ISLAM MARAN">PEJABAT AGAMA ISLAM MARAN</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-primary">Cari</button>
+                    </div>
+                    <div>
+                    <table class="table table-bordered" id="searchcoursetable" style="">
+                        <thead>
+                            <tr style="background-color: #D3D3D3;">
+                                <th scope="col">Bil.</th>
+                                <th scope="col">Anjuran</th>
+                                <th scope="col">Tempat</th>
+                                <th scope="col">Tarikh</th>
+                                <th scope="col">Kapasiti Peserta</th>
+                                <th scope="col">Kekosongan</th>
+                                <th scope="col">Papar Lanjut</th>
+                                <th scope="col">Daftar Penyertaan</th>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        </thead>
+                            <tbody>
+                                <tr>
+                                <td>tre</td>
+                                <td>weqr</td>
+                                <td>wqe</td>
+                                <td>wqe</td>
+                                <td>wqe</td>
+                                <td>wqe</td>
+                                <td><img src="assets/img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
+                                <td><img src="assets/img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                
             <br><br>
             </div>
         </div>

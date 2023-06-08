@@ -64,105 +64,108 @@
                 <span class="h6 text-uppercase">DAFTAR TAKLIMAT</span>
             </div>
             <div class="content-of-module-admin">
-                <div style="padding-left: 30px; padding-top: 5px;">
-                    <em>[*] adalah wajib diisi</em>
-                </div>
-                <div class="d-flex flex-row">
-                    <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
-                        <div>
-                            <label class="vcdlabel">Tarikh Mula :</label>
-                            <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
-                            <em>(dd-mm-yyyy)</em>
-                        </div>
-                        <div>
-                            <label class="vcdlabel">Tempat :</label>
-                            <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan tempat" required>
-                        </div>
-                        <div>
-                            <label class="vcdlabel">Masa Dari :</label>
-                            <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan alamat" required>
-                        </div>
-                        <div>
-                            <label class="vcdlabel">Pegawai Dihubungi :</label>
-                            <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" required>
-                        </div>
-                        <div>
-                            <label class="vcdlabel">No Telefon :</label>
-                            <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan no telefon" required>
-                        </div>
-                        <div style="display: flex;">
-                            <label class="vcdlabel">Catatan :</label>
-                            <textarea type="textarea" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan catatan" required></textarea>
-                        </div>
+                <form action="m2_registercoursevenuestaff.php" method="post">
+                    <div style="padding-left: 30px; padding-top: 5px;">
+                        <em>[*] adalah wajib diisi</em>
                     </div>
-                    <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
-                        <div>
-                            <label class="vcdlabel">Tarikh Tamat :</label>
-                            <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
-                            <em>(dd-mm-yyyy)</em>
+                    <div class="d-flex flex-row">
+                        
+                        <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
+                            <div>
+                                <label class="vcdlabel">Tarikh Mula :</label>
+                                <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
+                                <em>(dd-mm-yyyy)</em>
+                            </div>
+                            <div>
+                                <label class="vcdlabel">Tempat :</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan tempat" required>
+                            </div>
+                            <div>
+                                <label class="vcdlabel">Masa Dari :</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan alamat" required>
+                            </div>
+                            <div>
+                                <label class="vcdlabel">Pegawai Dihubungi :</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" required>
+                            </div>
+                            <div>
+                                <label class="vcdlabel">No Telefon :</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan no telefon" required>
+                            </div>
+                            <div style="display: flex;">
+                                <label class="vcdlabel">Catatan :</label>
+                                <textarea type="textarea" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan catatan" required></textarea>
+                            </div>
                         </div>
-                        <div>
-                            <label class="vcdlabel">Kapasiti :</label>
-                            <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan kapasiti" required>
-                        </div>
-                       <br><br>
-                        <div>
-                            <label class="vcdlabel">Masa Tamat :</label>
-                            <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" required>
-                        </div>
+                        <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
+                            <div>
+                                <label class="vcdlabel">Tarikh Tamat :</label>
+                                <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
+                                <em>(dd-mm-yyyy)</em>
+                            </div>
+                            <div>
+                                <label class="vcdlabel">Kapasiti :</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan kapasiti" required>
+                            </div>
                         <br><br>
-                        <div>
-                            <label class="vcdlabel">Terbitkan kepada umum :</label>
-                            <select class="form-select" aria-label="Default select example" id="inputboxstyle2" required>
-                                <option selected value="No val">Sila pilih</option>
-                                <option value="Yes">Ya</option>
-                                <option value="No">Tidak</option>
-                            </select>
+                            <div>
+                                <label class="vcdlabel">Masa Tamat :</label>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" required>
+                            </div>
+                            <br><br>
+                            <div>
+                                <label class="vcdlabel">Terbitkan kepada umum :</label>
+                                <select class="form-select" aria-label="Default select example" id="inputboxstyle2" required>
+                                    <option selected value="No val">Sila pilih</option>
+                                    <option value="Yes">Ya</option>
+                                    <option value="No">Tidak</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button type="reset" class="btn btn-danger">Reset</button>
-                    &nbsp;&nbsp;
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    &nbsp;&nbsp;
-                    <button type="btn" id="" class="btn btn-primary" id="backbuttonstaff">Kembali</button>
-                </div>
-                <br>
-                <div>
-                    <table class="table table-bordered" id="searchcoursetable" style="">
-                    <thead>
-                        <tr style="background-color: #D3D3D3;">
-                            <th scope="col">Bil</th>
-                            <th scope="col">Siri</th>
-                            <th scope="col">Tempat</th>
-                            <th scope="col">Masa</th>
-                            <th scope="col">Tarikh</th>
-                            <th scope="col">Kapasiti</th>
-                            <th scope="col" colspan="3">Operasi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>
-                                <img src="assets/img/delete.png" alt="logopapar" class="imgflaticon" id="">
-                            </td>
-                            <td>
-                                <img src="assets/img/update.png" alt="logodaftar" class="imgflaticon" id="">
-                            </td>
-                            <td>
-                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon" id="">
-                            </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                        &nbsp;&nbsp;
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        &nbsp;&nbsp;
+                        <button type="btn" id="" class="btn btn-primary" id="backbuttonstaff">Kembali</button>
+                    </div>
+                    <br>
+                    <div>
+                        <table class="table table-bordered" id="searchcoursetable" style="">
+                        <thead>
+                            <tr style="background-color: #D3D3D3;">
+                                <th scope="col">Bil</th>
+                                <th scope="col">Siri</th>
+                                <th scope="col">Tempat</th>
+                                <th scope="col">Masa</th>
+                                <th scope="col">Tarikh</th>
+                                <th scope="col">Kapasiti</th>
+                                <th scope="col" colspan="3">Operasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>
+                                    <img src="assets/img/delete.png" alt="logopapar" class="imgflaticon" id="">
+                                </td>
+                                <td>
+                                    <img src="assets/img/update.png" alt="logodaftar" class="imgflaticon" id="">
+                                </td>
+                                <td>
+                                    <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </form>
                 <br>
             </div>
         </div>

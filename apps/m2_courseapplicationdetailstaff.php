@@ -65,60 +65,62 @@
             </div>
             <div class="content-of-module-admin">
                 <br><br>
-                <div style="margin-left: 30px;">
-                    <div class="d-flex flex-row">
-                        <label>Siri Kursus:</label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan siri kursus" required>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-primary">Cari</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-secondary">Cetak maklumat</button>
+                <form action="m2_courseapplicationdetailstaff.php" method="post">
+                    <div style="margin-left: 30px;">
+                        <div class="d-flex flex-row">
+                            <label>Siri Kursus:</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan siri kursus" required>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Cari</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-secondary">Cetak maklumat</button>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div>
-                    <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
-                    <thead>
-                        <tr style="background-color: #D3D3D3;">
-                            <th scope="col">Bil</th>
-                            <th scope="col">Tarikh Mohon</th>
-                            <th scope="col">No. Permohonan</th>
-                            <th scope="col">Nama Peserta</th>
-                            <th scope="col">No Kad Pengenalan</th>
-                            <th scope="col">Kehadiran</th>
-                            <th scope="col">Catatan</th>
-                            <th scope="col">Kelulusan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>
-                                <select class="form-select" aria-label="Default select example" required>
-                                    <option>Pilih</option>
-                                    <option value="Hadir">Hadir</option>
-                                    <option value="Tidak Hadir">Tidak Hadir</option>
-                                </select>
-                            </td>
-                            <td><input type="text"></td>
-                            <td>
-                                <select class="form-select" aria-label="Default select example" required>
-                                    <option>Pilih</option>
-                                    <option value="Lulus">Lulus</option>
-                                    <option value="Gagal">Gagal</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
+                    <br>
+                    <div>
+                        <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
+                        <thead>
+                            <tr style="background-color: #D3D3D3;">
+                                <th scope="col">Bil</th>
+                                <th scope="col">Tarikh Mohon</th>
+                                <th scope="col">No. Permohonan</th>
+                                <th scope="col">Nama Peserta</th>
+                                <th scope="col">No Kad Pengenalan</th>
+                                <th scope="col">Kehadiran</th>
+                                <th scope="col">Catatan</th>
+                                <th scope="col">Kelulusan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>
+                                    <select class="form-select" aria-label="Default select example" required>
+                                        <option>Pilih</option>
+                                        <option value="Hadir">Hadir</option>
+                                        <option value="Tidak Hadir">Tidak Hadir</option>
+                                    </select>
+                                </td>
+                                <td><input type="text"></td>
+                                <td>
+                                    <select class="form-select" aria-label="Default select example" required>
+                                        <option>Pilih</option>
+                                        <option value="Lulus">Lulus</option>
+                                        <option value="Gagal">Gagal</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </form>
                 <br><br>
             </div>
         </div>

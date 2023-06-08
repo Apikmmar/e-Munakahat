@@ -69,65 +69,67 @@
             </div>
             <div class="content-of-module-admin">
                 <div style="padding: 20px 0px 0px 20px;">
-                    <div>
-                        <div class="d-flex justify-content-around">
-                            <div id="inputformpadding" style="margin-bottom: 20px;">
-                                <label>No K/P Pemohon:</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="No K/P Pemohon" required>
+                    <form action="m2_mainapplypagestaff.php" method="post">
+                        <div>
+                            <div class="d-flex justify-content-around">
+                                <div id="inputformpadding" style="margin-bottom: 20px;">
+                                    <label>No K/P Pemohon:</label>
+                                    <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="No K/P Pemohon" required>
+                                </div>
+                                <div id="inputformpadding">
+                                    <label>Nama Pemohon:</label>
+                                    <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="nama Pemohon" required>
+                                </div>
+                                <div id="inputformpadding">
+                                    <label>Tarikh Mohon:</label>
+                                    <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="Tarikh Mohon" required>
+                                </div>
+                                <div id="inputformpadding">
+                                    <label>Tarikh Akad Nikah:</label>
+                                    <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="Tarikh Akad Nikah" required>
+                                </div>
+                                <div id="inputformpadding">
+                                    <label>No Akuan Terima:</label>
+                                    <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="No Akuan Terima" required>
+                                </div>
                             </div>
-                            <div id="inputformpadding">
-                                <label>Nama Pemohon:</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="nama Pemohon" required>
-                            </div>
-                            <div id="inputformpadding">
-                                <label>Tarikh Mohon:</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="Tarikh Mohon" required>
-                            </div>
-                            <div id="inputformpadding">
-                                <label>Tarikh Akad Nikah:</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="Tarikh Akad Nikah" required>
-                            </div>
-                            <div id="inputformpadding">
-                                <label>No Akuan Terima:</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle1" placeholder="No Akuan Terima" required>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-success" id="searchsenarai">Cari</button>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success" id="searchsenarai">Cari</button>
+                        <div style="padding-top: 20px;">
+                            <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
+                            <thead>
+                                <tr style="background-color: #D3D3D3;">
+                                    <th scope="col">Bil</th>
+                                    <th scope="col">No KP Pemohon</th>
+                                    <th scope="col">Nama Pemohon</th>
+                                    <th scope="col">Tarikh Mohon</th>
+                                    <th scope="col">No Akuan Terima</th>
+                                    <th scope="col">Tarikh Akad Nikah</th>
+                                    <th scope="col">Operasi</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td class="d-flex justify-content-between">
+                                        <img src="assets/img/evaluation.png" alt="view" class="imgflaticon" id="viewmarriageapplicant">
+                                        <img src="assets/img/approved.png" alt="lulus" class="imgflaticon" id="approvemarriageapplicant">
+                                        <img src="assets/img/rejected.png" alt="tidak lulus" class="imgflaticon" id="rejectmarriageapplicant">
+                                    </td>
+                                    <td>Status</td>
+                                </tr>
+                            </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div style="padding-top: 20px;">
-                        <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
-                        <thead>
-                            <tr style="background-color: #D3D3D3;">
-                                <th scope="col">Bil</th>
-                                <th scope="col">No KP Pemohon</th>
-                                <th scope="col">Nama Pemohon</th>
-                                <th scope="col">Tarikh Mohon</th>
-                                <th scope="col">No Akuan Terima</th>
-                                <th scope="col">Tarikh Akad Nikah</th>
-                                <th scope="col">Operasi</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td class="d-flex justify-content-between">
-                                    <img src="assets/img/evaluation.png" alt="view" class="imgflaticon" id="viewmarriageapplicant">
-                                    <img src="assets/img/approved.png" alt="lulus" class="imgflaticon" id="approvemarriageapplicant">
-                                    <img src="assets/img/rejected.png" alt="tidak lulus" class="imgflaticon" id="rejectmarriageapplicant">
-                                </td>
-                                <td>Status</td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </div>
+                    </form>
                     <br>
                 </div>
             </div>

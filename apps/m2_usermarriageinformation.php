@@ -64,7 +64,7 @@
                 <span class="h6 text-uppercase">PERMOHONAN BERKAHWIN >> MAKLUMAT PERKAHWINAN</span>
             </div>
             <div class="content-of-module">
-                <form action="">
+                <form action="m2_usermarriageinformation.php" method="post">
                     <div style="padding: 10px 0px 0px 20px;">
                         <div>
                             <h5>Maklumat Perkahwinan</h5>

@@ -66,42 +66,45 @@
                 <div>
                     <h6 class="d-flex justify-content-center">SLIP PERMOHONAN KURSUS PRA PERKAHWINAN</h6>
                 </div>
-                <div class="d-flex flex-row">
-                    <div id="vcdlabeldiv1">
-                        <label>No Kad Pengenalan:</label><label>qwerty</label>
-                        <br>
-                        <label>Nama Pemohon:</label><label>qwerty</label>
-                        <br>
-                        <label>Alamat Surat-Menyurat:</label><label>qwerty</label>
-                        <br>
-                        <label>Jantina:</label><label>qwerty</label>
-                        <br>
-                        <label>No. Telefon:</label><label>qwerty</label>
-                        <br>
-                        <label>No. Resit Bayaran:</label><label>qwerty</label>
+
+                <form action="m2_downloadapplicationslip.php" method="post">
+                    <div class="d-flex flex-row">
+                        <div id="vcdlabeldiv1">
+                            <label>No Kad Pengenalan:</label><label>qwerty</label>
+                            <br>
+                            <label>Nama Pemohon:</label><label>qwerty</label>
+                            <br>
+                            <label>Alamat Surat-Menyurat:</label><label>qwerty</label>
+                            <br>
+                            <label>Jantina:</label><label>qwerty</label>
+                            <br>
+                            <label>No. Telefon:</label><label>qwerty</label>
+                            <br>
+                            <label>No. Resit Bayaran:</label><label>qwerty</label>
+                        </div>
+                        <div id="vcdlabeldiv1">
+                            <label>Tempat Taklimat:</label><label>qwerty</label>
+                            <br>
+                            <label>Tarikh Taklimat:</label><label>qwerty</label>
+                            <br>
+                            <label>Anjuran:</label><label>qwerty</label>
+                            <br>
+                            <label>Cadangan Tarikh Akad Nikah:</label><label>qwerty</label>
+                            <br>
+                            <label>Kebenaran Jabatan Agama Islam Negeri:</label><label>qwerty</label>
+                            <br>
+                            <label>Tarikh Resit:</label><label>qwerty</label>
+                        </div>
                     </div>
-                    <div id="vcdlabeldiv1">
-                        <label>Tempat Taklimat:</label><label>qwerty</label>
-                        <br>
-                        <label>Tarikh Taklimat:</label><label>qwerty</label>
-                        <br>
-                        <label>Anjuran:</label><label>qwerty</label>
-                        <br>
-                        <label>Cadangan Tarikh Akad Nikah:</label><label>qwerty</label>
-                        <br>
-                        <label>Kebenaran Jabatan Agama Islam Negeri:</label><label>qwerty</label>
-                        <br>
-                        <label>Tarikh Resit:</label><label>qwerty</label>
+                    <br>
+                    <div class="d-flex justify-content-center">
+                        <div style="padding-left: 150px;">
+                            <button class="btn btn-primary" id="userprepcoursemainpage">Kembali</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-secondary">Cetak</button>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div class="d-flex justify-content-center">
-                    <div style="padding-left: 150px;">
-                        <button class="btn btn-primary" id="userprepcoursemainpage">Kembali</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-secondary">Cetak</button>
-                    </div>
-                </div>
+                </form>
                 <br>
             </div>
         </div>

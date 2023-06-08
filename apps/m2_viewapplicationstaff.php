@@ -68,182 +68,184 @@
                 <span class="h6 text-uppercase">content</span>
             </div>
             <div class="content-of-module-admin">
-                <div style="padding-left: 20px;">
-                    <h6>MAKLUMAT PEMOHON</h6>
-                    <div class="d-flex flex-row">
-                        <div style="width: 600px;">
-                            <div>
-                                <label>No Kad Pengenalan:</label>
-                                <p style="margin: 0; display: inline;">no ic</p>
+                <form action="m2_viewapplicationstaff.php" method="post">
+                    <div style="padding-left: 20px;">
+                        <h6>MAKLUMAT PEMOHON</h6>
+                        <div class="d-flex flex-row">
+                            <div style="width: 600px;">
+                                <div>
+                                    <label>No Kad Pengenalan:</label>
+                                    <p style="margin: 0; display: inline;">no ic</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Nama Pemohon:</label>
+                                    <p style="margin: 0; display: inline;">nama pemohon</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Alamat Surat Menyurat:</label>
+                                    <p style="margin: 0; display: inline;">alamat pemohon</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Pekerjaan:</label>
+                                    <p style="margin: 0; display: inline;">work</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Sektor Pekerjaan:</label>
+                                    <p style="margin: 0; display: inline;">work sector</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>No telefon(PEJABAT):</label>
+                                    <p style="margin: 0; display: inline;">no fon pejabat</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Status Kahwin:</label>
+                                    <p style="margin: 0; display: inline;">status kahwin</p>
+                                </div>
                             </div>
-                            <div style="padding-top: 10px;">
-                                <label>Nama Pemohon:</label>
-                                <p style="margin: 0; display: inline;">nama pemohon</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Alamat Surat Menyurat:</label>
-                                <p style="margin: 0; display: inline;">alamat pemohon</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Pekerjaan:</label>
-                                <p style="margin: 0; display: inline;">work</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Sektor Pekerjaan:</label>
-                                <p style="margin: 0; display: inline;">work sector</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>No telefon(PEJABAT):</label>
-                                <p style="margin: 0; display: inline;">no fon pejabat</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Status Kahwin:</label>
-                                <p style="margin: 0; display: inline;">status kahwin</p>
+                            <div style="width: 600px;">
+                                <div>
+                                    <label>Jantina:</label>
+                                    <p style="margin: 0; display: inline;">jantina</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Tarikh Lahir:</label>
+                                    <p style="margin: 0; display: inline;">dob</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>No. Telefon:</label>
+                                    <p style="margin: 0; display: inline;">no fon</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Tahap pendidikan:</label>
+                                    <p style="margin: 0; display: inline;">tahap pendidikan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Kerja:</label>
+                                    <p style="margin: 0; display: inline;">tahap pendidikan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Warganegara:</label>
+                                    <p style="margin: 0; display: inline;">status warganegara</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Status Islam:</label>
+                                    <p style="margin: 0; display: inline;">status islam</p>
+                                </div>
                             </div>
                         </div>
-                        <div style="width: 600px;">
-                            <div>
-                                <label>Jantina:</label>
-                                <p style="margin: 0; display: inline;">jantina</p>
+                        <br>
+                        <h6>MAKLUMAT PASANGAN PEMOHON</h6>
+                        <div class="d-flex flex-row">
+                            <div style="width: 600px;">
+                                <div>
+                                    <label>No Kad Pengenalan:</label>
+                                    <p style="margin: 0; display: inline;">no ic</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Nama Pasangan:</label>
+                                    <p style="margin: 0; display: inline;">nama Pasangan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Alamat Surat Menyurat:</label>
+                                    <p style="margin: 0; display: inline;">alamat pemohon</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Pekerjaan:</label>
+                                    <p style="margin: 0; display: inline;">work</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Sektor Pekerjaan:</label>
+                                    <p style="margin: 0; display: inline;">work sector</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>No telefon(PEJABAT):</label>
+                                    <p style="margin: 0; display: inline;">no fon pejabat</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Status Kahwin:</label>
+                                    <p style="margin: 0; display: inline;">status kahwin</p>
+                                </div>
                             </div>
-                            <div style="padding-top: 10px;">
-                                <label>Tarikh Lahir:</label>
-                                <p style="margin: 0; display: inline;">dob</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>No. Telefon:</label>
-                                <p style="margin: 0; display: inline;">no fon</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Tahap pendidikan:</label>
-                                <p style="margin: 0; display: inline;">tahap pendidikan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Kerja:</label>
-                                <p style="margin: 0; display: inline;">tahap pendidikan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Warganegara:</label>
-                                <p style="margin: 0; display: inline;">status warganegara</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Status Islam:</label>
-                                <p style="margin: 0; display: inline;">status islam</p>
+                            <div style="width: 600px;">
+                                <div>
+                                    <label>Jantina:</label>
+                                    <p style="margin: 0; display: inline;">jantina</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Tarikh Lahir:</label>
+                                    <p style="margin: 0; display: inline;">dob</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>No. Telefon:</label>
+                                    <p style="margin: 0; display: inline;">no fon</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Tahap pendidikan:</label>
+                                    <p style="margin: 0; display: inline;">tahap pendidikan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Kerja:</label>
+                                    <p style="margin: 0; display: inline;">tahap pendidikan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Warganegara:</label>
+                                    <p style="margin: 0; display: inline;">status warganegara</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Status Islam:</label>
+                                    <p style="margin: 0; display: inline;">status islam</p>
+                                </div>
                             </div>
                         </div>
+                        <br>
+                        <h6>MAKLUMAT PERKAHWINAN</h6>
+                        <div class="d-flex flex-row">
+                            <div style="width: 600px; margin-top: 10px">
+                                <div style="padding-top: 10px;">
+                                    <label>Cadangan Tarikh Akad Nikah:</label>
+                                    <p style="margin: 0; display: inline;">cadangan tarikh</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Alamat Tempat Akad Nikah:</label>
+                                    <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Negeri:</label>
+                                    <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Mas Kahwin:</label>
+                                    <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
+                                </div>
+                            </div>
+                            <div style="width: 600px; margin-top: 10px;">
+                                <div style="padding-top: 10px;">
+                                    <label>No Persediaan Nikah:</label>
+                                    <p style="margin: 0; display: inline;">no persedian nikah</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Kategori Nikah:</label>
+                                    <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Negara:</label>
+                                    <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <label>Tarikh Mohon:</label>
+                                    <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Lulus</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-danger">Tolak</button>
+                        </div>
+                        <br>
                     </div>
-                    <br>
-                    <h6>MAKLUMAT PASANGAN PEMOHON</h6>
-                    <div class="d-flex flex-row">
-                        <div style="width: 600px;">
-                            <div>
-                                <label>No Kad Pengenalan:</label>
-                                <p style="margin: 0; display: inline;">no ic</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Nama Pasangan:</label>
-                                <p style="margin: 0; display: inline;">nama Pasangan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Alamat Surat Menyurat:</label>
-                                <p style="margin: 0; display: inline;">alamat pemohon</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Pekerjaan:</label>
-                                <p style="margin: 0; display: inline;">work</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Sektor Pekerjaan:</label>
-                                <p style="margin: 0; display: inline;">work sector</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>No telefon(PEJABAT):</label>
-                                <p style="margin: 0; display: inline;">no fon pejabat</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Status Kahwin:</label>
-                                <p style="margin: 0; display: inline;">status kahwin</p>
-                            </div>
-                        </div>
-                        <div style="width: 600px;">
-                            <div>
-                                <label>Jantina:</label>
-                                <p style="margin: 0; display: inline;">jantina</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Tarikh Lahir:</label>
-                                <p style="margin: 0; display: inline;">dob</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>No. Telefon:</label>
-                                <p style="margin: 0; display: inline;">no fon</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Tahap pendidikan:</label>
-                                <p style="margin: 0; display: inline;">tahap pendidikan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Kerja:</label>
-                                <p style="margin: 0; display: inline;">tahap pendidikan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Warganegara:</label>
-                                <p style="margin: 0; display: inline;">status warganegara</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Status Islam:</label>
-                                <p style="margin: 0; display: inline;">status islam</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <h6>MAKLUMAT PERKAHWINAN</h6>
-                    <div class="d-flex flex-row">
-                        <div style="width: 600px; margin-top: 10px">
-                            <div style="padding-top: 10px;">
-                                <label>Cadangan Tarikh Akad Nikah:</label>
-                                <p style="margin: 0; display: inline;">cadangan tarikh</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Alamat Tempat Akad Nikah:</label>
-                                <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Negeri:</label>
-                                <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Mas Kahwin:</label>
-                                <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
-                            </div>
-                        </div>
-                        <div style="width: 600px; margin-top: 10px;">
-                            <div style="padding-top: 10px;">
-                                <label>No Persediaan Nikah:</label>
-                                <p style="margin: 0; display: inline;">no persedian nikah</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Kategori Nikah:</label>
-                                <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Negara:</label>
-                                <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
-                            </div>
-                            <div style="padding-top: 10px;">
-                                <label>Tarikh Mohon:</label>
-                                <p style="margin: 0; display: inline;">maklumat perkahwinan</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Lulus</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="reset" class="btn btn-danger">Tolak</button>
-                    </div>
-                    <br>
-                </div>
+                </form>
             </div>
         </div>
     </div>

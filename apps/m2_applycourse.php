@@ -64,7 +64,7 @@
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="" method="post">
+                    <form action="m2_applycourse.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <h6 class="custcolor">Anjuran :</h6>
