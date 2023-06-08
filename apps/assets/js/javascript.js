@@ -29,11 +29,4 @@ $(document).ready(function() {
     $("#hey").on("click", function() {
         alert("Call this number 0107730425");
     });
-
-    // date picker
-    $(".datepicker").on("click", function() {
-        $(".datepicker").datepicker({
-            format: 'yyyy-mm-dd'
-        });
-    });
 });
