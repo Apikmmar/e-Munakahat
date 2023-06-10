@@ -1,0 +1,243 @@
+
+<html>
+<head>
+<title>e-Munakahat</title> 
+<link rel=stylesheet type="text/css" href="_styles.css">
+<script src="_alert.min.js"></script>
+<script type="text/javascript">
+var str = "Pengurusan Kata Laluan";
+var result = str.toUpperCase();
+
+function makluman(){
+	swal("NOTA KESELAMATAN", " "+result+" \n\nKata laluan hendaklah dilindungi, TIDAK BOLEH dikongsi atau didedahkan dengan apa cara sekalipun. \n\nRujukan: \nPolisi Keselamatan Siber (PKS), Pejabat Setiausaha Kerajaan Pahang", "");
+}
+</script>
+</head>
+<body topmargin="0">
+<table align="center" cellpadding="1" cellspacing="1" width="990">
+<tr><td>
+
+    <table align="center" cellpadding="0" cellspacing="0">
+    <tr align="center">
+    <td><img src="img/banner.jpg"></td>
+    </tr>
+    
+    <tr align="center" bgcolor="#2f80ed" class="font12putih" height="25">
+    <td><b><marquee class="font10" scrollAmount="2">Selamat Datang ke Sistem Maklumat Perkahwinan Islam Pahang (e-Munakahat)</marquee></b></td>
+    </tr>
+    </table>    <table align="center" width="100%" bgcolor="#FFFFFF" cellpadding="0" cellspacing="2">
+    <tr bgcolor="#f4f4f4" class="font14bold" height="30">
+    <td width="20%" align="center" bgcolor="#e2e8ef">LAMAN UTAMA</td> 
+    <td width="20%" align="center"><a href="frmKadi.php">JURUNIKAH</a></td>   
+    <td width="20%" align="center"><a href="frmHubungi.php">HUBUNGI KAMI</a></td>
+    
+    <td width="60%" align="right" bgcolor="#FFFFFF">
+    <link rel="stylesheet" href="_styles.css">
+    
+    <font class="font12bold">
+    <SCRIPT language="JavaScript">  
+        var mydate=new Date()
+        var year=mydate.getYear()
+        if (year < 1000)
+        year+=1900
+        var day=mydate.getDay()
+        var month=mydate.getMonth()
+        var daym=mydate.getDate()
+        if (daym<10)
+        daym="0"+daym
+        var dayarray=new Array("Ahad","Isnin","Selasa","Rabu","Khamis","Jumaat","Sabtu")
+        var montharray=new Array("Januari","Februari","Mac","April","Mei","Jun","Julai","Ogos","September","Oktober","November","Disember")
+        document.write(dayarray[day]+", "+daym+" "+montharray[month]+" "+year)     
+    </SCRIPT></font>
+    &nbsp;&nbsp;&nbsp;<span class="font12bold" id="clock">
+    <SCRIPT LANGUAGE="JavaScript">
+        var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+        var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+        function getthedate(){
+        var mydate=new Date()
+        var year=mydate.getYear()
+        if (year < 1000)
+        year+=1900
+        var day=mydate.getDay()
+        var month=mydate.getMonth()
+        var daym=mydate.getDate()
+        if (daym<10)
+        daym="0"+daym
+        var hours=mydate.getHours()
+        var minutes=mydate.getMinutes()
+        var seconds=mydate.getSeconds()
+        var dn="am"
+        if (hours>=12)
+        dn="pm"
+        if (hours>12){
+        hours=hours-12
+        }
+        {
+        d = new Date();
+        Time24H = new Date();
+        Time24H.setTime(d.getTime() + (d.getTimezoneOffset()*60000) + 3600000);
+        InternetTime = Math.round((Time24H.getHours()*60+Time24H.getMinutes()) / 1.44);
+        if (InternetTime < 10) InternetTime = '00'+InternetTime;
+        else if (InternetTime < 100) InternetTime = '0'+InternetTime;
+        }
+        if (hours==0)
+        hours=12
+        if (minutes<=9)
+        minutes="0"+minutes
+        if (seconds<=9)
+        seconds="0"+seconds
+    
+        var cdate=hours+":"+minutes+":"+seconds+" "+dn+""
+        if (document.all)
+        document.all.clock.innerHTML=cdate
+        else if (document.getElementById)
+        document.getElementById("clock").innerHTML=cdate
+        else
+        document.write(cdate)
+        }
+        if (!document.all&&!document.getElementById)
+        getthedate()
+        function goforit(){
+        if (document.all||document.getElementById)
+        setInterval("getthedate()",1000)
+   
+        }
+        window.onload=goforit
+    </SCRIPT>
+    </span>
+    </td>
+    </tr>
+    </table>
+
+    <table align="center" border="0">
+    <tr class="font12">
+    <td colspan="2"><img src="img/indek.png" width="546" height="260"></td>
+    <td colspan="2" valign="top" bgcolor="#CCCCCC" height="260">
+    	
+        <table align="center" bgcolor="#FFFFFF" width="100%" height="100%">
+        <tr class="font12" align="center">
+        <td>
+        
+        	<table cellpadding="0" cellspacing="0" width="480">
+            <tr>
+            <td colspan="3">
+                <table width="100%" border="0">
+                <tr class="font16boldbiru">
+                <td width="10%"><img src="img/login_user.png" title="Log Masuk Pemohon" alt="Log Masuk Pemohon" width="60" height="50" border="0"></td>
+                <td>LOG MASUK</td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+            
+            <tr class="font12gray">
+            <td colspan="2">&nbsp;</td>
+            </tr>
+            
+            <form name="frmLogin" method="post" action="_login.php">
+            <input type="hidden" name="txtToken" value="e8f93b1d9fc344aa36e795a9532b1975">
+            <tr class="font12gray">
+            <td>&nbsp;</td>
+            <td>
+                    <table width="405" align="center">
+                    <tr class="font14">
+                    <td>&nbsp;No Kad Pengenalan</td>
+					<td>:</td>
+					<td><input type="text" name="txtKp" style="width:180px" maxlength="12" autocomplete="off" readonly onFocus="this.removeAttribute('readonly');"> 
+                    </td>
+					</tr>
+                    
+                    <tr class="font14">
+					<td>&nbsp;Kata Laluan</td>
+					<td>:</td>
+					<td><input type="password" name="txtPassword" style="width:180px" autocomplete="off" readonly onFocus="this.removeAttribute('readonly');">
+                    </td>
+                    </tr>
+                    
+                    <tr class="font12" height="25">
+            		<td colspan="2">&nbsp;</td>
+            		<td><input type="submit" name="txtMasuk" class="butang" value="Masuk"></td>
+           		 	</tr>
+                    
+                    <tr class="font12">
+            		<td colspan="3">&nbsp;</td>
+            		</tr>
+                    
+                    <tr class="font12">
+            		<td colspan="3">&nbsp; <a href="frmLogin_daftar.php" onclick='return alert("Anda dinasihatkan supaya membaca panduan pengguna terlebih dahulu sebelum mendaftar sebagai pengguna.");'>Daftar</a> | <a href="frmKatalaluan.php">Tukar Kata Laluan</a> | <a href="frmLupakata.php">Lupa Kata Laluan?</a></td>
+            		</tr>
+					</table>     
+			</td>
+            </tr>
+			</form>
+			</table>
+            
+    </td></tr></table>
+    
+    </td>
+    </tr>
+       	<tr class="font14">
+        <td colspan="4" align="right">
+        <span align="center">
+        
+        <a href="frmInsentif.php" class="myButton">INSENTIF KHAS <br> PASANGAN PENGANTIN</a>
+        <a href="./fail/DOKUMEN_MANUAL_PENGGUNA_PEMOHON.pdf" class="myButton" target="_blank">PANDUAN<br> PENGGUNA</a>
+        <a href="https://www.youtube.com/watch?v=pLzd_MMVT_Q&feature=youtu.be" class="myButton" target="_blank">VIDEO <br>PENGGUNA</a>
+        <a href="frmLoginstaff.php" class="myButton">LOG MASUK <br>KAKITANGAN</a></span>
+        </td>
+        </tr>
+        
+        <tr class="font14"> 
+        <td colspan="4">        
+        <a href="https://prakahwin.pahang.gov.my" target="_blank"><b>PERMOHONAN KURSUS PRA PERKAHWINAN ISLAM PAHANG</b></a> <a href="https://prakahwin.pahang.gov.my" target="_blank"><img src="img/klik.gif" width="45" height="45"></a>
+        </td>
+        </tr>
+ 
+        <tr class="font12">
+        <td colspan="4">&nbsp;</td>
+        </tr>
+        
+        <tr class="font12">
+        <td width="25%">
+            <table align="center" bgcolor="#CCCCCC">
+            <tr bgcolor="#FFFFFF" class="font14bold" align="center">
+            <td><a href="frmInfo_kahwin.php"><img src="img/nikah.png" width="252" height="147"><br>PERKAHWINAN</a></td>
+            </tr>
+            </table>
+        </td>
+        <td width="25%">
+            <table align="center" bgcolor="#CCCCCC">
+            <tr bgcolor="#FFFFFF" class="font14bold" align="center">
+            <td><a href="frmInfo_cerai.php"><img src="img/cerai.png" width="252" height="147"><br>PERCERAIAN</a></td>
+            </tr>
+            </table>
+        </td>
+        <td width="25%">   
+            <table align="center" bgcolor="#CCCCCC">
+            <tr bgcolor="#FFFFFF" class="font14bold" align="center">
+            <td><a href="frmInfo_rujuk.php"><img src="img/rujuk.png" width="252" height="147"><br>RUJU'</a></td>
+            </tr>
+            </table>
+        </td>
+        <td width="25%">
+            <table align="center" bgcolor="#CCCCCC">
+            <tr bgcolor="#FFFFFF" class="font14bold" align="center">
+            <td><a href="frmInfo_khidmat.php"><img src="img/nasihat.png" width="252" height="147"><br>KHIDMAT NASIHAT</a></td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+        
+        <tr class="font12">
+        <td colspan="4">&nbsp;</td>
+        </tr>
+        
+        <tr align="center" class="font11gray">
+        <td colspan="4">Hak Cipta Terpelihara &copy; 2019  
+        Bahagian Teknologi Maklumat Pejabat Setiausaha Kerajaan Pahang.<br>
+        Paparan terbaik dengan menggunakan Mozilla Firefox (1024 x 768 piksel)
+        </td>
+        </tr>
+        </table>
+</body>
+</html>
