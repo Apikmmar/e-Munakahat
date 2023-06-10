@@ -6,12 +6,11 @@
     margin-right: auto;
 }
 
-
-/* module2 style */
 #vcdlabeldiv {
     padding-top: 30px;
     padding-left: 80px;
 }
+
 #vcdlabeldiv1 {
     width: 500px;
     padding-top: 30px;
@@ -47,6 +46,12 @@
 
 #inputboxstyle {
     width: 250px;
+    display: inline;
+}
+
+#inputboxstyle1 {
+    width: 200px;
+    display: inline;
 }
 
 #inputboxstyle2 {
