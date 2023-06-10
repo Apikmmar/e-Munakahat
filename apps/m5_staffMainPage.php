@@ -81,7 +81,7 @@
                             <th scope="col">No.KP / Nama Isteri</th>
                             <th scope="col">Tarikh Mohon</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Operasi</th>
+                            <th scope="col" colspan="3">Operasi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,6 +91,15 @@
                             <td>Mark</td>
                             <td>Mark</td>
                             <td>Mark</td>
+                            <td>
+                                <img src="assets/img/update.png" alt="logopapar" class="imgflaticon">
+                            </td>
+                            <td>
+                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon">
+                            </td>
+                            <td>
+                                <img src="assets/img/delete.png" alt="logodaftar" class="imgflaticon">
+                            </td>
                         </tr>
                     </tbody>
                     </table>
