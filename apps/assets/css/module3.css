@@ -1,0 +1,29 @@
+#main_nav .nav-item .nav-link:hover {
+    color: #fff;
+}
+.downloadButton {
+    display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+.img-printer {
+    border-radius: 50%;
+    width: 28px;
+    height: auto;
+}
+
+.img-upload {
+    border-radius: 50%;
+    width: 28px;
+    height: auto;
+}
+
+#blue {
+    color: blue;
+}
