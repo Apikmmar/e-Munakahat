@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include('../database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +68,7 @@
                 <span class="h6 text-uppercase">content</span>
             </div>
             <div class="content-of-module-admin">
-                <form action="m2_viewapplicationstaff.php" method="post">
+                <form action="../StaffMarriageApplicationController.php" method="post">
                     <div style="padding-left: 20px;">
                         <h6>MAKLUMAT PEMOHON</h6>
                         <div class="d-flex flex-row">

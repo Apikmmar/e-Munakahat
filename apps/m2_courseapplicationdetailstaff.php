@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include('../database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +65,7 @@
             </div>
             <div class="content-of-module-admin">
                 <br><br>
-                <form action="m2_courseapplicationdetailstaff.php" method="post">
+                <form action="../StaffMarriagePreparationController.php" method="post">
                     <div style="margin-left: 30px;">
                         <div class="d-flex flex-row">
                             <label>Siri Kursus:</label>
