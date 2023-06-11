@@ -67,7 +67,7 @@
                     <h6 class="d-flex justify-content-center">SLIP PERMOHONAN KURSUS PRA PERKAHWINAN</h6>
                 </div>
 
-                <form action="../UserMarriagePreparationController.php" method="post">
+                <form action="../business_service/controller/UserMarriagePreparationController.php" method="post">
                     <div class="d-flex flex-row">
                         <div id="vcdlabeldiv1">
                             <label>No Kad Pengenalan:</label><label>qwerty</label>

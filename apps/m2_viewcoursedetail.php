@@ -63,7 +63,7 @@
                 <span class="h6 text-uppercase">DAFTAR KURSUS >> PAPAR LANJUT</span>
             </div>
             <div class="content-of-module">
-                <form action="../UserMarriagePreparationController.php" method="post">
+                <form action="../business_service/controller/UserMarriagePreparationController.php" method="post">
                     <div class="d-flex flex-row">
                         <div id="vcdlabeldiv">
                             <p class="vcdlabel">Anjuran</p>
