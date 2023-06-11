@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 03:27 PM
+-- Generation Time: Jun 11, 2023 at 06:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `e-munakahat`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `applicant_partner_info`
+--
+
+CREATE TABLE `applicant_partner_info` (
+  `Partner_IC` varchar(12) NOT NULL,
+  `Partner_Name` varchar(30) DEFAULT NULL,
+  `Partner_DOB` date DEFAULT NULL,
+  `Partner_Gender` varchar(10) DEFAULT NULL,
+  `Partner_Race` varchar(30) DEFAULT NULL,
+  `Partner_Address` varchar(50) DEFAULT NULL,
+  `Partner_Age` int(11) DEFAULT NULL,
+  `Partner_Nationality` varchar(15) DEFAULT NULL,
+  `Partner_Edu` varchar(15) DEFAULT NULL,
+  `Partner_JobSector` varchar(30) DEFAULT NULL,
+  `Partner_JobPosition` varchar(30) DEFAULT NULL,
+  `Partner_Salary` float DEFAULT NULL,
+  `Partner_MarriageStatus` varchar(15) DEFAULT NULL,
+  `Partner_IslamStatus` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -138,7 +161,8 @@ CREATE TABLE `marriage_application` (
   `Staff_IC` varchar(12) NOT NULL,
   `Saksi_IC` varchar(12) NOT NULL,
   `Wali_IC` varchar(12) NOT NULL,
-  `Test_ID` varchar(15) NOT NULL
+  `Test_ID` varchar(15) NOT NULL,
+  `Partner_ID` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -277,7 +301,8 @@ CREATE TABLE `user_registration_info` (
   `User_MarriageStatus` varchar(15) NOT NULL,
   `User_IslamStatus` varchar(15) NOT NULL,
   `User_Password` varchar(15) NOT NULL,
-  `User_Email` varchar(30) NOT NULL
+  `User_Email` varchar(30) NOT NULL,
+  `Partner_ID` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -303,6 +328,12 @@ CREATE TABLE `wali_info` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `applicant_partner_info`
+--
+ALTER TABLE `applicant_partner_info`
+  ADD PRIMARY KEY (`Partner_IC`);
 
 --
 -- Indexes for table `consultation`
@@ -357,7 +388,8 @@ ALTER TABLE `marriage_application`
   ADD KEY `Staff_IC` (`Staff_IC`),
   ADD KEY `Saksi_IC` (`Saksi_IC`),
   ADD KEY `Wali_IC` (`Wali_IC`),
-  ADD KEY `Test_ID` (`Test_ID`);
+  ADD KEY `Test_ID` (`Test_ID`),
+  ADD KEY `Partner_ID` (`Partner_ID`);
 
 --
 -- Indexes for table `marriage_prep_course`
@@ -412,7 +444,8 @@ ALTER TABLE `staff_registration_info`
 -- Indexes for table `user_registration_info`
 --
 ALTER TABLE `user_registration_info`
-  ADD PRIMARY KEY (`User_IC`);
+  ADD PRIMARY KEY (`User_IC`),
+  ADD KEY `Partner_ID` (`Partner_ID`);
 
 --
 -- Indexes for table `wali_info`
@@ -455,7 +488,8 @@ ALTER TABLE `marriage_application`
   ADD CONSTRAINT `marriage_application_ibfk_2` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`),
   ADD CONSTRAINT `marriage_application_ibfk_3` FOREIGN KEY (`Saksi_IC`) REFERENCES `saksi_info` (`Saksi_IC`),
   ADD CONSTRAINT `marriage_application_ibfk_4` FOREIGN KEY (`Wali_IC`) REFERENCES `wali_info` (`Wali_IC`),
-  ADD CONSTRAINT `marriage_application_ibfk_5` FOREIGN KEY (`Test_ID`) REFERENCES `hiv_test_result` (`Test_ID`);
+  ADD CONSTRAINT `marriage_application_ibfk_5` FOREIGN KEY (`Test_ID`) REFERENCES `hiv_test_result` (`Test_ID`),
+  ADD CONSTRAINT `marriage_application_ibfk_6` FOREIGN KEY (`Partner_ID`) REFERENCES `applicant_partner_info` (`Partner_IC`);
 
 --
 -- Constraints for table `marriage_prep_course`
@@ -473,6 +507,12 @@ ALTER TABLE `marriage_registration`
   ADD CONSTRAINT `marriage_registration_ibfk_3` FOREIGN KEY (`MR_PaymentNo`) REFERENCES `mr_payment_info` (`MR_PaymentNo`),
   ADD CONSTRAINT `marriage_registration_ibfk_4` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`),
   ADD CONSTRAINT `marriage_registration_ibfk_5` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info` (`User_IC`);
+
+--
+-- Constraints for table `user_registration_info`
+--
+ALTER TABLE `user_registration_info`
+  ADD CONSTRAINT `user_registration_info_ibfk_1` FOREIGN KEY (`Partner_ID`) REFERENCES `applicant_partner_info` (`Partner_IC`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
