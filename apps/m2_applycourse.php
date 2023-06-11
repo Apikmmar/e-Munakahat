@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include('../database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +24,8 @@
                 <br>
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
-                        <span>ID :<p></p></span>
-                        <span>Nama :<p></p></span>
+                        <span>Username: <p></p></span><br>
+                        <span>IC Number: <p></p></span><br>
                     </div>
                 </div>
                 <br><br>
@@ -64,7 +64,7 @@
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="m2_applycourse.php" method="post">
+                    <form action="../UserMarriagePreparationController.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <h6 class="custcolor">Anjuran :</h6>

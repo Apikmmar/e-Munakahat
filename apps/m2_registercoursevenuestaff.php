@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include('../database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +64,7 @@
                 <span class="h6 text-uppercase">DAFTAR TAKLIMAT</span>
             </div>
             <div class="content-of-module-admin">
-                <form action="m2_registercoursevenuestaff.php" method="post">
+                <form action="../StaffMarriagePreparationController.php" method="post">
                     <div style="padding-left: 30px; padding-top: 5px;">
                         <em>[*] adalah wajib diisi</em>
                     </div>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include('../database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +69,7 @@
             </div>
             <div class="content-of-module-admin">
                 <div style="padding: 20px 0px 0px 20px;">
-                    <form action="m2_mainapplypagestaff.php" method="post">
+                    <form action="../StaffMarriageApplicationController.php" method="post">
                         <div>
                             <div class="d-flex justify-content-around">
                                 <div id="inputformpadding" style="margin-bottom: 20px;">

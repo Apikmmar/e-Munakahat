@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include('../database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
                 <span class="h6 text-uppercase">DAFTAR KURSUS >> PAPAR LANJUT</span>
             </div>
             <div class="content-of-module">
-                <form action="m2_viewcoursedetail.php" method="post">
+                <form action="../UserMarriagePreparationController.php" method="post">
                     <div class="d-flex flex-row">
                         <div id="vcdlabeldiv">
                             <p class="vcdlabel">Anjuran</p>
