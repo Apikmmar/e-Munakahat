@@ -16,7 +16,7 @@ $database = [
 
 if (!array_key_exists($icNumber, $database)) {
     $errorMessage = "IC number not found in the database.";
-    header("Location: change-password.html?error=" . urlencode($errorMessage));
+    header("Location: m1_changepassword.html?error=" . urlencode($errorMessage));
     exit();
 }
 
@@ -24,11 +24,11 @@ $storedPassword = $database[$icNumber];
 
 if ($oldpassword === $storedPassword) {
     $successMessage = "The password has successfully changed.";
-    header("Location: login.html?success=" . urlencode($successMessage));
+    header("Location: m1_login.html?success=" . urlencode($successMessage));
     // Additional code for successful login if needed
 } else {
     $successMessage = "The password has successfully changed.";
-    header("Location: login.html?success=" . urlencode($successMessage));
+    header("Location: m1_login.html?success=" . urlencode($successMessage));
     exit();
 }
 }

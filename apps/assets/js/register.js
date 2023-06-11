@@ -1,44 +1,60 @@
 function validateForm() {
-    // Retrieve form inputs
-    var icNumber = document.getElementById('icnum').value;
-    var name = document.getElementById('name').value;
-    var gender = document.getElementById('gender').value;
-    var bangsa = document.getElementById('bangsa').value;
-    var warga = document.getElementById('warga').value;
-    var address = document.getElementById('address').value;
-    var phonenum = document.getElementById('phonenum').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var confirmpassword = document.getElementById('confirmpassword').value;
+  // Retrieve form inputs
+  var icNumber = document.getElementById('icnum').value;
+  var name = document.getElementById('name').value;
+  var gender = document.getElementById('gender').value;
+  var bangsa = document.getElementById('bangsa').value;
+  var warga = document.getElementById('warga').value;
+  var address = document.getElementById('address').value;
+  var phonenum = document.getElementById('phonenum').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var confirmpassword = document.getElementById('confirmpassword').value;
   
-    // Check if IC number follows the Malaysian identification number format
-    var icNumberRegex = /^[0-9]{12}$/;
-    if (!icNumber.match(icNumberRegex)) {
-      alert("Sila masukkan nombor kad pengenalan Malaysia yang sah (e.g., 000000-00-0000).");
-      return false;
-    }
-  
-    // Add more validation rules for other fields if needed
-  
-    if (gender === '') {
-        alert("Sila pilih jantina.");
-        return false;
-    }
-    if (bangsa === '') {
-        alert("Sila pilih bangsa.");
-        return false;
-    }
-    if (warga === '') {
-        alert("Sila pilih warganegara.");
-        return false;
-    }
-
-    // Check if password and confirm password match
-    if (password !== confirmpassword) {
-        alert("Kata laluan yang dimasukkan tidak sepadan.");
-        return false;
-    }
+  // Check if IC number follows the Malaysian identification number format
+  var icNumberRegex = /^[0-9]{12}$/;
+  if (!icNumber.match(icNumberRegex)) {
+    alert("Sila masukkan nombor kad pengenalan Malaysia yang sah (e.g., 000000-00-0000).");
+    return false;
   }
+  
+  // Add more validation rules for other fields if needed
+  
+  if (gender === '') {
+      alert("Sila pilih jantina.");
+      return false;
+  }
+  if (bangsa === '') {
+    alert("Sila pilih bangsa.");
+      return false;
+  }
+  if (warga === '') {
+      alert("Sila pilih warganegara.");
+      return false;
+  }
+
+  // Check if password and confirm password match
+  if (password !== confirmpassword) {
+      alert("Kata laluan yang dimasukkan tidak sepadan.");
+      return false;
+  }
+}
+
+function toggleCurrentAddress() {
+  var currentAddressTextarea = document.getElementById('currentaddress');
+  var addressTextarea = document.getElementById('address');
+  var sameAddressCheckbox = document.getElementById('sameaddress');
+  
+  if (sameAddressCheckbox.checked) {
+    // Disable current address textarea and set its value to the address textarea value
+    currentAddressTextarea.disabled = true;
+    currentAddressTextarea.value = addressTextarea.value;
+  } else {
+    // Enable current address textarea
+    currentAddressTextarea.disabled = false;
+    currentAddressTextarea.value = ''; // Clear the value
+  }
+}
 
   
   var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!array_key_exists($icNumber, $database)) {
       $errorMessage = "IC number not found in the database.";
-      header("Location: forget-password.html?error=" . urlencode($errorMessage));
+      header("Location: m1_forget-password.html?error=" . urlencode($errorMessage));
       exit;
   }
 
@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if ($email === $storedEmail) {
       $successMessage = "Password reset link has been sent to your email: " . $email;
-      header("Location: login.html?success=" . urlencode($successMessage));
+      header("Location: m1_login.html?success=" . urlencode($successMessage));
       // Additional code for successful login if needed
   } else {
       $errorMessage = "The IC number and the email is not matching";
-      header("Location: forget-password.html?error=" . urlencode($errorMessage));
+      header("Location: forgetpm1_assword.html?error=" . urlencode($errorMessage));
       exit;
   }
 

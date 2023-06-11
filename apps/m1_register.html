@@ -11,8 +11,7 @@
 
 <!-- Theme CSS -->
 <!-- build:css @@webRoot/assets/css/theme.min.css -->
-<link rel="stylesheet" href="assets/css/theme.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/login.css">
 <!-- endbuild -->
 
 <script src="assets/js/register.js"></script>
@@ -90,7 +89,7 @@
               <!-- Gender -->
               <div class="form-group">
                 <label for="gendeer" class="form-label">Jantina</label>
-                <select name="gender" class="form-select" id="gender">
+                <select name="gender" class="form-select" id="gender" required>
                   <option selected disabled value="">- Sila Pilih Jantina -</option>
                   <option value="male">Lelaki</option>
                   <option value="female">Perempuan</option>
@@ -100,34 +99,90 @@
               <!-- Bangsa -->
               <div class="form-group">
                 <label for="bangsa" class="form-label">Bangsa</label>
-                <select name="bangsa" class="form-select" id="bangsa">
+                <select name="bangsa" class="form-select" id="bangsa" required>
                   <option selected disabled value="">- Sila Pilih Bangsa -</option>
-                  <option value="malay">Melayu</option>
-                  <option value="chinese">China</option>
-                  <option value="indian">India</option>
+                  <option value="melayu">Melayu</option>
+                  <option value="cina">Cina</option>
+                  <option value="india">India</option>
+                  <option value="bangladeshi">Bangladeshi</option>
+                  <option value="pakistani">Pakistani</option>
+                  <option value="sri lanka">Sri Lanka</option>
+                  <option value="indonesian">Indonesian</option>
+                  <option value="bumiputera sabah">Bumiputera Sabah</option>
+                  <option value="bumiputera sarawak">Bumiputera Sarawak</option>
+                  <option value="orang asli">Orang Asli (Semenanjung)</option>
+                  <option value="lain-lain asia">Lain-lain Asia</option>
+                  <option value="european">European</option>
+                  <option value="arab">Arab</option>
                 </select>
                 <br>
               </div>
               <!-- Warganegara -->
               <div class="form-group">
                 <label for="warga" class="form-label">Warganegara</label>
-                <select name="warga" class="form-select" id="warga">
+                <select name="warga" class="form-select" id="warga" required>
                   <option selected disabled value="">- Sila Pilih Warganegara -</option>
                   <option value="warganegara">Warganegara</option>
                   <option value="bukan">Bukan Warganegara</option>
                 </select>
                 <br>
               </div>
-              <!-- Address -->
+              <!-- Address KP-->
               <div class="form-group">
-                <label for="address" class="form-label">Alamat</label>
-                <textarea name="address" id="address" cols="30" rows="2" class="form-control" required></textarea>
+                <label for="address" class="form-label">Alamat dalam K/P</label>
+                <textarea name="address" id="address" rows="2" class="form-control" required oninput="toggleCurrentAddress()"></textarea>
+                <div class="form-check">
+                  <input type="checkbox" name="sameaddress" id="sameaddress" class="form-check-input" onclick="toggleCurrentAddress()"> Tanda Jika Alamat Semasa Sama Dengan Alamat Dalam K/P
+
+                </div>
+                <br>
+              </div>
+              <!-- Current Address -->
+              <div class="form-group">
+                <label for="currentaddress" class="form-label">Alamat Semasa</label>
+                <textarea name="currentaddress" id="currentaddress" rows="2" class="form-control" required></textarea>
                 <br>
               </div>
               <!-- Phone Num -->
               <div class="form-group">
                 <label for="phonenum" class="form-label">No. Telefon Bimbit</label>
                 <input type="text" id="phonenum" class="form-control" name="phonenum" placeholder="" pattern="^(\+?60\s?1[0-9]-?[0-9]{3}\s?[0-9]{4})$" title="Example: 601xxxxxxxx" required>
+                <br>
+              </div>
+              <!-- Taraf Pendidikan -->
+              <div class="form-group">
+                <label for="pendidikan" class="form-label">Taraf Pendidikan</label>
+                <select name="pendidikan" class="form-select" id="pendidikan" required>
+                  <option selected disabled value="">- Sila Pilih Taraf Pendidikan -</option>
+                  <option value="phd">PHD</option>
+                  <option value="master">Master</option>
+                  <option value="ijazah">Ijazah</option>
+                  <option value="diploma">Diploma</option>
+                  <option value="stpm">STPM/HSC/Sijil</option>
+                  <option value="spm">SPM/MCE</option>
+                  <option value="pt3">PT3/PMR/SRP/LC</option>
+                  <option value="upsr">UPSR</option>
+                  <option value="tiadapendidikan">Tiada Pendidikan Rasmi</option>
+                </select>
+                <br>
+              </div>
+              <!-- Sektor Pekerjaan -->
+              <div class="form-group">
+                <label for="pekerjaan" class="form-label">Sektor Pekerjaan</label>
+                <select name="pekerjaan" class="form-select" id="pekerjaan" required>
+                  <option selected disabled value="">- Sila Pilih Warganegara -</option>
+                  <option value="awam">Sektor Awam</option>
+                  <option value="swasta">Sektor Swasta</option>
+                  <option value="sendiri">Bekerja Sendiri</option>
+                  <option value="pesara">Pesara</option>
+                  <option value="tidakbekerja">Tidak Bekerja</option>
+                </select>
+                <br>
+              </div>
+              <!-- Alamat Tempat Kerja-->
+              <div class="form-group">
+                <label for="kerjaaddress" class="form-label">Alamat Tempat Kerja</label>
+                <textarea name="kerjaaddress" id="kerjaaddress" rows="2" class="form-control" required></textarea>
                 <br>
               </div>
               <!-- Email -->
