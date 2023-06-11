@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include "connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Munakahat</title>
-    <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
+    <link rel="shortcut icon" href="assets/img/jata-pahang.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/module2.css">
 
 </head>
 <body>
@@ -40,8 +46,8 @@
             <div class="h-span-container">
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
-                <img src="img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+                <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -54,53 +60,33 @@
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">DAFTAR KURSUS</span>
+                <span class="h6 text-uppercase">TANGGUH KURSUS</span>
             </div>
             <div class="content-of-module">
-                <br>
-                <div class="text-center h6">
-                    <p>Pilihan Anjuran:</p>
-                    <select name="pejabatagamedaerah" id="pejagamdae">
-                        <option value="PILIH PEJABAT AGAMA DAERAH">PILIH PEJABAT AGAMA DAERAH</option>
-                        <option value="PEJABAT AGAMA ISLAM KUANTAN">PEJABAT AGAMA ISLAM KUANTAN</option>
-                        <option value="PEJABAT AGAMA ISLAM PEKAN">PEJABAT AGAMA ISLAM PEKAN</option>
-                        <option value="PEJABAT AGAMA ISLAM MARAN">PEJABAT AGAMA ISLAM MARAN</option>
-                    </select>
-                    &nbsp;&nbsp;&nbsp;
-                    <button class="btn btn-primary">Cari</button>
-                </div>
-                <div>
-                    <table id="searchcoursetable">
-                        <tr>
-                            <th>Bil.</th>
-                            <th>Anjuran</th>
-                            <th>Tempat</th>
-                            <th>Tarikh</th>
-                            <th>Kapasiti Peserta</th>
-                            <th>Kekosongan</th>
-                            <th>Papar Lanjut</th>
-                            <th>Daftar Penyertaan</th>
-                        </tr>
-                        <tr>
-                            <td>tre</td>
-                            <td>weqr</td>
-                            <td>wqe</td>
-                            <td>wqe</td>
-                            <td>wqe</td>
-                            <td>wqe</td>
-                            <td><img src="img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
-                            <td><img src="img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-
+                <div id="custalign">
+                    <div id="inputformpadding">
+                        <h6 class="custcolor">Anjuran :</h6>
+                        <h6 class="custcolor">Tempat dan Tarikh :</h6>
+                    </div>
+                    <form action="m2_reschedulecourse.php" method="post">
+                        <div id="inputformpadding">
+                            <label>Resit pembayaran(RM80.00):</label>
+                            <em>jika tangguh kurang daripada seminggu</em>
+                            <br>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                        </div>
+                        <div class="d-flex justify-content-around" style="width: 300px; margin-top: 30px;">
+                            <button type="submit" class="btn btn-primary">Tangguh</button>
+                            <button type="btn" class="btn btn-primary" id="userprepcoursemainpage">Kembali</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="javascript.js" defer></script>
+    <script src="assets/js/javascript.js" defer></script>
+    <script src="assets/js/module2js.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
