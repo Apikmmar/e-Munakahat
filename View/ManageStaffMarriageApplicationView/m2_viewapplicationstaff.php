@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include('../database/connection.php');
+    require '../../database/connection.php';
+    // depend on how deep the package is .//
 ?>
 
 <!DOCTYPE html>
