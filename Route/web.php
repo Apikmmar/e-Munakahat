@@ -2,8 +2,8 @@
 
 $_SESSION['current_link'] = $_SERVER['HTTP_REFERER'];
 // module 2
-require "business_service/controller/ManageMarriagePreparation/UserMarriagePreparationController.php";
-require "business_service/controller/ManageMarriagePreparation/StaffMarriagePreparationController.php";
-require "business_service/controller/ManageMarriageApplication/StaffMarriageApplicationController.php";
-require "business_service/controller/ManageMarriageApplication/UserMarriageApplicationController.php";
+require "Business_Service/Controller/ManageMarriagePreparation/UserMarriagePreparationController.php";
+require "Business_Service/Controller/ManageMarriagePreparation/StaffMarriagePreparationController.php";
+require "Business_Service/Controller/ManageMarriageApplication/StaffMarriageApplicationController.php";
+require "Business_Service/Controller/ManageMarriageApplication/UserMarriageApplicationController.php";
 extract ($_POST);
