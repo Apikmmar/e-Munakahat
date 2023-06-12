@@ -68,7 +68,7 @@
                         <h6 class="custcolor">Anjuran :</h6>
                         <h6 class="custcolor">Tempat dan Tarikh :</h6>
                     </div>
-                    <form action="../business_service/controller/UserMarriagePreparationController.php" method="post">
+                    <form action="../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
                         <div id="inputformpadding">
                             <label>Resit pembayaran(RM80.00):</label>
                             <em>jika tangguh kurang daripada seminggu</em>

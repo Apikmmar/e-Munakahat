@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include('../database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -63,48 +63,52 @@
                 <span class="h6 text-uppercase">DAFTAR KURSUS >> PAPAR LANJUT</span>
             </div>
             <div class="content-of-module">
-                <div>
-                    <h6 class="d-flex justify-content-center">SLIP PERMOHONAN KURSUS PRA PERKAHWINAN</h6>
-                </div>
-
-                <form action="../business_service/controller/UserMarriagePreparationController.php" method="post">
+                <form action="../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
                     <div class="d-flex flex-row">
-                        <div id="vcdlabeldiv1">
-                            <label>No Kad Pengenalan:</label><label>qwerty</label>
+                        <div id="vcdlabeldiv">
+                            <p class="vcdlabel">Anjuran</p>
                             <br>
-                            <label>Nama Pemohon:</label><label>qwerty</label>
+                            <p class="vcdlabel">Tempat</p>
                             <br>
-                            <label>Alamat Surat-Menyurat:</label><label>qwerty</label>
+                            <p class="vcdlabel">Tarikh</p>
                             <br>
-                            <label>Jantina:</label><label>qwerty</label>
+                            <p class="vcdlabel">Masa</p>
                             <br>
-                            <label>No. Telefon:</label><label>qwerty</label>
+                            <p class="vcdlabel">Kapasiti Peserta</p>
                             <br>
-                            <label>No. Resit Bayaran:</label><label>qwerty</label>
+                            <p class="vcdlabel">Siri Taklimat</p>
+                            <br>
+                            <p class="vcdlabel">Pegawai Dihubungi</p>
+                            <br>
+                            <p class="vcdlabel">No Telefon</p>
+                            <br>
                         </div>
-                        <div id="vcdlabeldiv1">
-                            <label>Tempat Taklimat:</label><label>qwerty</label>
+                        <div id="vcdlabeldiv" style="padding-left: 0px;">
+                            <p class="vcdlabel">:</p>
                             <br>
-                            <label>Tarikh Taklimat:</label><label>qwerty</label>
+                            <p class="vcdlabel">:</p>
                             <br>
-                            <label>Anjuran:</label><label>qwerty</label>
+                            <p class="vcdlabel">:</p>
                             <br>
-                            <label>Cadangan Tarikh Akad Nikah:</label><label>qwerty</label>
+                            <p class="vcdlabel">:</p>
                             <br>
-                            <label>Kebenaran Jabatan Agama Islam Negeri:</label><label>qwerty</label>
+                            <p class="vcdlabel">:</p>
                             <br>
-                            <label>Tarikh Resit:</label><label>qwerty</label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="d-flex justify-content-center">
-                        <div style="padding-left: 150px;">
-                            <button class="btn btn-primary" id="userprepcoursemainpage">Kembali</button>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-secondary">Cetak</button>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
+                            <p class="vcdlabel">:</p>
+                            <br>
                         </div>
                     </div>
                 </form>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <div style="padding-left: 150px;">
+                        <button class="btn btn-primary" id="backtosearchkursus">Kembali</button>
+                    </div>
+                </div>
                 <br>
             </div>
         </div>
