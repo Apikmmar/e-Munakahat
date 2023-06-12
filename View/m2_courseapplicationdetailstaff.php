@@ -65,7 +65,7 @@
             </div>
             <div class="content-of-module-admin">
                 <br><br>
-                <form action="../business_service/controller/StaffMarriagePreparationController.php" method="post">
+                <form action="../Business_Service/Controller/StaffMarriagePreparationController.php" method="post">
                     <div style="margin-left: 30px;">
                         <div class="d-flex flex-row">
                             <label>Siri Kursus:</label>

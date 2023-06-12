@@ -64,7 +64,7 @@
                 <span class="h6 text-uppercase">PERMOHONAN BERKAHWIN >> MAKLUMAT PERKAHWINAN</span>
             </div>
             <div class="content-of-module">
-                <form action="../business_service/controller/UserMarriageApplicationController.php" method="post">
+                <form action="../Business_Service/Controller/UserMarriageApplicationController.php" method="post">
                     <div style="padding: 10px 0px 0px 20px;">
                         <div>
                             <h5>Maklumat Perkahwinan</h5>
@@ -77,15 +77,15 @@
                                     </div>
                                     <div style="padding-top: 10px;">
                                         <label>Alamat Tempat Akad Nikah:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan alamat tempat nikah" required>
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan alamat tempat nikah" name="MA_Address" required>
                                     </div>
                                     <div style="padding-top: 10px;">
                                         <label>Negeri:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" name="MA_State" required>
                                     </div>
                                     <div style="padding-top: 10px;">
                                         <label>Mas Kahwin:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan mas kahwin" required>
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan mas kahwin" name="MA_MasKahwin" required>
                                     </div>
                                 </div>
                                 <div style="width: 600px; margin-top: 10px;">
@@ -95,15 +95,15 @@
                                     </div>
                                     <div style="padding-top: 10px;">
                                         <label>Kategori Nikah:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan kategori nikah" required>
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan kategori nikah" name="MA_Category" required>
                                     </div>
                                     <div style="padding-top: 10px;">
                                         <label>Negara:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negara" required>
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negara" name="MA_Nation" required>
                                     </div>
                                     <div style="padding-top: 10px;">
                                         <label>Tarikh Mohon:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm datepicker" id="inputboxstyle" placeholder="Masukkan tarikh mohon" required>
+                                        <input type="text" class="form-control form-control-sm datepicker" id="inputboxstyle" placeholder="Masukkan tarikh mohon" name="MA_ApplyDate" required>
                                     </div>
                                 </div>
                             </div>

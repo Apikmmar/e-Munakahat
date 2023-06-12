@@ -69,7 +69,7 @@
             </div>
             <div class="content-of-module-admin">
                 <div style="padding: 20px 0px 0px 20px;">
-                    <form action="../business_service/controller/StaffMarriageApplicationController.php" method="post">
+                    <form action="../Business_Service/Controller/StaffMarriageApplicationController.php" method="post">
                         <div>
                             <div class="d-flex justify-content-around">
                                 <div id="inputformpadding" style="margin-bottom: 20px;">
