@@ -140,8 +140,8 @@
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
-                            <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
-                            <button type="btn" id="backtousermainpage" class="btn btn-primary">Kembali</button>
+                            <button type="btn" id="backtouserupload" class="btn btn-primary">Kembali</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
                 </div>

@@ -2,15 +2,9 @@
 <html lang="en">
 <?php
 session_start();
-
-if (isset($_POST['submit'])) {
-    $_SESSION['tempatlahir'] = $_POST['tempatlahir'];
-    $_SESSION['akuanbank'] = $_POST['akuanbank'];
-    $_SESSION['namabank'] = $_POST['namabank'];
-}
-
+$_SESSION['pendapatanpasangan'] = $_POST['pendapatanpasangan'];
+$_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
 ?>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,8 +49,7 @@ if (isset($_POST['submit'])) {
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
                 <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia"
-                    class="img-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -69,87 +62,61 @@ if (isset($_POST['submit'])) {
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">Mohon Bantuan Insentif (Maklumat Pasangan)</span>
+                <span class="h6 text-uppercase">Mohon Bantuan Insentif (Maklumat lain-lain)</span>
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="m5_userInputHeirInformation.php" method="post">
+                    <form action="m5_userMainPage.php" method="post">
                         <div>
-
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
                                     <div id="inputformpadding">
-                                        <label>
-                                            <?php echo $_SESSION['tempatlahir']
-                                                ?>No. K/Pengenalan Pasangan <span class="red-asterisk">*</span>:
-                                        </label><br>
-                                        <input type="text" class="form-control form-control-sm" id="ic"
-                                            value="931882-06-0061" placeholder="Masukkan IC" disabled>
+                                        <label>Perkerjaan Pemohon <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" value="PETRONAS OIL AND GAS" disabled>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>No. Passport/Tentera/Polis Pasangan <span
-                                                class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="ic"
-                                            value="931882-06-0061" placeholder="Masukkan IC" disabled>
+                                        <label>Jenis Pekerjaan <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm"  value="Swasta" disabled>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>Nama Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="Nana"
-                                            value="Siti Nur Fathiah binti Asnul" placeholder="Masukkan nama" disabled>
+                                        <label>Pendapatan Pemohon <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm"  value="RM4500.00" disabled>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>Alamat Semasa Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamat"
-                                            value="LOT 2323, JALAN TENGKU ARIF BENDAHARA, 26600 PEKAN, PAHANG"
-                                            placeholder="Masukkan alamat" disabled>
+                                        <label>Alamat & alamat Majikan/Premis Perniagaan <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" value="LOT 2475, GM 5709, MUKIM PAKA DAERAH DUNGUN, 23100 KUALA TERENGGANU, TERENGGANU" disabled>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>Pendapatan Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm"
-                                            name="pendapatanpasangan" name="pendapatanpasangan"
-                                            placeholder="Masukkan pendapatan" required>
+                                        <label>Nama Waris <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="namawaris" name="namawaris"
+                                            placeholder="Masukkan nama waris" required>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div>
-                                            <label>No Telefon Pasangan<span class="red-asterisk">*</span>:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="019-2817423" placeholder="Masukkan nombor telefon" disabled>
+                                            <label>Hubungan <span class="red-asterisk">*</span>:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="hubunganwaris" name="hubunganwaris"
+                                                placeholder="Masukkan hubungan" required>
                                         </div>
                                         <div>
-                                            <label>Tarikh Lahir Pasangan <span
-                                                    class="red-asterisk">*</span>:</label><br>
-                                            <input type="tex" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="21/12/1993" disabled>
+                                            <label>No Tel Waris <span class="red-asterisk">*</span>:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="notelwaris" name="notelwaris" value="<?php $_SESSION['pendapatanpasangan']?>"
+                                                placeholder="Masukkan no tel waris" required>
                                         </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between" id="inputformpadding">
-                                        <div>
-                                            <label>Umur Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="27" placeholder="Masukkan umur" disabled>
-                                        </div>
-                                        <div>
-                                            <label>Kewarganegaraan Pasangan <span
-                                                    class="red-asterisk">*</span>:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="Warganegara" placeholder="Masukkan no telefon" disabled>
-                                        </div>
-                                    </div>
-                                    <div id="inputformpadding">
-                                        <label>Tempat lahir Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="tempatlahirpasangan"
-                                            name="tempatlahirpasangan" placeholder="Masukkan tempat lahir" required>
                                     </div>
                                 </div>
                             </div>
                             <br>
+                            <div>
+                                <input type="checkbox" value="agree" required>
+                                <p style="display: inline;">Saya mengaku dengan nama Allah S.W.T bahawa saya telah bermastautin di Negeri Pahang lebih 10 TAHUN dan semua keterangan yang telah diberikan adalah benar. Pihak kerajaan Negeri Atau Jabatan Agama Islam Pahang berhak menolah permohonan saya ini sekiranya maklumat/keterangan yang diberikan adalah TIDAK BENAR.</p>
+                            </div>
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
-                            <button type="btn" id="backtoinputapplicantinfo" class="btn btn-primary">Kembali</button>
+                            <button type="btn" id="backtoeditpartnerinfo" class="btn btn-primary">Kembali</button>
                             <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>

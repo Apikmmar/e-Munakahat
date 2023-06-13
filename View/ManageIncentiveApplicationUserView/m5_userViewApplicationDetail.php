@@ -89,19 +89,19 @@
                     <table style="table-layout: fixed;width:70%;">
                         <tr>
                             <td>Salinan Kad Pengenalan pemohon</td>
-                            <td>: 931882-06-0061</td>
+                            <td>: <a href="../assets/documentexample/contohIC.pdf">ICPemohon.pdf</a></td>
                         </tr>
                         <tr>
                             <td>Salinan catatan akad nikah pemohon</td>
-                            <td>: Example</td>
+                            <td>: <a href="../assets/documentexample/suratperakuannikah.pdf">suratperakuannikah.pdf</a></td>
                         </tr>
                         <tr>
                             <td>Salinan penyata akaun bank pemohon</td>
-                            <td>: Example</td>
+                            <td>: <a href="../assets/documentexample/penyata-maybank.pdf">penyata-maybank.pdf</a></td>
                         </tr>
                         <tr>
                             <td>Dokumen sokongan</td>
-                            <td>: Example</td>
+                            <td>: Tiada</td>
                         </tr>
                     </table>
                     <br>
@@ -255,6 +255,7 @@
         </div>
 
         <script src="../assets/js/javascript.js" defer></script>
+        <script src="../assets/js/module5js.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
         <script

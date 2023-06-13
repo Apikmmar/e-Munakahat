@@ -116,7 +116,7 @@ $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
-                            <button type="btn" id="backtosearchkursus" class="btn btn-primary">Kembali</button>
+                            <button type="btn" id="backtoinputpartnerinfo" class="btn btn-primary">Kembali</button>
                             <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>

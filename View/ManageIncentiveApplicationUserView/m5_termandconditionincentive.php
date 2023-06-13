@@ -45,7 +45,8 @@
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
                 <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia"
+                    class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -63,8 +64,8 @@
             <div class="content-of-module">
                 <br>
                 <div class="text-center h6">
-                    <p>SYARAT KELAYAKAN INSENTIF KHAS PASANGAN PENGANTIN YANG BERDAFTAR DI NEGERI PAHANG<br>JABATAN
-                        AGAMA ISLAM PAHANG</p>
+                    <p><b>SYARAT KELAYAKAN INSENTIF KHAS PASANGAN PENGANTIN YANG BERDAFTAR DI NEGERI PAHANG<br>JABATAN
+                            AGAMA ISLAM PAHANG</b></p>
                 </div>
                 <div>
                     <ol>
@@ -95,7 +96,7 @@
                 </div>
                 <div>
                     <ol>
-                        <li>Poligomi</li>
+                        <li>Poligami</li>
                         <li>Nikah semula ( pasangan yang sama selepas tamat tempoh iddah )</li>
                         <li>Nikah tanpa kebenaran</li>
                         <li>Kedua pasangan bukan asal Pahang</li>
@@ -103,16 +104,19 @@
                         <br>
                     </ol>
                 </div>
+                <div class="container">
+                    <button type="btn" id="backtousermainpage" class="btn btn-primary">Kembali</button>
+                    <br><br>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <script src="../assets/js/javascript.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+            <script src="../assets/js/javascript.js" defer></script>
+            <script src="../assets/js/module5js.js" defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>

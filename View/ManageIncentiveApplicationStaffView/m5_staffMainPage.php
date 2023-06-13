@@ -60,7 +60,7 @@
         <!-- content -->
         <div class="content-admin">
             <div class="p-2 mb-2 bg-success text-white">
-                <span class="h6 text-uppercase">DAFTAR TAKLIMAT</span>
+                <span class="h6 text-uppercase">Bantuan Insentif Khas</span>
             </div>
             <div class="content-of-module-admin">
                 <br><br>
@@ -69,7 +69,7 @@
                         <label>No. KP Pengguna:</label>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                            placeholder="Masukkan siri kursus" required>
+                            placeholder="Masukkan nama pengguna" required>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <button type="submit" class="btn btn-primary">Cari</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -113,6 +113,7 @@
 
     <script src="../assets/js/javascript.js" defer></script>
     <script src="../assets/js/module2js.js" defer></script>
+    <script src="../assets/js/module5js.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

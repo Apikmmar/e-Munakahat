@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-session_start();
-
-if (isset($_POST['submit'])) {
-    $_SESSION['tempatlahir'] = $_POST['tempatlahir'];
-    $_SESSION['akuanbank'] = $_POST['akuanbank'];
-    $_SESSION['namabank'] = $_POST['namabank'];
-}
-
-?>
 
 <head>
     <meta charset="UTF-8">
@@ -69,79 +59,80 @@ if (isset($_POST['submit'])) {
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">Mohon Bantuan Insentif (Maklumat Pasangan)</span>
+                <span class="h6 text-uppercase">Mohon Bantuan Insentif (Maklumat Pemohon)</span>
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="m5_userInputHeirInformation.php" method="post">
+                    <form action="m5_userEditPartnerInformation.php" method="post">
                         <div>
-
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
                                     <div id="inputformpadding">
-                                        <label>
-                                            <?php echo $_SESSION['tempatlahir']
-                                                ?>No. K/Pengenalan Pasangan <span class="red-asterisk">*</span>:
-                                        </label><br>
+                                        <label>No. K/Pengenalan <span class="red-asterisk">*</span>:</label><br>
                                         <input type="text" class="form-control form-control-sm" id="ic"
                                             value="931882-06-0061" placeholder="Masukkan IC" disabled>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>No. Passport/Tentera/Polis Pasangan <span
+                                        <label>No. Passport/Tentera/Polis <span
                                                 class="red-asterisk">*</span>:</label><br>
                                         <input type="text" class="form-control form-control-sm" id="ic"
-                                            value="931882-06-0061" placeholder="Masukkan IC" disabled>
+                                            value="931882-06-0061" placeholder="IC" disabled>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>Nama Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="Nana"
-                                            value="Siti Nur Fathiah binti Asnul" placeholder="Masukkan nama" disabled>
+                                        <label>Nama <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="nama"
+                                            value="Muhammad Abu bin Seman" placeholder="Masukkan alamat" disabled>
+                                    </div>
+                                    <div class="d-flex justify-content-between" id="inputformpadding">
+                                        <div>
+                                            <label>No. Akuan bank <span class="red-asterisk">*</span>:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
+                                                id="akuanbank" name="akuanbank" placeholder="Masukkan no. bank"
+                                                required>
+                                        </div>
+                                        <div>
+                                            <label>Nama Bank <span class="red-asterisk">*</span>:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
+                                                id="namabank" name="namabank" placeholder="Masukkan nama bank" required>
+                                        </div>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>Alamat Semasa Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamat"
-                                            value="LOT 2323, JALAN TENGKU ARIF BENDAHARA, 26600 PEKAN, PAHANG"
+                                        <label>Alamat Semasa <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
+                                            value="LOT. 414, KAWASAN PERINDUSTRIAN PERAMU, 26600 PEKAN, PAHANG"
                                             placeholder="Masukkan alamat" disabled>
                                     </div>
-                                    <div id="inputformpadding">
-                                        <label>Pendapatan Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm"
-                                            name="pendapatanpasangan" name="pendapatanpasangan"
-                                            placeholder="Masukkan pendapatan" required>
-                                    </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div>
-                                            <label>No Telefon Pasangan<span class="red-asterisk">*</span>:</label><br>
+                                            <label>No Telefon <span class="red-asterisk">*</span>:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="019-2817423" placeholder="Masukkan nombor telefon" disabled>
+                                                value="019-9215521" placeholder="Masukkan nombor telefon" disabled>
                                         </div>
                                         <div>
-                                            <label>Tarikh Lahir Pasangan <span
-                                                    class="red-asterisk">*</span>:</label><br>
-                                            <input type="tex" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="21/12/1993" disabled>
+                                            <label>Tarikh Lahir <span class="red-asterisk">*</span>:</label><br>
+                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
+                                                value="21/12/1993" placeholder="Masukkan daerah" disabled>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div>
-                                            <label>Umur Pasangan <span class="red-asterisk">*</span>:</label><br>
+                                            <label>Umur <span class="red-asterisk">*</span>:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="27" placeholder="Masukkan umur" disabled>
+                                                value="26" placeholder="Masukkan negeri" disabled>
                                         </div>
                                         <div>
-                                            <label>Kewarganegaraan Pasangan <span
-                                                    class="red-asterisk">*</span>:</label><br>
+                                            <label>Kewarganegaraan <span class="red-asterisk">*</span>:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                value="Warganegara" placeholder="Masukkan no telefon" disabled>
+                                                value="Warganegara" placeholder="Masukkan daerah" disabled>
                                         </div>
                                     </div>
                                     <div id="inputformpadding">
-                                        <label>Tempat lahir Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="tempatlahirpasangan"
-                                            name="tempatlahirpasangan" placeholder="Masukkan tempat lahir" required>
+                                        <label>Tempat lahir <span class="red-asterisk">*</span>:</label><br>
+                                        <input type="text" class="form-control form-control-sm" id="tempatlahir"
+                                            name="tempatlahir" placeholder="Masukkan tempat lahir" required>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +140,7 @@ if (isset($_POST['submit'])) {
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
-                            <button type="btn" id="backtoinputapplicantinfo" class="btn btn-primary">Kembali</button>
+                            <button type="btn" id="backtousermainpage" class="btn btn-primary">Kembali</button>
                             <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>

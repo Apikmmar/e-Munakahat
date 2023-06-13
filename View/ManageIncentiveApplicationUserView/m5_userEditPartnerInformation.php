@@ -2,7 +2,6 @@
 <html lang="en">
 <?php
 session_start();
-
 if (isset($_POST['submit'])) {
     $_SESSION['tempatlahir'] = $_POST['tempatlahir'];
     $_SESSION['akuanbank'] = $_POST['akuanbank'];
@@ -73,19 +72,16 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="m5_userInputHeirInformation.php" method="post">
+                    <form action="m5_userEditHeirInformation.php" method="post">
                         <div>
-
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
                                     <div id="inputformpadding">
-                                        <label>
-                                            <?php echo $_SESSION['tempatlahir']
-                                                ?>No. K/Pengenalan Pasangan <span class="red-asterisk">*</span>:
-                                        </label><br>
+                                        <label>No. K/Pengenalan Pasangan <span
+                                                class="red-asterisk">*</span>:</label><br>
                                         <input type="text" class="form-control form-control-sm" id="ic"
                                             value="931882-06-0061" placeholder="Masukkan IC" disabled>
                                     </div>
@@ -140,7 +136,7 @@ if (isset($_POST['submit'])) {
                                     </div>
                                     <div id="inputformpadding">
                                         <label>Tempat lahir Pasangan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="tempatlahirpasangan"
+                                        <input type="text" class="form-control form-control-sm" id="tempatlahirpasangan" value="<?php $_SESSION['namabank'] ?>"
                                             name="tempatlahirpasangan" placeholder="Masukkan tempat lahir" required>
                                     </div>
                                 </div>
@@ -149,7 +145,7 @@ if (isset($_POST['submit'])) {
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
-                            <button type="btn" id="backtoinputapplicantinfo" class="btn btn-primary">Kembali</button>
+                            <button type="btn" id="backtoeditapplicantinfo" class="btn btn-primary">Kembali</button>
                             <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>

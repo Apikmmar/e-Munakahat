@@ -90,19 +90,20 @@
                     <table style="table-layout: fixed;width:70%" class="viewtable">
                         <tr>
                             <td>Salinan Kad Pengenalan pemohon</td>
-                            <td>Example</td>
+                            <td>: <a href="../assets/documentexample/contohIC.pdf">ICPemohon.pdf</a></td>
                         </tr>
                         <tr>
                             <td>Salinan catatan akad nikah pemohon</td>
-                            <td>Example</td>
+                            <td>: <a href="../assets/documentexample/suratperakuannikah.pdf">suratperakuannikah.pdf</a>
+                            </td>
                         </tr>
                         <tr>
                             <td>Salinan penyata akaun bank pemohon</td>
-                            <td>Example</td>
+                            <td>: <a href="../assets/documentexample/penyata-maybank.pdf">penyata-maybank.pdf</a></td>
                         </tr>
                         <tr>
                             <td>Dokumen sokongan</td>
-                            <td>Example</td>
+                            <td>: Tiada</td>
                         </tr>
                     </table>
                     <br>
@@ -248,7 +249,7 @@
                                 <td><select class="form-select" aria-label="Default select example" id="inputboxstyle2"
                                         required>
                                         <option selected value="No val" disabled>Sila pilih</option>
-                                        <option value="Diterima">Diterima</option>
+                                        <option value="Diterima">Terima</option>
                                         <option value="Ditolak">Tolak</option>
                                     </select></td>
                             </form>
@@ -257,7 +258,7 @@
                     </table>
                     <br><br>
                     <div style="  margin: auto; width: 50%;">
-                        <button type="btn" id="backtosearchkursus" class="btn btn-primary">Kembali</button>
+                        <button type="btn" id="backtostaffmainpage" class="btn btn-primary">Kembali</button>
                         <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
                     </div>
 
@@ -269,6 +270,7 @@
 
     <script src="../assets/js/javascript.js" defer></script>
     <script src="../assets/js/module2js.js" defer></script>
+    <script src="../assets/js/module5js.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

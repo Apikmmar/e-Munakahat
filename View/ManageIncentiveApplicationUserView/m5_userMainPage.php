@@ -46,7 +46,8 @@
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
                 <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia"
+                    class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -62,18 +63,23 @@
                 <span class="h6 text-uppercase">Bantuan Insentif Khas</span>
             </div>
             <div class="content-of-module">
-            <br>
                 <br>
                 <div>
-                <table class="table table-bordered" id="searchcoursetable" style="width: 90%;table-layout: fixed">
+                    <div class="container">
+                        Senarai Permohonan
+                        <button style="float: right;" type="btn" id="mohonbantuan" class="btn btn-primary">Mulakan Permohonan</button>
+                        <button style="float: right;" type="btn" id="termadansyarat" class="btn btn-primary">Lihat Terma dan Syarat</button>
+                        <br><br>
+                    </div>
+                    <table class="table table-bordered" id="searchcoursetable" style="width: 90%;table-layout: fixed">
                         <thead>
                             <tr style="background-color: #D3D3D3;">
-                                <th scope="col">Bil</th>
+                                <th style="width:50px" scope="col">Bil</th>
                                 <th scope="col">No.KP / Nama Suami</th>
                                 <th scope="col">No.KP / Nama Isteri</th>
                                 <th scope="col">Tarikh Mohon</th>
                                 <th scope="col">Status</th>
-                                <th scope="col" colspan="2">Operasi</th>
+                                <th scope="col" colspan="3">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,8 +90,12 @@
                                 <td>12/6/2023</td>
                                 <td>Dalam Proses</td>
                                 <td>
-                                    <a href="m5_userUpdateApplicationStatus.php"><img src="../assets/img/edit.png" alt="logopapar"
-                                            class="imgflaticon"></a>
+                                    <a href="m5_userViewApplicationDetail.php"><img src="../assets/img/view.png"
+                                            alt="logopapar" class="imgflaticon"></a>
+                                </td>
+                                <td>
+                                    <a href="m5_userEditApplicantInformation.php"><img src="../assets/img/edit.png"
+                                            alt="logopapar" class="imgflaticon"></a>
                                 </td>
                                 <td>
                                     <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
@@ -100,6 +110,7 @@
     </div>
 
     <script src="../assets/js/javascript.js" defer></script>
+    <script src="../assets/js/module5js.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
