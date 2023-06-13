@@ -1,43 +1,91 @@
-function validateForm() {
+function userRegistration() {
   // Retrieve form inputs
-  var icNumber = document.getElementById('icnum').value;
+  var icnum = document.getElementById('icnum').value;
   var name = document.getElementById('name').value;
   var gender = document.getElementById('gender').value;
   var bangsa = document.getElementById('bangsa').value;
   var warga = document.getElementById('warga').value;
   var address = document.getElementById('address').value;
+  var currentaddress = document.getElementById('currentaddress').value;
   var phonenum = document.getElementById('phonenum').value;
+  var pendidikan = document.getElementById('pendidikan').value;
+  var pekerjaan = document.getElementById('pekerjaan').value;
+  var jobAddress = document.getElementById('jobAddress').value;
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   var confirmpassword = document.getElementById('confirmpassword').value;
   
   // Check if IC number follows the Malaysian identification number format
   var icNumberRegex = /^[0-9]{12}$/;
-  if (!icNumber.match(icNumberRegex)) {
+
+  if (icnum === '') {
     alert("Sila masukkan nombor kad pengenalan Malaysia yang sah (e.g., 000000-00-0000).");
     return false;
   }
   
-  // Add more validation rules for other fields if needed
-  
+  if (name === '') {
+    alert("Sila masukkan nama penuh anda.");
+    return false;
+  }
   if (gender === '') {
-      alert("Sila pilih jantina.");
-      return false;
+    alert("Sila pilih jantina.");
+    return false;
   }
   if (bangsa === '') {
     alert("Sila pilih bangsa.");
-      return false;
+    return false;
   }
   if (warga === '') {
-      alert("Sila pilih warganegara.");
-      return false;
+    alert("Sila pilih warganegara.");
+    return false;
   }
-
+  if (address === '') {
+    alert("Sila masukkan alamat dalam K/P.");
+    return false;
+  }
+  if (currentaddress === '') {
+    alert("Sila masukkan alamat semasa.");
+    return false;
+  }
+  if (phonenum === '') {
+    alert("Sila masukkan no. telefon bimbit.");
+    return false;
+  }
+  if (pendidikan === '') {
+    alert("Sila pilih taraf pendidikan.");
+    return false;
+  }
+  if (pekerjaan === '') {
+    alert("Sila pilih pekerjaan.");
+    return false;
+  }
+  if (jobAddress === '') {
+    alert("Sila masukkan alamat tempat kerja.");
+    return false;
+  }
+  if (email === '') {
+    alert("Sila masukkan emel yang sah (example@gmail.com).");
+    return false;
+  }
+  if (password === '') {
+    alert("Sila masukkan kata laluan.");
+    return false;
+  }
+  if (confirmpassword === '') {
+    alert("Sila masukkan ulang kata laluan.");
+    return false;
+  }
+  if (!icnum.match(icNumberRegex)) {
+    alert("Sila masukkan nombor kad pengenalan Malaysia yang sah (e.g., 000000-00-0000).");
+    return false;
+  }
   // Check if password and confirm password match
   if (password !== confirmpassword) {
       alert("Kata laluan yang dimasukkan tidak sepadan.");
       return false;
   }
+  
+  return true;
 }
 
 function toggleCurrentAddress() {
@@ -56,6 +104,21 @@ function toggleCurrentAddress() {
   }
 }
 
+// Retrieve the error message from the URL query parameter
+function getErrorMessage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('error');
+}
+
+// Display the error message on the login page if it exists
+function displayErrorMessage() {
+  const errorMessage = getErrorMessage();
+  if (errorMessage) {
+    const errorContainer = document.getElementById('errorContainer');
+    errorContainer.textContent = errorMessage;
+    errorContainer.style.color = 'red'; // Set the text color to red
+  }
+}
   
   var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
   var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
@@ -130,3 +193,4 @@ function toggleCurrentAddress() {
     document.write(date) 
   }
   window.addEventListener('load', goforit);
+  window.addEventListener('load', displayErrorMessage);

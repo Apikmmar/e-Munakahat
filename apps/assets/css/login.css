@@ -38222,27 +38222,4 @@ div.code-toolbar > .toolbar > .toolbar-item > span:hover, div.code-toolbar > .to
     overflow-y: auto;
   }
   
-  .userdata {
-    color: black;
-    font-weight: bold;
-  }
   
-  .content {
-    margin: 100px 40px 0px 300px;
-  }
-  
-  .content-of-module {
-    margin-top: -8px;
-    background-color: #bbe0f7;
-    min-height: fit-content;
-  }
-  
-  .content-admin {
-    margin: 100px 40px 0px 300px;
-  }
-  
-  .content-of-module-admin {
-    margin-top: -8px;
-    background-color: #bcfebb;
-    min-height: fit-content;
-  }
