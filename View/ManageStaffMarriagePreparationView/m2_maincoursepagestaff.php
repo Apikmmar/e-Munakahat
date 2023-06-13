@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('../database/connection.php');
+    require '../../database/connection.php';
 ?>
 
 <!DOCTYPE html>

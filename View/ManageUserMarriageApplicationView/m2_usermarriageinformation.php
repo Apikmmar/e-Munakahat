@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('../database/connection.php');
+    require '../../database/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +64,7 @@
                 <span class="h6 text-uppercase">PERMOHONAN BERKAHWIN >> MAKLUMAT PERKAHWINAN</span>
             </div>
             <div class="content-of-module">
-                <form action="../Business_Service/Controller/UserMarriageApplicationController.php" method="post">
+                <form action="../../Business_Service/Controller/UserMarriageApplicationController.php" method="post">
                     <div style="padding: 10px 0px 0px 20px;">
                         <div>
                             <h5>Maklumat Perkahwinan</h5>

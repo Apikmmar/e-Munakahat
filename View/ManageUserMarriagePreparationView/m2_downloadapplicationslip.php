@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    require '../../database/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@
                     <h6 class="d-flex justify-content-center">SLIP PERMOHONAN KURSUS PRA PERKAHWINAN</h6>
                 </div>
 
-                <form action="../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
+                <form action="../../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
                     <div class="d-flex flex-row">
                         <div id="vcdlabeldiv1">
                             <label>No Kad Pengenalan:</label><label>qwerty</label>

@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include('../database/connection.php');
+    require '../../database/connection.php';
+    // depend on how deep the package is .//
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +69,7 @@
                 <span class="h6 text-uppercase">content</span>
             </div>
             <div class="content-of-module-admin">
-                <form action="../Business_Service/Controller/StaffMarriageApplicationController.php" method="post">
+                <form action="../../Business_Service/Controller/StaffMarriageApplicationController.php" method="post">
                     <div style="padding-left: 20px;">
                         <h6>MAKLUMAT PEMOHON</h6>
                         <div class="d-flex flex-row">
