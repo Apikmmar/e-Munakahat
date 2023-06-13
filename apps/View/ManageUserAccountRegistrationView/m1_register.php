@@ -70,7 +70,7 @@
               <hr class="mb-6">
             </div>
             <!-- Form -->
-            <form action="m1_register.php" method="POST" onsubmit="return userRegistration()">
+            <form action="../../business_service/controller/ManageAccountRegistration/userAccountRegistrationController.php" method="POST" onsubmit="return userRegistration()">
               <!-- IC Number -->
               <div class="form-group">
                 <label for="icnum" class="form-label">No. Kad Pengenalan</label>
@@ -83,34 +83,24 @@
                 <input type="text" id="name" class="form-control" name="name" placeholder="">
                 <br>
               </div>
-              <!-- Gender -->
-              <div class="form-group">
-                <label for="gender" class="form-label">Jantina</label>
-                <select name="gender" class="form-select" id="gender">
-                  <option selected disabled value="">- Sila Pilih Jantina -</option>
-                  <option value="male">Lelaki</option>
-                  <option value="female">Perempuan</option>
-                </select>
-                <br>
-              </div>
               <!-- Bangsa -->
               <div class="form-group">
                 <label for="bangsa" class="form-label">Bangsa</label>
                 <select name="bangsa" class="form-select" id="bangsa">
                   <option selected disabled value="">- Sila Pilih Bangsa -</option>
-                  <option value="melayu">Melayu</option>
-                  <option value="cina">Cina</option>
-                  <option value="india">India</option>
-                  <option value="bangladeshi">Bangladeshi</option>
-                  <option value="pakistani">Pakistani</option>
-                  <option value="sri lanka">Sri Lanka</option>
-                  <option value="indonesian">Indonesian</option>
-                  <option value="bumiputera sabah">Bumiputera Sabah</option>
-                  <option value="bumiputera sarawak">Bumiputera Sarawak</option>
-                  <option value="orang asli">Orang Asli (Semenanjung)</option>
-                  <option value="lain-lain asia">Lain-lain Asia</option>
-                  <option value="european">European</option>
-                  <option value="arab">Arab</option>
+                  <option value="Melayu">Melayu</option>
+                  <option value="Cina">Cina</option>
+                  <option value="India">India</option>
+                  <option value="Bangladeshi">Bangladeshi</option>
+                  <option value="Pakistani">Pakistani</option>
+                  <option value="Sri Lanka">Sri Lanka</option>
+                  <option value="Indonesian">Indonesian</option>
+                  <option value="Bumiputera Sabah">Bumiputera Sabah</option>
+                  <option value="Bumiputera Sarawak">Bumiputera Sarawak</option>
+                  <option value="Orang Asli (Semenanjung)">Orang Asli (Semenanjung)</option>
+                  <option value="Lain-lain Asia">Lain-lain Asia</option>
+                  <option value="European">European</option>
+                  <option value="Arab">Arab</option>
                 </select>
                 <br>
               </div>
@@ -119,8 +109,8 @@
                 <label for="warga" class="form-label">Warganegara</label>
                 <select name="warga" class="form-select" id="warga">
                   <option selected disabled value="">- Sila Pilih Warganegara -</option>
-                  <option value="warganegara">Warganegara</option>
-                  <option value="bukan">Bukan Warganegara</option>
+                  <option value="Warganegara">Warganegara</option>
+                  <option value="Bukan Warganegara">Bukan Warganegara</option>
                 </select>
                 <br>
               </div>
@@ -151,15 +141,15 @@
                 <label for="pendidikan" class="form-label">Taraf Pendidikan</label>
                 <select name="pendidikan" class="form-select" id="pendidikan">
                   <option selected disabled value="">- Sila Pilih Taraf Pendidikan -</option>
-                  <option value="phd">PHD</option>
-                  <option value="master">Master</option>
-                  <option value="ijazah">Ijazah</option>
-                  <option value="diploma">Diploma</option>
-                  <option value="stpm">STPM/HSC/Sijil</option>
-                  <option value="spm">SPM/MCE</option>
-                  <option value="pt3">PT3/PMR/SRP/LC</option>
-                  <option value="upsr">UPSR</option>
-                  <option value="tiadapendidikan">Tiada Pendidikan Rasmi</option>
+                  <option value="PHD">PHD</option>
+                  <option value="Master">Master</option>
+                  <option value="Ijazah">Ijazah</option>
+                  <option value="Diploma">Diploma</option>
+                  <option value="STPM/HSC/Sijil">STPM/HSC/Sijil</option>
+                  <option value="SPM/MCE">SPM/MCE</option>
+                  <option value="PT3/PMR/SRP/LC">PT3/PMR/SRP/LC</option>
+                  <option value="UPSR">UPSR</option>
+                  <option value="Tiada Pendidikan Rasmi">Tiada Pendidikan Rasmi</option>
                 </select>
                 <br>
               </div>
@@ -167,12 +157,12 @@
               <div class="form-group">
                 <label for="pekerjaan" class="form-label">Sektor Pekerjaan</label>
                 <select name="pekerjaan" class="form-select" id="pekerjaan">
-                  <option selected disabled value="">- Sila Pilih Warganegara -</option>
-                  <option value="awam">Sektor Awam</option>
-                  <option value="swasta">Sektor Swasta</option>
-                  <option value="sendiri">Bekerja Sendiri</option>
-                  <option value="pesara">Pesara</option>
-                  <option value="tidakbekerja">Tidak Bekerja</option>
+                  <option selected disabled value="">- Sila Pilih Sektor Pekerjaan -</option>
+                  <option value="Sektor Awam">Sektor Awam</option>
+                  <option value="Sektor Swasta">Sektor Swasta</option>
+                  <option value="Bekerja Sendiri">Bekerja Sendiri</option>
+                  <option value="Pesara">Pesara</option>
+                  <option value="Tidak Bekerja">Tidak Bekerja</option>
                 </select>
                 <br>
               </div>
