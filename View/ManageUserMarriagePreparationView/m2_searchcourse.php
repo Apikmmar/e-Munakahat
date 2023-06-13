@@ -64,7 +64,7 @@
             </div>
             <div class="content-of-module">
                 <br>
-                <form action="../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
+                <form action="../../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
                     <div class="text-center h6">
                         <p>Pilihan Anjuran:</p>
                         <select name="pejabatagamedaerah" id="pejagamdae">

@@ -64,7 +64,7 @@
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
+                    <form action="../../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <h6 class="custcolor">Anjuran :</h6>
