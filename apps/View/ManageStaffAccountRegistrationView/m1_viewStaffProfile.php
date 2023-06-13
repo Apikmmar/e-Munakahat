@@ -9,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Munakahat</title>
-    <link rel="shortcut icon" href="assets/img/jata-pahang.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/css/module1.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/css/module1.css">
 
 </head>
 <body>
@@ -51,8 +51,8 @@
             <div class="h-span-container">
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
-                <img src="assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -65,7 +65,7 @@
         <!-- content -->
         <div class="content-admin">
             <div class="p-2 mb-2 bg-success text-white">
-                <span class="h6 text-uppercase">PENGGUNA >> KEMAS KINI PENGGUNA</span>
+                <span class="h6 text-uppercase">PROFIL</span>
             </div>
             <div class="content-of-module-admin">
                 <div id="custalign">
@@ -89,7 +89,7 @@
                                                 <label><b>Nama Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="nama" required>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -97,7 +97,7 @@
                                                 <label><b>Jawatan Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="jawatan" required>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -105,23 +105,7 @@
                                                 <label><b>PAID<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <select class="form-control form-control-sm" required>
-                                                    <option value="" selected disabled>- Sila Pilih - </option>
-                                                    <option value="PAID Pekan">PAID Pekan</option>
-                                                    <option value="PAID Kuantan">PAID Kuantan</option>
-                                                    <option value="PAID Rompin">PAID Rompin</option>
-                                                    <option value="PAID Muadzam Shah">PAID Muadzam Shah</option>
-                                                    <option value="PAID Maran">PAID Maran</option>
-                                                    <option value="PAID Jengka">PAID Jengka</option>
-                                                    <option value="PAID Kuantan Barat">PAID Kuantan Barat</option>
-                                                    <option value="PAID Temerloh">PAID Temerloh</option>
-                                                    <option value="PAID Bentong">PAID Bentong</option>
-                                                    <option value="PAID Jerantut">PAID Jerantut</option>
-                                                    <option value="PAID Raub">PAID Raub</option>
-                                                    <option value="PAID Kuala Lipis">PAID Kuala Lipis</option>
-                                                    <option value="PAID Bera">PAID Bera</option>
-                                                    <option value="PAID Cameron Highland">PAID Cameron Highland</option>
-                                                </select>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -129,13 +113,7 @@
                                                 <label><b>Kategori Akses<span class="red-asterisk">*</b></span>:</label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <select name="akses" class="form-control form-control-sm" required>
-                                                    <option value="" selected disabled>- Sila Pilih - </option>
-                                                    <option value="Pengguna PAID">Pengguna PAID</option>
-                                                    <option value="Pentadbir Sistem JAIP">Pentadbir Sistem JAIP</option>
-                                                    <option value="Pengawai Kaunter">Pengawai Kaunter</option>
-                                                    <option value="Pengawai Kewangan">Pengawai Kewangan</option>
-                                                </select>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -143,7 +121,7 @@
                                                 <label><b>Emel<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="emel" required>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -151,11 +129,7 @@
                                                 <label><b>Status Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <select name="status" class="form-control form-control-sm">required
-                                                    <option value="" selected disabled>- Sila Pilih - </option>
-                                                    <option value="Masih Bekerja">Masih Bekerja</option>
-                                                    <option value="Bersara">Bersara</option>
-                                                </select>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -163,7 +137,7 @@
                                                 <label><b>Kata Laluan<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="password" required>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                     </table>

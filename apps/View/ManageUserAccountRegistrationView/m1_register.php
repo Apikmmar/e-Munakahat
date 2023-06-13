@@ -1,62 +1,3 @@
-<?php
-  // Create connection
-  $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
-  // Check connection
-  if (!$conn) {
-    echo 'Connection error: ' . mysqli_connect_error();
-  }
-
-  // Check if form is submitted
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve form data
-    $icnum = mysqli_real_escape_string($conn, $_POST['icnum']);
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-    $bangsa = mysqli_real_escape_string($conn, $_POST['bangsa']);
-    $warga = mysqli_real_escape_string($conn, $_POST['warga']);
-    $address = mysqli_real_escape_string($conn, $_POST['address']);
-    $currentaddress = mysqli_real_escape_string($conn, $_POST['currentaddress']);
-    $phonenum = $_POST['phonenum'];
-    $pendidikan = mysqli_real_escape_string($conn, $_POST['pendidikan']);
-    $pekerjaan = mysqli_real_escape_string($conn, $_POST['pekerjaan']);
-    $jobAddress = mysqli_real_escape_string($conn, $_POST['jobAddress']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $confirmpassword = mysqli_real_escape_string($conn, $_POST['confirmpassword']);
-
-    // Perform validation
-    $errors = array();
-
-    // Check if icnum already exists in the database
-    $query = "SELECT * FROM user_registration_info WHERE User_IC = '$icnum'";
-    $result = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($result) > 0) {
-      $errors[] = "IC number already exists. Please choose a different IC number.";
-    }
-
-    // If there are no validation errors, proceed to store the data in the database
-    if (empty($errors)) {
-      // Prepare and execute the SQL query
-      $sql = "INSERT INTO user_registration_info (User_IC, User_Name, User_Gender, User_Race, User_Nationality, User_AddressInIC, User_Address, User_HP, User_Edu, User_JobSector, User_JobAddress, User_Email, User_Password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-      $stmt = $conn->prepare($sql);
-      $stmt->bind_param("sssssssssssss", $icnum, $name, $gender, $bangsa, $warga, $address, $currentaddress, $phonenum, $pendidikan, $pekerjaan, $jobAddress, $email, $password);
-      $stmt->execute();
-
-      // Close the database connection
-      $stmt->close();
-      $conn->close();
-
-      // Display success message
-      $successMessage = "Data has been successfully stored in the database.";
-      header("Location: login.php?success=" . urlencode($successMessage));
-    } else {
-      // Display validation errors
-      $errorMessage = "Nombor kad pengenalan sudah wujud dalam sistem. Sila pilih nombor kad pengenalan yang lain.";
-      header("Location: m1_register.php?error=" . urlencode($errorMessage));
-    }
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/jata-pahang.png">
+<link rel="shortcut icon" type="image/x-icon" href="../assets/img/jata-pahang.png">
 
 <!-- Theme CSS -->
 <!-- build:css @@webRoot/assets/css/theme.min.css -->
-<link rel="stylesheet" href="assets/css/login.css">
+<link rel="stylesheet" href="../assets/css/login.css">
 <!-- endbuild -->
 
-<script src="assets/js/register.js"></script>
+<script src="../assets/js/register.js"></script>
 
   <title>e-Munakahat</title>
 </head>
@@ -82,7 +23,7 @@
         <div class="position-sticky">
             <br><br><br><br><br><br>
             <div class="ps-12 pt-10">
-                <img src="assets/img/jata-pahang.png" alt="logo-persekutuan-malaysia" class="img-upper-interface ms-2">
+                <img src="../assets/img/jata-pahang.png" alt="logo-persekutuan-malaysia" class="img-upper-interface ms-2">
                 <h1 class="fw-medium text-white" style="font-size: 4em;">SISTEM</h1>
                 <h1 class="fw-medium text-white" style="font-size: 4em;">MAKLUMAT</h1>
                 <h1 class="fw-medium text-white" style="font-size: 4em;">PERKAHWINAN</h1>
@@ -103,17 +44,15 @@
                         <h4 class="text-white pt-2 ps-12 fs-2">e-Munakahat</h4>
                     </td>
                     <td>
-                        <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                        <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                     </td>
                 </tr>
             </table>
         </div>
         <div class="col-md-7 justify-content-end d-flex pt-2 pe-5">
-            
             &nbsp;&nbsp;&nbsp;<span class="fw-medium text-white" id="day"></span>
             &nbsp;&nbsp;&nbsp;<span class="fw-medium text-white" id="clock"></span>
         </div>
-        
     </nav>
   <!-- container -->
   <div class="content mt-5 pe-23">
@@ -269,7 +208,7 @@
                 <hr>
                 <div class="d-md-flex justify-content-center">
                   <div>
-                    <a href="m1_login.php" >Kembali</a>
+                    <a href="../ManageLoginView/m1_login.php" >Kembali</a>
                   </div>
                   <br><br>
                 </div>

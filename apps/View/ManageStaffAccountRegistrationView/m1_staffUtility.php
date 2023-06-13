@@ -9,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Munakahat</title>
-    <link rel="shortcut icon" href="assets/img/jata-pahang.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/css/module2.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/css/module2.css">
 
 </head>
 <body>
@@ -51,8 +51,8 @@
             <div class="h-span-container">
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
-                <img src="assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
