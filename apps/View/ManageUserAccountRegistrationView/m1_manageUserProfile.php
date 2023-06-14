@@ -1,13 +1,39 @@
 <?php
     session_start();
-    include "../../connection.php";
+    $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
+    // Check connection
+    if (!$conn) {
+      echo 'Connection error: ' . mysqli_connect_error();
+    }
 
     // Check if the user is not logged in
     if(!isset($_SESSION['icnum'])) {
         header("Location: ../ManageLoginView/m1_login.php");
         exit;
     } else {
-        
+        $icnum = $_SESSION['icnum'];
+        $query = "SELECT * FROM user_registration_info WHERE User_IC = '$icnum'";
+        $result = mysqli_query($conn, $query);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $name = $row['User_Name'];
+            $emel = $row['User_Email'];
+            $gender = $row['User_Gender'];
+            $dob = $row['User_DOB'];
+            $age = $row['User_Age'];
+            $bangsa = $row['User_Race'];
+            $warga = $row['User_Nationality'];
+            $phonenum = $row['User_HP'];
+            $pendidikan = $row['User_Edu'];
+            $address = $row['User_AddressInIC'];
+            $currentaddress = $row['User_Address'];
+            $pekerjaan = $row['User_JobSector'];
+            $jobaddress = $row['User_JobAddress'];
+        } else {
+            echo "Complaint not found.";
+            exit;
+        }
     }
 
     // Check if the logout parameter is set
