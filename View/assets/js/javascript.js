@@ -15,7 +15,7 @@ $(document).ready(function() {
     // SIDEBAR MAIN ROUTING- DO FOR ALL INTERFACE
     // user sidebar
     $(document).on("click", "#userloginmainpage", function() {
-        window.location.href = "../ManageLoginView/m1_login.php";
+        window.location.href = "../ManageLoginView/m1_manageUserProfile.php";
     });
 
     $(document).on("click", "#userprepcoursemainpage", function(e) {

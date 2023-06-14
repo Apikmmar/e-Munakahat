@@ -8,11 +8,6 @@ if (!$conn) {
   echo 'Connection error: ' . mysqli_connect_error();
 }
 
-if(isset($_SESSION['icnum'])) {
-  header("Location: ../../../View/ManageUserAccountRegistrationView/m1_manageUserProfile.php");
-  exit;
-}
-
 class Login {
     private $conn;
     

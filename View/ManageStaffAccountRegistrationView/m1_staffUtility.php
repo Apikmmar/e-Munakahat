@@ -25,6 +25,16 @@
             echo "User not found.";
         }
     }
+    // Check if the logout parameter is set
+    if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
+        // User requested to log out, unset the session variables
+        $_SESSION = array();
+        session_destroy();
+        
+        // Redirect the user to the login page or any other desired page
+        header("Location: ../ManageLoginView/m1_login.php");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -57,15 +67,15 @@
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                    <button class="btn btn-secondary h6" onclick="window.location.href='m1_homepagestaff.php'">Laman Utama</button>
-                        <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php'">Profil</button>
-                        <button class="btn btn-success h6">Permohonan Berkahwin</button>
-                        <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-success h6">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-success h6">Laporan</button>
+                        <button class="btn btn-secondary h6" id="staffloginmainpage">Laman Utama</button>
+                        <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php?staff_ic=<?php echo $icnum;?>'">Profil</button>
+                        <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6" id="staffapplymainpage">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
+                        <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan Pengantin</button>
                         <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
-                        <button class="btn btn-dark h6">Keluar</button> 
+                        <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -168,8 +178,7 @@
         </div>
     </div>
 
-    <script src="assets/js/javascript.js" defer></script>
-    <script src="assets/js/module2js.js" defer></script>
+    <script src="../assets/js/javascript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
