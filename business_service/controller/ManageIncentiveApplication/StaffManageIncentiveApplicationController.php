@@ -1,8 +1,14 @@
+
 <?php
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
 
-require_once "../database/connection.php";
 
-class StaffMarriageApplication
+class IncentiveApplication
 {
     private $conn;
 
@@ -12,10 +18,16 @@ class StaffMarriageApplication
         $this->conn = $conn;
     }
 
-    public function staffIA_update($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$namawaris,$hubunganwaris,$notelwaris)
+    public function staffIA_edit($status)
     {
-        $stmt = $this->conn->prepare("INSERT INTO incentive_application(IA_ApplyDate, IA_Status, IA_BankAccount	, IA_BankName, IA_POB, IA_PartnerPOB) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan);
+        $query = "SELECT * FROM incentive_application WHERE IA_ID = '$icnum'";
+        $result = mysqli_query($this->conn, $query);
+        $updateSql = "UPDATE incentive_application SET status = '$newPassword' WHERE User_IC = '$icnum'";
+            $update = mysqli_query($this->conn, $updateSql);
+        $sql = "INSERT INTO incentive_application(IA_ApplyDate, IA_Status, IA_BankAccount, IA_BankName, IA_POB, IA_PartnerPOB,IA_PartnerSalary,User_IC,Staff_IC,DI_ICCopy,DI_AkadNikahCopy,DI_BankAccountCopy,DI_SupportDocument,HI_Name,HI_Relationship,HI_PhoneNo) VALUES (?, ?, ?, ?, ?, ?,?,?, ?, ?, ?, ?,?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ssssssssssssssss", $applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$pendapatanpasangan, $User_IC,$Staff_IC,$DI_ICCopy,$DI_AkadNikahCopy,$DI_BankAccountCopy,$DI_SupportDocument,$namawaris,$hubunganwaris,$notelwaris);
+        $stmt->execute();
 
         if ($stmt->execute() === TRUE) {
             echo "<script>alert('INCENTIVE APPLICATION IS SAVED')</script>";
@@ -24,30 +36,24 @@ class StaffMarriageApplication
         }
 
         $stmt->close();
+        $successMessage = "Data has been successfully stored in the database.";
+        header("Location: ../../../View/ManageIncentiveApplicationView/m5_userMainPage.php?success=" . urlencode($successMessage));
     }
+
+    
 
     public function closeConnection()
     {
         $this->conn->close();
     }
 }
-
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['namawaris']) && isset($_POST['hubunganwaris']) && isset($_POST['notelwaris'])) {
-        $namawaris = $_POST['namawaris'];
-        $hubunganwaris = $_POST['hubunganwaris'];
-        $notelwaris = $_POST['notelwaris'];
-        $pendapatanpasangan = $_SESSION['pendapatanpasangan'];
-        $tempatlahirpasangan = $_SESSION['tempatlahirpasangan'];
-        $tempatlahir = $_SESSION['tempatlahir']=
-        $akuanbank = $_SESSION['akuanbank'];
-        $namabank = $_SESSION['namabank'];
-        $applydate = date("d-m-Y");
-        $status = "Dalam Proses";
+    if (isset($_POST['status'])) {
+        $DI_SupportDocument = "status";
+        
 
-        $db = new UserMarriageApplication();
-        $db->userIA_create($MA_Address, $MA_State, $MA_MasKahwin, $MA_Category, $MA_Nation, $MA_ApplyDate);
+        $db = new IncentiveApplication();
+        $db->userIA_create($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$pendapatanpasangan, $User_IC,$Staff_IC,$DI_ICCopy,$DI_AkadNikahCopy,$DI_BankAccountCopy,$DI_SupportDocument,$namawaris,$hubunganwaris,$notelwaris);
         $db->closeConnection();
     }
 }

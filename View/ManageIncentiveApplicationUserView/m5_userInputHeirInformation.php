@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 session_start();
-require '../../Business_Service/Controller/ManageIncentiveApplication/UserManageIncentiveApplicationController.php';
+require_once '../../Business_Service/Controller/ManageIncentiveApplication/UserManageIncentiveApplicationController.php';
 $_SESSION['pendapatanpasangan'] = $_POST['pendapatanpasangan'];
 $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
 ?>
@@ -143,11 +143,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $namawaris = $_POST['namawaris'];
         $hubunganwaris = $_POST['hubunganwaris'];
         $notelwaris = $_POST['notelwaris'];
-        $pendapatanpasangan = "1200";
-        $tempatlahirpasangan = "pekan";
-        $tempatlahir = "gambang";
-        $akuanbank = "akuanbankss";
-        $namabank = "maybank";
+        $pendapatanpasangan = $_SESSION['pendapatanpasangan'];
+        $tempatlahirpasangan = $_SESSION['tempatlahirpasangan'];
+        $tempatlahir = $_SESSION['tempatlahir'];
+        $akuanbank = $_SESSION['akuanbank'];
+        $namabank = $_SESSION['namabank'];
         $applydate = date("d-m-Y");
         $User_IC = "011221060079";
         $Staff_IC = "111221060079";

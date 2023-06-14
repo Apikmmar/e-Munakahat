@@ -1,5 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+    echo 'Connection error: ' . mysqli_connect_error();
+}
+
+$IA_ID = $_GET['IA_ID'];
+$_SESSION['IA_ID'] = $_GET['IA_ID'];
+
+$query = "SELECT * FROM incentive_application where IA_ID =$IA_ID";
+$result = mysqli_query($conn, $query);
+while ($row = mysqli_fetch_assoc($result)) {
+    $namawaris = $row['HI_Name'];
+    $hubunganwaris = $row['HI_Relationship'];
+    $notelwaris = $row['HI_PhoneNo'];
+    $pendapatanpasangan = $row['IA_PartnerSalary'];
+    $tempatlahirpasangan = $row['IA_PartnerPOB'];
+    $tempatlahir = $row['IA_POB'];
+    $akuanbank = $row['IA_BankAccount'];
+    $namabank = $row['IA_BankName'];
+    $applydate = $row['IA_ApplyDate'];
+    $User_IC = $row['User_IC'];
+    $Staff_IC = $row['Staff_IC'];
+    $status = $row['IA_Status'];
+    $DI_ICCopy = $row['IA_ApplyDate'];
+    $DI_AkadNikahCopy = $row['$DI_AkadNikahCopy'];
+    $DI_BankAccountCopy = $row['$DI_BankAccountCopy'];
+    $DI_SupportDocument = $row['$DI_SupportDocument'];
+?>
+<?php
+}
+
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -125,11 +160,11 @@
                         </tr>
                         <tr>
                             <td>No. Akaun bank</td>
-                            <td>: 3812359818235</td>
+                            <td>: <?php echo $akuanbank ?></td>
                         </tr>
                         <tr>
                             <td>Nama Bank</td>
-                            <td>: Maybank</td>
+                            <td>: <?php echo $namabank ?></td>
                         </tr>
                         <tr>
                             <td>Nama</td>
@@ -149,7 +184,7 @@
                         </tr>
                         <tr>
                             <td>Tempat lahir</td>
-                            <td>: Kuantan, Pahang</td>
+                            <td>: <?php echo $tempatlahir ?></td>
                         </tr>
                         <tr>
                             <td>Kewarganegaraan</td>
@@ -179,7 +214,7 @@
                         </tr>
                         <tr>
                             <td>Pendapatan</td>
-                            <td>: RM2500.00</td>
+                            <td>: <?php echo $pendapatanpasangan ?></td>
                         </tr>
                         <tr>
                             <td>No.Telefon</td>
@@ -191,7 +226,7 @@
                         </tr>
                         <tr>
                             <td>Tempat lahir</td>
-                            <td>: Pekan, Pahang</td>
+                            <td>: <?php echo $tempatlahirpasangan ?></td>
                         </tr>
                         <tr>
                             <td>Kewarganegaraan</td>
@@ -227,15 +262,15 @@
                     <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Nama Waris</td>
-                            <td>: Idris bin Abu Wahab</td>
+                            <td>: <?php echo $namawaris ?></td>
                         </tr>
                         <tr>
                             <td>Hubungan</td>
-                            <td>: Sepupu</td>
+                            <td>: <?php echo $hubunganwaris ?></td>
                         </tr>
                         <tr>
                             <td>No. Tel</td>
-                            <td>: 013-8237112</td>
+                            <td>: <?php echo $notelwaris ?></td>
                         </tr>
                     </table>
                     <br>
@@ -248,7 +283,7 @@
                             <td>: 12/6/2023</td>
                         </tr>
                         <tr>
-                            <form>
+                            <form action="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php">
                                 <td>Pengesahan</td>
                                 <td><select class="form-select" aria-label="Default select example" id="inputboxstyle2"
                                         required>
@@ -256,7 +291,7 @@
                                         <option value="Diterima">Terima</option>
                                         <option value="Ditolak">Tolak</option>
                                     </select></td>
-                            </form>
+                            
 
                         </tr>
                     </table>
@@ -265,6 +300,10 @@
                         <button type="btn" id="backtostaffmainpage" class="btn btn-primary">Kembali</button>
                         <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
                     </div>
+                    
+                    </form>
+
+                    
 
                 </div>
                 <br><br>

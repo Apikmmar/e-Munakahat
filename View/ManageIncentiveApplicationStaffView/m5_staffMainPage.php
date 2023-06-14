@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+    echo 'Connection error: ' . mysqli_connect_error();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -84,7 +91,7 @@
                     <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
                         <thead>
                             <tr style="background-color: #D3D3D3;">
-                                <th scope="col">Bil</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">No.KP / Nama Suami</th>
                                 <th scope="col">No.KP / Nama Isteri</th>
                                 <th scope="col">Tarikh Mohon</th>
@@ -93,20 +100,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>931882-06-0061<br>Muhammad Abu bin Seman</td>
-                                <td>931882-06-0061<br>Siti Nur Fathiah binti Asnul</td>
-                                <td>12/6/2023</td>
-                                <td>Dalam Proses</td>
-                                <td>
-                                    <a href="m5_staffUpdateApplicationStatus.php"><img src="../assets/img/edit.png" alt="logopapar"
-                                            class="imgflaticon"></a>
-                                </td>
-                                <td>
-                                    <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
-                                </td>
-                            </tr>
+                            <?php
+                            $sql = "SELECT * FROM incentive_application";
+                            $result = $conn->query($sql);
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $IA_ID = $row['IA_ID'];
+                                ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $IA_ID; ?>
+                                    </td>
+                                    <td>931882-06-0061<br>Muhammad Abu bin Seman</td>
+                                    <td>931882-06-0061<br>Siti Nur Fathiah binti Asnul</td>
+                                    <td>12/6/2023</td>
+                                    <td>Dalam Proses</td>
+                                    <td>
+                                        <a href="m5_staffUpdateApplicationStatus.php?IA_ID=<?php echo $IA_ID; ?>"><img src="../assets/img/edit.png"
+                                                alt="logopapar" class="imgflaticon"></a>
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

@@ -1,9 +1,9 @@
 <?php
 // Create connection
-$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
 // Check connection
 if (!$conn) {
-  echo 'Connection error: ' . mysqli_connect_error();
+    echo 'Connection error: ' . mysqli_connect_error();
 }
 
 
@@ -17,11 +17,11 @@ class IncentiveApplication
         $this->conn = $conn;
     }
 
-    public function userIA_create($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$pendapatanpasangan, $User_IC,$Staff_IC,$DI_ICCopy,$DI_AkadNikahCopy,$DI_BankAccountCopy,$DI_SupportDocument,$namawaris,$hubunganwaris,$notelwaris)
+    public function userIA_create($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan, $pendapatanpasangan, $User_IC, $Staff_IC, $DI_ICCopy, $DI_AkadNikahCopy, $DI_BankAccountCopy, $DI_SupportDocument, $namawaris, $hubunganwaris, $notelwaris)
     {
         $sql = "INSERT INTO incentive_application(IA_ApplyDate, IA_Status, IA_BankAccount, IA_BankName, IA_POB, IA_PartnerPOB,IA_PartnerSalary,User_IC,Staff_IC,DI_ICCopy,DI_AkadNikahCopy,DI_BankAccountCopy,DI_SupportDocument,HI_Name,HI_Relationship,HI_PhoneNo) VALUES (?, ?, ?, ?, ?, ?,?,?, ?, ?, ?, ?,?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssssssssssssssss", $applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$pendapatanpasangan, $User_IC,$Staff_IC,$DI_ICCopy,$DI_AkadNikahCopy,$DI_BankAccountCopy,$DI_SupportDocument,$namawaris,$hubunganwaris,$notelwaris);
+        $stmt->bind_param("ssssssssssssssss", $applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan, $pendapatanpasangan, $User_IC, $Staff_IC, $DI_ICCopy, $DI_AkadNikahCopy, $DI_BankAccountCopy, $DI_SupportDocument, $namawaris, $hubunganwaris, $notelwaris);
         $stmt->execute();
 
         if ($stmt->execute() === TRUE) {
@@ -34,6 +34,8 @@ class IncentiveApplication
         $successMessage = "Data has been successfully stored in the database.";
         header("Location: ../../../View/ManageIncentiveApplicationView/m5_userMainPage.php?success=" . urlencode($successMessage));
     }
+
+
 
     public function closeConnection()
     {
@@ -60,10 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $DI_AkadNikahCopy = "AkadNikahCopy";
         $DI_BankAccountCopy = "DI_BankAccountCopy";
         $DI_SupportDocument = "DI_SupportDocument";
-        
+
 
         $db = new IncentiveApplication();
-        $db->userIA_create($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$pendapatanpasangan, $User_IC,$Staff_IC,$DI_ICCopy,$DI_AkadNikahCopy,$DI_BankAccountCopy,$DI_SupportDocument,$namawaris,$hubunganwaris,$notelwaris);
+        $db->userIA_create($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan, $pendapatanpasangan, $User_IC, $Staff_IC, $DI_ICCopy, $DI_AkadNikahCopy, $DI_BankAccountCopy, $DI_SupportDocument, $namawaris, $hubunganwaris, $notelwaris);
         $db->closeConnection();
     }
 }

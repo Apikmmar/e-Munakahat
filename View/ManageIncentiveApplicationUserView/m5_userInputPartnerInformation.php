@@ -83,8 +83,7 @@ if (isset($_POST['submit'])) {
                                 <div>
                                     <div id="inputformpadding">
                                         <label>
-                                            <?php echo $_SESSION['tempatlahir']
-                                                ?>No. K/Pengenalan Pasangan <span class="red-asterisk">*</span>:
+                                            No. K/Pengenalan Pasangan <span class="red-asterisk">*</span>:
                                         </label><br>
                                         <input type="text" class="form-control form-control-sm" id="ic"
                                             value="931882-06-0061" placeholder="Masukkan IC" disabled>
