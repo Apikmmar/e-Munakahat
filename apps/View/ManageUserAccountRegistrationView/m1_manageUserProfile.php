@@ -6,6 +6,8 @@
     if(!isset($_SESSION['icnum'])) {
         header("Location: ../ManageLoginView/m1_login.php");
         exit;
+    } else {
+        
     }
 
     // Check if the logout parameter is set
