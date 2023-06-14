@@ -1,6 +1,6 @@
 <?php
-// Database connection settings
-include 'dbconnection.php';
+// Database connection settings done
+include 'connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,8 @@ include 'dbconnection.php';
   <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <!-- external stylesheet -->
-  <link rel="stylesheet" href="style/module3.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/css/module3.css">
 
   <!-- internal stylesheet -->
   <style>
