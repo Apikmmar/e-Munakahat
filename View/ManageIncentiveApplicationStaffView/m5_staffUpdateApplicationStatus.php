@@ -41,10 +41,14 @@
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6" id="staffprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-success h6" id="regcourseven">Maklumat Taklimat</button>
-                        <button class="btn btn-success h6" id="appcourseapp">Maklumat Peserta</button>
-                        <button class="btn btn-dark h6" id="staffmainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-secondary h6">Laman Utama</button>
+                        <button class="btn btn-success h6">Profil</button>
+                        <button class="btn btn-success h6">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6">Pendaftaran Nikah</button>
+                        <button class="btn btn-success h6">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6">Keluar</button>
                     </div>
                 </div>
             </div>

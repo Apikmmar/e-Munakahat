@@ -58,7 +58,7 @@
         <!-- content -->
         <div class="content">
             <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">DAFTAR KURSUS</span>
+                <span class="h6 text-uppercase">Mohon Bantuan Insentif (Muatnaik Dokumen)</span>
             </div>
             <div class="content-of-module">
                 <div id="custalign">

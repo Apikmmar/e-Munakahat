@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 session_start();
+require '../../Business_Service/Controller/ManageIncentiveApplication/UserManageIncentiveApplicationController.php';
 $_SESSION['pendapatanpasangan'] = $_POST['pendapatanpasangan'];
 $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
 ?>
@@ -66,7 +67,7 @@ $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="m5_userMainPage.php" method="post">
+                    <form action="m5_userInputHeirInformation.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
@@ -136,3 +137,30 @@ $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
 </body>
 
 </html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['namawaris']) && isset($_POST['hubunganwaris']) && isset($_POST['notelwaris'])) {
+        $namawaris = $_POST['namawaris'];
+        $hubunganwaris = $_POST['hubunganwaris'];
+        $notelwaris = $_POST['notelwaris'];
+        $pendapatanpasangan = "1200";
+        $tempatlahirpasangan = "pekan";
+        $tempatlahir = "gambang";
+        $akuanbank = "akuanbankss";
+        $namabank = "maybank";
+        $applydate = date("d-m-Y");
+        $User_IC = "011221060079";
+        $Staff_IC = "111221060079";
+        $status = "Dalam Proses";
+        $DI_ICCopy = "ICCopy";
+        $DI_AkadNikahCopy = "AkadNikahCopy";
+        $DI_BankAccountCopy = "DI_BankAccountCopy";
+        $DI_SupportDocument = "DI_SupportDocument";
+        
+
+        $db = new IncentiveApplication();
+        $db->userIA_create($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$pendapatanpasangan, $User_IC,$Staff_IC,$DI_ICCopy,$DI_AkadNikahCopy,$DI_BankAccountCopy,$DI_SupportDocument,$namawaris,$hubunganwaris,$notelwaris);
+        $db->closeConnection();
+    }
+}
+?>

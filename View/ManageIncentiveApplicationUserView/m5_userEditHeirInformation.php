@@ -66,7 +66,7 @@ $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="m5_userMainPage.php" method="post">
+                    <form action="../../Business_Service/Controller/ManageIncentiveApplication/UserManageIncentiveApplicationController.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
