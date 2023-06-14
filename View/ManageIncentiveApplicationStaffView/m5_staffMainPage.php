@@ -122,7 +122,7 @@ if (!$conn) {
                                                 alt="logopapar" class="imgflaticon"></a>
                                     </td>
                                     <td>
-                                    <a href="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php?IA_ID=<?php echo $IA_ID; ?>"><img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon"></a>
+                                    <a onclick="return confirm('Are you sure you want to delete?')" href="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php?IA_ID=<?php echo $IA_ID; ?>"><img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon"></a>
                                     </td>
                                 </tr>
                             <?php } ?>
