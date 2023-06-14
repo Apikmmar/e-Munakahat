@@ -15,11 +15,6 @@ $(document).ready(function() {
     console.log("module2 jquery is on");
 
     // preparation course-user
-    $(document).on("click", "#userprepcoursemainpage", function(e) {
-        e.preventDefault();
-        window.location.href = '../ManageUserMarriagePreparationView/m2_maincoursepage.php';
-    });
-
     $(document).on("click", "#daftarcourse", function() {
         window.location.href = '../ManageUserMarriagePreparationView/m2_searchcourse.php';
     });
@@ -30,10 +25,6 @@ $(document).ready(function() {
 
     $(document).on("click", "#printslippermohonan", function() {
         window.location.href = '../ManageUserMarriagePreparationView/m2_downloadapplicationslip.php';
-    });
-
-    $(document).on("click", "#usermainpage", function() {
-        window.location.href = '';
     });
 
     $(document).on("click", "#viewcourse", function() {
@@ -49,10 +40,6 @@ $(document).ready(function() {
     });
 
     // preparation course-staff
-    $(document).on("click", "#staffprepcoursemainpage", function() {
-        window.location.href = '../ManageStaffMarriagePreparationView/m2_maincoursepagestaff.php';
-    });
-
     $(document).on("click", "#regcourseven", function() {
         window.location.href = '../ManageStaffMarriagePreparationView/m2_registercoursevenuestaff.php';
     });
@@ -61,20 +48,12 @@ $(document).ready(function() {
         window.location.href = '../ManageStaffMarriagePreparationView/m2_courseapplicationdetailstaff.php';
     });
 
-    $(document).on("click", "#staffmainpage", function() {
-        window.location.href = '';
-    });
-
     $(document).on("click", "#backbuttonstaff", function(e) {
         e.preventDefault();
         window.location.href = '../ManageStaffMarriagePreparationView/m2_maincoursepagestaff.php';
     });
 
     //apply marriage-user
-    $(document).on("click", "#marriageapply", function() {
-        window.location.href = "../ManageUserMarriageApplicationView/m2_homepage.php"
-    });
-
     $(document).on("click", "#daftarkahwin", function() {
         window.location.href = "../ManageUserMarriageApplicationView/m2_userinputinformation.php"
     });
