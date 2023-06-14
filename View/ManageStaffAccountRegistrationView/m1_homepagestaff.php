@@ -1,5 +1,30 @@
 <?php
     session_start();
+    // Create connection
+    $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
+    // Check connection
+    if (!$conn) {
+    echo 'Connection error: ' . mysqli_connect_error();
+    }
+
+    // Check if the user is not logged in
+    if(!isset($_SESSION['icnum'])) {
+        header("Location: ../ManageLoginView/m1_login.php");
+        exit;
+    } else {
+        $icnum = $_SESSION['icnum'];
+        // Check if icnum already exists in the database
+        $query = "SELECT * FROM staff_registration_info WHERE Staff_IC = '$icnum'";
+        $result = mysqli_query($conn, $query);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $name = $row['Staff_Name'];
+            $akses = $row['Staff_AccessCategory'];
+            $jabatan = $row['Staff_PAID'];
+        } else {
+            echo "User not found.";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +49,9 @@
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
                         <span>ID :<p></p></span>
-                        <span>Nama :<p></p></span>
-                        <span>Akses :<p></p></span>
-                        <span>Jabatan :<p></p></span>
+                        <span>Nama : <?php echo $name; ?><p></p></span>
+                        <span>Akses : <?php echo $akses; ?><p></p></span>
+                        <span>Jabatan : <?php echo $jabatan; ?><p></p></span>
                     </div>
                 </div>
                 <br>
@@ -40,7 +65,7 @@
                         <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
                         <button class="btn btn-success h6">Laporan</button>
                         <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
-                        <button class="btn btn-dark h6">Keluar</button> 
+                        <button class="btn btn-dark h6" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button> 
                     </div>
                 </div>
             </div>
