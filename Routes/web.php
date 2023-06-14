@@ -1,6 +1,13 @@
 <?php
 
 $_SESSION['current_link'] = $_SERVER['HTTP_REFERER'];
+// module 1
+require "Business_Service/Controller/ManageLogin/ChangePasswordController.php";
+require "Business_Service/Controller/ManageLogin/ForgetPasswordController.php";
+require "Business_Service/Controller/ManageLogin/LoginController.php";
+require "Business_Service/Controller/ManageAccountRegistration/userAccountRegistrationController.php";
+require "Business_Service/Controller/ManageAccountRegistration/staffAccountRegistrationController.php";
+
 // module 2
 require "Business_Service/Controller/ManageMarriagePreparation/UserMarriagePreparationController.php";
 require "Business_Service/Controller/ManageMarriagePreparation/StaffMarriagePreparationController.php";

@@ -1,30 +1,5 @@
 <?php
-    session_start();
-    // Create connection
-    $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
-    // Check connection
-    if (!$conn) {
-    echo 'Connection error: ' . mysqli_connect_error();
-    }
-    
-    // Check if the user is not logged in
-    if(!isset($_SESSION['icnum'])) {
-        header("Location: ../ManageLoginView/m1_login.php");
-        exit;
-    } else {
-        $icnum = $_SESSION['icnum'];
-        // Check if icnum already exists in the database
-        $query = "SELECT * FROM staff_registration_info WHERE Staff_IC = '$icnum'";
-        $result = mysqli_query($conn, $query);
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $name = $row['Staff_Name'];
-            $akses = $row['Staff_AccessCategory'];
-            $jabatan = $row['Staff_PAID'];
-        } else {
-            echo "User not found.";
-        }
-    }
+    include "connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -49,15 +24,15 @@
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
                         <span>ID :<p></p></span>
-                        <span>Nama : <?php echo $name; ?><p></p></span>
-                        <span>Akses : <?php echo $akses; ?><p></p></span>
-                        <span>Jabatan : <?php echo $jabatan; ?><p></p></span>
+                        <span>Nama :<p></p></span>
+                        <span>Akses :<p></p></span>
+                        <span>Jabatan :<p></p></span>
                     </div>
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                    <button class="btn btn-secondary h6" onclick="window.location.href='m1_homepagestaff.php'">Laman Utama</button>
+                        <button class="btn btn-secondary h6">Laman Utama</button>
                         <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php'">Profil</button>
                         <button class="btn btn-success h6">Permohonan Berkahwin</button>
                         <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
@@ -90,24 +65,23 @@
         <!-- content -->
         <div class="content-admin">
             <div class="p-2 mb-2 bg-success text-white">
-                <span class="h6 text-uppercase">PENGGUNA >> TAMBAH PENGGUNA</span>
+                <span class="h6 text-uppercase">PROFIL</span>
             </div>
             <div class="content-of-module-admin">
                 <div id="custalign">
-                    <form action="../../business_service/controller/ManageAccountRegistration/staffAccountRegistrationController.php" method="post">
-                        <div class="" >
+                    <form action="" method="post">
+                        <div>
                             <div id="inputformpadding">
-                                <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
-                                <table style="border-collapse: collapse; border:none; margin-top: 20px;" id="formprofiletable">
+                                    <table style="border-collapse: collapse; border:none; margin-top: 20px;" id="formprofiletable">
                                         <tr style="border:none;">
                                             <td style="border:none;" >
-                                                <label><b>No. Kad Pengenalan<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                                <label><b>No. Kad Pengenalan :</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="icnum" required>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none; ">
@@ -115,15 +89,7 @@
                                                 <label><b>Nama Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="name" required>
-                                            </td>
-                                        </tr>
-                                        <tr style="border:none;">
-                                            <td style="border:none;" >
-                                                <label><b>No. Telefon<span class="red-asterisk">*</span>:</b></label> &nbsp;
-                                            </td>
-                                            <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="phonenum" required>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -131,7 +97,7 @@
                                                 <label><b>Jawatan Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="jawatan" required>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -139,23 +105,7 @@
                                                 <label><b>PAID<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <select name="paid" class="form-control form-control-sm" required>
-                                                    <option value="" selected disabled>- Sila Pilih - </option>
-                                                    <option value="PAID Pekan">PAID Pekan</option>
-                                                    <option value="PAID Kuantan">PAID Kuantan</option>
-                                                    <option value="PAID Rompin">PAID Rompin</option>
-                                                    <option value="PAID Muadzam Shah">PAID Muadzam Shah</option>
-                                                    <option value="PAID Maran">PAID Maran</option>
-                                                    <option value="PAID Jengka">PAID Jengka</option>
-                                                    <option value="PAID Kuantan Barat">PAID Kuantan Barat</option>
-                                                    <option value="PAID Temerloh">PAID Temerloh</option>
-                                                    <option value="PAID Bentong">PAID Bentong</option>
-                                                    <option value="PAID Jerantut">PAID Jerantut</option>
-                                                    <option value="PAID Raub">PAID Raub</option>
-                                                    <option value="PAID Kuala Lipis">PAID Kuala Lipis</option>
-                                                    <option value="PAID Bera">PAID Bera</option>
-                                                    <option value="PAID Cameron Highland">PAID Cameron Highland</option>
-                                                </select>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -163,13 +113,7 @@
                                                 <label><b>Kategori Akses<span class="red-asterisk">*</b></span>:</label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <select name="akses" class="form-control form-control-sm" required>
-                                                    <option value="" selected disabled>- Sila Pilih - </option>
-                                                    <option value="Pengguna PAID">Pengguna PAID</option>
-                                                    <option value="Pentadbir Sistem JAIP">Pentadbir Sistem JAIP</option>
-                                                    <option value="Pengawai Kaunter">Pengawai Kaunter</option>
-                                                    <option value="Pengawai Kewangan">Pengawai Kewangan</option>
-                                                </select>
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
@@ -177,7 +121,23 @@
                                                 <label><b>Emel<span class="red-asterisk">*</span>:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <input type="text" class="form-control form-control-sm" id="alamatstyle" name="emel" required>
+                                                <label>010203040506</label>
+                                            </td>
+                                        </tr>
+                                        <tr style="border:none;">
+                                            <td style="border:none;" >
+                                                <label><b>Status Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                            </td>
+                                            <td style="border:none;">
+                                                <label>010203040506</label>
+                                            </td>
+                                        </tr>
+                                        <tr style="border:none;">
+                                            <td style="border:none;" >
+                                                <label><b>Kata Laluan<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                            </td>
+                                            <td style="border:none;">
+                                                <label>010203040506</label>
                                             </td>
                                         </tr>
                                     </table>
@@ -187,11 +147,8 @@
                         </div>
                         <br>
                         <div class="btn-block d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success">Daftar</button>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a class="btn btn-secondary" href="m1_staffUtility.php" >Kembali</a>
+                            <button type="submit" class="btn btn-success" href="m1_pengguna.php">Kemas Kini</button>
                         </div>
-                        <br>    
                     </form>
                 </div>
             </div>

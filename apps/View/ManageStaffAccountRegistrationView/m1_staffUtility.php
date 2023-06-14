@@ -1,30 +1,5 @@
 <?php
-    session_start();
-    // Create connection
-    $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
-    // Check connection
-    if (!$conn) {
-    echo 'Connection error: ' . mysqli_connect_error();
-    }
-
-    // Check if the user is not logged in
-    if(!isset($_SESSION['icnum'])) {
-        header("Location: ../ManageLoginView/m1_login.php");
-        exit;
-    } else {
-        $icnum = $_SESSION['icnum'];
-        // Check if icnum already exists in the database
-        $query = "SELECT * FROM staff_registration_info WHERE Staff_IC = '$icnum'";
-        $result = mysqli_query($conn, $query);
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $name = $row['Staff_Name'];
-            $akses = $row['Staff_AccessCategory'];
-            $jabatan = $row['Staff_PAID'];
-        } else {
-            echo "User not found.";
-        }
-    }
+    include "connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -49,15 +24,15 @@
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
                         <span>ID :<p></p></span>
-                        <span>Nama : <?php echo $name; ?><p></p></span>
-                        <span>Akses : <?php echo $akses; ?><p></p></span>
-                        <span>Jabatan : <?php echo $jabatan; ?><p></p></span>
+                        <span>Nama :<p></p></span>
+                        <span>Akses :<p></p></span>
+                        <span>Jabatan :<p></p></span>
                     </div>
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                    <button class="btn btn-secondary h6" onclick="window.location.href='m1_homepagestaff.php'">Laman Utama</button>
+                    <button class="btn btn-secondary h6">Laman Utama</button>
                         <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php'">Profil</button>
                         <button class="btn btn-success h6">Permohonan Berkahwin</button>
                         <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
@@ -125,38 +100,15 @@
                             <td>PAID Pekan</td>
                             <td>Pengguna PAID</td>
                             <td>
-                                <img src="../assets/img/view.png" alt="logopapar" class="imgflaticon">
+                                <img src="assets/img/update.png" alt="logopapar" class="imgflaticon">
                             </td>
                             <td>
-                                <img src="../assets/img/update.png" alt="logodaftar" class="imgflaticon">
+                                <img src="assets/img/printer.png" alt="logodaftar" class="imgflaticon">
                             </td>
                             <td>
-                                <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
+                                <img src="assets/img/delete.png" alt="logodaftar" class="imgflaticon">
                             </td>
                         </tr>
-                        <?php
-                            $sql = "SELECT * FROM staff_registration_info";
-                            $result = $conn->query($sql);
-                            $bil = 1;
-
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $bil =++ $bil;
-                                $icNumber = $row['Staff_IC'];
-                                $name = $row['Staff_Name'];
-                                $paid = $row['Staff_PAID'];
-                                $access = $row['Staff_AccessCategory'];
-                        ?>
-                        <tr>
-                            <td><?php echo $bil; ?></td>
-                            <td><?php echo $icNumber; ?></td>
-                            <td><?php echo $name; ?></td>
-                            <td><?php echo $paid; ?></td>
-                            <td><?php echo $access; ?></td>
-                            <td><a href="m1_viewStaffProfile.php?staff_ic=<?php echo $icNumber; ?>"><img class="imgflaticon" src="../assets/img/view.png"></a></td>
-                            <td><a href="m1_updateStaffInfo.php?staff_ic=<?php echo $icNumber; ?>"><img class="imgflaticon" src="../assets/img/update.png"></a></td>
-                            <td><a href="deleteStaff(<?php echo $icNumber; ?>)"><img class="imgflaticon" src="../assets/img/delete.png"></a></td>
-                        </tr>
-                        <?php } ?>
                     </tbody>
                     </table>
                     <div style="padding-left: 100px;">
