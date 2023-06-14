@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+$_SESSION['pendapatanpasangan'] = $_POST['pendapatanpasangan'];
+$_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Munakahat</title>
-    <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/css/module5.css">
 
 </head>
 
@@ -43,8 +48,8 @@
             <div class="h-span-container">
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
-                <img src="img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -61,7 +66,7 @@
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="" method="post">
+                    <form action="m5_userMainPage.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
@@ -70,39 +75,35 @@
                                 <div>
                                     <div id="inputformpadding">
                                         <label>Perkerjaan Pemohon <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
-                                            placeholder="Masukkan alamat" required>
+                                        <input type="text" class="form-control form-control-sm" value="PETRONAS OIL AND GAS" disabled>
                                     </div>
                                     <div id="inputformpadding">
                                         <label>Jenis Pekerjaan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
-                                            placeholder="Masukkan alamat" required>
+                                        <input type="text" class="form-control form-control-sm"  value="Swasta" disabled>
                                     </div>
                                     <div id="inputformpadding">
                                         <label>Pendapatan Pemohon <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
-                                            placeholder="Masukkan alamat" required>
+                                        <input type="text" class="form-control form-control-sm"  value="RM4500.00" disabled>
                                     </div>
                                     <div id="inputformpadding">
                                         <label>Alamat & alamat Majikan/Premis Perniagaan <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
-                                            placeholder="Masukkan alamat" required>
+                                        <input type="text" class="form-control form-control-sm" value="LOT 2475, GM 5709, MUKIM PAKA DAERAH DUNGUN, 23100 KUALA TERENGGANU, TERENGGANU" disabled>
                                     </div>
                                     <div id="inputformpadding">
                                         <label>Nama Waris <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" class="form-control form-control-sm" id="alamatstyle"
-                                            placeholder="Masukkan alamat" required>
+                                        <input type="text" class="form-control form-control-sm" id="namawaris" name="namawaris"
+                                            placeholder="Masukkan nama waris" required>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div>
                                             <label>Hubungan <span class="red-asterisk">*</span>:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                placeholder="Masukkan negeri" required>
+                                            <input type="text" class="form-control form-control-sm" id="hubunganwaris" name="hubunganwaris"
+                                                placeholder="Masukkan hubungan" required>
                                         </div>
                                         <div>
                                             <label>No Tel Waris <span class="red-asterisk">*</span>:</label><br>
-                                            <input type="text" class="form-control form-control-sm" id="inputboxstyle"
-                                                placeholder="Masukkan daerah" required>
+                                            <input type="text" class="form-control form-control-sm" id="notelwaris" name="notelwaris"
+                                                placeholder="Masukkan no tel waris" required>
                                         </div>
                                     </div>
                                 </div>
@@ -115,9 +116,8 @@
                         </div>
                         <br>
                         <div class="d-flex justify-content-around" style="width: 300px;">
-                            <button type="reset" class="btn btn-danger">Reset</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                            <button type="btn" id="backtosearchkursus" class="btn btn-primary">Kembali</button>
+                            <button type="btn" id="backtoinputpartnerinfo" class="btn btn-primary">Kembali</button>
+                            <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
                 </div>
@@ -125,7 +125,8 @@
         </div>
     </div>
 
-    <script src="javascript.js" defer></script>
+    <script src="../assets/js/javascript.js" defer></script>
+    <script src="../assets/js/module5js.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>

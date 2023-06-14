@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Munakahat</title>
-    <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/css/module5.css">
 
 
 </head>
@@ -44,8 +45,9 @@
             <div class="h-span-container">
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
-                <img src="img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia"
+                    class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -61,41 +63,54 @@
                 <span class="h6 text-uppercase">Bantuan Insentif Khas</span>
             </div>
             <div class="content-of-module">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <br>
+                <div>
+                    <div class="container">
+                        Senarai Permohonan
+                        <button style="float: right;" type="btn" id="mohonbantuan" class="btn btn-primary">Mulakan Permohonan</button>
+                        <button style="float: right;" type="btn" id="termadansyarat" class="btn btn-primary">Lihat Terma dan Syarat</button>
+                        <br><br>
+                    </div>
+                    <table class="table table-bordered" id="searchcoursetable" style="width: 90%;table-layout: fixed">
+                        <thead>
+                            <tr style="background-color: #D3D3D3;">
+                                <th style="width:50px" scope="col">Bil</th>
+                                <th scope="col">No.KP / Nama Suami</th>
+                                <th scope="col">No.KP / Nama Isteri</th>
+                                <th scope="col">Tarikh Mohon</th>
+                                <th scope="col">Status</th>
+                                <th scope="col" colspan="3">Operasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>931882-06-0061<br>Muhammad Abu bin Seman</td>
+                                <td>931882-06-0061<br>Siti Nur Fathiah binti Asnul</td>
+                                <td>12/6/2023</td>
+                                <td>Dalam Proses</td>
+                                <td>
+                                    <a href="m5_userViewApplicationDetail.php"><img src="../assets/img/view.png"
+                                            alt="logopapar" class="imgflaticon"></a>
+                                </td>
+                                <td>
+                                    <a href="m5_userEditApplicantInformation.php"><img src="../assets/img/edit.png"
+                                            alt="logopapar" class="imgflaticon"></a>
+                                </td>
+                                <td>
+                                    <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
             </div>
         </div>
     </div>
 
-    <script src="javascript.js" defer></script>
+    <script src="../assets/js/javascript.js" defer></script>
+    <script src="../assets/js/module5js.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
