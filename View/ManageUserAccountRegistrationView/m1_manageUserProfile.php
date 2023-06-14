@@ -105,10 +105,10 @@
                         <button class="btn btn-primary h6" id="Profil" onclick="window.location.href='m1_manageUserProfile.php'">Profil</button>
                         <button class="btn btn-primary h6" id="KursusPraPerkahwinan">Kursus Pra-Perkahwinan</button>
                         <button class="btn btn-primary h6" id="PermohonanBerkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-dark h6" id="PendaftaranPerkahwinan">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="PendaftaranPerkahwinan">Pendaftaran Perkahwinan</button>
                         <button class="btn btn-primary h6" id="KhidmatNasihat">Khidmat nasihat</button>
                         <button class="btn btn-primary h6" id="insentifKhas">insentif Khas</button>
-                        <button class="btn btn-primary h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'" >Keluar</button>
+                        <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'" >Keluar</button>
                     </div>
                 </div>
             </div>
