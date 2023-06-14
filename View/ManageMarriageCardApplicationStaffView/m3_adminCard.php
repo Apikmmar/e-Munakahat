@@ -1,6 +1,8 @@
 <?php
-include('../database/connection.php');
+// Database connection settings done
+include 'connection.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +11,12 @@ include('../database/connection.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>e-Munakahat</title>
-  <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
+  <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/css/module3.css">
+  
+  <!-- external stylesheet -->
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/css/module3.css">
 
 </head>
 
@@ -24,21 +28,17 @@ include('../database/connection.php');
         <br>
         <div class="p-2 mb-1 bg-info text-white">
           <div class="userdata">
-
             ID : 710204070801
-
             <br>
             Nama :Hamsha Bin Hamdan
             <br>
-
             Akses :Kakitangan
             <br>
-
             Jabatan :Jabatan Agama Islam Negeri Pahang
-
           </div>
         </div>
         <br>
+        <!-- navigation bar (left side) -->
         <div class="d-flex justify-content-center">
           <div class="list-group" style="width: 16rem;">
             <button class="btn btn-secondary h6">Laman Utama</button>
@@ -55,8 +55,7 @@ include('../database/connection.php');
         </div>
       </div>
     </nav>
-
-    <!-- navbar -->
+    <!-- title bar -->
     <nav class="p-1 mb-1 bg-primary text-white justify-content-center fixed-top">
       <div class="h-span-container">
         <button class="navbar-button" id="hey">&#9776;</button>
@@ -79,14 +78,12 @@ include('../database/connection.php');
       </div>
       <div class="content-of-module-admin">
         <div style="padding: 20px 0px 20px 6px">
-
           <button><a style="text-decoration:none;" href="M3_adminMarriage.php">
               <h6 style="color:black;">Mohon Pengesahan Nikah</h6>
             </a></button>
           <button class=" btn btn-secondary"><a style="text-decoration:none;" href="M3_adminCard.php">
               <h6 style="color:white;">Mohon Pengesahan Kad Nikah Dan Sijil</h6>
             </a></button><br><br><br>
-
           <b>No.K/P Suami </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="blue">: Ali Bin Abu</b><br><br>
           <b>No.K/P Isteri </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="blue"> : Aliya Binti Abdul</b><br><br>
           <b>No.Akuan Terima</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"><br><br>
@@ -98,10 +95,9 @@ include('../database/connection.php');
           </select>
           <div style="padding: 10px 0px 20px 700px"><a href="m3_adminCardList.php"><button class=" btn btn-success">Carian</button></a></div>
         </div>
-
       </div>
     </div>
-
+    <!-- external link to js file -->
     <script src="javascript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>

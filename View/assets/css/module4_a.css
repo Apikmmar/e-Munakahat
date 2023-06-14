@@ -1,9 +1,25 @@
 body {
-    background-image: url('../img/agama1.jpg');
+    background-image: url('gam/img/agama1.jpg');
     background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+   
 }
+
+<style>
+table ,th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+   th, td {
+         padding-top: 10px;
+         padding-bottom: 20px;
+         padding-left: 30px;
+         padding-right: 40px;
+      }
+
+      {
+        box-sizing: border-box;
+      }
+</style> 
 
 .overlay {
     position: absolute;
@@ -13,6 +29,10 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.6);
 }
+
+.red-asterisk {
+    color: red;
+  }
 
 .img-upper-interface {
     margin-left: 40px;
@@ -44,13 +64,12 @@ body {
     height: 30px;
     background-color: #bbe0f7;
     border: 1px solid #ddeeff;
-    float: right;
+    float: left;
     color: black;
-    /* margin-left: 930px; */
-    margin: 8px 0px 0px 800px;
+    margin-left: 780px;
     justify-content: center;
     text-align: center;
-    box-shadow: 1px 1px 1px 1px rgb(67, 67, 234);
+    box-shadow: 1px 1px 1px 1px #0E5B24;
 }
 
 .float-hub {
@@ -71,7 +90,7 @@ body {
 
 @media (max-width: 991.98px) {
     .sidebar {
-        width: 100%;
+    width: 100%;
     }
 }
 
@@ -100,9 +119,8 @@ body {
 
 .content-of-module {
     margin-top: -8px;
-    background-color: #bbe0f7;
+    background-color:#b5dcc7;
     min-height: fit-content;
-
 }
 
 .content-admin {
@@ -115,13 +133,10 @@ body {
     min-height: fit-content;
 }
 
-#searchcoursetable,
-td,
-tr,
-th {
+#searchcoursetable, td, tr, th {
     text-align: center;
     border: 2px solid black;
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -147,7 +162,7 @@ th {
 }
 
 .custcolor {
-    color: rgb(8, 8, 172);
+    color: rgb(31.4, 78.4, 47.1);
 }
 
 #inputformpadding {
@@ -162,71 +177,22 @@ th {
     width: 250px;
 }
 
-/* module3 main page*/
-.notification {
-    margin-top: -8px;
-    background-color: #bbe0f7;
-    display: inline-block;
-    min-height: 50%;
-    padding: 100px;
-    width: 100%;
-    text-align: center;
-}
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
-.filled-rectangle-button {
-    margin-bottom: 30px;
-}
-
-.filled-rectangle-button a {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 0.5px;
-    color: #fff;
-    border: 2px solid rgb(18, 33, 162);
-    transition: all 0.5s;
-    background-color: rgb(18, 33, 162);
-}
-
-.filled-rectangle-button a:hover {
-    color: #535ba0;
-    background-color: rgba(83, 91, 160, 0.25);
-}
-
-/* module3 form page*/
-
-/* Main Nav */
-#main_nav .nav-item .nav-link:hover {
-    color: #fff;
-}
-
-.downloadButton {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.img-printer {
-    border-radius: 50%;
-    width: 28px;
-    height: auto;
-}
-
-.img-upload {
-    border-radius: 50%;
-    width: 28px;
-    height: auto;
-}
-
-#blue {
-    color: blue;
-}
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
