@@ -102,13 +102,13 @@
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6" id="Profil" onclick="window.location.href='m1_manageUserProfile.php'">Profil</button>
-                        <button class="btn btn-primary h6" id="KursusPraPerkahwinan">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-primary h6" id="PermohonanBerkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-dark h6" id="PendaftaranPerkahwinan">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-primary h6" id="KhidmatNasihat">Khidmat nasihat</button>
-                        <button class="btn btn-primary h6" id="insentifKhas">insentif Khas</button>
-                        <button class="btn btn-primary h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'" >Keluar</button>
+                        <button class="btn btn-secondary h6" id="userloginmainpage">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Kursus Pra-Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="marriageapply">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">insentif Khas</button>
+                        <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'" >Keluar</button>
                     </div>
                 </div>
             </div>
@@ -297,8 +297,7 @@
         </div>
     </div>
 
-    <script src="assets/js/javascript.js" defer></script>
-    <script src="assets/js/module2js.js" defer></script>
+    <script src="../assets/js/javascript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
