@@ -37,15 +37,15 @@ if (!$conn) {
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
-                    <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6">Laman Utama</button>
-                        <button class="btn btn-success h6">Profil</button>
-                        <button class="btn btn-success h6">Kursus Pra Perkahwinan</button>
-                        <button class="btn btn-success h6">Kebenaran Berkahwin</button>
-                        <button class="btn btn-success h6">Pendaftaran Nikah</button>
-                        <button class="btn btn-success h6">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6">Keluar</button>
+                <div class="list-group" style="width: 16rem;">
+                        <button class="btn btn-secondary h6" id="">Laman Utama</button>
+                        <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
+                        <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6" id="staffapplymainpage">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
+                        <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6" id="">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -106,6 +106,8 @@ if (!$conn) {
 
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $IA_ID = $row['IA_ID'];
+                                $tarikhmohon = $row['IA_ApplyDate'];
+                                $status = $row['IA_Status'];
                                 ?>
                                 <tr>
                                     <td>
@@ -113,14 +115,14 @@ if (!$conn) {
                                     </td>
                                     <td>931882-06-0061<br>Muhammad Abu bin Seman</td>
                                     <td>931882-06-0061<br>Siti Nur Fathiah binti Asnul</td>
-                                    <td>12/6/2023</td>
-                                    <td>Dalam Proses</td>
+                                    <td><?php echo $tarikhmohon; ?></td>
+                                    <td><?php echo $status; ?></td>
                                     <td>
                                         <a href="m5_staffUpdateApplicationStatus.php?IA_ID=<?php echo $IA_ID; ?>"><img src="../assets/img/edit.png"
                                                 alt="logopapar" class="imgflaticon"></a>
                                     </td>
                                     <td>
-                                        <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
+                                    <a href="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php?IA_ID=<?php echo $IA_ID; ?>"><img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon"></a>
                                     </td>
                                 </tr>
                             <?php } ?>

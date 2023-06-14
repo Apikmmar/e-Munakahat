@@ -32,7 +32,8 @@ class IncentiveApplication
 
         $stmt->close();
         $successMessage = "Data has been successfully stored in the database.";
-        header("Location: ../../../View/ManageIncentiveApplicationView/m5_userMainPage.php?success=" . urlencode($successMessage));
+        header("Location: ../../View/ManageIncentiveApplicationUserView/m5_userMainPage.php?success=" . urlencode($successMessage));
+        exit;
     }
 
 

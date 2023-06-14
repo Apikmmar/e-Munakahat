@@ -29,11 +29,13 @@
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-primary h6" id="daftarcourse">Daftar Kursus</button>
-                        <button class="btn btn-primary h6" id="tangguhkursus">Tangguh Kursus</button>
-                        <button class="btn btn-primary h6" id="printslippermohonan">Cetak Slip Permohonan</button>
-                        <button class="btn btn-dark h6" id="usermainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-primary h6" id="userloginmainpage">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">Insentif Khas Pasangan
+                            Pengantin</button>
+                        <button class="btn btn-dark h6">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -45,7 +47,8 @@
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
                 <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia"
+                    class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -62,7 +65,7 @@
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="" method="post">
+                    <form action="m5_userInputApplicantInformation.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
@@ -71,20 +74,23 @@
                                 <div>
 
                                     <div id="inputformpadding">
-                                        <label>Salinan Kad Pengenalan pemohon (depan dan belakang) <span class="red-asterisk">*</span>:</label><br>
+                                        <label>Salinan Kad Pengenalan pemohon (depan dan belakang) <span
+                                                class="red-asterisk">*</span>:</label><br>
                                         <input class="form-control form-control-sm" id="formFileSm" type="file"
                                             required>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div id="inputformpadding">
-                                            <label>Salinan catatan akad nikah pemohon <span class="red-asterisk">*</span>:</label><br>
+                                            <label>Salinan catatan akad nikah pemohon <span
+                                                    class="red-asterisk">*</span>:</label><br>
                                             <input class="form-control form-control-sm" id="formFileSm" type="file"
                                                 required>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div id="inputformpadding">
-                                            <label>Salinan penyata akaun bank pemohon <span class="red-asterisk">*</span>:</label><br>
+                                            <label>Salinan penyata akaun bank pemohon <span
+                                                    class="red-asterisk">*</span>:</label><br>
                                             <input class="form-control form-control-sm" id="formFileSm" type="file"
                                                 required>
                                         </div>
@@ -92,8 +98,7 @@
                                     <div class="d-flex justify-content-between" id="inputformpadding">
                                         <div id="inputformpadding">
                                             <label>Dokumen sokongan (jika perlu):</label><br>
-                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
-                                                required>
+                                            <input class="form-control form-control-sm" id="formFileSm" type="file">
                                         </div>
                                     </div>
                                 </div>

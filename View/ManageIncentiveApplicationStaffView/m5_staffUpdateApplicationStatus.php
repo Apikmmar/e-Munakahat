@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-
+session_start();
 $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
 // Check connection
 if (!$conn) {
@@ -26,10 +26,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $User_IC = $row['User_IC'];
     $Staff_IC = $row['Staff_IC'];
     $status = $row['IA_Status'];
-    $DI_ICCopy = $row['IA_ApplyDate'];
-    $DI_AkadNikahCopy = $row['$DI_AkadNikahCopy'];
-    $DI_BankAccountCopy = $row['$DI_BankAccountCopy'];
-    $DI_SupportDocument = $row['$DI_SupportDocument'];
 ?>
 <?php
 }
@@ -76,14 +72,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6">Laman Utama</button>
-                        <button class="btn btn-success h6">Profil</button>
-                        <button class="btn btn-success h6">Kursus Pra Perkahwinan</button>
-                        <button class="btn btn-success h6">Kebenaran Berkahwin</button>
-                        <button class="btn btn-success h6">Pendaftaran Nikah</button>
-                        <button class="btn btn-success h6">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6">Keluar</button>
+                        <button class="btn btn-secondary h6" id="">Laman Utama</button>
+                        <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
+                        <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6" id="staffapplymainpage">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
+                        <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan
+                            Pengantin</button>
+                        <button class="btn btn-dark h6" id="">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -109,7 +106,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <!-- content -->
         <div class="content-admin">
             <div class="p-2 mb-2 bg-success text-white">
-                <span class="h6 text-uppercase">DAFTAR TAKLIMAT</span>
+                <span class="h6 text-uppercase">PERMOHONAN BANTUAN INSENTIF</span>
             </div>
             <div class="content-of-module-admin">
                 <div id="custalign">
@@ -160,11 +157,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </tr>
                         <tr>
                             <td>No. Akaun bank</td>
-                            <td>: <?php echo $akuanbank ?></td>
+                            <td>:
+                                <?php echo $akuanbank ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nama Bank</td>
-                            <td>: <?php echo $namabank ?></td>
+                            <td>:
+                                <?php echo $namabank ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nama</td>
@@ -184,11 +185,13 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </tr>
                         <tr>
                             <td>Tempat lahir</td>
-                            <td>: <?php echo $tempatlahir ?></td>
+                            <td>:
+                                <?php echo $tempatlahir ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Kewarganegaraan</td>
-                            <td>: SSWarganegara</td>
+                            <td>: Warganegara</td>
                         </tr>
                     </table>
                     <br>
@@ -214,7 +217,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </tr>
                         <tr>
                             <td>Pendapatan</td>
-                            <td>: <?php echo $pendapatanpasangan ?></td>
+                            <td>:
+                                <?php echo $pendapatanpasangan ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>No.Telefon</td>
@@ -226,7 +231,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </tr>
                         <tr>
                             <td>Tempat lahir</td>
-                            <td>: <?php echo $tempatlahirpasangan ?></td>
+                            <td>:
+                                <?php echo $tempatlahirpasangan ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Kewarganegaraan</td>
@@ -262,15 +269,21 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Nama Waris</td>
-                            <td>: <?php echo $namawaris ?></td>
+                            <td>:
+                                <?php echo $namawaris ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Hubungan</td>
-                            <td>: <?php echo $hubunganwaris ?></td>
+                            <td>:
+                                <?php echo $hubunganwaris ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>No. Tel</td>
-                            <td>: <?php echo $notelwaris ?></td>
+                            <td>:
+                                <?php echo $notelwaris ?>
+                            </td>
                         </tr>
                     </table>
                     <br>
@@ -280,30 +293,29 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Tarikh Permohonan</td>
-                            <td>: 12/6/2023</td>
+                            <td>:
+                                <?php echo $applydate ?>
+                            </td>
                         </tr>
                         <tr>
-                            <form action="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php">
+                            <form
+                                action="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php"
+                                method="post">
                                 <td>Pengesahan</td>
-                                <td><select class="form-select" aria-label="Default select example" id="inputboxstyle2"
-                                        required>
+                                <td><select class="form-select" aria-label="Default select example" id="status"
+                                        name="status" required>
                                         <option selected value="No val" disabled>Sila pilih</option>
                                         <option value="Diterima">Terima</option>
                                         <option value="Ditolak">Tolak</option>
                                     </select></td>
-                            
-
                         </tr>
                     </table>
                     <br><br>
                     <div style="  margin: auto; width: 50%;">
-                        <button type="btn" id="backtostaffmainpage" class="btn btn-primary">Kembali</button>
-                        <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
+                        <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan</button>
                     </div>
-                    
                     </form>
 
-                    
 
                 </div>
                 <br><br>
