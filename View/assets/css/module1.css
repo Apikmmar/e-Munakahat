@@ -1,0 +1,149 @@
+
+.red-asterisk {
+    color: red;
+  }
+
+.img-upper-interface {
+    margin-left: 40px;
+    width: 55px;
+    height: auto;
+}
+
+.imglogo-upper-interface {
+    margin-left: 20px;
+    width: 35px;
+    height: auto;
+}
+
+.navbar-button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.h-span-container {
+    display: flex;
+    align-items: center;
+}
+
+.timedatebox {
+    width: 240px;
+    height: 30px;
+    background-color: #bbe0f7;
+    border: 1px solid #ddeeff;
+    float: left;
+    color: black;
+    margin-left: 780px;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px rgb(67, 67, 234);
+}
+
+.float-hub {
+    float: right;
+    margin: 8px 0px 0px 20px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 265px;
+    z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+    width: 100%;
+    }
+}
+
+.sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.userdata {
+    color: black;
+    font-weight: bold;
+}
+
+.content {
+    margin: 100px 40px 0px 300px;
+}
+
+.content-of-module {
+    margin-top: -8px;
+    background-color: #bbe0f7;
+    min-height: fit-content;
+}
+
+.content-admin {
+    margin: 100px 40px 0px 300px;
+}
+
+.content-of-module-admin {
+    margin-top: -8px;
+    background-color: #bcfebb;
+    min-height: fit-content;
+}
+
+
+#formprofiletable, td, tr, th {
+    border: 2px solid black;
+    padding: 0.75rem;
+    border-collapse: collapse; 
+    border:none; 
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#vcdlabeldiv {
+    padding-top: 30px;
+    padding-left: 80px;
+}
+
+.vcdlabel {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.imgflaticon {
+    width: 40px;
+    height: auto;
+}
+
+#custalign {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+
+#inputformpadding {
+    margin-top: 10px;
+}
+
+#alamatstyle {
+    width: 600px;
+}
+
+#inputboxstyle {
+    width: 250px;
+}
