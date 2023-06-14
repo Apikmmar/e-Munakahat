@@ -9,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Munakahat</title>
-    <link rel="shortcut icon" href="assets/img/jata-pahang.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/css/module2.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/css/module2.css">
 
 </head>
 <body>
@@ -32,11 +32,15 @@
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6" id="staffprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-success h6" id="regcourseven">Maklumat Taklimat</button>
-                        <button class="btn btn-success h6" id="appcourseapp">Maklumat Peserta</button>
-                        <button class="btn btn-success h6" id="utilityuser" onclick="window.location.href='m1_pengguna.php'">Pengguna</button>
-                        <button class="btn btn-dark h6" id="staffmainpage">Kembali Ke e-Munakahat</button>
+                    <button class="btn btn-secondary h6">Laman Utama</button>
+                        <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php'">Profil</button>
+                        <button class="btn btn-success h6">Permohonan Berkahwin</button>
+                        <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-success h6">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-success h6">Laporan</button>
+                        <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
+                        <button class="btn btn-dark h6">Keluar</button> 
                     </div>
                 </div>
             </div>
@@ -47,8 +51,8 @@
             <div class="h-span-container">
                 <button class="navbar-button" id="hey">&#9776;</button>
                 <h4 class=".float-start">e-Munakahat</h4>
-                <img src="assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-                <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+                <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                 <div class="timedatebox">
                     <span id="date"></span>&nbsp;<span id="time"></span>
                 </div>
@@ -83,8 +87,8 @@
                             <th scope="col" style="width: 2%;">Bil</th>
                             <th scope="col" style="width: 18%;">No.KP</th>
                             <th scope="col" style="width: 30%;">Nama Pengguna</th>
-                            <th scope="col" style="width: 13%;">Peranan</th>
-                            <th scope="col" style="width: 13%;">Status</th>
+                            <th scope="col" style="width: 13%;">Jabatan</th>
+                            <th scope="col" style="width: 13%;">Peringkat Akses</th>
                             <th scope="col" style="width: 24%;" colspan="3">Operasi</th>
                         </tr>
                     </thead>
@@ -93,8 +97,8 @@
                             <td>1</td>
                             <td>011225112547</td>
                             <td>Mark</td>
-                            <td>Pengguna</td>
-                            <td>Aktif</td>
+                            <td>PAID Pekan</td>
+                            <td>Pengguna PAID</td>
                             <td>
                                 <img src="assets/img/update.png" alt="logopapar" class="imgflaticon">
                             </td>
@@ -108,7 +112,7 @@
                     </tbody>
                     </table>
                     <div style="padding-left: 100px;">
-                        <button class="btn btn-success" id="tambahpengguna" onclick="window.location.href='m1_addpengguna.php'" >Tambah Pengguna</button>
+                        <button class="btn btn-success" id="tambahpengguna" onclick="window.location.href='m1_addStaffAccount.php'" >Tambah Pengguna</button>
                     </div>
                 </div>
                 <br><br>

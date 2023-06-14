@@ -1,3 +1,34 @@
+body {
+    background-image: url('gam/img/agama1.jpg');
+    background-size: cover;
+   
+}
+
+<style>
+table ,th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+   th, td {
+         padding-top: 10px;
+         padding-bottom: 20px;
+         padding-left: 30px;
+         padding-right: 40px;
+      }
+
+      {
+        box-sizing: border-box;
+      }
+</style> 
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
 
 .red-asterisk {
     color: red;
@@ -38,7 +69,7 @@
     margin-left: 780px;
     justify-content: center;
     text-align: center;
-    box-shadow: 1px 1px 1px 1px rgb(67, 67, 234);
+    box-shadow: 1px 1px 1px 1px #0E5B24;
 }
 
 .float-hub {
@@ -88,7 +119,7 @@
 
 .content-of-module {
     margin-top: -8px;
-    background-color: #bbe0f7;
+    background-color:#b5dcc7;
     min-height: fit-content;
 }
 
@@ -102,13 +133,10 @@
     min-height: fit-content;
 }
 
-
-#formprofiletable, td, tr, th {
+#searchcoursetable, td, tr, th {
+    text-align: center;
     border: 2px solid black;
-    padding: 0.75rem;
-    border-collapse: collapse; 
-    border:none; 
-    margin-top: 20px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -130,11 +158,12 @@
 }
 
 #custalign {
-    width: inherit;
-    display: flex;
-    justify-content: center;
+    padding: 10px 10px 10px 10px;
 }
 
+.custcolor {
+    color: rgb(31.4, 78.4, 47.1);
+}
 
 #inputformpadding {
     margin-top: 10px;
@@ -147,3 +176,23 @@
 #inputboxstyle {
     width: 250px;
 }
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/jata-pahang.png">
+<link rel="shortcut icon" type="image/x-icon" href="../assets/img/jata-pahang.png">
 
 <!-- Theme CSS -->
 <!-- build:css @@webRoot/assets/css/theme.min.css -->
-<link rel="stylesheet" href="assets/css/login.css">
+
+<link rel="stylesheet" href="../assets/css/login.css">
+
 <!-- endbuild -->
 
-<script src="assets/js/login.js"></script>
+<script src="../assets/js/change-password.js"></script>
 
   <title>e-Munakahat</title>
 </head>
@@ -24,7 +25,7 @@
         <div class="position-sticky">
             <br><br><br><br><br><br>
             <div class="ps-12 pt-10">
-                <img src="assets/img/jata-pahang.png" alt="logo-persekutuan-malaysia" class="img-upper-interface ms-2">
+                <img src="../assets/img/jata-pahang.png" alt="logo-persekutuan-malaysia" class="img-upper-interface ms-2">
                 <h1 class="fw-medium text-white" style="font-size: 4em;">SISTEM</h1>
                 <h1 class="fw-medium text-white" style="font-size: 4em;">MAKLUMAT</h1>
                 <h1 class="fw-medium text-white" style="font-size: 4em;">PERKAHWINAN</h1>
@@ -45,17 +46,15 @@
                         <h4 class="text-white pt-2 ps-12 fs-2">e-Munakahat</h4>
                     </td>
                     <td>
-                        <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                        <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                     </td>
                 </tr>
             </table>
         </div>
         <div class="col-md-7 justify-content-end d-flex pt-2 pe-5">
-            
             &nbsp;&nbsp;&nbsp;<span class="fw-medium text-white" id="day"></span>
             &nbsp;&nbsp;&nbsp;<span class="fw-medium text-white" id="clock"></span>
         </div>
-        
     </nav>
   <!-- container -->
   <div class="content mt-23 pe-23">
@@ -64,16 +63,15 @@
           <!-- Card body -->
           <div class="card-body mt-10">
             <header>
-              <h2 > Log Masuk</h2>
+              <h2>Tukar Kata Laluan</h2>
             </header>
             <div>
               <p>Sila masukkan maklumat pengguna anda.</p>
               <p id="errorContainer" class="my-n3"></p>
-              <p id="successContainer" class="my-n3"></p>
               <hr class="mb-6">
             </div>
             <!-- Form -->
-            <form action="login.php" method="POST" onsubmit="return validateForm()">
+            <form action="../../business_service/controller/ManageLogin/ChangePasswordController.php" method="POST" onsubmit="return changepasswordData()">
               <!-- Username -->
               <div class="form-group">
                 <label for="icnum" class="form-label">No. Kad Pengenalan</label>
@@ -86,28 +84,31 @@
                 <input type="password" id="password" class="form-control" name="password" placeholder="**************" required>
                 <br>
               </div>
-              <!-- User Type -->
+              <!-- New Password -->
               <div class="form-group">
-                <label for="userType" class="form-label">Jenis Pengguna</label>
-                <select name="userType" class="form-select" id="userType">
-                  <option value="biasa">Pengguna</option>
-                  <option value="staff">Staff</option>
-                </select>
+                <label for="newpassword" class="form-label">Kata Laluan Baru</label>
+                <input type="password" id="newpassword" class="form-control" name="newpassword" placeholder="**************" required="">
+                <br>
+              </div>
+              <!-- Confirm Password -->
+              <div class="form-group">
+                <label for="confirmpassword" class="form-label">Ulang Kata Laluan Baru</label>
+                <input type="password" id="confirmpassword" class="form-control" name="confirmpassword" placeholder="**************" required="">
                 <br>
               </div>
               <div>
                 <!-- Button -->
                 <div class="d-grid ">
-                  <button type="submit" class="btn btn-primary" value="login">Masuk</button>
+                  <button type="submit" class="btn btn-primary" value="change-password">Tukar Kata Laluan</button>
                 </div>
                 <hr>
                 <div class="d-md-flex justify-content-center">
                   <div>
-                    <a href="m1_register.html" >Daftar Akaun</a>
+                    <a href="m1_login.php" >Log Masuk</a>
                     <a> | </a>
-                    <a href="m1_changepassword.html" class="text-inherit fs-5 p">Tukar Kata Laluan</a>
+                    <a href="m1_changepassword.php" class="text-inherit fs-5 p">Tukar Kata Laluan</a>
                     <a> | </a>
-                    <a href="m1_forgetpassword.html" class="text-inherit fs-5">Lupa Kata Laluan?</a>
+                    <a href="m1_forgetpassword.php" class="text-inherit fs-5">Lupa Kata Laluan?</a>
                   </div>
                 </div>
               </div>
