@@ -25,8 +25,8 @@ $(document).ready(function() {
         $('#time').text(time);
     }, 1000);
 
-    //close navbar - not working bodo punya default designer
-    $("#hey").on("click", function() {
-        alert("Call this number 0107730425");
-    });
+    // SIDEBAR MAIN ROUTING- DO FOR ALL INTERFACE
+    // user sidebar
+
+    // staff sidebar
 });
