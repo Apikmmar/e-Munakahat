@@ -46,6 +46,32 @@
         header("Location: ../ManageLoginView/m1_login.php");
         exit;
     }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Validate and sanitize user inputs
+        $updatedname = mysqli_real_escape_string($conn, $_POST['name']);
+        $updatedemel = mysqli_real_escape_string($conn, $_POST['emel']);
+        $updatedbangsa = mysqli_real_escape_string($conn, $_POST['bangsa']);
+        $updatedwarga = mysqli_real_escape_string($conn, $_POST['warga']);
+        $updatedphonenum = mysqli_real_escape_string($conn, $_POST['phonenum']);
+        $updatedpendidikan = mysqli_real_escape_string($conn, $_POST['pendidikan']);
+        $updatedaddress = mysqli_real_escape_string($conn, $_POST['address']);
+        $updatedcurrentaddress = mysqli_real_escape_string($conn, $_POST['currentaddress']);
+        $updatedpekerjaan = mysqli_real_escape_string($conn, $_POST['pekerjaan']);
+        $updatedjobaddress = mysqli_real_escape_string($conn, $_POST['jobaddress']);
+
+        // Update the complaint in the database
+        $updateSql = "UPDATE user_registration_info SET User_Name = '$updatedname', User_Email = '$updatedemel', User_Race = '$updatedbangsa', User_Nationality = '$updatedwarga', User_HP = '$updatedphonenum', User_Edu = '$updatedpendidikan', User_AddressInIC = '$updatedaddress', User_Address = '$updatedcurrentaddress', User_JobSector = '$updatedpekerjaan', User_JobAddress = '$updatedjobaddress' WHERE User_IC = $icnum";
+
+        if ($conn->query($updateSql) === true) {
+            echo "Complaint updated successfully.";
+            header("Location: m1_manageUserProfile.php");
+            // You can redirect the user to a different page or display a success message here
+        } else {
+            echo "Error updating user: ";
+            // You can handle the error scenario as per your requirements
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -263,7 +289,7 @@
                         </div>
                         <br>
                         <div class="btn-block d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary" href="m1_addpengguna.php">Kemas Kini</button>
+                            <button type="submit" class="btn btn-primary">Kemas Kini</button>
                         </div>
                     </form>
                 </div>
