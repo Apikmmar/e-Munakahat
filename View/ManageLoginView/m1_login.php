@@ -79,7 +79,7 @@
               <hr class="mb-6">
             </div>
             <!-- Form -->
-            <form action="../../../business_service/controller/ManageLogin/LoginController.php" method="POST" onsubmit="return loginData()">
+            <form action="../../business_service/controller/ManageLogin/LoginController.php" method="POST" onsubmit="return loginData()">
               <!-- Username -->
               <div class="form-group">
                 <label for="icnum" class="form-label">No. Kad Pengenalan</label>
