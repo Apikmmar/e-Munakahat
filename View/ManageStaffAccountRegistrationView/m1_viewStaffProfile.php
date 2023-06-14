@@ -1,5 +1,50 @@
 <?php
-    include "connection.php";
+    session_start();
+    // Create connection
+    $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat'); 
+    // Check connection
+    if (!$conn) {
+    echo 'Connection error: ' . mysqli_connect_error();
+    }
+    
+    // Check if the user is not logged in
+    if(!isset($_SESSION['icnum'])) {
+        header("Location: ../ManageLoginView/m1_login.php");
+        exit;
+    } else {
+        $icnum = $_SESSION['icnum'];
+        // Check if icnum already exists in the database
+        $query = "SELECT * FROM staff_registration_info WHERE Staff_IC = '$icnum'";
+        $result = mysqli_query($conn, $query);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $name = $row['Staff_Name'];
+            $akses = $row['Staff_AccessCategory'];
+            $jabatan = $row['Staff_PAID'];
+        }
+        if($_GET['staff_ic']) {
+            $icNumber = $_GET['staff_ic'];
+            // Check if icnum already exists in the database
+            $query = "SELECT * FROM staff_registration_info WHERE Staff_IC = '$icNumber'";
+            $result = mysqli_query($conn, $query);
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $nama = $row['Staff_Name'];
+                $jawatan = $row['Staff_Position'];
+                $access = $row['Staff_AccessCategory'];
+                $paid = $row['Staff_PAID'];
+                $emel = $row['Staff_Email'];
+                $gender = $row['Staff_Gender'];
+                $phonenum = $row['Staff_PhoneNo'];
+                $password = $row['Staff_Password'];
+            } else {
+                echo "User not found.";
+            }
+        } else {
+            header("Location: m1_staffUtility.php");
+            exit;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,15 +69,15 @@
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
                         <span>ID :<p></p></span>
-                        <span>Nama :<p></p></span>
-                        <span>Akses :<p></p></span>
-                        <span>Jabatan :<p></p></span>
+                        <span>Nama : <?php echo $name; ?><p></p></span>
+                        <span>Akses : <?php echo $akses; ?><p></p></span>
+                        <span>Jabatan : <?php echo $jabatan; ?><p></p></span>
                     </div>
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6">Laman Utama</button>
+                        <button class="btn btn-secondary h6" onclick="window.location.href='m1_homepagestaff.php'">Laman Utama</button>
                         <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php'">Profil</button>
                         <button class="btn btn-success h6">Permohonan Berkahwin</button>
                         <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
@@ -81,63 +126,71 @@
                                                 <label><b>No. Kad Pengenalan :</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <label>010203040506</label>
+                                                <label><?php echo $icNumber; ?></label>
                                             </td>
                                         </tr>
                                         <tr style="border:none; ">
                                             <td style="border:none;" >
-                                                <label><b>Nama Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                                <label><b>Nama Pengguna:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <label>010203040506</label>
+                                                <label><?php echo $nama; ?></label>
+                                            </td>
+                                        </tr>
+                                        <tr style="border:none; ">
+                                            <td style="border:none;" >
+                                                <label><b>Jantina:</b></label> &nbsp;
+                                            </td>
+                                            <td style="border:none;">
+                                                <label><?php echo $gender; ?></label>
+                                            </td>
+                                        </tr>
+                                        <tr style="border:none; ">
+                                            <td style="border:none;" >
+                                                <label><b>No. Telefon:</b></label> &nbsp;
+                                            </td>
+                                            <td style="border:none;">
+                                                <label><?php echo $phonenum; ?></label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
                                             <td style="border:none;" >
-                                                <label><b>Jawatan Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                                <label><b>Jawatan Pengguna:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <label>010203040506</label>
+                                                <label><?php echo $jawatan; ?></label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
                                             <td style="border:none;" >
-                                                <label><b>PAID<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                                <label><b>PAID:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <label>010203040506</label>
+                                                <label><?php echo $paid; ?></label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
                                             <td style="border:none;" >
-                                                <label><b>Kategori Akses<span class="red-asterisk">*</b></span>:</label> &nbsp;
+                                                <label><b>Kategori Akses:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <label>010203040506</label>
+                                                <label><?php echo $access; ?></label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
                                             <td style="border:none;" >
-                                                <label><b>Emel<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                                <label><b>Emel:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <label>010203040506</label>
+                                                <label><?php echo $emel; ?></label>
                                             </td>
                                         </tr>
                                         <tr style="border:none;">
                                             <td style="border:none;" >
-                                                <label><b>Status Pengguna<span class="red-asterisk">*</span>:</b></label> &nbsp;
+                                                <label><b>Kata Laluan:</b></label> &nbsp;
                                             </td>
                                             <td style="border:none;">
-                                                <label>010203040506</label>
-                                            </td>
-                                        </tr>
-                                        <tr style="border:none;">
-                                            <td style="border:none;" >
-                                                <label><b>Kata Laluan<span class="red-asterisk">*</span>:</b></label> &nbsp;
-                                            </td>
-                                            <td style="border:none;">
-                                                <label>010203040506</label>
+                                                <label><?php echo $password; ?></label>
                                             </td>
                                         </tr>
                                     </table>
@@ -147,8 +200,9 @@
                         </div>
                         <br>
                         <div class="btn-block d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success" href="m1_pengguna.php">Kemas Kini</button>
+                            <a class="btn btn-secondary" href="m1_staffUtility.php" >Kembali</a>
                         </div>
+                        <br>
                     </form>
                 </div>
             </div>

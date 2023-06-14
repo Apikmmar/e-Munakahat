@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require '../../database/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +32,15 @@
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6" id="staffprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-success h6" id="regcourseven">Maklumat Taklimat</button>
-                        <button class="btn btn-success h6" id="appcourseapp">Maklumat Peserta</button>
-                        <button class="btn btn-dark h6" id="staffmainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-secondary h6" onclick="window.location.href='m1_homepagestaff.php'">Laman Utama</button>
+                        <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php'">Profil</button>
+                        <button class="btn btn-success h6">Permohonan Berkahwin</button>
+                        <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-success h6">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-success h6">Laporan</button>
+                        <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
+                        <button class="btn btn-dark h6">Keluar</button> 
                     </div>
                 </div>
             </div>
