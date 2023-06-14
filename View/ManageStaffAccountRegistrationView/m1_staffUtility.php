@@ -58,14 +58,14 @@
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
                     <button class="btn btn-secondary h6" onclick="window.location.href='m1_homepagestaff.php'">Laman Utama</button>
-                        <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php'">Profil</button>
+                        <button class="btn btn-success h6" onclick="window.location.href='m1_viewStaffProfile.php?staff_ic=<?php echo $icnum;?>'">Profil</button>
                         <button class="btn btn-success h6">Permohonan Berkahwin</button>
                         <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
                         <button class="btn btn-success h6">Khidmat Nasihat</button>
                         <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
                         <button class="btn btn-success h6">Laporan</button>
                         <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
-                        <button class="btn btn-dark h6">Keluar</button> 
+                        <button class="btn btn-success h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
                     </div>
                 </div>
             </div>
