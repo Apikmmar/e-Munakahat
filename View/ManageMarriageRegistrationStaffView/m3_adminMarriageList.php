@@ -1,6 +1,8 @@
 <?php
-include('../database/connection.php');
+// Database connection settings done
+include 'connection.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,20 +13,15 @@ include('../database/connection.php');
   <title>e-Munakahat</title>
   <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/css/module3.css">
+  <!-- external stylesheet -->
+  <link rel="stylesheet" href="../assets/css/module3.css">
 
+  <!-- internal stylesheet -->
   <style>
     table {
       width: 100%;
       border-collapse: collapse;
     }
-
-    /* th,
-    td {
-      border: 1px solid black;
-      padding: 8px;
-    } */
 
     th {
       background-color: #f2f2f2;
@@ -42,7 +39,6 @@ include('../database/connection.php');
       right: 20px;
     }
   </style>
-
 </head>
 
 <body>
@@ -53,21 +49,17 @@ include('../database/connection.php');
         <br>
         <div class="p-2 mb-1 bg-info text-white">
           <div class="userdata">
-
             ID : 710204070801
-
             <br>
             Nama :Hamsha Bin Hamdan
             <br>
-
             Akses :Kakitangan
             <br>
-
             Jabatan :Jabatan Agama Islam Negeri Pahang
-
           </div>
         </div>
         <br>
+        <!-- navigation bar (left side) -->
         <div class="d-flex justify-content-center">
           <div class="list-group" style="width: 16rem;">
             <button class="btn btn-secondary h6">Laman Utama</button>
@@ -84,8 +76,7 @@ include('../database/connection.php');
         </div>
       </div>
     </nav>
-
-    <!-- navbar -->
+    <!-- title bar -->
     <nav class="p-1 mb-1 bg-primary text-white justify-content-center fixed-top">
       <div class="h-span-container">
         <button class="navbar-button" id="hey">&#9776;</button>
@@ -108,8 +99,6 @@ include('../database/connection.php');
       </div>
       <div class="content-of-module-admin">
         <div style="padding: 20px 0px 20px 6px">
-
-
           <h5 style="color:black;"> &nbsp; Senarai Permohonan Nikah </h5>
           <table style="width: 100%;border-collapse: collapse;">
             <tr>
@@ -117,25 +106,26 @@ include('../database/connection.php');
               <th style=" width:360px; background-color: grey">No.KP / Nama Suami</th>
               <th style=" width:350px; background-color: grey">No.KP / Nama Isteri</th>
               <th style=" width:400px; background-color: grey">No.Akuan Terima</th>
-              <th style=" width:360px; background-color: grey">Tarikh Terima</th>
+              <th style=" width:360px;
+background-color: grey">Tarikh Terima</th>
               <th style=" width:300px; background-color: grey">Status</th>
               <th style=" width:400px; background-color: grey">Operasi</th>
             </tr>
             <tr>
-              <td style="width: 10px; background-color: white;" ">1</td>
+              <td style="width: 10px; background-color: white;" ">1</td> 
               <td style=" width: 360px; background-color: white;">011011011111 <br>Ali Bin Abu</td>
               <td style="width: 350px; background-color: white;">000202022222 <br>Aliya Binti Abdul</td>
               <td style="width: 400px; background-color: white;">KTM2M3/2023-001</td>
               <td style="width:360px; background-color: white;">2023-01-01</td>
               <td style="color:green; width:300px; background-color: white;">Untuk Diluluskan</td>
               <td style="color:green; width:400px; background-color: white;">
+                <!-- viewFile -->
                 <img class=" icon" src="img/view.png" onclick="viewRecord(1)">
+                <!-- editFile -->
                 <img class="icon" src="img/edit.png" onclick="editRecord(1)">
                 <a href="M3_adminApproveM.php"><img class="icon" src="img/approved.png" onclick="approveRecord(1)"></a>
-
                 <!-- downloadFile -->
                 <button style="border:none;" onclick="downloadFile()"><img class="icon" src="img/print.png"></button>
-
                 <script>
                   function downloadFile() {
                     var filename = 'Borang Pendaftaran Nikah 001.php';
@@ -153,15 +143,15 @@ include('../database/connection.php');
                     document.body.removeChild(element);
                   }
                 </script>
+                <!-- deleteFile -->
                 <img class="icon" src="img/delete.png" onclick="deleteRecord(1)">
               </td>
             </tr>
-
           </table>
           <br>
           <div> <a href="M3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
 
-         
+          <!-- external link to js file -->
           </script>
           <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
