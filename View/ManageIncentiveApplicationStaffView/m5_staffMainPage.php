@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+    echo 'Connection error: ' . mysqli_connect_error();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -30,11 +37,15 @@
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
-                    <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6" id="staffprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-success h6" id="regcourseven">Maklumat Taklimat</button>
-                        <button class="btn btn-success h6" id="appcourseapp">Maklumat Peserta</button>
-                        <button class="btn btn-dark h6" id="staffmainpage">Kembali Ke e-Munakahat</button>
+                <div class="list-group" style="width: 16rem;">
+                        <button class="btn btn-secondary h6" id="">Laman Utama</button>
+                        <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
+                        <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6" id="staffapplymainpage">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
+                        <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6" id="">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -80,7 +91,7 @@
                     <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
                         <thead>
                             <tr style="background-color: #D3D3D3;">
-                                <th scope="col">Bil</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">No.KP / Nama Suami</th>
                                 <th scope="col">No.KP / Nama Isteri</th>
                                 <th scope="col">Tarikh Mohon</th>
@@ -89,20 +100,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>931882-06-0061<br>Muhammad Abu bin Seman</td>
-                                <td>931882-06-0061<br>Siti Nur Fathiah binti Asnul</td>
-                                <td>12/6/2023</td>
-                                <td>Dalam Proses</td>
-                                <td>
-                                    <a href="m5_staffUpdateApplicationStatus.php"><img src="../assets/img/edit.png" alt="logopapar"
-                                            class="imgflaticon"></a>
-                                </td>
-                                <td>
-                                    <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
-                                </td>
-                            </tr>
+                            <?php
+                            $sql = "SELECT * FROM incentive_application";
+                            $result = $conn->query($sql);
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $IA_ID = $row['IA_ID'];
+                                $tarikhmohon = $row['IA_ApplyDate'];
+                                $status = $row['IA_Status'];
+                                ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $IA_ID; ?>
+                                    </td>
+                                    <td>931882-06-0061<br>Muhammad Abu bin Seman</td>
+                                    <td>931882-06-0061<br>Siti Nur Fathiah binti Asnul</td>
+                                    <td><?php echo $tarikhmohon; ?></td>
+                                    <td><?php echo $status; ?></td>
+                                    <td>
+                                        <a href="m5_staffUpdateApplicationStatus.php?IA_ID=<?php echo $IA_ID; ?>"><img src="../assets/img/edit.png"
+                                                alt="logopapar" class="imgflaticon"></a>
+                                    </td>
+                                    <td>
+                                    <a onclick="return confirm('Are you sure you want to delete?')" href="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php?IA_ID=<?php echo $IA_ID; ?>"><img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon"></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

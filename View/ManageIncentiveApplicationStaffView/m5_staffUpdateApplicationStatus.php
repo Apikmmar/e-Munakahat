@@ -1,5 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+    echo 'Connection error: ' . mysqli_connect_error();
+}
+
+$IA_ID = $_GET['IA_ID'];
+$_SESSION['IA_ID'] = $_GET['IA_ID'];
+
+$query = "SELECT * FROM incentive_application where IA_ID =$IA_ID";
+$result = mysqli_query($conn, $query);
+while ($row = mysqli_fetch_assoc($result)) {
+    $namawaris = $row['HI_Name'];
+    $hubunganwaris = $row['HI_Relationship'];
+    $notelwaris = $row['HI_PhoneNo'];
+    $pendapatanpasangan = $row['IA_PartnerSalary'];
+    $tempatlahirpasangan = $row['IA_PartnerPOB'];
+    $tempatlahir = $row['IA_POB'];
+    $akuanbank = $row['IA_BankAccount'];
+    $namabank = $row['IA_BankName'];
+    $applydate = $row['IA_ApplyDate'];
+    $User_IC = $row['User_IC'];
+    $Staff_IC = $row['Staff_IC'];
+    $status = $row['IA_Status'];
+?>
+<?php
+}
+
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -41,10 +72,15 @@
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6" id="staffprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-success h6" id="regcourseven">Maklumat Taklimat</button>
-                        <button class="btn btn-success h6" id="appcourseapp">Maklumat Peserta</button>
-                        <button class="btn btn-dark h6" id="staffmainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-secondary h6" id="">Laman Utama</button>
+                        <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
+                        <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6" id="staffapplymainpage">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
+                        <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan
+                            Pengantin</button>
+                        <button class="btn btn-dark h6" id="">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -70,7 +106,7 @@
         <!-- content -->
         <div class="content-admin">
             <div class="p-2 mb-2 bg-success text-white">
-                <span class="h6 text-uppercase">DAFTAR TAKLIMAT</span>
+                <span class="h6 text-uppercase">PERMOHONAN BANTUAN INSENTIF</span>
             </div>
             <div class="content-of-module-admin">
                 <div id="custalign">
@@ -121,11 +157,15 @@
                         </tr>
                         <tr>
                             <td>No. Akaun bank</td>
-                            <td>: 3812359818235</td>
+                            <td>:
+                                <?php echo $akuanbank ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nama Bank</td>
-                            <td>: Maybank</td>
+                            <td>:
+                                <?php echo $namabank ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nama</td>
@@ -145,11 +185,13 @@
                         </tr>
                         <tr>
                             <td>Tempat lahir</td>
-                            <td>: Kuantan, Pahang</td>
+                            <td>:
+                                <?php echo $tempatlahir ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Kewarganegaraan</td>
-                            <td>: SSWarganegara</td>
+                            <td>: Warganegara</td>
                         </tr>
                     </table>
                     <br>
@@ -175,7 +217,9 @@
                         </tr>
                         <tr>
                             <td>Pendapatan</td>
-                            <td>: RM2500.00</td>
+                            <td>:
+                                <?php echo $pendapatanpasangan ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>No.Telefon</td>
@@ -187,7 +231,9 @@
                         </tr>
                         <tr>
                             <td>Tempat lahir</td>
-                            <td>: Pekan, Pahang</td>
+                            <td>:
+                                <?php echo $tempatlahirpasangan ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Kewarganegaraan</td>
@@ -223,15 +269,21 @@
                     <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Nama Waris</td>
-                            <td>: Idris bin Abu Wahab</td>
+                            <td>:
+                                <?php echo $namawaris ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Hubungan</td>
-                            <td>: Sepupu</td>
+                            <td>:
+                                <?php echo $hubunganwaris ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>No. Tel</td>
-                            <td>: 013-8237112</td>
+                            <td>:
+                                <?php echo $notelwaris ?>
+                            </td>
                         </tr>
                     </table>
                     <br>
@@ -241,26 +293,29 @@
                     <table style="table-layout: fixed;width:70%">
                         <tr>
                             <td>Tarikh Permohonan</td>
-                            <td>: 12/6/2023</td>
+                            <td>:
+                                <?php echo $applydate ?>
+                            </td>
                         </tr>
                         <tr>
-                            <form>
+                            <form
+                                action="../../Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php"
+                                method="post">
                                 <td>Pengesahan</td>
-                                <td><select class="form-select" aria-label="Default select example" id="inputboxstyle2"
-                                        required>
+                                <td><select class="form-select" aria-label="Default select example" id="status"
+                                        name="status" required>
                                         <option selected value="No val" disabled>Sila pilih</option>
                                         <option value="Diterima">Terima</option>
                                         <option value="Ditolak">Tolak</option>
                                     </select></td>
-                            </form>
-
                         </tr>
                     </table>
                     <br><br>
                     <div style="  margin: auto; width: 50%;">
-                        <button type="btn" id="backtostaffmainpage" class="btn btn-primary">Kembali</button>
-                        <button type="submit" name="Submit" value="Simpan" class="btn btn-primary">Simpan</button>
+                        <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan</button>
                     </div>
+                    </form>
+
 
                 </div>
                 <br><br>
