@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/jata-pahang.png">
+<link rel="shortcut icon" type="image/x-icon" href="../assets/img/jata-pahang.png">
 
 <!-- Theme CSS -->
 <!-- build:css @@webRoot/assets/css/theme.min.css -->
 
-<link rel="stylesheet" href="assets/css/login.css">
+<link rel="stylesheet" href="../assets/css/login.css">
 <!-- endbuild -->
 
-<script src="assets/js/forget-password.js"></script>
+<script src="../assets/js/forget-password.js"></script>
 
   <title>e-Munakahat</title>
 </head>
@@ -25,7 +24,7 @@
         <div class="position-sticky">
             <br><br><br><br><br><br>
             <div class="ps-12 pt-10">
-                <img src="assets/img/jata-pahang.png" alt="logo-persekutuan-malaysia" class="img-upper-interface ms-2">
+                <img src="../assets/img/jata-pahang.png" alt="logo-persekutuan-malaysia" class="img-upper-interface ms-2">
                 <h1 class="fw-medium text-white" style="font-size: 4em;">SISTEM</h1>
                 <h1 class="fw-medium text-white" style="font-size: 4em;">MAKLUMAT</h1>
                 <h1 class="fw-medium text-white" style="font-size: 4em;">PERKAHWINAN</h1>
@@ -46,7 +45,7 @@
                         <h4 class="text-white pt-2 ps-12 fs-2">e-Munakahat</h4>
                     </td>
                     <td>
-                        <img src="assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+                        <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
                     </td>
                 </tr>
             </table>
@@ -73,17 +72,17 @@
               <hr class="mb-6">
             </div>
             <!-- Form -->
-            <form action="forget-password.php" method="POST" onsubmit="return validateForm()">
+            <form action="../../business_service/controller/ManageLogin/ForgetPasswordController.php" method="POST" onsubmit="return forgetpasswordData()">
               <!-- Username -->
               <div class="form-group">
                 <label for="icnum" class="form-label">No. Kad Pengenalan</label>
-                <input type="text" id="icnum" class="form-control" name="icnum" placeholder="" required="">
+                <input type="text" id="icnum" class="form-control" name="icnum" placeholder="" required>
                 <br>
               </div>
               <!-- Password -->
               <div class="form-group">
                 <label for="email" class="form-label">Emel</label>
-                <input type="email" id="email" class="form-control" name="email" placeholder="" required="">
+                <input type="email" id="email" class="form-control" name="email" placeholder="" required>
                 <br>
               </div>
               <div>
@@ -94,11 +93,11 @@
                 <hr>
                 <div class="d-md-flex justify-content-center">
                   <div>
-                    <a href="m1_login.html">Log Masuk</a>
+                    <a href="m1_login.php">Log Masuk</a>
                     <a> | </a>
-                    <a href="m1_changepassword.html" class="text-inherit fs-5 p">Tukar Kata Laluan</a>
+                    <a href="m1_changepassword.php" class="text-inherit fs-5 p">Tukar Kata Laluan</a>
                     <a> | </a>
-                    <a href="m1_forgetpassword.html" class="text-inherit fs-5">Lupa Kata Laluan?</a>
+                    <a href="m1_forgetpassword.php" class="text-inherit fs-5">Lupa Kata Laluan?</a>
                   </div>
                 </div>
               </div>
