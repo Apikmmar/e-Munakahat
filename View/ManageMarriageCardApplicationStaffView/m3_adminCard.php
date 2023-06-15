@@ -1,6 +1,6 @@
 <?php
-// Database connection settings done
-include 'connection.php';
+session_start();
+require '../../database/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include 'connection.php';
   <title>e-Munakahat</title>
   <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  
+
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
@@ -44,12 +44,12 @@ include 'connection.php';
             <button class="btn btn-secondary h6">Laman Utama</button>
             <button class="btn btn-success h6">Profil</button>
             <button class="btn btn-success h6">Permohonan Berkahwin</button>
-            <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
+            <button class="btn btn-dark h6">Pendaftaran Perkahwinan</button>
             <button class="btn btn-success h6">Khidmat Nasihat</button>
             <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
             <button class="btn btn-success h6">Laporan</button>
             <button class="btn btn-success h6">Pengguna</button>
-            <button class="btn btn-dark h6">Keluar</button>
+            <button class="btn btn-success h6">Keluar</button>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
           </div>
         </div>
@@ -60,8 +60,8 @@ include 'connection.php';
       <div class="h-span-container">
         <button class="navbar-button" id="hey">&#9776;</button>
         <h4 class=".float-start">e-Munakahat</h4>
-        <img src="img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-        <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+        <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+        <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
         <div class="timedatebox">
           <span id="date"></span>&nbsp;<span id="time"></span>
         </div>
@@ -78,10 +78,10 @@ include 'connection.php';
       </div>
       <div class="content-of-module-admin">
         <div style="padding: 20px 0px 20px 6px">
-          <button><a style="text-decoration:none;" href="M3_adminMarriage.php">
+          <button><a style="text-decoration:none;" href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php">
               <h6 style="color:black;">Mohon Pengesahan Nikah</h6>
             </a></button>
-          <button class=" btn btn-secondary"><a style="text-decoration:none;" href="M3_adminCard.php">
+          <button class=" btn btn-secondary"><a style="text-decoration:none;" href="../ManageMarriageRegistrationStaffView/m3_adminCard.php">
               <h6 style="color:white;">Mohon Pengesahan Kad Nikah Dan Sijil</h6>
             </a></button><br><br><br>
           <b>No.K/P Suami </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="blue">: Ali Bin Abu</b><br><br>
@@ -93,12 +93,12 @@ include 'connection.php';
             <option value="lulus">lulus</option>
             <option value="gagal">gagal</option>
           </select>
-          <div style="padding: 10px 0px 20px 700px"><a href="m3_adminCardList.php"><button class=" btn btn-success">Carian</button></a></div>
+          <div style="padding: 10px 0px 20px 700px"><a href="../ManageMarriageCardApplicationStaffView/m3_adminCardList.php"><button class=" btn btn-success">Carian</button></a></div>
         </div>
       </div>
     </div>
     <!-- external link to js file -->
-    <script src="javascript.js" defer></script>
+    <script src="../assets/js/javascript.jss" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

@@ -11,7 +11,7 @@ include 'connection.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>e-Munakahat</title>
-  <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
+  <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/css/module3.css">
@@ -53,8 +53,8 @@ include 'connection.php';
       <div class="h-span-container">
         <button class="navbar-button" id="hey">&#9776;</button>
         <h4 class=".float-start">e-Munakahat</h4>
-        <img src="img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-        <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+        <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+        <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
         <div class="timedatebox">
           <span id="date"></span>&nbsp;<span id="time"></span>
         </div>
@@ -86,7 +86,7 @@ include 'connection.php';
             </a></button>
 
           <!-- downloadFile -->
-          <button onclick="downloadFile()"><img class=" img-printer " src=" img/printer.png" alt="print not function"></button>
+          <button onclick="downloadFile()"><img class=" img-printer " src="../assets/img/print.png" alt="print not function"></button>
           <script>
             function downloadFile() {
               var filename = 'Borang Pendaftaran Nikah.php';
@@ -343,7 +343,7 @@ include 'connection.php';
           <h5 id="senarai">Senarai Semak</h5>
         </div>
         <div class="p-2 mb-2 bg-secondary text-white"><b>Dokumen yang perlu muat naik</b> &nbsp;<button>
-            <img class=" img-upload " src=" img/upload.png" alt="upload documents not function">
+            <img class=" img-upload " src=" ../assets/img/upload.png" alt="upload documents not function">
           </button></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -378,15 +378,15 @@ include 'connection.php';
               </div>
             </fieldset>
           </span>
-          <a href="m3_marriageStatusB.php"><button style="float:right">simpan</button></a>
-          <a href="m3_marriageStatusA.php"><button style="float:right">Hantar</button></a>
+          <a href="../ManageMarriageRegistrationUserView/m3_marriageStatusB.php"><button style="float:right">simpan</button></a>
+          <a href="../ManageMarriageRegistrationUserView/m3_marriageStatusA.php"><button style="float:right">Hantar</button></a>
         </div>
       </div>
       <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
       </section>
 
       <!-- external link to js file -->
-      <script src="javascript.js" defer></script>
+      <script src="../assets/js/javascript.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
