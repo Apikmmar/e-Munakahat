@@ -31,12 +31,12 @@
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6">Profil</button>
-                        <button class="btn btn-primary h6">Permohonan Berkahwin</button>
-                        <button class="btn btn-primary h6">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-primary h6">Khidmat Nasihat</button>
-                        <button class="btn btn-primary h6">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6">Keluar</button>
+                        <button class="btn btn-primary h6" id="userloginmainpage">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
                     </div>
                 </div>
             </div>

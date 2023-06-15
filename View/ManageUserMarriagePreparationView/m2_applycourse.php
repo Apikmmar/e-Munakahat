@@ -35,7 +35,7 @@
                         <button class="btn btn-primary h6" id="daftarcourse">Daftar Kursus</button>
                         <button class="btn btn-primary h6" id="tangguhkursus">Tangguh Kursus</button>
                         <button class="btn btn-primary h6" id="printslippermohonan">Cetak Slip Permohonan</button>
-                        <button class="btn btn-dark h6" id="usermainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-dark h6" id="userloginmainpage">Kembali Ke e-Munakahat</button>
                     </div>
                 </div>
             </div>

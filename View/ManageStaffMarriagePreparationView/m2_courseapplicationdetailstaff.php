@@ -36,7 +36,7 @@
                         <button class="btn btn-secondary h6" id="staffprepcoursemainpage">Laman Utama</button>
                         <button class="btn btn-success h6" id="regcourseven">Maklumat Taklimat</button>
                         <button class="btn btn-success h6" id="appcourseapp">Maklumat Peserta</button>
-                        <button class="btn btn-dark h6" id="staffmainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-dark h6" id="staffloginmainpage">Kembali Ke e-Munakahat</button>
                     </div>
                 </div>
             </div>
