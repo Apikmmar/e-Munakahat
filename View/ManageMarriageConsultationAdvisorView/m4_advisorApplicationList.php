@@ -26,6 +26,7 @@
                 </div>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
+<<<<<<< HEAD
                         <button class="btn btn-success h6" id="profilpenasihat">Profil</button>
                         <button class="btn btn-success h6" id="home">Kursus Pra-Perkahwinan</button>
                         <button class="btn btn-success h6" id="mohonkahwin">Permohonan Berkahwin</button>
@@ -33,6 +34,16 @@
                         <button class="btn btn-success h6" id="khidmat">Khidmat Nasihat</button>
                         <button class="btn btn-success h6" id="insentif">Insentif Khas Pasangan Pengantin</button>
                         <button class="btn btn-success h6" id="exit">Keluar</button>
+=======
+                        <button class="btn btn-secondary h6" id="">Laman Utama</button>
+                        <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
+                        <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
+                        <button class="btn btn-success h6" id="staffapplymainpage">Kebenaran Berkahwin</button>
+                        <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
+                        <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6" id=""  onclick="window.location.href='../ManageLoginView/m1_login.php'">Keluar</button>
+>>>>>>> 1ece4bcc013c5acf5f6205d57c5299626cdc5920
                     </div>
                 </div>
         </nav>
@@ -152,7 +163,7 @@
         </div>
     </div>
 
-    <script src="javascript.js" defer></script>
+    <script src="../assets/js/javascript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>

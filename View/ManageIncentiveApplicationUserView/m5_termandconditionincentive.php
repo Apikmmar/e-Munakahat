@@ -28,12 +28,13 @@
                 </div>
                 <br><br>
                 <div class="d-flex justify-content-center">
-                    <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-primary h6" id="daftarcourse">Daftar Kursus</button>
-                        <button class="btn btn-primary h6" id="tangguhkursus">Tangguh Kursus</button>
-                        <button class="btn btn-primary h6" id="printslippermohonan">Cetak Slip Permohonan</button>
-                        <button class="btn btn-dark h6" id="usermainpage">Kembali Ke e-Munakahat</button>
+                <div class="list-group" style="width: 16rem;">
+                        <button class="btn btn-primary h6" id="userloginmainpage">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6">Keluar</button>
                     </div>
                 </div>
             </div>

@@ -31,12 +31,12 @@
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6">Profil</button>
+                        <button class="btn btn-primary h6"  id="">Profil</button>
                         <button class="btn btn-primary h6" id="marriageapply">Permohonan Berkahwin</button>
-                        <button class="btn btn-primary h6">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-primary h6">Khidmat Nasihat</button>
-                        <button class="btn btn-primary h6">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6">Keluar</button>
+                        <button class="btn btn-primary h6" id="">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="">Khidmat Nasihat</button>
+                        <button class="btn btn-primary h6" id="">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6" id="">Keluar</button>
                     </div>
                 </div>
             </div>

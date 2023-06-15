@@ -11,57 +11,79 @@ $(document).on("click", "button", function() {
     do something here
 });
 */
-$(document).ready(function() {
+$(document).ready(function () {
     console.log("module5 jquery is on");
 
     // Kembali button
-    $(document).on("click", "#backtousermainpage", function() {
+    $(document).on("click", "#backtousermainpage", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userMainPage.php';
     });
 
     // Kembali button
-    $(document).on("click", "#backtouserupload", function() {
+    $(document).on("click", "#backtouserupload", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userUploadDocument.php';
     });
 
     // Kembali button
-    $(document).on("click", "#backtoinputapplicantinfo", function() {
+    $(document).on("click", "#backtoinputapplicantinfo", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userInputApplicantInformation.php';
     });
 
     // Kembali button
-    $(document).on("click", "#backtoinputpartnerinfo", function() {
+    $(document).on("click", "#backtoinputpartnerinfo", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userInputPartnerInformation.php';
     });
-    
+
     // Kembali button
-    $(document).on("click", "#backtoeditapplicantinfo", function() {
+    $(document).on("click", "#backtoeditapplicantinfo", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userEditApplicantInformation.php';
     });
 
     // Kembali button
-    $(document).on("click", "#backtoeditpartnerinfo", function() {
+    $(document).on("click", "#backtoeditpartnerinfo", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userEditPartnerInformation.php';
     });
 
     // Kembali button
-    $(document).on("click", "#backtousermainpage", function() {
+    $(document).on("click", "#backtousermainpage", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userMainPage.php';
     });
 
     // Staff Kembali button
-    $(document).on("click", "#backtostaffmainpage", function() {
+    $(document).on("click", "#backtostaffmainpage", function () {
         window.location.href = '../ManageIncentiveApplicationStaffView/m5_staffMainPage.php';
     });
 
     // Mohon button
-    $(document).on("click", "#mohonbantuan", function() {
+    $(document).on("click", "#mohonbantuan", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_userUploadDocument.php';
     });
     // terma dan syarat page
-    $(document).on("click", "#termadansyarat", function() {
+    $(document).on("click", "#termadansyarat", function () {
         window.location.href = '../ManageIncentiveApplicationUserView/m5_termandconditionincentive.php';
     });
+
+    function getSuccessMessage() {
+        var urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('success');
+    }
+
+    function displaySuccessMessage() {
+        const successMessage = getSuccessMessage();
+        if (successMessage) {
+            const successContainer = document.getElementById('successContainer');
+            successContainer.textContent = successMessage;
+            successContainer.style.color = 'blue'; // Set the text color to red
+        }
+    }
+
+    window.addEventListener('load', displaySuccessMessage);
+
+    function confirmDelete(delUrl) {
+        if (confirm("Are you sure you want to delete")) {
+            document.location = delUrl;
+        }
+    }
 
 
 

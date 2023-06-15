@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 session_start();
+require_once '../../Business_Service/Controller/ManageIncentiveApplication/UserManageIncentiveApplicationController.php';
 $_SESSION['pendapatanpasangan'] = $_POST['pendapatanpasangan'];
 $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
 ?>
@@ -32,12 +33,13 @@ $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
                 </div>
                 <br><br>
                 <div class="d-flex justify-content-center">
-                    <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Laman Utama</button>
-                        <button class="btn btn-primary h6" id="daftarcourse">Daftar Kursus</button>
-                        <button class="btn btn-primary h6" id="tangguhkursus">Tangguh Kursus</button>
-                        <button class="btn btn-primary h6" id="printslippermohonan">Cetak Slip Permohonan</button>
-                        <button class="btn btn-dark h6" id="usermainpage">Kembali Ke e-Munakahat</button>
+                <div class="list-group" style="width: 16rem;">
+                        <button class="btn btn-primary h6" id="userloginmainpage">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -66,7 +68,7 @@ $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
             </div>
             <div class="content-of-module">
                 <div id="custalign">
-                    <form action="m5_userMainPage.php" method="post">
+                    <form action="m5_userInputHeirInformation.php" method="post">
                         <div>
                             <div id="inputformpadding">
                                 <em>Ruangan yang bertanda [<span class="red-asterisk">*</span>] adalah WAJIB diisi</em>
@@ -136,3 +138,30 @@ $_SESSION['tempatlahirpasangan'] = $_POST['tempatlahirpasangan'];
 </body>
 
 </html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['namawaris']) && isset($_POST['hubunganwaris']) && isset($_POST['notelwaris'])) {
+        $namawaris = $_POST['namawaris'];
+        $hubunganwaris = $_POST['hubunganwaris'];
+        $notelwaris = $_POST['notelwaris'];
+        $pendapatanpasangan = $_SESSION['pendapatanpasangan'];
+        $tempatlahirpasangan = $_SESSION['tempatlahirpasangan'];
+        $tempatlahir = $_SESSION['tempatlahir'];
+        $akuanbank = $_SESSION['akuanbank'];
+        $namabank = $_SESSION['namabank'];
+        $applydate = date("d-m-Y");
+        $User_IC = "011221060079";
+        $Staff_IC = "111221060079";
+        $status = "Dalam Proses";
+        $DI_ICCopy = "ICCopy";
+        $DI_AkadNikahCopy = "AkadNikahCopy";
+        $DI_BankAccountCopy = "DI_BankAccountCopy";
+        $DI_SupportDocument = "DI_SupportDocument";
+        
+
+        $db = new IncentiveApplication();
+        $db->userIA_create($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$pendapatanpasangan, $User_IC,$Staff_IC,$DI_ICCopy,$DI_AkadNikahCopy,$DI_BankAccountCopy,$DI_SupportDocument,$namawaris,$hubunganwaris,$notelwaris);
+        $db->closeConnection();
+    }
+}
+?>
