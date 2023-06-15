@@ -30,13 +30,10 @@
                 
                 <div class="d-flex justify-content-center">
                    <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-success h6" id="profilpenasihat">Profil</button>
-                        <button class="btn btn-success h6" id="home">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-success h6" id="mohonkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-success h6" id="daftarkahwin">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-success h6" id="khidmat">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6" id="insentif">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6" id="exit">Keluar</button>
+                   <button class="btn btn-success h6" id="first">Laman Utama</button>
+                    <button class="btn btn-success h6" id="list">Senarai Permohonan</button>
+                    <button class="btn btn-success h6" id="schedule">Jadual Sesi Konsultasi</button>
+                    <button class="btn btn-dark h6" id="exit">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -78,7 +75,7 @@
 
         <!-- content -->
         <div class="content">
-            <div class="p-2 mb-2 bg-primary text-white">
+        <div class="p-2 mb-2 text-white" style="background-color:green;">
                 <span class="h6">Khidmat Nasihat - Permohonan Khidmat Nasihat</span>
             </div>
             <div class="content-of-module">
@@ -94,9 +91,9 @@
                                         <div class="row">
                                             <div class="column">
                                             <h6>Maklumat Pengadu</h6>
-                                            <label for="nama1">Nama: Hasan bin Ahmad Kamarul</label><br><br>
+                                            <label for="nama1">Nama: Aminudin bin Baki</label><br><br>
                                         
-                                            <label for="kp1">No. Kad Pengenalan: 900330009821 </label><br><br>
+                                            <label for="kp1">No. Kad Pengenalan: 900312110321 </label><br><br>
                                       
                                             <label for="alamat1">Alamat: NO 24, JALAN KEMPADANG, KUANTAN, PAHANG</label><br><br>
                                            
@@ -121,11 +118,12 @@
                                         <div><label for="phone1">Keterangan aduan: Sudah ditegur namun tiada perubahan. Perlu berjumpa penasihat.</label><br>
                                             
                         </div>
-                        <br><br><br><div><button type="submit" style="background-color:green;" class="btn btn-primary">PERLU KHIDMAT NASIHAT</button></div><br>
+                        <br><br><br><div><button type="submit" style="background-color:green;" class="btn btn-primary">
+                        <a href="m4_advisorScheduleSession.php">PERLU KHIDMAT NASIHAT</a></button></div><br>
                         <br><div><button type="submit" style="background-color:green;" class="btn btn-primary">TIDAK MEMERLUKAN KHIDMAT NASIHAT</button></div><br>
                         <br>
                     </form>
-                    <div><button onclick="myFunction()" class="btn btn-primary" style="background-color:green;">Kemaskini<type="submit" ></button></div>                
+                    <div><button type="submit"><a href="m4_advisorUpdatePage.php">Permohonan Baru</a></button></div>                
                 </div>
             </div>
         </div>

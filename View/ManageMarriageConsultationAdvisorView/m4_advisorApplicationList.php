@@ -25,16 +25,13 @@
                 <span>Akses : KAKITANGAN<p></p></span>
                 <span>Jabatan : JABATAN AGAMA ISLAM NEGERI PAHANG<p></p></span>
                 </div>
+                <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-secondary h6" id="">Laman Utama</button>
-                        <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
-                        <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
-                        <button class="btn btn-success h6" id="staffapplymainpage">Kebenaran Berkahwin</button>
-                        <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
-                        <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6" id=""  onclick="window.location.href='../ManageLoginView/m1_login.php'">Keluar</button>
+                    <button class="btn btn-success h6" id="first">Laman Utama</button>
+                    <button class="btn btn-success h6" id="list">Senarai Permohonan</button>
+                    <button class="btn btn-success h6" id="schedule">Jadual Sesi Konsultasi</button>
+                    <button class="btn btn-dark h6" id="exit">Keluar</button>
                     </div>
                 </div>
         </nav>
@@ -75,8 +72,8 @@
 
         <!-- content -->
         <div class="content">
-            <div class="p-2 mb-2 bg-primary text-white">
-                <span class="h6 text-uppercase">KHIDMAT NASIHAT - Senarai Permohonan Khidmat Nasihat</span>
+        <div class="p-2 mb-2 text-white" style="background-color:green;">
+                <span class="h6 text-uppercase">KHIDMAT NASIHAT - Senarai Permohonan</span>
             </div>
             <div class="content-of-module">
                 <div id="custalign">
@@ -104,45 +101,39 @@
                             <th>Tarikh Mohon  </th>
                             <th>Status   </th>
                             <th>Operasi   </th>
-                            <th>Ulasan   </th>
+                            <th>Khidmat Lanjutan   </th>
+                         
                           <tr>
                             <td>1.</td>
                             <td>900312110321 Aminuddin bin Baki</td>
                             <td>K3 /2022 - 000012</td>
                             <td>23 - 10 - 2022</td>
-                            <td>Untuk disahkan</td>
-                            <td><select id="operasi" name="operasi">
-                                <option value="update">Kemaskini</option>
-                                <option value="done">Selesai</option>
-                                <option value="delete">Buang</option>
-                            </select></td>
-                            <td><input type="text" id="ulas" name="ulas"></td>
+                            <td>DIHANTAR</td>
+                            <td>
+                            <div><button type="submit" ><a href="m4_advisorApprovalPage.php">LIHAT</a></button>
+                            <td></td>
                           </tr>
                           <tr>
                             <td>2.</td>
                             <td>960723005433 Sofi bin Muhammad Jikan</td>
                             <td>K3 /2022 - 000013</td>
-                            <td>23 - 10 - 2022</td>
-                            <td>Untuk disahkan</td>
+                            <td>03 - 10 - 2022</td>
+                            <td>SELESAI</td>
                             <td><select id="operasi" name="operasi">
-                                <option value="update">Kemaskini</option>
-                                <option value="done">Selesai</option>
-                                <option value="del">Buang</option>
-                            </select></td>
-                            <td><input type="text" id="ulas" name="ulas"></td>
+                            <option value="done">SEMAK</option>
+                            <option value="del">BUANG</option>
+                            <td>YA</td>
                           </tr>
                           <tr>
                             <td>3.</td>
                             <td>920221110881 Muhammad Firdaus bin Ferhad</td>
                             <td>K3 /2022 - 000014</td>
                             <td>23 - 10 - 2022</td>
-                            <td>Untuk disahkan</td>
+                            <td>SELESAI</td>
                             <td><select id="operasi" name="operasi">
-                                <option value="update">Kemaskini</option>
-                                <option value="done">Selesai</option>
-                                <option value="del">Buang</option>
-                            </select></td>
-                            <td><input type="text" id="ulas" name="ulas"></td>
+                            <option value="done">SEMAK</option>
+                            <option value="del">BUANG</option>
+                            <td>TIDAK</td>
                           </tr>
                         </table>
                     </form>        
@@ -151,7 +142,7 @@
         </div>
     </div>
 
-    <script src="../assets/js/javascript.js" defer></script>
+    <script src="javascript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
