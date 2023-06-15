@@ -35,7 +35,7 @@
                         <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
                         <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat Nasihat</button>
                         <button class="btn btn-primary h6" id="userincentivemainpage">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6">Keluar</button>
+                        <button class="btn btn-dark h6" onclick="window.location.href='../ManageLoginView/m1_login.php'">Keluar</button>
                     </div>
                 </div>
             </div>
