@@ -1,8 +1,35 @@
 <?php
 // Database connection settings
-include './database/connection.php';
-?>
+include 'connection.php';
 
+
+// Check if a registration no is provided
+if (isset($_GET['RegistrationNo'])) {
+  $RegistrationNo1 = $_GET['RegistrationNo'];
+  // Retrieve the Registration details from the database
+  $sql = "SELECT * FROM marriage_registration WHERE RegistrationNo = $RegistrationNo1";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $User_Name1 = $row['User_Name'];
+    $User_IC1 = $row['User_IC'];
+    $Partner_Name1 = $row['Partner_Name'];
+    $Partner_IC1 = $row['Partner_IC'];
+    $RegistrationNo = $row['RegistrationNo'];
+    $Registration_date1 = $row['Registration_date'];
+    $Registration_Status1 = $row['Registration_Status'];
+  } else {
+    echo "registration not found.";
+    exit;
+  }
+} else {
+  echo "No registration no provided.";
+  exit;
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +44,7 @@ include './database/connection.php';
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
+  <link rel="stylesheet" href="../assets/css/view3.css">
   <!-- internal stylesheet -->
   <style>
     table {
@@ -101,65 +129,43 @@ include './database/connection.php';
       <div class="content-of-module-admin">
         <div style="padding: 20px 0px 20px 6px">
           <h5 style="color:black;"> &nbsp; Senarai Permohonan Nikah </h5>
-          <table style="width: 100%;border-collapse: collapse;">
-            <thead>
-              <tr>
-                <th style=" width:360px; background-color: grey">No.KP Suami</th>
-                <th style=" width:360px; background-color: grey">Nama Suami</th>
-                <th style=" width:360px; background-color: grey">No.KP Isteri</th>
-                <th style=" width:350px; background-color: grey">Nama Isteri</th>
-                <th style=" width:400px; background-color: grey">No.Akuan Terima</th>
-                <th style=" width:360px; background-color: grey">Tarikh Terima</th>
-                <th style=" width:300px; background-color: grey">Status</th>
-                <th style=" width:400px; background-color: grey">Operasi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="width: 10px; background-color: white;">011011011111</td>
-                <td style="width: 360px; background-color: white;">Ali Bin Abu</td>
-                <td style="width: 350px; background-color: white;">000202022222</td>
-                <td style="width: 400px; background-color: white;">Aliya Binti Abdul</td>
-                <td style="width:360px; background-color: white;">M001</td>
-                <td style="width:360px; background-color: white;">2023-01-01</td>
-                <td style="color:green; width:300px; background-color: white;">Untuk Diluluskan</td>
-                <td style="color:green; width:400px; background-color: white;">
-                  <!-- viewFile -->
-                  <a href="viewMarriage.php?RegistrationNo=<?php echo $RegistrationNo; ?>"><img class=" icon" src="../assets/img/view.png" alt="View"></a>&nbsp;
-                  <!-- editFile -->
-                  <a href="updateMarriage.php?RegistrationNo=<?php echo $RegistrationNo; ?>"><img class="icon" src="../assets/img/edit.png"></a>&nbsp;
-                  <!-- approveFile -->
-                  <a href="../ManageMarriageRegistrationStaffView/m3_adminApproveM.php?RegistrationNo=<?php echo $RegistrationNo; ?>"><img class="icon" src="../assets/img/approved.png"></a>
-                  <!-- downloadFile -->
-                  <button style="border:none;" onclick="downloadFile()"><img class="icon" src="../assets/img/print.png"></button>
-                  <script>
-                    function downloadFile() {
-                      var filename = 'Borang Pendaftaran Nikah 001.php';
-                      var content = 'Slip Pendaftaran Perkahwinan ';
-
-                      var element = document.createElement('a');
-                      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-                      element.setAttribute('download', filename);
-
-                      element.style.display = 'none';
-                      document.body.appendChild(element);
-
-                      element.click();
-
-                      document.body.removeChild(element);
-                    }
-                  </script>
-                  <!-- deleteFile -->
-                  <a href="    ?RegistrationNo=<?php echo $RegistrationNo; ?>" onclick="return confirm('Are you really want to delete this publication?')"> <img class="icon" src="../assets/img/false.png"></a>
+          <section class="content">
+            <div class="col-md-6">
+              <div class="">
+                <div class="form-body">
+                  <div class="form-group">                   
+                    <label for="date">Date: <?php echo $date; ?></label><br>
+                    <label for="time">Time: <?php echo $time; ?></label>
+                  </div>
+                  <div class="form-group">
+                    <label for="complainttype">Marriage Registration</label>
+                    <select id="complainttype" class="form-control custom-select" disabled>
+                      <option selected disabled>Choose the type of complaint</option>
+                      <option value="Unsatisfied Expert's Feedback" <?php if ($complaintType === "Unsatisfied Expert's Feedback") echo 'selected'; ?>>Unsatisfied Expert's Feedback</option>
+                      <option value="Wrongly Assigned Research Area" <?php if ($complaintType === "Wrongly Assigned Research Area") echo 'selected'; ?>>Wrongly Assigned Research Area</option>
+                      <option value="Misleading or Incorrect Information" <?php if ($complaintType === "Misleading or Incorrect Information") echo 'selected'; ?>>Misleading or Incorrect Information</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" class="form-control" row="4" placeholder="Write a description of the complaint" disabled><?php echo $description; ?></textarea>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <a href="complaintmainpage.php" class="btn btn-secondary">Back</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </section>
 
 
-                </td>
-
-
-
-                </td>
-              </tr>
-            </tbody>
+          </td>
+          </tr>
+          </tbody>
           </table>
           <br>
           <div> <a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
