@@ -5,7 +5,6 @@ class AccountRegistrationModel {
 
     public function __construct() {
         // Create a new instance of the Database class
-        $this->db = new Database();
     }
     public function getUserByIC($icnum) {
         $query = "SELECT * FROM user_registration_info WHERE User_IC = $icnum";
