@@ -1,6 +1,11 @@
 <?php
-// Database connection settings done
-include 'connection.php';
+session_start();
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,13 +13,16 @@ include 'connection.php';
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>e-Munakahat</title>
-  <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
+  <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
+
 
   <!-- internal stylesheet -->
   <style>
@@ -62,16 +70,16 @@ include 'connection.php';
         <!-- navigation bar (left side) -->
         <div class="d-flex justify-content-center">
           <div class="list-group" style="width: 16rem;">
-            <button class="btn btn-secondary h6">Laman Utama</button>
-            <button class="btn btn-success h6">Profil</button>
-            <button class="btn btn-success h6">Permohonan Berkahwin</button>
-            <button class="btn btn-success h6">Pendaftaran Perkahwinan</button>
-            <button class="btn btn-success h6">Khidmat Nasihat</button>
-            <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
-            <button class="btn btn-success h6">Laporan</button>
-            <button class="btn btn-success h6">Pengguna</button>
-            <button class="btn btn-dark h6">Keluar</button>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="list-group" style="width: 16rem;">
+              <button class="btn btn-secondary h6"><a href="../ManageStaffAccountRegistrationView/m1_homepagestaff.php" style="color:white;text-decoration:none;">Laman Utama</a></button>
+              <button class="btn btn-success h6"><a href="../ManageStaffMarriagePreparationView/m2_maincoursepagestaff.php" style="color:white;text-decoration:none;">Kursus Pra Perkahwinan</a></button>
+              <button class="btn btn-success h6"><a href="../ManageStaffMarriageApplicationView/m2_mainapplypagestaff.php" style="color:white;text-decoration:none;">Kebenaran Berkahwin</a></button>
+              <button class="btn btn-success h6"><a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php" style="color:white;text-decoration:none;">Pendaftaran Nikah</a></button>
+              <button class="btn btn-success h6"><a href="../ManageMarriageConsultationAdvisorView/m4_advisorApplicationList.php" style="color:white;text-decoration:none;">Khidmat Nasihat</a></button>
+              <button class="btn btn-success h6" id="staffincentivemainpage"><a href="../ManageIncentiveApplicationStaffView/m5_staffMainPage.php" style="color:white;text-decoration:none;">Insentif Khas Pasangan Pengantin</a></button>
+              <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
+              <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
+            </div>
           </div>
         </div>
       </div>
@@ -81,8 +89,8 @@ include 'connection.php';
       <div class="h-span-container">
         <button class="navbar-button" id="hey">&#9776;</button>
         <h4 class=".float-start">e-Munakahat</h4>
-        <img src="img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-        <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+        <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+        <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
         <div class="timedatebox">
           <span id="date"></span>&nbsp;<span id="time"></span>
         </div>
@@ -118,12 +126,12 @@ include 'connection.php';
               <td style="color:green; width:300px; background-color: white;">Untuk Diluluskan</td>
               <td style="color:green; width:400px; background-color: white;">
                 <!-- viewFile -->
-                <img class=" icon" src="img/view.png" onclick="viewRecord(1)">
+                <img class=" icon" src="../assets/img/view.png" onclick="viewRecord(1)">
                 <!-- editFile -->
-                <img class="icon" src="img/edit.png" onclick="editRecord(1)">
-                <a href="m3_adminApproveC.php"><img class="icon" src="img/approved.png" onclick="approveRecord(1)"></a>
+                <img class="icon" src="../assets/img/edit.png" onclick="editRecord(1)">
+                <a href="../ManageMarriageCardApplicationStaffView/m3_adminApproveC.php"><img class="icon" src="../assets/img/approved.png" onclick="approveRecord(1)"></a>
                 <!-- downloadFile -->
-                <button style="border:none;" onclick="downloadFile()"><img class="icon" src="img/print.png"></button>
+                <button style="border:none;" onclick="downloadFile()"><img class="icon" src="../assets/img/print.png"></button>
                 <script>
                   function downloadFile() {
                     var filename = 'Borang Pendaftaran Nikah 001.php';
@@ -142,16 +150,16 @@ include 'connection.php';
                   }
                 </script>
                 <!-- deleteFile -->
-                <img class="icon" src="img/delete.png" onclick="deleteRecord(1)">
+                <img class="icon" src="../assets/img/false.png" onclick="deleteRecord(1)">
               </td>
             </tr>
           </table>
           <br>
-          <div> <a href="m3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
+          <div> <a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
           </script>
 
           <!-- external link to js file -->
-          <script src="javascript.js" defer></script>
+          <script src="../assets/js/javascript.js" defer></script>
           <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
