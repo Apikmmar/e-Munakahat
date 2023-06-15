@@ -8,6 +8,11 @@ if (!$conn) {
   echo 'Connection error: ' . mysqli_connect_error();
 }
 
+if(isset($_SESSION['icnum'])) {
+  header("Location: ../../../View/ManageUserAccountRegistrationView/m1_manageUserProfile.php");
+  exit;
+}
+
 class Login {
     private $conn;
     
@@ -56,7 +61,7 @@ class Login {
             if ($password === $storedPassword) {
                 echo "Login successful!";
                 $_SESSION['icnum'] = $icnum;
-                header("Location: ../../../View/ManageStaffAccountRegistrationView/m1_homepagestaff.php?icnum=" . urlencode($icnum));
+                header("Location: ../../../View/ManageStaffAccountRegistrationView/m1_viewStaffProfile.php?icnum=" . urlencode($icnum));
                 exit;
             } else {
                 $errorMessage = "Kata Laluan tidak sah. Sila masukkan semula kata laluan yang sah.";

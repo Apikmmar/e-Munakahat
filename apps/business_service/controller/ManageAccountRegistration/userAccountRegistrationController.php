@@ -24,7 +24,7 @@ class Register {
         $result = mysqli_query($this->conn, $query);
 
         if (mysqli_num_rows($result) > 0) {
-        $errors[] = "Nombor kad penegenalan sudah wujud. Sila masukkan nombor kad pengenalan yang lain.";
+        $errors[] = "IC number already exists. Please choose a different IC number.";
         }
 
         // If there are no validation errors, proceed to store the data in the database
@@ -40,7 +40,7 @@ class Register {
 
         // Display success message
         $successMessage = "Data has been successfully stored in the database.";
-        header("Location: ../../../View/ManageLoginView/m1_login.php?success=" . urlencode($successMessage));
+        header("Location: ../../../View//ManageLoginView/m1_login.php?success=" . urlencode($successMessage));
         } else {
         // Display validation errors
         $errorMessage = "Nombor kad pengenalan sudah wujud dalam sistem. Sila pilih nombor kad pengenalan yang lain.";

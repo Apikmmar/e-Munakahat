@@ -25,6 +25,7 @@
             echo "User not found.";
         }
     }
+
     // Check if the logout parameter is set
     if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
         // User requested to log out, unset the session variables
@@ -100,78 +101,14 @@
         <!-- content -->
         <div class="content-admin">
             <div class="p-2 mb-2 bg-success text-white">
-                <span class="h6 text-uppercase">PENGGUNA</span>
+                <span class="h6 text-uppercase">LAMAN UTAMA</span>
             </div>
             <div class="content-of-module-admin">
                 <br><br>
-                <div class="d-flex justify-content-center">
-                    <div class="d-flex flex-row">
-                    <h6 style="margin-top: 5px;" id="daftarkahwin">No. KP Pengguna</h6>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No. KP Pengguna" required>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-success">Carian</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                    </div>
-                </div>
-                <br>
-                <div>
-                    <table class="table table-bordered" id="searchcoursetable" style="width: 90%;">
-                    <thead>
-                        <tr style="background-color: #D3D3D3;">
-                            <th scope="col" style="width: 2%;">Bil</th>
-                            <th scope="col" style="width: 18%;">No.KP</th>
-                            <th scope="col" style="width: 30%;">Nama Pengguna</th>
-                            <th scope="col" style="width: 13%;">Jabatan</th>
-                            <th scope="col" style="width: 13%;">Peringkat Akses</th>
-                            <th scope="col" style="width: 24%;" colspan="3">Operasi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>011225112547</td>
-                            <td>Mark</td>
-                            <td>PAID Pekan</td>
-                            <td>Pengguna PAID</td>
-                            <td>
-                                <img src="../assets/img/view.png" alt="logopapar" class="imgflaticon">
-                            </td>
-                            <td>
-                                <img src="../assets/img/update.png" alt="logodaftar" class="imgflaticon">
-                            </td>
-                            <td>
-                                <img src="../assets/img/delete.png" alt="logodaftar" class="imgflaticon">
-                            </td>
-                        </tr>
-                        <?php
-                            $sql = "SELECT * FROM staff_registration_info";
-                            $result = $conn->query($sql);
-                            $bil = 1;
-
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $bil =++ $bil;
-                                $icNumber = $row['Staff_IC'];
-                                $name = $row['Staff_Name'];
-                                $paid = $row['Staff_PAID'];
-                                $access = $row['Staff_AccessCategory'];
-                        ?>
-                        <tr>
-                            <td><?php echo $bil; ?></td>
-                            <td><?php echo $icNumber; ?></td>
-                            <td><?php echo $name; ?></td>
-                            <td><?php echo $paid; ?></td>
-                            <td><?php echo $access; ?></td>
-                            <td><a href="m1_viewStaffProfile.php?staff_ic=<?php echo $icNumber; ?>"><img class="imgflaticon" src="../assets/img/view.png"></a></td>
-                            <td><a href="m1_updateStaffInfo.php?staff_ic=<?php echo $icNumber; ?>"><img class="imgflaticon" src="../assets/img/update.png"></a></td>
-                            <td><a href="deleteStaff(<?php echo $icNumber; ?>)"><img class="imgflaticon" src="../assets/img/delete.png"></a></td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                    </table>
-                    <div style="padding-left: 100px;">
-                        <button class="btn btn-success" id="tambahpengguna" onclick="window.location.href='m1_addStaffAccount.php'" >Tambah Pengguna</button>
-                    </div>
+                <div class="text-center">
+                    <h5>Selamat Datang ke Sistem Maklumat Perkahwinan Negeri Pahang</h5>
+                    <p>Sistem Ini Membantu Jabatan Agama Islam Pahang(JAIP) Menguruskan Maklumat Perkahwinan Secara Sistematik</p>
+                    <em>Klik Manual Pengguna Sistem di sini</em>
                 </div>
                 <br><br>
             </div>
