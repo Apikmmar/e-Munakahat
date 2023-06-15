@@ -102,12 +102,12 @@
                 <br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6" id="Profil" onclick="window.location.href='m1_manageUserProfile.php'">Profil</button>
-                        <button class="btn btn-primary h6" id="KursusPraPerkahwinan">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-primary h6" id="PermohonanBerkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-primary h6" id="PendaftaranPerkahwinan">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-primary h6" id="KhidmatNasihat">Khidmat nasihat</button>
-                        <button class="btn btn-primary h6" id="insentifKhas">insentif Khas</button>
+                        <button class="btn btn-primary h6" id="userloginmainpage" onclick="window.location.href='m1_manageUserProfile.php'">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Kursus Pra-Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="marriageapply">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">insentif Khas</button>
                         <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'" >Keluar</button>
                     </div>
                 </div>
