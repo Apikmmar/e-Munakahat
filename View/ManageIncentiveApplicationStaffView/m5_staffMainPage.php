@@ -37,7 +37,7 @@ if (!$conn) {
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
-                <div class="list-group" style="width: 16rem;">
+                    <div class="list-group" style="width: 16rem;">
                         <button class="btn btn-secondary h6" id="">Laman Utama</button>
                         <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
                         <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
