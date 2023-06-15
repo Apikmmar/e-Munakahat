@@ -1,6 +1,11 @@
 <?php
-// Database connection settings done
-include 'connection.php';
+session_start();
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,19 +39,19 @@ include 'connection.php';
           </div>
         </div>
         <br><br>
+
         <!-- navigation bar (left side) -->
         <div class="d-flex justify-content-center">
           <div class="list-group" style="width: 16rem;">
-            <button class="btn btn-primary h6" id="Profil">Profil</button>
-            <button class="btn btn-primary h6" id="KursusPraPerkahwinan">Kursus Pra-Perkahwinan</button>
-            <button class="btn btn-primary h6" id="PermohonanBerkahwin">Permohonan Berkahwin</button>
-            <button class="btn btn-dark h6" id="PendaftaranPerkahwinan">Pendaftaran Perkahwinan</button>
-            <button class="btn btn-primary h6" id="KhidmatNasihat">Khidmat nasihat</button>
-            <button class="btn btn-primary h6" id="insentifKhas">insentif Khas</button>
-            <button class="btn btn-primary h6" id="Keluar">Keluar</button>
+            <button class="btn btn-primary h6"><a href="../ManageUserAccountRegistrationView/m1_manageUserProfile.php" style="color:white;text-decoration:none;">Profil</a></button>
+            <a href=""></a><button class=" btn btn-primary h6"><a href="../ManageUserMarriagePreparationView/m2_maincoursepage.php" style="color:white;text-decoration:none;">Kursus Pra-Perkahwinan</a></button>
+            <a href=""></a><button class="btn btn-primary h6"><a href="../ManageUserMarriageApplicationView/m2_homepage.php" style="color:white;text-decoration:none;">Permohonan Berkahwin</a></button>
+            <a href=""></a><button class="btn btn-primary h6"><a href="../ManageMarriageRegistrationUserView/m3_marriage.php" style="color:white;text-decoration:none;">Pendaftaran Perkahwinan</a></button>
+            <a href=""></a><button class=" btn btn-primary h6"><a href="../ManageMarriageConsultationUserView/m4_userHomepage.php" style="color:white;text-decoration:none;">Khidmat nasihat</a></button>
+            <a href=""></a> <button class=" btn btn-primary h6"><a href="../ManageIncentiveApplicationUserView/m5_userMainPage.php" style="color:white;text-decoration:none;">Insentif Khas Pasangan Pengantin</a></button>
+            <a href=""></a><button class=" btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
           </div>
         </div>
-      </div>
     </nav>
     <!-- title bar -->
     <nav class="p-1 mb-1 bg-primary text-white justify-content-center fixed-top">
@@ -84,7 +89,6 @@ include 'connection.php';
 
       <!-- external link to js file -->
       <script src="../assets/js/javascript.js" defer></script>
-      <script src="assets/js/module2js.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

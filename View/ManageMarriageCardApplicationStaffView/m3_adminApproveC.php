@@ -1,6 +1,11 @@
 <?php
 session_start();
-require '../../database/connection.php';
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +45,16 @@ require '../../database/connection.php';
         <!-- navigation bar (left side) -->
         <div class="d-flex justify-content-center">
           <div class="list-group" style="width: 16rem;">
-            <button class="btn btn-secondary h6">Laman Utama</button>
-            <button class="btn btn-success h6">Profil</button>
-            <button class="btn btn-success h6">Permohonan Berkahwin</button>
-            <button class="btn btn-dark h6">Pendaftaran Perkahwinan</button>
-            <button class="btn btn-success h6">Khidmat Nasihat</button>
-            <button class="btn btn-success h6">Insentif Khas Pasangan Pengantin</button>
-            <button class="btn btn-success h6">Laporan</button>
-            <button class="btn btn-success h6">Pengguna</button>
-            <button class="btn btn-success h6">Keluar</button>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="list-group" style="width: 16rem;">
+              <button class="btn btn-secondary h6"><a href="../ManageStaffAccountRegistrationView/m1_homepagestaff.php" style="color:white;text-decoration:none;">Laman Utama</a></button>
+              <button class="btn btn-success h6"><a href="../ManageStaffMarriagePreparationView/m2_maincoursepagestaff.php" style="color:white;text-decoration:none;">Kursus Pra Perkahwinan</a></button>
+              <button class="btn btn-success h6"><a href="../ManageStaffMarriageApplicationView/m2_mainapplypagestaff.php" style="color:white;text-decoration:none;">Kebenaran Berkahwin</a></button>
+              <button class="btn btn-success h6"><a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php" style="color:white;text-decoration:none;">Pendaftaran Nikah</a></button>
+              <button class="btn btn-success h6"><a href="../ManageMarriageConsultationAdvisorView/m4_advisorApplicationList.php" style="color:white;text-decoration:none;">Khidmat Nasihat</a></button>
+              <button class="btn btn-success h6" id="staffincentivemainpage"><a href="../ManageIncentiveApplicationStaffView/m5_staffMainPage.php" style="color:white;text-decoration:none;">Insentif Khas Pasangan Pengantin</a></button>
+              <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
+              <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
+            </div>
           </div>
         </div>
       </div>
