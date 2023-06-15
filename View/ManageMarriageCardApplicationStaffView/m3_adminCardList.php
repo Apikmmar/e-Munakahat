@@ -150,7 +150,7 @@ if (!$conn) {
                   }
                 </script>
                 <!-- deleteFile -->
-                <img class="icon" src="../assets/img/delete.png" onclick="deleteRecord(1)">
+                <img class="icon" src="../assets/img/false.png" onclick="deleteRecord(1)">
               </td>
             </tr>
           </table>
