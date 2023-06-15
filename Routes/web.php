@@ -7,6 +7,8 @@ require "Business_Service/Controller/ManageLogin/ForgetPasswordController.php";
 require "Business_Service/Controller/ManageLogin/LoginController.php";
 require "Business_Service/Controller/ManageAccountRegistration/userAccountRegistrationController.php";
 require "Business_Service/Controller/ManageAccountRegistration/staffAccountRegistrationController.php";
+require "Business_Service/Model/ManageAccountRegistration/AccountRegistrationModel.php";
+
 
 // module 2
 require "Business_Service/Controller/ManageMarriagePreparation/UserMarriagePreparationController.php";
