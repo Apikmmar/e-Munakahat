@@ -30,13 +30,10 @@
                 
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-success h6" id="profil">Profil</button>
-                        <button class="btn btn-success h6" id="kursuspre">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-success h6" id="mohonkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-success h6" id="daftarkahwin">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-success h6" id="khidmat">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6" id="insentif">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-success h6" style="background-color:#000;"" id="exit">Keluar</button>
+                    <button class="btn btn-success h6" id="first">Laman Utama</button>
+                    <button class="btn btn-success h6" id="list">Senarai Permohonan</button>
+                    <button class="btn btn-success h6" id="schedule">Jadual Sesi Konsultasi</button>
+                    <button class="btn btn-dark h6" id="exit">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -77,7 +74,7 @@
 
         <!-- content -->
         <div class="content">
-            <div class="p-2 mb-2 bg-primary text-white">
+        <div class="p-2 mb-2 text-white" style="background-color:green;">
                 <span class="h6">Khidmat Nasihat - Ulasan </span>
             </div>
             <div class="content-of-module">
@@ -109,7 +106,7 @@
                                         <textarea id="ulasan" name="ulasan" placeholder="Ini boleh diselesaikan dengan cara....." ></textarea></div>
                                         <br>
                     </form>     
-                    <br><div><button type="submit" style="background-color:green;" class="btn btn-primary">Kemaskini</button></div>        
+                    <br><div><div><button onclick="view()"><a href="m4_advisorUpdatePage.php">KEMASKINI</a></button></div>    
                 </div>
             </div>
         </div>

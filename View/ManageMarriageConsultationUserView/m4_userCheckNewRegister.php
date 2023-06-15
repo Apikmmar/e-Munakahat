@@ -29,13 +29,11 @@
                 
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6" id="profil">Profil</button>
-                        <button class="btn btn-primary h6" id="kursuspre">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-primary h6" id="mohonkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-primary h6" id="daftarkahwin">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-dark h6" style="background-color:#0000FF;" id="khidmat">Khidmat Nasihat</button>
-                        <button class="btn btn-primary h6" id="insentif">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-primary h6" style="background-color:#000;" id="exit">Keluar</button>
+                    <button class="btn btn-primary h6" id="profil">Laman Utama</button>
+                    <button class="btn btn-primary h6" id="permohonan">Maklumat Permohonan</button>
+                    <button class="btn btn-primary h6" id="mohonkahwin">Borang Permohonan</button>
+                    <button class="btn btn-primary h6" id="feedback">Ulasan</button>
+                    <button class="btn btn-primary h6" style="background-color:#000;" id="exit">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -126,7 +124,7 @@
                         </div>
                         <br>
                     </form>
-                    <div><button type="submit" style="background-color:green;" class="btn btn-primary">Hantar</button></div>                
+                    <br><button type="next" ><a href="m4_userChooseDate.php">Seterusnya</a></button>  
                 </div>
             </div>
         </div>
