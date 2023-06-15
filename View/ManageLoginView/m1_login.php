@@ -1,10 +1,6 @@
 <?php
   session_start();
 
-  if(isset($_SESSION['icnum'])) {
-    header("Location: ../ManageUserAccountRegistrationView/m1_manageUserProfile.php");
-    exit;
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

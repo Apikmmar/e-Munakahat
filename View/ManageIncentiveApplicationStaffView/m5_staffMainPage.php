@@ -45,7 +45,7 @@ if (!$conn) {
                         <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
                         <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
                         <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6" id="">Keluar</button>
+                        <button class="btn btn-dark h6" id=""  onclick="window.location.href='../ManageLoginView/m1_login.php'">Keluar</button>
                     </div>
                 </div>
             </div>
