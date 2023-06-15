@@ -23,13 +23,6 @@ class IncentiveApplication
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("ssssssssssssssss", $applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan, $pendapatanpasangan, $User_IC, $Staff_IC, $DI_ICCopy, $DI_AkadNikahCopy, $DI_BankAccountCopy, $DI_SupportDocument, $namawaris, $hubunganwaris, $notelwaris);
         $stmt->execute();
-
-        if ($stmt->execute() === TRUE) {
-            echo "<script>alert('INCENTIVE APPLICATION IS SAVED')</script>";
-        } else {
-            echo "Error creating incentive application: " . $stmt->error;
-        }
-
         $stmt->close();
         $successMessage = "Data has been successfully stored in the database.";
         header("Location: ../../View/ManageIncentiveApplicationUserView/m5_userMainPage.php?success=" . urlencode($successMessage));

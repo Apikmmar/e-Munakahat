@@ -37,7 +37,7 @@ if (!$conn) {
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
-                <div class="list-group" style="width: 16rem;">
+                    <div class="list-group" style="width: 16rem;">
                         <button class="btn btn-secondary h6" id="">Laman Utama</button>
                         <button class="btn btn-success h6" id="staffloginmainpage">Profil</button>
                         <button class="btn btn-success h6" id="staffprepcoursemainpage">Kursus Pra Perkahwinan</button>
@@ -45,7 +45,7 @@ if (!$conn) {
                         <button class="btn btn-success h6" id="staffmarriagemainpage">Pendaftaran Nikah</button>
                         <button class="btn btn-success h6" id="staffconsultationmainpage">Khidmat Nasihat</button>
                         <button class="btn btn-success h6" id="staffincentivemainpage">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6" id="">Keluar</button>
+                        <button class="btn btn-dark h6" id=""  onclick="window.location.href='../ManageLoginView/m1_login.php'">Keluar</button>
                     </div>
                 </div>
             </div>
