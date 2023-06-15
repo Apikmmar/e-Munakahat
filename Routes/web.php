@@ -15,6 +15,9 @@ require "Business_Service/Controller/ManageMarriagePreparation/UserMarriagePrepa
 require "Business_Service/Controller/ManageMarriagePreparation/StaffMarriagePreparationController.php";
 require "Business_Service/Controller/ManageMarriageApplication/StaffMarriageApplicationController.php";
 require "Business_Service/Controller/ManageMarriageApplication/UserMarriageApplicationController.php";
+
+//module 5
 require "Business_Service/Controller/ManageIncentiveApplication/UserManageIncentiveApplicationController.php";
 require "Business_Service/Controller/ManageIncentiveApplication/StaffManageIncentiveApplicationController.php";
+require "Business_Service/Model/ManageIncentiveApplication/ManageIncentiveApplicationModel.php";
 extract ($_POST);
