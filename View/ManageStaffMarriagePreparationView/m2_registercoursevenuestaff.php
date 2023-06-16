@@ -64,7 +64,7 @@
                 <span class="h6 text-uppercase">DAFTAR TAKLIMAT</span>
             </div>
             <div class="content-of-module-admin">
-                <form action="../../Business_Service/Controller/StaffMarriagePreparationController.php" method="post">
+                <form action="../../Business_Service/Controller/ManageMarriagePreparation/StaffMarriagePreparationController.php" method="post">
                     <div style="padding-left: 30px; padding-top: 5px;">
                         <em>[*] adalah wajib diisi</em>
                     </div>
@@ -72,50 +72,49 @@
                         
                         <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
                             <div>
-                                <label class="vcdlabel">Tarikh Mula :</label>
-                                <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
-                                <em>(dd-mm-yyyy)</em>
+                                <label class="vcdlabel">Nama Penganjur :</label>
+                                <input type="text" class="form-control-sm" id="inputboxstyle2" placeholder="Masukkan penganjur" name="MPC_PenganjurName" required>
                             </div>
                             <div>
                                 <label class="vcdlabel">Tempat :</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan tempat" required>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan tempat" name="MPC_Address" required>
                             </div>
                             <div>
                                 <label class="vcdlabel">Masa Dari :</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan alamat" required>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan alamat" name="MPC_Time" required>
                             </div>
                             <div>
                                 <label class="vcdlabel">Pegawai Dihubungi :</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" required>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" name="Staff_IC" required>
                             </div>
                             <div>
                                 <label class="vcdlabel">No Telefon :</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan no telefon" required>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan no telefon" name="Staff_HP" required>
                             </div>
                             <div style="display: flex;">
                                 <label class="vcdlabel">Catatan :</label>
-                                <textarea type="textarea" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan catatan" required></textarea>
+                                <textarea type="textarea" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan catatan" name="" required></textarea>
                             </div>
                         </div>
                         <div style="padding-left: 30px; padding-top: 10px; width: 600px;">
                             <div>
-                                <label class="vcdlabel">Tarikh Tamat :</label>
-                                <input type="text" class="form-control-sm datepicker" placeholder="Select date" required>
+                                <label class="vcdlabel">Tarikh :</label>
+                                <input type="text" class="form-control-sm datepicker" placeholder="Select date" name="MPC_Date" required>
                                 <em>(dd-mm-yyyy)</em>
                             </div>
                             <div>
                                 <label class="vcdlabel">Kapasiti :</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan kapasiti" required>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan kapasiti" name="MPC_Capacity" required>
                             </div>
                         <br><br>
                             <div>
                                 <label class="vcdlabel">Masa Tamat :</label>
-                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" required>
+                                <input type="text" class="form-control form-control-sm" id="inputboxstyle2" placeholder="Masukkan masa" name="" required>
                             </div>
                             <br><br>
                             <div>
                                 <label class="vcdlabel">Terbitkan kepada umum :</label>
-                                <select class="form-select" aria-label="Default select example" id="inputboxstyle2" required>
+                                <select class="form-select" aria-label="Default select example" id="inputboxstyle2" name="" required>
                                     <option selected value="No val">Sila pilih</option>
                                     <option value="Yes">Ya</option>
                                     <option value="No">Tidak</option>
@@ -126,7 +125,7 @@
                     <div class="d-flex justify-content-center">
                         <button type="reset" class="btn btn-danger">Reset</button>
                         &nbsp;&nbsp;
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary" name="createNewPreparationCourse">Simpan</button>
                         &nbsp;&nbsp;
                         <button type="btn" class="btn btn-primary" id="backbuttonstaff">Kembali</button>
                     </div>
@@ -145,23 +144,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>
-                                    <img src="../assets/img/delete.png" alt="logopapar" class="imgflaticon" id="">
-                                </td>
-                                <td>
-                                    <img src="../assets/img/update.png" alt="logodaftar" class="imgflaticon" id="">
-                                </td>
-                                <td>
-                                    <img src="../assets/img/printer.png" alt="logodaftar" class="imgflaticon" id="">
-                                </td>
-                            </tr>
+                        <?php
+                            $staffMarriagePrepController = new StaffMarriagePreparation();
+                            $courses = $staffMarriagePrepController->readPreparationCourses();
+                            foreach ($courses as $course) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $course['counter'] ?></td>
+                                    <td><?php echo $course['siritaklimat'] ?></td>
+                                    <td><?php echo $course['address'] ?></td>
+                                    <td><?php echo $course['date'] ?></td>
+                                    <td><?php echo $course['time'] ?></td>
+                                    <td><?php echo $course['capacity'] ?></td>
+                                    <td><img src="../assets/img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
+                                    <td><img src="../assets/img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
+                                </tr>
+                                <?php
+                            }
+                        ?>
                         </tbody>
                         </table>
                     </div>
@@ -170,6 +170,10 @@
             </div>
         </div>
     </div>
+
+    <td><img src="../assets/img/delete.png" alt="logopapar" class="imgflaticon" id=""></td>
+    <td><img src="../assets/img/update.png" alt="logodaftar" class="imgflaticon" id=""></td>
+    <td><img src="../assets/img/printer.png" alt="logodaftar" class="imgflaticon" id=""></td>
 
     <script src="../assets/js/javascript.js" defer></script>
     <script src="../assets/js/module2js.js" defer></script>

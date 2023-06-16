@@ -93,15 +93,15 @@
                                     </div>
                                     <div id="inputformpadding">
                                         <div>
-                                            <label>Negeri:</label><br>
+                                            <label>Negeri *:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
                                         </div>
                                         <div style="padding-top: 10px;">
-                                            <label>Daerah:</label><br>
+                                            <label>Daerah *:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan daerah" required>
                                         </div>
                                         <div style="padding-top: 10px;">
-                                            <label>Kebenaran jabatan agama negeri:</label><br>
+                                            <label>Kebenaran jabatan agama negeri *:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
                                         </div>
                                     </div>
@@ -122,12 +122,12 @@
                                         </div>
                                     </div>
                                     <div id="inputformpadding" style="padding-top: 35px;">
-                                        <label>Resit pembayaran(RM80.00):</label><br>
+                                        <label>Resit pembayaran(RM80.00) *:</label><br>
                                         <input class="form-control form-control-sm" id="inputboxstyle" type="file" required>
                                     </div>
                                     <div id="inputformpadding">
                                         <div>
-                                            <label>Cadangan Tarikh Akad Nikah:</label><br>
+                                            <label>Cadangan Tarikh Akad Nikah *:</label><br>
                                             <input type="text" class="form-control form-control-sm datepicker" id="inputboxstyle" placeholder="Select date" required>
                                         </div>
                                     </div>
