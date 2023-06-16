@@ -1,6 +1,10 @@
 <?php
-// Database connection settings
-include './database/connection.php';
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +21,7 @@ include './database/connection.php';
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
+  <link rel="stylesheet" href="../assets/css/function.css">
   <!-- internal stylesheet -->
   <style>
     table {
@@ -71,7 +76,7 @@ include './database/connection.php';
               <button class="btn btn-success h6"><a href="../ManageMarriageConsultationAdvisorView/m4_advisorApplicationList.php" style="color:white;text-decoration:none;">Khidmat Nasihat</a></button>
               <button class="btn btn-success h6" id="staffincentivemainpage"><a href="../ManageIncentiveApplicationStaffView/m5_staffMainPage.php" style="color:white;text-decoration:none;">Insentif Khas Pasangan Pengantin</a></button>
               <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
-              <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
+              <button class="btn btn-dark h6" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
             </div>
           </div>
         </div>
@@ -92,40 +97,56 @@ include './database/connection.php';
         </div>
       </div>
     </nav>
-
     <!-- content -->
-    <div class="content-admin">
-      <div class="p-2 mb-2 bg-success text-white">
-        <span class="h6 text-uppercase">PENDAFTARAN PERKAHWINAN > Mohon Pengesahan Nikah > Senarai Permohonan Nikah</span>
-      </div>
-      <div class="content-of-module-admin">
-        <div style="padding: 20px 0px 20px 6px">
-          <h5 style="color:black;"> &nbsp; Senarai Permohonan Nikah </h5>
-          <table style="width: 100%;border-collapse: collapse;">
-            <thead>
+    <div class="table-wrapper">
+      <div class="content">
+        <!-- CRUD table -->
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 15%">Permohonan No</th>
+              <th style="width: 15%">Tarikh Permohonan</th>
+              <th style="width: 20%">Status Permohonan</th>
+              <th style="width: 15%">Tarikh Kemas Kini </th>
+              <th style="width: 50%">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $sql = "SELECT * FROM marriage_registration";
+            $result = $conn->query($sql);
+
+            while ($row = mysqli_fetch_assoc($result)) {
+              $RegistrationNo = $row['RegistrationNo'];
+              $Registration_Date = $row['Registration_Date'];
+              $Registration_Type = $row['Registration_Type'];
+              $Registration_Status = $row['Registration_Status'];
+              $Accept_Date = $row['Accept_Date'];
+            ?>
               <tr>
-                <th style=" width:360px; background-color: grey">No.KP Suami</th>
-                <th style=" width:360px; background-color: grey">Nama Suami</th>
-                <th style=" width:360px; background-color: grey">No.KP Isteri</th>
-                <th style=" width:350px; background-color: grey">Nama Isteri</th>
-                <th style=" width:400px; background-color: grey">No.Akuan Terima</th>
-                <th style=" width:360px; background-color: grey">Tarikh Terima</th>
-                <th style=" width:300px; background-color: grey">Status</th>
-                <th style=" width:400px; background-color: grey">Operasi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="width: 10px; background-color: white;">011011011111</td>
-                <td style="width: 360px; background-color: white;">Ali Bin Abu</td>
-                <td style="width: 350px; background-color: white;">000202022222</td>
-                <td style="width: 400px; background-color: white;">Aliya Binti Abdul</td>
-                <td style="width:360px; background-color: white;">M001</td>
-                <td style="width:360px; background-color: white;">2023-01-01</td>
-                <td style="color:green; width:300px; background-color: white;">Untuk Diluluskan</td>
-                <td style="color:green; width:400px; background-color: white;">
+                <td style="width: 15%"><?php echo $Registration_Type; ?></td>
+                <td style="width: 15%"><?php echo $Registration_Date; ?></td>
+                <?php
+                $class = '';
+                switch ($Registration_Status) {
+                  case 'Lulus':
+                    $class = 'badge badge-success';
+                    break;
+                  case 'Untuk Diluluskan':
+                    $class = 'badge badge-warning';
+                    break;
+                  case 'Gagal':
+                    $class = 'badge badge-danger';
+                    break;
+                  default:
+                    $class = 'badge';
+                }
+                ?>
+                <td style="width: 20%"><span class="<?php echo $class; ?>"><?php echo $Registration_Status; ?></span></td>
+                <td style="width: 15%"><?php echo $Accept_Date; ?></td>
+                <td style="color:green; background-color: white;width: 20%;">
                   <!-- viewFile -->
-                  <a href="viewMarriage.php?RegistrationNo=<?php echo $RegistrationNo; ?>"><img class=" icon" src="../assets/img/view.png" alt="View"></a>&nbsp;
+                  <a href="../../business_service/controller/ManageMarriageRegistration/staffMarriageRegistrationController/viewMarriage.php?RegistrationNo<?php echo $RegistrationNo; ?>"><img class=" icon" src="../assets/img/view.png" alt="View"></a>&nbsp;
                   <!-- editFile -->
                   <a href="updateMarriage.php?RegistrationNo=<?php echo $RegistrationNo; ?>"><img class="icon" src="../assets/img/edit.png"></a>&nbsp;
                   <!-- approveFile -->
@@ -150,26 +171,24 @@ include './database/connection.php';
                     }
                   </script>
                   <!-- deleteFile -->
-                  <a href="    ?RegistrationNo=<?php echo $RegistrationNo; ?>" onclick="return confirm('Are you really want to delete this publication?')"> <img class="icon" src="../assets/img/false.png"></a>
-
-
-                </td>
-
-
-
+                  <a href="../../business_service/controller/ManageMarriageRegistration/staffMarriageRegistrationController/deleteMarriage.php?RegistrationNo=<?php echo $RegistrationNo; ?>" onclick="return confirm('Are you really want to delete this publication?')"> <img class="icon" src="../assets/img/false.png"></a>
                 </td>
               </tr>
-            </tbody>
-          </table>
-          <br>
-          <div> <a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
+            <?php } ?>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
 
-          <!-- external link to js file -->
+        <div> <a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
+      </div>
+    </div>
+  </div>
 
-          <script src="../assets/js/javascript.js" defer></script>
-          <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <!-- external link to js file -->
+  <script src="../assets/js/javascript.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

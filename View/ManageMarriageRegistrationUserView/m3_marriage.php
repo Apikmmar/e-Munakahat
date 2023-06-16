@@ -6,7 +6,9 @@ $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
 if (!$conn) {
   echo 'Connection error: ' . mysqli_connect_error();
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,10 +33,10 @@ if (!$conn) {
         <div class="p-2 mb-1 bg-info text-white">
           <div class="userdata">
             <span>
-              <p>ID : 011023000000</p>
+              <p>ID : 011023080204</p>
             </span>
             <span>
-              <p>Nama : ALI</p>
+              <p>Nama : abby</p>
             </span>
           </div>
         </div>
