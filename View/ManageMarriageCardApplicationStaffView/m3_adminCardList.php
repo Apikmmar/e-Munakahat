@@ -1,6 +1,10 @@
 <?php
-session_start();
-require '../../database/connection.php';
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +21,7 @@ require '../../database/connection.php';
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
-
-
+  <link rel="stylesheet" href="../assets/css/function.css">
   <!-- internal stylesheet -->
   <style>
     table {
@@ -73,7 +76,7 @@ require '../../database/connection.php';
               <button class="btn btn-success h6"><a href="../ManageMarriageConsultationAdvisorView/m4_advisorApplicationList.php" style="color:white;text-decoration:none;">Khidmat Nasihat</a></button>
               <button class="btn btn-success h6" id="staffincentivemainpage"><a href="../ManageIncentiveApplicationStaffView/m5_staffMainPage.php" style="color:white;text-decoration:none;">Insentif Khas Pasangan Pengantin</a></button>
               <button class="btn btn-success h6" onclick="window.location.href='m1_staffUtility.php'">Pengguna</button>
-              <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
+              <button class="btn btn-dark h6" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
             </div>
           </div>
         </div>
@@ -94,70 +97,99 @@ require '../../database/connection.php';
         </div>
       </div>
     </nav>
-
     <!-- content -->
-    <div class="content-admin">
-      <div class="p-2 mb-2 bg-success text-white">
-        <span class="h6 text-uppercase">PENDAFTARAN PERKAHWINAN > Mohon Pengesahan Kad Nikah Dan Sijil > Senarai Permohonan Kad Nikah Dan Sijil</span>
+    <div class="table-wrapper">
+      <div class="content">
+        <!-- CRUD table -->
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 15%">Permohonan No</th>
+              <th style="width: 15%">Pilihan Penghantaran</th>
+              <th style="width: 20%">Status Permohonan</th>
+              <th style="width: 15%">Tarikh Kemas Kini </th>
+              <th style="width: 50%">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $sql = "SELECT * FROM marriagecard_application";
+            $result = $conn->query($sql);
+
+            while ($row = mysqli_fetch_assoc($result)) {
+              $CardApplicationNo = $row['CardApplicationNo'];
+              $CardApplicationCode = $row['CardApplicationCode'];
+              $Card_Delivery_Method = $row['Card_Delivery_Method'];
+              $CardApplication_Status = $row['CardApplication_Status'];
+              $cardAccept_Date = $row['cardAccept_Date'];
+            ?>
+              <tr>
+                <td style="width: 15%"><?php echo $CardApplicationCode; ?></td>
+                <td style="width: 15%"><?php echo $Card_Delivery_Method; ?></td>
+
+                <?php
+                $class = '';
+                switch ($CardApplication_Status) {
+                  case 'Lulus':
+                    $class = 'badge badge-success';
+                    break;
+                  case 'Untuk Diluluskan':
+                    $class = 'badge badge-warning';
+                    break;
+                  case 'Gagal':
+                    $class = 'badge badge-danger';
+                    break;
+                  default:
+                    $class = 'badge';
+                }
+                ?>
+                <td style="width: 20%"><span class="<?php echo $class; ?>"><?php echo $CardApplication_Status; ?></span></td>
+                <td style="width: 15%"><?php echo $cardAccept_Date; ?></td>
+                <td style="color:green; background-color: white;width: 20%;">
+                  <!-- viewFile -->
+                  <a href="../../business_service/controller/ManageMarriageRegistration/staffMarriageRegistrationController/viewMarriage.php?CardApplicationCode<?php echo $CardApplicationNo; ?>"><img class=" icon" src="../assets/img/view.png" alt="View"></a>&nbsp;
+                  <!-- editFile -->
+                  <a href="updateMarriage.php?CardApplicationNo=<?php echo $CardApplicationNo; ?>"><img class="icon" src="../assets/img/edit.png"></a>&nbsp;
+                  <!-- approveFile -->
+                  <a href="../ManageMarriageCardApplicationStaffView/m3_adminApproveC.php?CardApplicationNo=<?php echo $CardApplicationNo; ?>"><img class="icon" src="../assets/img/approved.png"></a>
+                  <!-- downloadFile -->
+                  <button style="border:none;" onclick="downloadFile()"><img class="icon" src="../assets/img/print.png"></button>
+                  <script>
+                    function downloadFile() {
+                      var filename = 'Borang Pendaftaran card.php';
+                      var content = 'Slip Pendaftaran Perkahwinan ';
+
+                      var element = document.createElement('a');
+                      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+                      element.setAttribute('download', filename);
+
+                      element.style.display = 'none';
+                      document.body.appendChild(element);
+
+                      element.click();
+
+                      document.body.removeChild(element);
+                    }
+                  </script>
+                  <!-- deleteFile -->
+                  <a href="../../business_service/controller/ManageMarriageCardApplication/staffMarriageCardApplicatiojController/deleteCard.php?CardApplicationNo=<?php echo $CardApplicationNo; ?>" onclick="return confirm('Are you really want to delete this publication?')"> <img class="icon" src="../assets/img/false.png"></a>
+                </td>
+              </tr>
+            <?php } ?>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+
+        <div> <a href="../ManageMarriageCardApplicationStaffView/m3_adminCard.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
       </div>
-      <div class="content-of-module-admin">
-        <div style="padding: 20px 0px 20px 6px">
-          <h5 style="color:black;"> &nbsp; Senarai Permohonan Kad Nikah Dan Sijil </h5>
-          <!-- the table of application card list -->
-          <table style="width: 100%;border-collapse: collapse;">
-            <tr>
-              <th style=" padding: 10px;  width:60px; background-color: grey;">No</th>
-              <th style=" width:360px; background-color: grey">No.KP / Nama Suami</th>
-              <th style=" width:350px; background-color: grey">No.KP / Nama Isteri</th>
-              <th style=" width:400px; background-color: grey">No.Akuan Terima</th>
-              <th style=" width:300px; background-color: grey">Status</th>
-              <th style=" width:400px; background-color: grey">Operasi</th>
-            </tr>
-            <tr>
-              <td style="width: 10px; background-color: white;" ">1</td>
-              <td style=" width: 360px; background-color: white;">011011011111 <br>Ali Bin Abu</td>
-              <td style="width: 350px; background-color: white;">000202022222 <br>Aliya Binti Abdul</td>
-              <td style="width: 400px; background-color: white;">KTM2M3/2023-001</td>
-              <td style="color:green; width:300px; background-color: white;">Untuk Diluluskan</td>
-              <td style="color:green; width:400px; background-color: white;">
-                <!-- viewFile -->
-                <img class=" icon" src="../assets/img/view.png" onclick="viewRecord(1)">
-                <!-- editFile -->
-                <img class="icon" src="../assets/img/edit.png" onclick="editRecord(1)">
-                <a href="../ManageMarriageCardApplicationStaffView/m3_adminApproveC.php"><img class="icon" src="../assets/img/approved.png" onclick="approveRecord(1)"></a>
-                <!-- downloadFile -->
-                <button style="border:none;" onclick="downloadFile()"><img class="icon" src="../assets/img/print.png"></button>
-                <script>
-                  function downloadFile() {
-                    var filename = 'Borang Pendaftaran Nikah 001.php';
-                    var content = 'Slip Pendaftaran Perkahwinan ';
+    </div>
+  </div>
 
-                    var element = document.createElement('a');
-                    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-                    element.setAttribute('download', filename);
-
-                    element.style.display = 'none';
-                    document.body.appendChild(element);
-
-                    element.click();
-
-                    document.body.removeChild(element);
-                  }
-                </script>
-                <!-- deleteFile -->
-                <img class="icon" src="../assets/img/false.png" onclick="deleteRecord(1)">
-              </td>
-            </tr>
-          </table>
-          <br>
-          <div> <a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
-          </script>
-
-          <!-- external link to js file -->
-          <script src="../assets/js/javascript.js" defer></script>
-          <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <!-- external link to js file -->
+  <script src="../assets/js/javascript.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

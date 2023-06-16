@@ -1,11 +1,60 @@
 <?php
-session_start();
 // Create connection
 $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+
 // Check connection
 if (!$conn) {
   echo 'Connection error: ' . mysqli_connect_error();
 }
+
+// Check if marriage card application no is provided
+if (isset($_GET['CardApplicationNo'])) {
+  $CardApplicationNo = $_GET['CardApplicationNo']; 
+
+  // Sanitize the input to prevent SQL injection
+  $CardApplicationNo = mysqli_real_escape_string($conn, $CardApplicationNo);
+
+  // Retrieve the marriage card application details from the database
+  $sql = "SELECT * FROM marriagecard_application WHERE CardApplicationNo = $CardApplicationNo";
+  $result = $conn->query($sql);
+  date_default_timezone_set('Asia/Kuala_Lumpur');
+  $currentdate = date('Y-m-d'); // Get the current date
+
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $CardApplicationNo = $row['CardApplicationNo'];
+    $CardApplicationCode = $row['CardApplicationCode'];
+    $Card_Delivery_Method = $row['Card_Delivery_Method'];
+    $CardApplication_Status = $row['CardApplication_Status'];
+    $cardAccept_Date = $row['cardAccept_Date'];
+  } else {
+    echo "marriage card application not found.";
+    exit;
+  }
+} else {
+  echo "No marriage card application no provided.";
+  exit;
+}
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Validate and sanitize user inputs
+  $updatedCardApplication_Status = mysqli_real_escape_string($conn, $_POST['CardApplication_Status']);
+  $updatedcardAccept_Date = mysqli_real_escape_string($conn, $_POST['cardAccept_Date']);
+
+  // Update the marriage card application in the database
+  $updateSql = "UPDATE marriagecard_application SET CardApplication_Status = '$updatedCardApplication_Status', cardAccept_Date = '$updatedcardAccept_Date' WHERE CardApplicationNo = '$CardApplicationNo'";
+
+  if ($conn->query($updateSql) === true) {
+    echo "marriage card applicationupdated successfully.";
+    // You can redirect the user to a different page or display a success message here
+  } else {
+    echo "Error updating marriage card application: " . $conn->error;
+    // You can handle the error scenario as per your requirements
+  }
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +71,8 @@ if (!$conn) {
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
+  <link rel="stylesheet" href="../assets/css/function.css">
+
 </head>
 
 <body>
@@ -57,7 +108,6 @@ if (!$conn) {
             </div>
           </div>
         </div>
-      </div>
     </nav>
     <!-- title bar -->
     <nav class="p-1 mb-1 bg-primary text-white justify-content-center fixed-top">
@@ -78,37 +128,46 @@ if (!$conn) {
     <!-- content -->
     <div class="content-admin">
       <div class="p-2 mb-2 bg-success text-white">
-        <span class="h6 text-uppercase">KAD NIKAH DAN SIJIL > Mohon Pengesahan KAD Nikah DAN SIJIL > MAKLUMAT KELULUSAN</span>
+        <span class="h6 text-uppercase">PENDAFTARAN PERKAHWINAN > Mohon Pengesahan Card > MAKLUMAT KELULUSAN</span>
       </div>
       <div class="content-of-module-admin">
         <div style="padding: 20px 0px 20px 6px;">
-          <b>Nama Suami </b> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="blue">: Ali Bin Abu</b><br>
-          <b>Nama Isteri </b> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="blue"> : Aliya Binti Abdul</b><br>
-          <b>Tarikh Mohon </b> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="blue">: 23-7-2023</b><br>
-          <b>Tarikh Terima </b> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="blue"> : 23-10-2023</b><br>
-          <b>No.Permohonan Online </b> &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <b id="blue"> : 23-10-2023</b><br>
-          <b>No.Akuan Terima </b> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b id="blue"> : KTN2M3/2023-001</b><br>
-          <b>No.Resit Bayaran </b> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <b id="blue"> : RPN/00792/2023 </b><br>
-          <b>Status Pendaftaran Nikah </b>&nbsp; &nbsp;<b id="blue"> : LULUS</b><br>
-        </div>
-        <!-- approve area -->
-        <div class="p-2 mb-2 bg-secondary text-white"></div>
-        <div style="padding: 5px 0px 20px 6px">
-          <b>Status</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select required>
-            <option selected value="No val">Sila pilih</option>
-            <option value="lulus">lulus</option>
-            <option value="gagal">gagal</option>
-          </select>
-          <br><br>
-          <b>Tarikh Kelulusan</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" required><br><br>
+          <form action="./m3_adminApproveC.php?CardApplicationNo=<?php echo $CardApplicationNo; ?>" method="POST">
 
-          <a href="#"><input style="float:right;margin-top:40;margin-right:5px;margin-left:5px;" class=" btn btn-success" type="submit" value="Simpan"></a>
-          <a href="../ManageMarriageCardApplicationStaffView/m3_adminCardList.php"><button style=" float:right;margin-top:40;" class=" btn btn-success">Cancel</button></a>
-          </p>
+            <div class="form-group">
+              <label for="CardApplicationCode">Permohonan No</label>
+              <input type="text" name="CardApplicationCode" class="form-control" placeholder="<?php echo $CardApplicationCode; ?>" disabled>
+            </div>
+            <div class="form-group">
+              <label for="Card_Delivery_Method">Pilihan Penghantaran</label>
+              <input type="text" name="Card_Delivery_Method" class="form-control" placeholder="<?php echo $Card_Delivery_Method; ?>" disabled>
+            </div>
+            <div class="form-group">
+              <label for="CardApplication_Status">Status Permohonan</label>
+              <select id="CardApplication_Status" class="form-control custom-select" name="CardApplication_Status" required>
+                <option selected disabled>Sila pilih status</option>
+                <option value="Lulus" <?php if ($CardApplication_Status === "Lulus") echo 'selected'; ?>>Lulus</option>
+                <option value="Untuk Diluluskan" <?php if ($CardApplication_Status === "Untuk Diluluskan") echo 'selected'; ?>>Untuk Diluluskan</option>
+                <option value="Gagal" <?php if ($CardApplication_Status === "Gagal") echo 'selected'; ?>>Gagal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cardAccept_Date">Tarikh Kemas Kini</label>
+              <input type="date" name="cardAccept_Date" class="form-control" required>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-success">Update</button>
+                <a href="./m3_adminCardList.php" class="btn btn-secondary">kembali</a>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+
   <!-- external link to js file -->
   <script src="../assets/js/javascript.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>

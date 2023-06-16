@@ -1,7 +1,10 @@
 <?php
-// Database connection settings
-include 'connection.php';
-
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
 
 // Check if a registration no is provided
 if (isset($_GET['RegistrationNo'])) {
@@ -9,16 +12,14 @@ if (isset($_GET['RegistrationNo'])) {
   // Retrieve the Registration details from the database
   $sql = "SELECT * FROM marriage_registration WHERE RegistrationNo = $RegistrationNo1";
   $result = $conn->query($sql);
+  date_default_timezone_set('Asia/Kuala_Lumpur');
+  $currentdate = date('Y-m-d'); // Get the current date
 
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $User_Name1 = $row['User_Name'];
-    $User_IC1 = $row['User_IC'];
-    $Partner_Name1 = $row['Partner_Name'];
-    $Partner_IC1 = $row['Partner_IC'];
     $RegistrationNo = $row['RegistrationNo'];
-    $Registration_date1 = $row['Registration_date'];
-    $Registration_Status1 = $row['Registration_Status'];
+    $Registration_Date = $row['Registration_Date'];
+    $Registration_Status = $row['Registration_Status'];
   } else {
     echo "registration not found.";
     exit;
@@ -30,6 +31,7 @@ if (isset($_GET['RegistrationNo'])) {
 
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,30 +46,7 @@ $conn->close();
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
-  <link rel="stylesheet" href="../assets/css/view3.css">
-  <!-- internal stylesheet -->
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    .icon {
-      width: 30px;
-      height: auto;
-      cursor: pointer;
-    }
-
-    .back-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/function.css">
 </head>
 
 <body>
@@ -103,7 +82,6 @@ $conn->close();
             </div>
           </div>
         </div>
-      </div>
     </nav>
     <!-- title bar -->
     <nav class="p-1 mb-1 bg-primary text-white justify-content-center fixed-top">
@@ -124,58 +102,50 @@ $conn->close();
     <!-- content -->
     <div class="content-admin">
       <div class="p-2 mb-2 bg-success text-white">
-        <span class="h6 text-uppercase">PENDAFTARAN PERKAHWINAN > Mohon Pengesahan Nikah > Senarai Permohonan Nikah</span>
+        <span class="h6 text-uppercase">PENDAFTARAN PERKAHWINAN > Mohon Pengesahan Nikah > MAKLUMAT KELULUSAN</span>
       </div>
       <div class="content-of-module-admin">
-        <div style="padding: 20px 0px 20px 6px">
-          <h5 style="color:black;"> &nbsp; Senarai Permohonan Nikah </h5>
-          <section class="content">
-            <div class="col-md-6">
-              <div class="">
-                <div class="form-body">
-                  <div class="form-group">                   
-                    <label for="date">Date: <?php echo $date; ?></label><br>
-                    <label for="time">Time: <?php echo $time; ?></label>
-                  </div>
-                  <div class="form-group">
-                    <label for="complainttype">Marriage Registration</label>
-                    <select id="complainttype" class="form-control custom-select" disabled>
-                      <option selected disabled>Choose the type of complaint</option>
-                      <option value="Unsatisfied Expert's Feedback" <?php if ($complaintType === "Unsatisfied Expert's Feedback") echo 'selected'; ?>>Unsatisfied Expert's Feedback</option>
-                      <option value="Wrongly Assigned Research Area" <?php if ($complaintType === "Wrongly Assigned Research Area") echo 'selected'; ?>>Wrongly Assigned Research Area</option>
-                      <option value="Misleading or Incorrect Information" <?php if ($complaintType === "Misleading or Incorrect Information") echo 'selected'; ?>>Misleading or Incorrect Information</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" class="form-control" row="4" placeholder="Write a description of the complaint" disabled><?php echo $description; ?></textarea>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <a href="complaintmainpage.php" class="btn btn-secondary">Back</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
+        <div style="padding: 20px 0px 20px 6px;">
+          <form action="../../business_service/controller/ManageMarriageRegistration/staffMarriageRegistrationController/updateMarriage.php?RegistrationNo<?php echo $RegistrationNo; ?>" method="POST">
+            <div class="form-group">
+              <label for="RegistrationNo">Permohonan No</label>
+              <input type="text" name="RegistrationNo" class="form-control" disabled><?php echo $RegistrationNo; ?>
             </div>
-          </section>
+            <div class="form-group">
+              <label for="Registration_Date">Tarikh permohonan</label>
+              <input type="text" name="Registration_Date" class="form-control" disabled><?php echo $Registration_Date; ?>
+            </div>
+            <div class="form-group">
+              <label for="Registration_Status">Status Permohonan</label>
+              <select id="Registration_Status" class="form-control custom-select" name="Registration_Status" disabled>
+                <option selected disabled>Sila pilih status</option>
+                <option value="Lulus" <?php if ($Registration_Status === "Lulus") echo 'selected'; ?>>Lulus</option>
+                <option value="Untuk Diluluskan" <?php if ($Registration_Status === "Untuk Diluluskan") echo 'selected'; ?>>Untuk Diluluskan</option>
+                <option value="Gagal" <?php if ($Registration_Status === "Gagal") echo 'selected'; ?>>Gagal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Accept_Date">Tarikh Kemas Kini</label>
+              <input type="text" name="Accept_Date" class="form-control" disabled><?php echo $Accept_Date; ?>
+            </div>
 
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-success">Update</button>
+                <a href="../../../../View/ManageMarriageRegistrationStaffView/m3_adminMarriageList.php" class="btn btn-secondary">Cancel</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          </td>
-          </tr>
-          </tbody>
-          </table>
-          <br>
-          <div> <a href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php"><button style="margin-top:25px; float:right;" class=" btn btn-success">Kembali</button></a></div>
-
-          <!-- external link to js file -->
-
-          <script src="../assets/js/javascript.js" defer></script>
-          <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <!-- external link to js file -->
+  <script src="../assets/js/javascript.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

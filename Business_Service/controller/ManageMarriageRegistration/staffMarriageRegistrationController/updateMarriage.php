@@ -1,11 +1,15 @@
 <?php
-session_start();
 // Create connection
 $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
 // Check connection
 if (!$conn) {
   echo 'Connection error: ' . mysqli_connect_error();
 }
+
+$RegistrationNo = $_GET['a'];
+$query = "SELECT * FROM marriage_registration WHERE RegistrationNo='$RegistrationNo'";
+
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +26,7 @@ if (!$conn) {
   <!-- external stylesheet -->
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/css/module3.css">
-
+  <link rel="stylesheet" href="../assets/css/view3.css">
 </head>
 
 <body>
@@ -58,7 +62,6 @@ if (!$conn) {
             </div>
           </div>
         </div>
-      </div>
     </nav>
     <!-- title bar -->
     <nav class="p-1 mb-1 bg-primary text-white justify-content-center fixed-top">
@@ -77,34 +80,76 @@ if (!$conn) {
     </nav>
 
     <!-- content -->
-    <div class="content-admin">
-      <div class="p-2 mb-2 bg-success text-white">
-        <span class="h6 text-uppercase">PENDAFTARAN PERKAHWINAN > Mohon Pengesahan Kad Nikah Dan Sijil</span>
-      </div>
-      <div class="content-of-module-admin">
-        <div style="padding: 20px 0px 20px 6px">
-          <button><a style="text-decoration:none;" href="../ManageMarriageRegistrationStaffView/m3_adminMarriage.php">
-              <h6 style="color:black;">Mohon Pengesahan Nikah</h6>
-            </a></button>
-          <button class=" btn btn-secondary"><a style="text-decoration:none;" href="../ManageMarriageRegistrationStaffView/m3_adminCard.php">
-              <h6 style="color:white;">Mohon Pengesahan Kad Nikah Dan Sijil</h6>
-            </a></button><br><br><br>
-          <b>No.Akuan Terima</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"><br><br>
-          <b>Status</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select required>
-            <option selected value="No val">Sila pilih</option>
-            <option value="wait">Untuk Diluluskan</option>
-            <option value="lulus">lulus</option>
-            <option value="gagal">gagal</option>
-          </select>
-          <div style="padding: 10px 0px 20px 700px"><a href="../ManageMarriageCardApplicationStaffView/m3_adminCardList.php"><button class=" btn btn-success">Carian</button></a></div>
-        </div>
+    <div id="content-wrapper">
+
+      <!-- main content (right side) -->
+      <div id="main-content">
+
+        <form class="expenses-form" method="post" action="../../controller/ManageMarriageRegistration/staffMarriageRegistrationController/update-authenticator.php?a=<?php echo $RegistrationNo ?>"> 
+            <div class="expenses-details">
+              <div class="expenses-title">
+                <input type="text" name="expenses-title" value=<?php echo $row['expenses_title'] ?>>
+              </div>
+
+              <?php
+              if (isset($_SESSION['ERROR_MESSAGE'])) {
+                $i = 0;
+                if (in_array("title cannot be empty.", $_SESSION['ERROR_MESSAGE'])) {
+                  echo "<p style='color:red;font-size:12px;'>" . $_SESSION['ERROR_MESSAGE'][$i] . "</p>";
+                  $i += 1;
+                }
+              }
+              ?>
+
+              <div class="date">
+                <input type="text" name="date" placeholder="Date, ex: 2022-01-01" value=<?php echo $row['expenses_date'] ?>>
+              </div>
+
+              <?php
+              if (isset($_SESSION['ERROR_MESSAGE'])) {
+                if (in_array("date cannot be empty.", $_SESSION['ERROR_MESSAGE'])) {
+                  echo "<p style='color:red;font-size:12px;'>*" . $_SESSION['ERROR_MESSAGE'][$i] . "</p>";
+                  $i += 1;
+                }
+                if (in_array("invalid date format.", $_SESSION['ERROR_MESSAGE'])) {
+                  echo "<p style='color:red;font-size:12px;'>*" . $_SESSION['ERROR_MESSAGE'][$i] . "</p>";
+                  $i += 1;
+                }
+              }
+              ?>
+
+              <div class="description">
+                <textarea placeholder="Expenses Description" name="expenses-description" cols="130" rows="10"><?php echo $row['expenses_description'] ?></textarea>
+              </div>
+
+              <div class="expenses-amount">
+                <input type="text" name="expenses-amount" placeholder="Expenses Amount, ex: 22.10" value=<?php echo $row['expenses_amount'] ?>>
+              </div>
+
+              <?php
+              if (isset($_SESSION['ERROR_MESSAGE'])) {
+                if (in_array("expenses amount cannot be empty.", $_SESSION['ERROR_MESSAGE'])) {
+                  echo "<p style='color:red;font-size:12px;'>*" . $_SESSION['ERROR_MESSAGE'][$i] . "</p>";
+                  $i += 1;
+                }
+                if (in_array("expenses amount must be numbers.", $_SESSION['ERROR_MESSAGE'])) {
+                  echo "<p style='color:red;font-size:12px;'>*" . $_SESSION['ERROR_MESSAGE'][$i] . "</p>";
+                  $i = NULL;
+                }
+              }
+              $_SESSION['ERROR_MESSAGE'] = null;
+              ?>
+
+            </div>
+            <?php } ?>
+
+          <div class="button-section">
+            <a href="../../View/ManageMarriageRegistrationStaffView/m3_adminMarriageList.php"><button type="button" id="cancel-button">Cancel</button></a>
+            <button type="submit" id="add-button" name="update">Update</button>
+          </div>
+        </form>
       </div>
     </div>
-    <!-- external link to js file -->
-    <script src="../assets/js/javascript.jss" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>
