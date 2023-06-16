@@ -14,8 +14,6 @@ class UserMarriagePreparation {
         $counter = 0;
         $courses = [];
 
-        require_once "../../database/connection.php"; // Include specific connection file for this function
-
         try {
             $sql = "SELECT MPC_PenganjurName, MPC_Address, MPC_Date, MPC_Time, MPC_Capacity FROM marriage_prep_course";
 

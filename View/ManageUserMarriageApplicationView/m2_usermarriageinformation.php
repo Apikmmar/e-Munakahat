@@ -1,6 +1,28 @@
 <?php
     session_start();
-    require '../../database/connection.php';
+    if (isset($_SESSION['icnum'])) {
+        require '../../database/connection.php';
+
+        $user_IC = $_SESSION['icnum'];
+
+        $sql = "SELECT User_Name FROM user_registration_info WHERE User_IC = :user_ic";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':user_ic', $user_IC, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            $user_Name = $result['User_Name'];
+	    }
+
+        if (isset($_SESSION['form_data'])) {
+            $form_data = $_SESSION['form_data'];
+    
+            unset($_SESSION['form_data']);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +46,8 @@
                 <br>
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
-                        <span>ID :<p></p></span>
-                        <span>Nama :<p></p></span>
+                        <span><?php echo "Username: $user_Name "; ?></span><br>
+                        <span><?php echo "IC Number: $user_IC "; ?></span><br>
                     </div>
                 </div>
                 <br><br>
@@ -64,7 +86,7 @@
                 <span class="h6 text-uppercase">PERMOHONAN BERKAHWIN >> MAKLUMAT PERKAHWINAN</span>
             </div>
             <div class="content-of-module">
-                <form action="../../Business_Service/Controller/UserMarriageApplicationController.php" method="post">
+                <form action="../../Business_Service/Controller/ManageMarriageApplication/UserMarriageApplicationController.php" method="post">
                     <div style="padding: 10px 0px 0px 20px;">
                         <div>
                             <h5>Maklumat Perkahwinan</h5>
@@ -115,51 +137,51 @@
                             <div class="d-flex flex-row">
                                 <div style="width: 600px; margin-top: 10px">
                                     <div style="padding-top: 10px;">
-                                        <label>Nama Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Nama Wali" required>
+                                        <label>Nama Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Nama Wali" name="Wali_Name" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Tarikh lahir Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Tarikh lahir Wali" required>
+                                        <label>Tarikh lahir Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Tarikh lahir Wali" name="Wali_DOB" required>
                                         <em>dd-mm-yyyy</em>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Umur Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Umur Wali" required>
+                                        <label>Umur Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Umur Wali" name="Wali_Age" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>No HP Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No HP Wali" required>
+                                        <label>No HP Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No HP Wali" name="Wali_HP" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Tarikh Nikah Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm datepicker" id="inputboxstyle" placeholder="Masukkan Tarikh Nikah Wali" required>
+                                        <label>Tarikh Nikah Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm datepicker" id="inputboxstyle" placeholder="Masukkan Tarikh Nikah Wali" name="Wali_MarriageDate" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Status Islam Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan status islam" required>
+                                        <label>Status Islam Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan status islam" name="Wali_IslamStatus" required>
                                     </div>
                                 </div>
                                 <div style="width: 600px; margin-top: 10px">
                                     <div style="padding-top: 10px;">
-                                        <label>Jantina Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Jantina Wali" required>
+                                        <label>Jantina Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Jantina Wali" name="Wali_Gender" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Alamat Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Alamat Wali" required>
+                                        <label>Alamat Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Alamat Wali" name="Wali_Address" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Hubungan Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Hubungan Wali" required>
+                                        <label>Hubungan Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Hubungan Wali" name="Wali_Hubungan" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>No Sijil Nikah Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No Sijil Nikah Wali" required>
+                                        <label>No Sijil Nikah Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No Sijil Nikah Wali" name="Wali_NoSijilNikah" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Pelulus Nikah Wali:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Pelulus Nikah Wali" required>
+                                        <label>Pelulus Nikah Wali *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Pelulus Nikah Wali" name="Wali_Pelulus" required>
                                     </div>
                                 </div>
                             </div>
@@ -172,31 +194,39 @@
                                 <div style="width: 600px;">
                                     <h6>Saksi 1</h6>
                                     <div style="padding-top: 10px;">
-                                        <label>Nama Saksi:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Nama Saksi" required>
+                                        <label>Nombor IC Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No IC Saksi" name="Saksi_IC" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Alamat Saksi:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Alamat Saksi" required>
+                                        <label>Nama Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Nama Saksi" name="Saksi_Name" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>No HP Saksi:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No HP Saksi" required>
+                                        <label>Alamat Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Alamat Saksi" name="Saksi_Address" required>
+                                    </div>
+                                    <div style="padding-top: 10px;">
+                                        <label>No HP Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No HP Saksi" name="Saksi_HP" required>
                                     </div>
                                 </div>
                                 <div style="width: 600px;">
                                     <h6>Saksi 2</h6>
                                     <div style="padding-top: 10px;">
-                                        <label>Nama Saksi:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Nama Saksi" required>
+                                        <label>Nombor IC Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No IC Saksi" name="Saksi_" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Alamat Saksi:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Alamat Saksi" required>
+                                        <label>Nama Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Nama Saksi" name="Saksi_" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>No HP Saksi:</label>&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No HP Saksi" required>
+                                        <label>Alamat Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan Alamat Saksi" name="Saksi_" required>
+                                    </div>
+                                    <div style="padding-top: 10px;">
+                                        <label>No HP Saksi *:</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan No HP Saksi" name="Saksi_" required>
                                     </div>
                                 </div>
                             </div>
@@ -208,13 +238,13 @@
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="" class="btn btn-primary">Simpan</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button type="reset" class="btn btn-danger">Reset</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-secondary" id="backtomainpage">Kembali</button>
+                        <button type="" class="btn btn-secondary" id="backtomainpage">Kembali</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" value="submit" class="btn btn-primary" id="gotouploadmarriagedoc" disable>Daftar Kahwin</button>
+                        <button type="submit" value="submit" class="btn btn-primary" id="gotouploadmarriagedoc" name="daftarperkahwinan">Daftar Kahwin</button>
                     </div>
                     <br>
                 </form>

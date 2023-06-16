@@ -1,8 +1,13 @@
 <?php
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "e-munakahat";
 
-// Create connection
-$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
-// Check connection
-if (!$conn) {
-	echo 'Connection error: ' . mysqli_connect_error();
-}
+	try {
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		echo("<script>console.log('connection is on')</script>");
+	} catch (PDOException $e) {
+		echo $e->getMessage();
+	}

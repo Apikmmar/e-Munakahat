@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jun 16, 2023 at 03:55 PM
+-- Host: 127.0.0.1
+-- Generation Time: Jun 16, 2023 at 06:44 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -145,14 +145,12 @@ CREATE TABLE `incentive_application` (
 --
 
 CREATE TABLE `marriagecard_application` (
-  `CardApplicationNo` int(11) NOT NULL,
-  `CardApplicationCode` varchar(20) NOT NULL,
+  `CardApplicationNo` varchar(15) NOT NULL,
   `Card_Delivery_Method` varchar(15) NOT NULL,
   `Card_Pickup_Date` date NOT NULL,
   `Card_Pickup_Venue` varchar(15) NOT NULL,
   `Card_Delivery_Address` varchar(10) NOT NULL,
-  `CardApplication_Status` varchar(20) NOT NULL,
-  `cardAccept_Date` date DEFAULT NULL,
+  `CardApplication_Status` varchar(15) NOT NULL,
   `MC_PaymentNo` varchar(15) NOT NULL,
   `Staff_IC` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -174,7 +172,7 @@ INSERT INTO `marriagecard_application` (`CardApplicationNo`, `CardApplicationCod
 
 CREATE TABLE `marriage_application` (
   `MA_ID` varchar(12) NOT NULL,
-  `MA_ApplyDate` date NOT NULL,
+  `MA_ApplyDate` int(11) NOT NULL,
   `MA_Nation` varchar(25) NOT NULL,
   `MA_State` varchar(20) NOT NULL,
   `MA_Category` varchar(30) NOT NULL,
@@ -203,9 +201,19 @@ CREATE TABLE `marriage_prep_course` (
   `MPC_Date` int(11) NOT NULL,
   `MPC_Time` int(11) NOT NULL,
   `MPC_Capacity` int(11) NOT NULL,
-  `Staff_IC` varchar(12) NOT NULL,
-  `Attendance_ID` varchar(10) NOT NULL
+  `Staff_IC` varchar(12) DEFAULT NULL,
+  `Attendance_ID` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `marriage_prep_course`
+--
+
+INSERT INTO `marriage_prep_course` (`MPC_SiriTaklimat`, `MPC_PenganjurName`, `MPC_Address`, `MPC_Date`, `MPC_Time`, `MPC_Capacity`, `Staff_IC`, `Attendance_ID`) VALUES
+('22', '2', '2', 2, 2, 2, NULL, NULL),
+('619c782bbe', '5', '5', 5, 5, 5, NULL, NULL),
+('76f96f3416', '7', '7', 7, 7, 7, NULL, NULL),
+('e94ca27f65', '7', '7', 7, 7, 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -214,12 +222,16 @@ CREATE TABLE `marriage_prep_course` (
 --
 
 CREATE TABLE `marriage_registration` (
-  `RegistrationNo` int(11) NOT NULL,
-  `Registration_Type` varchar(30) NOT NULL,
+  `RegistrationNo` varchar(15) NOT NULL,
+  `Registration_Type` varchar(15) NOT NULL,
   `Registration_Date` date NOT NULL,
-  `Registration_Status` varchar(20) NOT NULL,
-  `Accept_Date` date DEFAULT NULL,
-  `Staff_IC` varchar(12) NOT NULL
+  `Registration_Status` varchar(15) NOT NULL,
+  `Registration_Document` varchar(15) NOT NULL,
+  `MA_ID` varchar(15) NOT NULL,
+  `CardApplicationNo` varchar(15) NOT NULL,
+  `MR_PaymentNo` varchar(15) NOT NULL,
+  `Staff_IC` varchar(12) NOT NULL,
+  `User_IC` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -300,13 +312,6 @@ CREATE TABLE `saksi_info` (
   `Saksi_HP` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `saksi_info`
---
-
-INSERT INTO `saksi_info` (`Saksi_IC`, `Saksi_Name`, `Saksi_Address`, `Saksi_HP`) VALUES
-('0303030303', 'ab', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -328,6 +333,10 @@ CREATE TABLE `staff_registration_info` (
 --
 -- Dumping data for table `staff_registration_info`
 --
+
+INSERT INTO `staff_registration_info` (`Staff_IC`, `Staff_Name`, `Staff_Password`, `Staff_PhoneNo`, `Staff_Gender`, `Staff_Email`, `Staff_Position`, `Staff_PAID`, `Staff_AccessCategory`) VALUES
+('020111020425', 'ammar', 'admin@123', 107730425, 'Lelaki', 'a@gmail.com', 'Staff', 'AA1234', 'admin');
+
 
 INSERT INTO `staff_registration_info` (`Staff_IC`, `Staff_Name`, `Staff_Password`, `Staff_PhoneNo`, `Staff_Gender`, `Staff_Email`, `Staff_Position`, `Staff_PAID`, `Staff_AccessCategory`) VALUES
 ('0101010101', 'admin', 'adminpwd', 0, '', '', '', '', ''),
@@ -369,8 +378,7 @@ CREATE TABLE `user_registration_info` (
 --
 
 INSERT INTO `user_registration_info` (`User_IC`, `User_Name`, `User_DOB`, `User_Gender`, `User_Race`, `User_Address`, `User_AddressInIC`, `User_Age`, `User_Nationality`, `User_HomeHP`, `User_HP`, `User_Edu`, `User_JobSector`, `User_JobPosition`, `User_JobAddress`, `User_JobHP`, `User_Salary`, `User_MarriageStatus`, `User_IslamStatus`, `User_Password`, `User_Email`, `Partner_ID`) VALUES
-('011023080204', 'abby', '2001-10-23', 'Perempuan', 'Cina', '', 'kuantan', 22, 'Warganegara', 0, 2147483647, 'PHD', 'Sektor Swasta', '', '1134,SUNGAI DURIAN', 0, 0, '', '', '123', 'abbyoxide01@gmail.com', NULL),
-('0909090909', 'izzan', '2001-02-16', 'Lelaki', 'Bumiputera Sabah', 'No.5, Lrg IS 11, Taman Indera Sempurna, Kuantan, P', 'No.5, Lrg IS 11, Taman Indera Sempurna, Kuantan, P', 22, 'Warganegara', 0, 2147483647, 'PT3/PMR/SRP/LC', 'Pesara', '', 'No.5, Lrg IS 11, Taman Indera Sempurna, Kuantan, P', 0, 0, '', '', '122', 'wmizzan@gmail.com', NULL);
+('020111020425', 'AFIQ', '2002-01-11', 'Lelaki', 'Melayu', '11111', '11111', 21, 'Warganegara', 0, 2147483647, 'Ijazah', 'Sektor Swasta', '', '11111', 0, 0, '', '', 'Apik@020111', 'b@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -477,7 +485,12 @@ ALTER TABLE `marriage_prep_course`
 -- Indexes for table `marriage_registration`
 --
 ALTER TABLE `marriage_registration`
-  ADD PRIMARY KEY (`RegistrationNo`);
+  ADD PRIMARY KEY (`RegistrationNo`),
+  ADD KEY `MA_ID` (`MA_ID`),
+  ADD KEY `CardApplicationNo` (`CardApplicationNo`),
+  ADD KEY `MR_PaymentNo` (`MR_PaymentNo`),
+  ADD KEY `Staff_IC` (`Staff_IC`),
+  ADD KEY `User_IC` (`User_IC`);
 
 --
 -- Indexes for table `mc_payment_info`
@@ -523,22 +536,6 @@ ALTER TABLE `wali_info`
   ADD PRIMARY KEY (`Wali_IC`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `marriagecard_application`
---
-ALTER TABLE `marriagecard_application`
-  MODIFY `CardApplicationNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `marriage_registration`
---
-ALTER TABLE `marriage_registration`
-  MODIFY `RegistrationNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- Constraints for dumped tables
 --
 
@@ -546,8 +543,8 @@ ALTER TABLE `marriage_registration`
 -- Constraints for table `consultation`
 --
 ALTER TABLE `consultation`
-  ADD CONSTRAINT `consultation_ibfk_1` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info1` (`Staff_IC`),
-  ADD CONSTRAINT `consultation_ibfk_2` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info1` (`User_IC`);
+  ADD CONSTRAINT `consultation_ibfk_1` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`),
+  ADD CONSTRAINT `consultation_ibfk_2` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info` (`User_IC`);
 
 --
 -- Constraints for table `incentive_application`
@@ -555,21 +552,22 @@ ALTER TABLE `consultation`
 ALTER TABLE `incentive_application`
   ADD CONSTRAINT `incentive_application_ibfk_1` FOREIGN KEY (`DI_ID`) REFERENCES `document_info` (`DI_ID`),
   ADD CONSTRAINT `incentive_application_ibfk_2` FOREIGN KEY (`HI_ID`) REFERENCES `heir_info` (`HI_ID`),
-  ADD CONSTRAINT `incentive_application_ibfk_3` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info1` (`Staff_IC`),
-  ADD CONSTRAINT `incentive_application_ibfk_4` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info1` (`User_IC`);
+  ADD CONSTRAINT `incentive_application_ibfk_3` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`),
+  ADD CONSTRAINT `incentive_application_ibfk_4` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info` (`User_IC`);
 
 --
 -- Constraints for table `marriagecard_application`
 --
 ALTER TABLE `marriagecard_application`
-  ADD CONSTRAINT `marriagecard_application_ibfk_1` FOREIGN KEY (`MC_PaymentNo`) REFERENCES `mc_payment_info` (`MC_PaymentNo`);
+  ADD CONSTRAINT `marriagecard_application_ibfk_1` FOREIGN KEY (`MC_PaymentNo`) REFERENCES `mc_payment_info` (`MC_PaymentNo`),
+  ADD CONSTRAINT `marriagecard_application_ibfk_2` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`);
 
 --
 -- Constraints for table `marriage_application`
 --
 ALTER TABLE `marriage_application`
-  ADD CONSTRAINT `marriage_application_ibfk_1` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info1` (`User_IC`),
-  ADD CONSTRAINT `marriage_application_ibfk_2` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info1` (`Staff_IC`),
+  ADD CONSTRAINT `marriage_application_ibfk_1` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info` (`User_IC`),
+  ADD CONSTRAINT `marriage_application_ibfk_2` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`),
   ADD CONSTRAINT `marriage_application_ibfk_3` FOREIGN KEY (`Saksi_IC`) REFERENCES `saksi_info` (`Saksi_IC`),
   ADD CONSTRAINT `marriage_application_ibfk_4` FOREIGN KEY (`Wali_IC`) REFERENCES `wali_info` (`Wali_IC`),
   ADD CONSTRAINT `marriage_application_ibfk_5` FOREIGN KEY (`Test_ID`) REFERENCES `hiv_test_result` (`Test_ID`),
@@ -579,8 +577,18 @@ ALTER TABLE `marriage_application`
 -- Constraints for table `marriage_prep_course`
 --
 ALTER TABLE `marriage_prep_course`
-  ADD CONSTRAINT `marriage_prep_course_ibfk_1` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info1` (`Staff_IC`),
+  ADD CONSTRAINT `marriage_prep_course_ibfk_1` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`),
   ADD CONSTRAINT `marriage_prep_course_ibfk_2` FOREIGN KEY (`Attendance_ID`) REFERENCES `mpc_attendance` (`Attendance_ID`);
+
+--
+-- Constraints for table `marriage_registration`
+--
+ALTER TABLE `marriage_registration`
+  ADD CONSTRAINT `marriage_registration_ibfk_1` FOREIGN KEY (`MA_ID`) REFERENCES `marriage_application` (`MA_ID`),
+  ADD CONSTRAINT `marriage_registration_ibfk_2` FOREIGN KEY (`CardApplicationNo`) REFERENCES `marriagecard_application` (`CardApplicationNo`),
+  ADD CONSTRAINT `marriage_registration_ibfk_3` FOREIGN KEY (`MR_PaymentNo`) REFERENCES `mr_payment_info` (`MR_PaymentNo`),
+  ADD CONSTRAINT `marriage_registration_ibfk_4` FOREIGN KEY (`Staff_IC`) REFERENCES `staff_registration_info` (`Staff_IC`),
+  ADD CONSTRAINT `marriage_registration_ibfk_5` FOREIGN KEY (`User_IC`) REFERENCES `user_registration_info` (`User_IC`);
 
 --
 -- Constraints for table `user_registration_info`
