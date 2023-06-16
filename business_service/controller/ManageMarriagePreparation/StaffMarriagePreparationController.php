@@ -10,14 +10,25 @@
             $this->conn = $conn;
         }
 
-        public function generateRandomString($length = 10) {
-            $bytes = random_bytes(ceil($length / 2));
-            return substr(bin2hex($bytes), 0, $length);
+        public function generateSiriTaklimat($length = 10) {
+            $prefix = "MPC";
+            $suffix = "MPC";
+            $remainingLength = $length - strlen($prefix) - strlen($suffix);
+            
+            if ($remainingLength <= 0) {
+                return $prefix . "/" . $suffix;
+            }
+            
+            $bytes = random_bytes(ceil($remainingLength / 2));
+            $randomString = substr(bin2hex($bytes), 0, $remainingLength);
+            
+            return $prefix . "/" . $randomString . "/" . $suffix;
         }
+        
 
         public function createNewPreparationCourse($MPC_PenganjurName, $MPC_Address, $MPC_Date, $MPC_Time, $MPC_Capacity, $Staff_IC) {
             // Generate a random VARCHAR value for MPC_SiriTaklimat
-            $MPC_SiriTaklimat = $this->generateRandomString(10); 
+            $MPC_SiriTaklimat = $this->generateSiriTaklimat(10); 
 
             // insert into database
             $stmt = $this->conn->prepare("INSERT INTO marriage_prep_course (MPC_SiriTaklimat, MPC_PenganjurName, MPC_Address, MPC_Date, MPC_Time, MPC_Capacity) VALUES (?, ?, ?, ?, ?, ?)");
@@ -36,37 +47,6 @@
             }
 
             $stmt->closeCursor();
-        }
-
-        public function readPreparationCourses() {
-            $counter = 0;
-            $courses = [];
-        
-            try {
-                $sql = "SELECT MPC_SiriTaklimat, MPC_Address, MPC_Date, MPC_Time, MPC_Capacity FROM marriage_prep_course";
-        
-                $stmt = $this->conn->prepare($sql);
-                $stmt->execute();
-        
-                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-                foreach ($results as $row) {
-                    $counter++;
-                    $course = [
-                        'counter' => $counter,
-                        'siritaklimat' => $row['MPC_SiriTaklimat'],
-                        'address' => $row['MPC_Address'],
-                        'date' => $row['MPC_Date'],
-                        'time' => $row['MPC_Time'],
-                        'capacity' => $row['MPC_Capacity']
-                    ];
-                    $courses[] = $course;
-                }
-            } catch (PDOException $e) {
-                die("Database query failed: " . $e->getMessage());
-            }
-        
-            return $courses;
         }
 
         public function closeConnection() {

@@ -1,6 +1,39 @@
 <?php
     session_start();
-    require '../../database/connection.php';
+    
+    function readPreparationCourses() {
+        require '../../database/connection.php';
+        $counter = 0;
+        $courses = [];
+
+        try {
+            $sql = "SELECT MPC_SiriTaklimat, MPC_Address, MPC_Date, MPC_Time, MPC_Capacity FROM marriage_prep_course";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($results as $row) {
+                $counter++;
+                $course = [
+                    'counter' => $counter,
+                    'siritaklimat' => $row['MPC_SiriTaklimat'],
+                    'address' => $row['MPC_Address'],
+                    'date' => $row['MPC_Date'],
+                    'time' => $row['MPC_Time'],
+                    'capacity' => $row['MPC_Capacity']
+                ];
+                $courses[] = $course;
+            }
+        } catch (PDOException $e) {
+            die("Database query failed: " . $e->getMessage());
+        }
+
+        return $courses;
+    }
+
+    $courses = readPreparationCourses();
 ?>
 
 <!DOCTYPE html>
@@ -129,7 +162,7 @@
                         &nbsp;&nbsp;
                         <button type="btn" class="btn btn-primary" id="backbuttonstaff">Kembali</button>
                     </div>
-                    <br>
+                </form>
                     <div>
                         <table class="table table-bordered" id="searchcoursetable" style="">
                         <thead>
@@ -144,28 +177,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                            $staffMarriagePrepController = new StaffMarriagePreparation();
-                            $courses = $staffMarriagePrepController->readPreparationCourses();
-                            foreach ($courses as $course) {
-                                ?>
-                                <tr>
-                                    <td><?php echo $course['counter'] ?></td>
-                                    <td><?php echo $course['siritaklimat'] ?></td>
-                                    <td><?php echo $course['address'] ?></td>
-                                    <td><?php echo $course['date'] ?></td>
-                                    <td><?php echo $course['time'] ?></td>
-                                    <td><?php echo $course['capacity'] ?></td>
-                                    <td><img src="../assets/img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
-                                    <td><img src="../assets/img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
-                                </tr>
-                                <?php
-                            }
-                        ?>
+                        <?php foreach ($courses as $course) : ?>
+                            <tr>
+                                <td><?php echo $course['counter'] ?></td>
+                                <td><?php echo $course['siritaklimat'] ?></td>
+                                <td><?php echo $course['address'] ?></td>
+                                <td><?php echo $course['time'] ?></td>
+                                <td><?php echo $course['date'] ?></td>
+                                <td><?php echo $course['capacity'] ?></td>
+                                <td><img src="../assets/img/evaluation.png" alt="logopapar" class="imgflaticon" id=""></td>
+                                <td><img src="../assets/img/add-user.png" alt="logodaftar" class="imgflaticon" id=""></td>
+                            </tr>
+                        <?php endforeach; ?>
                         </tbody>
                         </table>
                     </div>
-                </form>
                 <br>
             </div>
         </div>
