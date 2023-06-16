@@ -1,6 +1,8 @@
 <?php
-    session_start();
-    require '../../database/connection.php';
+    require_once "../../Business_Service/Controller/ManageMarriagePreparation/UserMarriagePreparationController.php";
+
+    $userMarriagePrepController = new UserMarriagePreparation();
+    $courses = $userMarriagePrepController->readMarriagePrepCourses();
 ?>
 
 <!DOCTYPE html>
@@ -64,49 +66,52 @@
             </div>
             <div class="content-of-module">
                 <br>
-                <form action="../../Business_Service/Controller/UserMarriagePreparationController.php" method="post">
-                    <div class="text-center h6">
-                        <p>Pilihan Anjuran:</p>
-                        <select name="pejabatagamedaerah" id="pejagamdae">
-                            <option value="PILIH PEJABAT AGAMA DAERAH">PILIH PEJABAT AGAMA DAERAH</option>
-                            <option value="PEJABAT AGAMA ISLAM KUANTAN">PEJABAT AGAMA ISLAM KUANTAN</option>
-                            <option value="PEJABAT AGAMA ISLAM PEKAN">PEJABAT AGAMA ISLAM PEKAN</option>
-                            <option value="PEJABAT AGAMA ISLAM MARAN">PEJABAT AGAMA ISLAM MARAN</option>
-                        </select>
-                        &nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-primary">Cari</button>
-                    </div>
-                    <div>
-                    <table class="table table-bordered" id="searchcoursetable" style="">
-                        <thead>
-                            <tr style="background-color: #D3D3D3;">
-                                <th scope="col">Bil.</th>
-                                <th scope="col">Anjuran</th>
-                                <th scope="col">Tempat</th>
-                                <th scope="col">Tarikh</th>
-                                <th scope="col">Kapasiti Peserta</th>
-                                <th scope="col">Kekosongan</th>
-                                <th scope="col">Papar Lanjut</th>
-                                <th scope="col">Daftar Penyertaan</th>
-                            </tr>
-                        </thead>
-                            <tbody>
+                <div class="text-center h6">
+                    <p>Pilihan Anjuran:</p>
+                    <select name="pejabatagamedaerah" id="pejagamdae">
+                        <option value="PILIH PEJABAT AGAMA DAERAH">PILIH PEJABAT AGAMA DAERAH</option>
+                        <option value="PEJABAT AGAMA ISLAM KUANTAN">PEJABAT AGAMA ISLAM KUANTAN</option>
+                        <option value="PEJABAT AGAMA ISLAM PEKAN">PEJABAT AGAMA ISLAM PEKAN</option>
+                        <option value="PEJABAT AGAMA ISLAM MARAN">PEJABAT AGAMA ISLAM MARAN</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-primary">Cari</button>
+                </div>
+                <div>
+                <table class="table table-bordered" id="searchcoursetable" style="">
+                    <thead>
+                        <tr style="background-color: #D3D3D3;">
+                            <th scope="col">Bil.</th>
+                            <th scope="col">Anjuran</th>
+                            <th scope="col">Tempat</th>
+                            <th scope="col">Tarikh</th>
+                            <th scope="col">Kapasiti Peserta</th>
+                            <th scope="col">Kekosongan</th>
+                            <th scope="col">Papar Lanjut</th>
+                            <th scope="col">Daftar Penyertaan</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                        <?php
+                            foreach ($courses as $course) {
+                                ?>
                                 <tr>
-                                <td>tre</td>
-                                <td>weqr</td>
-                                <td>wqe</td>
-                                <td>wqe</td>
-                                <td>wqe</td>
-                                <td>wqe</td>
-                                <td><img src="../assets/img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
-                                <td><img src="../assets/img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
+                                    <td><?php echo $course['counter'] ?></td>
+                                    <td><?php echo $course['name'] ?></td>
+                                    <td><?php echo $course['address'] ?></td>
+                                    <td><?php echo $course['date'] ?></td>
+                                    <td><?php echo $course['time'] ?></td>
+                                    <td><?php echo $course['capacity'] ?></td>
+                                    <td><img src="../assets/img/evaluation.png" alt="logopapar" class="imgflaticon" id="viewcourse"></td>
+                                    <td><img src="../assets/img/add-user.png" alt="logodaftar" class="imgflaticon" id="regcourse"></td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
-                
-            <br><br>
+                                <?php
+                            }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
             </div>
         </div>
     </div>

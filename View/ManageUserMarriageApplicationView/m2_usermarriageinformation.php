@@ -76,15 +76,15 @@
                                         <p style="margin: 0; display: inline;">cadangan tarikh</p>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Alamat Tempat Akad Nikah:</label>&nbsp;&nbsp;&nbsp;
+                                        <label>Alamat Tempat Akad Nikah *:</label>&nbsp;&nbsp;&nbsp;
                                         <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan alamat tempat nikah" name="MA_Address" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Negeri:</label>&nbsp;&nbsp;&nbsp;
+                                        <label>Negeri *:</label>&nbsp;&nbsp;&nbsp;
                                         <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" name="MA_State" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Mas Kahwin:</label>&nbsp;&nbsp;&nbsp;
+                                        <label>Mas Kahwin *:</label>&nbsp;&nbsp;&nbsp;
                                         <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan mas kahwin" name="MA_MasKahwin" required>
                                     </div>
                                 </div>
@@ -94,15 +94,15 @@
                                         <p style="margin: 0; display: inline;">no persedian nikah</p>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Kategori Nikah:</label>&nbsp;&nbsp;&nbsp;
+                                        <label>Kategori Nikah *:</label>&nbsp;&nbsp;&nbsp;
                                         <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan kategori nikah" name="MA_Category" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Negara:</label>&nbsp;&nbsp;&nbsp;
+                                        <label>Negara *:</label>&nbsp;&nbsp;&nbsp;
                                         <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negara" name="MA_Nation" required>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label>Tarikh Mohon:</label>&nbsp;&nbsp;&nbsp;
+                                        <label>Tarikh Mohon *:</label>&nbsp;&nbsp;&nbsp;
                                         <input type="text" class="form-control form-control-sm datepicker" id="inputboxstyle" placeholder="Masukkan tarikh mohon" name="MA_ApplyDate" required>
                                     </div>
                                 </div>
