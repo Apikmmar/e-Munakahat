@@ -1,7 +1,22 @@
 <?php
     session_start();
-    require '../../database/connection.php';
-    // depend on how deep the package is .//
+    if (isset($_SESSION['icnum'])) {
+        require '../../database/connection.php';
+
+        $Staff_IC = $_SESSION['icnum'];
+
+        $sql = "SELECT Staff_Name FROM Staff_registration_info WHERE Staff_IC = :Staff_ic";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':Staff_ic', $Staff_IC, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            $Staff_Name = $result['Staff_Name'];
+	    }
+    }
 ?>
 
 <!DOCTYPE html>
