@@ -1,6 +1,22 @@
 <?php
     session_start();
-    require '../../database/connection.php';
+    if (isset($_SESSION['icnum'])) {
+        require '../../database/connection.php';
+
+        $Staff_IC = $_SESSION['icnum'];
+
+        $sql = "SELECT Staff_Name FROM Staff_registration_info WHERE Staff_IC = :Staff_ic";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':Staff_ic', $Staff_IC, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            $Staff_Name = $result['Staff_Name'];
+	    }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +40,8 @@
                 <br>
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
-                        <span>ID :<p></p></span>
-                        <span>Nama :<p></p></span>
+                        <span><?php echo "Username: $Staff_Name "; ?></span><br>
+                        <span><?php echo "IC Number: $Staff_IC "; ?></span><br>
                         <span>Akses :<p></p></span>
                         <span>Jabatan :<p></p></span>
                     </div>
