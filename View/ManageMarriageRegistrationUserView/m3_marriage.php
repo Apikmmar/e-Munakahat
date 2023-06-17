@@ -1,5 +1,4 @@
 <?php
-session_start();
 // Create connection
 $conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
 // Check connection
@@ -7,6 +6,24 @@ if (!$conn) {
   echo 'Connection error: ' . mysqli_connect_error();
 }
 
+session_start();
+if (isset($_SESSION['icnum'])) {
+  require '../../database/connection.php';
+
+  $user_IC = $_SESSION['icnum'];
+
+  $sql = "SELECT User_Name FROM user_registration_info WHERE User_IC = :user_ic";
+
+  $stmt = $conn->prepare($sql);
+  $stmt->bindParam(':user_ic', $user_IC, PDO::PARAM_STR);
+  $stmt->execute();
+
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if ($result) {
+    $user_Name = $result['User_Name'];
+  }
+}
 ?>
 
 
@@ -32,12 +49,8 @@ if (!$conn) {
         <br>
         <div class="p-2 mb-1 bg-info text-white">
           <div class="userdata">
-            <span>
-              <p>ID : 011023080204</p>
-            </span>
-            <span>
-              <p>Nama : abby</p>
-            </span>
+            <span><?php echo "Username: $user_Name "; ?></span><br>
+            <span><?php echo "IC Number: $user_IC "; ?></span><br>
           </div>
         </div>
         <br><br>
