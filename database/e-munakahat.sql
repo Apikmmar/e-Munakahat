@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 
 --
 -- Table structure for table `applicant_partner_info`
---
+--  
 
 CREATE TABLE `applicant_partner_info` (
   `Partner_IC` varchar(12) NOT NULL,
