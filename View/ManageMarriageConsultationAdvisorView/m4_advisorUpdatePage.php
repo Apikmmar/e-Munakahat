@@ -27,13 +27,10 @@
                 </div>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-success h6" id="profilpenasihat">Profil</button>
-                        <button class="btn btn-success h6" id="home">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-success h6" id="mohonkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-success h6" id="daftarkahwin">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-success h6" id="khidmat">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6" id="insentif">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6" id="exit">Keluar</button>
+                    <button class="btn btn-success h6" id="first">Laman Utama</button>
+                    <button class="btn btn-success h6" id="list">Senarai Permohonan</button>
+                    <button class="btn btn-success h6" id="schedule">Jadual Sesi Konsultasi</button>
+                    <button class="btn btn-dark h6" id="exit">Keluar</button>
                     </div>
                 </div>
         </nav>
@@ -74,7 +71,7 @@
 
         <!-- content -->
         <div class="content">
-            <div class="p-2 mb-2 bg-primary text-white">
+        <div class="p-2 mb-2 text-white" style="background-color:green;">
                 <span class="h6 text-uppercase">KHIDMAT NASIHAT</span>
             </div>
             <div class="content-of-module">
@@ -98,42 +95,31 @@
                         <table style="width:50%">
                           
                             <th>Bil</th>
-                            <th>ID/Nama Pegawai Penasihat </th>
-                            <th>Jabatan </th>
+                            <th>ID/Nama Pengguna </th>
                             <th>Operasi  </th>
                           <tr>
                             <td>1.</td>
                             <td>900312110321 Aminuddin bin Baki</td>
-                            <td>JABATAN AGAMA ISLAM PAHANG</td>
-                            <td><select id="operasi" name="operasi">
-                                <option value="update">Kemaskini</option>
-                                <option value="done">Selesai</option>
-                                <option value="del">Buang</option>
-                            </select></td>
+                            <td><div><button onclick="view()">LIHAT<type="submit" ></button></div><br>
+                            <div><button onclick="view()"><a href="m4_advisorReport.php">ULASAN</a></button></div></td>
                           </tr>
                           <tr>
                             <td>2.</td>
                             <td>960723005433 Sofi bin Muhammad Jikan</td>
-                            <td>JABATAN AGAMA ISLAM PAHANG</td>
-                            <td><select id="operasi" name="operasi">
-                                <option value="update">Kemaskini</option>
-                                <option value="done">Selesai</option>
-                                <option value="del">Buang</option>
-                            </select></td>
+                            <td><div><button onclick="view()">LIHAT<type="submit" ></button></div><br>
+                            <div><button onclick="view()"><a href="m4_advisorReport.php">ULASAN</a></button></div></td>
+                            
                           </tr>
                           <tr>
                             <td>3.</td>
-                            <td>920221110881 Muhammad Firdaus bin Ferhad</td>
-                            <td>JABATAN AGAMA ISLAM PAHANG</td>
-                            <td><select id="operasi" name="operasi">
-                                <option value="update">Kemaskini</option>
-                                <option value="done">Selesai</option>
-                                <option value="del">Buang</option>
-                            </select></td>
+                            <td>920221110881 Nazrin bin Mahari</td>
+                            <td><div><button onclick="view()">LIHAT<type="submit" ></button></div><br>
+                            <div><button onclick="view()"><a href="m4_advisorReport.php">ULASAN</a></button></div></td>
+                            
                           </tr>
 
                         </table>
-                        <br><br><button type="submit" style="background-color:green;" class="btn btn-primary">Kemaskini</button></div>
+                        <br><br><div><button onclick="view()"><a href="m4_advisorApplicationList.php">KEMBALI</a></button></div></td>
                     </form>        
                 </div>
             </div>

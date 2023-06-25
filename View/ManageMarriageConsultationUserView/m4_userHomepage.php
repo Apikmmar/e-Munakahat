@@ -29,6 +29,13 @@
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
+                      
+                    <button class="btn btn-primary h6" id="profil">Laman Utama</button>
+                    <button class="btn btn-primary h6" id="permohonan">Maklumat Permohonan</button>
+                    <button class="btn btn-primary h6" id="mohonkahwin">Borang Permohonan</button>
+                    <button class="btn btn-primary h6" id="feedback">Ulasan</button>
+                    <button class="btn btn-primary h6" style="background-color:#000;" id="exit">Keluar</button>
+
                     <button class="btn btn-primary h6" id="userloginmainpage">Profil</button>
                         <button class="btn btn-primary h6" id="userprepcoursemainpage">Kursus Pra-Perkahwinan</button>
                         <button class="btn btn-primary h6" id="userprepcoursemainpage">Permohonan Berkahwin</button>
@@ -93,8 +100,7 @@
                                     <div id="inputformpadding">
                                         
                                         <label>No. K/P /Passport <span class="red-asterisk">*</span>:</label><br>
-                                        <input type="text" id="fname" name="fname">&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">Semak</button>
-                                        
+                                        <input type="text" id="fname" >&nbsp;&nbsp;<button type="submit" ><a href="m4_userCheckIC.php">Semak</a></button>
                                     </div>
                                  
                                 <p style="display: inline;"><b>Nota:</b> Aduan bagi Wali Enggan Hanya Dibenarkan Dimohon Oleh Pihak Perempuan Sahaja.

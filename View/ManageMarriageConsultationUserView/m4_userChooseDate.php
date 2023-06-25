@@ -28,13 +28,11 @@
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6" id="profil">Profil</button>
-                        <button class="btn btn-primary h6" id="kursuspre">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-primary h6" id="mohonkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-primary h6" id="daftarkahwin">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-dark h6" style="background-color:#0000FF;" id="khidmat">Khidmat Nasihat</button>
-                        <button class="btn btn-primary h6" id="insentif">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-primary h6" style="background-color:#000;" id="exit">Keluar</button>
+                    <button class="btn btn-primary h6" id="profil">Laman Utama</button>
+                    <button class="btn btn-primary h6" id="permohonan">Maklumat Permohonan</button>
+                    <button class="btn btn-primary h6" id="mohonkahwin">Borang Permohonan</button>
+                    <button class="btn btn-primary h6" id="feedback">Ulasan</button>
+                    <button class="btn btn-primary h6" style="background-color:#000;" id="exit">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -125,7 +123,7 @@
                           
                           <tr>
                             <td>2.</td>
-                            <td>710204070801 AHMAD BIN SULAIMAN</td>
+                            <td>710204070801 HAMSHA BIN HAMDAN</td>
                             <td>JABATAN AGAMA ISLAM PAHANG</td>
                             <td>+60 10-426 6463</td>
                             <td><input type="checkbox" id="pilih" name="p1">
@@ -161,7 +159,8 @@
                           
                         </table>
                     </form>
-                    <br><button type="next"  class="btn btn-primary">Seterusnya</button></div>
+                    <div><br><button type="submit" ><a href="m4_userUpdatePage.php">Hantar</a></button>
+                    
                                         
                 </div>
             </div>

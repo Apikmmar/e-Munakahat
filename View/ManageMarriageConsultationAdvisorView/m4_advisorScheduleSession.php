@@ -29,13 +29,10 @@
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-success h6" id="profil">Profil</button>
-                        <button class="btn btn-success h6" id="kursuspre">Kursus Pra-Perkahwinan</button>
-                        <button class="btn btn-success h6" id="mohonkahwin">Permohonan Berkahwin</button>
-                        <button class="btn btn-success h6" id="daftarkahwin">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-success h6" id="khidmat">Khidmat Nasihat</button>
-                        <button class="btn btn-success h6" id="insentif">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-primary h6" style="background-color:#000;" id="exit">Keluar</button>
+                    <button class="btn btn-success h6" id="first">Laman Utama</button>
+                    <button class="btn btn-success h6" id="list">Senarai Permohonan</button>
+                    <button class="btn btn-success h6" id="schedule">Jadual Sesi Konsultasi</button>
+                    <button class="btn btn-dark h6" id="exit">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +48,6 @@
                 
                 <div class="timedatebox">
                     <span id="date">&nbsp;<span id="time"></span>
-                    <font class="font12bold"></font>
                     <script language="JavaScript">  
                         var mydate=new Date()
                         var year=mydate.getYear()
@@ -76,7 +72,7 @@
 
         <!-- content -->
         <div class="content">
-            <div class="p-2 mb-2 bg-primary text-white">
+        <div class="p-2 mb-2 text-white" style="background-color:green;">
                 <span class="h6 ">Khidmat Nasihat - Jadual Sesi Khidmat Nasihat</span>
             </div>
             <div class="content-of-module">
@@ -98,7 +94,7 @@
                         <table style="width:50%" style="background-color:white;">
                           
                             <th>HARI</th>
-                            <th>8:39 am - 9:30 am</th>
+                            <th>8:30 am - 9:30 am</th>
                             <th>10:00am - 11:00am</th>
                             <th>2:30pm - 3:30pm </th>
                       
@@ -111,7 +107,7 @@
                           <tr>
                             <td>SELASA</td>
                             <td></td>
-                            <td>000122020101 AMAN BIN MASRI</td>
+                            <td>900312110321 AMINUDIN BIN BAKI</td>
                             <td></td>
                           </tr>
                           <tr>
@@ -139,7 +135,7 @@
                           </tr>
                         </table>
                     </form>
-                    <br><button type="next"  class="btn btn-success">Kembali</button></div>                  
+                    <br><button type="next" ><a href="m4_advisorApplicationList.php">KEMBALI</a></button></div>                  
                 </div>
             </div>
         </div>
