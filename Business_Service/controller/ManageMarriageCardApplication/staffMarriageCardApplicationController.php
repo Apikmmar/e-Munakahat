@@ -1,6 +1,6 @@
 <?php
 // Database connection settings
-include 'link.php';
+include '../../../database/connection.php';
 
 
 // Disable foreign key checks
@@ -12,7 +12,7 @@ $CardApplicationNo = $_GET['CardApplicationNo'];
 $sql = "DELETE FROM marriagecard_application WHERE CardApplicationNo = $CardApplicationNo";
 
 if ($conn->query($sql) === TRUE) {
-header("Location: ../../../../View/ManageMarriageCardApplicationStaffView/m3_adminCardList.php");
+header("Location: ../../../../View/ManageMarriageRegistrationStaffView/m3_adminMarriageList.php");
 } else {
 echo "Error: " . $sql . "<br>";
 }
