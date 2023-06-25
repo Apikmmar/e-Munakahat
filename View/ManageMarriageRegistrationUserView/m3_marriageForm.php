@@ -1,6 +1,31 @@
 <?php
-include('../database/connection.php');
+// Create connection
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+  echo 'Connection error: ' . mysqli_connect_error();
+}
+
+session_start();
+if (isset($_SESSION['icnum'])) {
+  require '../../database/connection.php';
+
+  $user_IC = $_SESSION['icnum'];
+
+  $sql = "SELECT User_Name FROM user_registration_info WHERE User_IC = :user_ic";
+
+  $stmt = $conn->prepare($sql);
+  $stmt->bindParam(':user_ic', $user_IC, PDO::PARAM_STR);
+  $stmt->execute();
+
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if ($result) {
+    $user_Name = $result['User_Name'];
+  }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +34,10 @@ include('../database/connection.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>e-Munakahat</title>
-  <link rel="shortcut icon" href="img/jata-pahang.png" type="image/png">
+  <link rel="shortcut icon" href="../assets/img/jata-pahang.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/css/module3.css">
-
+  <!-- external stylesheet -->
+  <link rel="stylesheet" href="../assets/css/module3.css">
 </head>
 
 <body>
@@ -24,36 +48,31 @@ include('../database/connection.php');
         <br>
         <div class="p-2 mb-1 bg-info text-white">
           <div class="userdata">
-            <span>
-              <p>ID : 011023000000</p>
-            </span>
-            <span>
-              <p>Nama : ALI</p>
-            </span>
+            <span><?php echo "Username: $user_Name "; ?></span><br>
+            <span><?php echo "IC Number: $user_IC "; ?></span><br>
           </div>
         </div>
         <br><br>
+        <!-- navigation bar (left side) -->
         <div class="d-flex justify-content-center">
           <div class="list-group" style="width: 16rem;">
-            <button class="btn btn-primary h6" id="Profil">Profil</button>
-            <button class="btn btn-primary h6" id="KursusPraPerkahwinan">Kursus Pra-Perkahwinan</button>
-            <button class="btn btn-primary h6" id="PermohonanBerkahwin">Permohonan Berkahwin</button>
-            <button class="btn btn-dark h6" id="PendaftaranPerkahwinan">Pendaftaran Perkahwinan</button>
-            <button class="btn btn-primary h6" id="KhidmatNasihat">Khidmat nasihat</button>
-            <button class="btn btn-primary h6" id="insentifKhas">insentif Khas</button>
-            <button class="btn btn-primary h6" id="Keluar">Keluar</button>
+            <button class="btn btn-primary h6"><a href="../ManageUserAccountRegistrationView/m1_manageUserProfile.php" style="color:white;text-decoration:none;">Profil</a></button>
+            <a href=""></a><button class=" btn btn-primary h6"><a href="../ManageUserMarriagePreparationView/m2_maincoursepage.php" style="color:white;text-decoration:none;">Kursus Pra-Perkahwinan</a></button>
+            <a href=""></a><button class="btn btn-primary h6"><a href="../ManageUserMarriageApplicationView/m2_homepage.php" style="color:white;text-decoration:none;">Permohonan Berkahwin</a></button>
+            <a href=""></a><button class="btn btn-primary h6"><a href="../ManageMarriageRegistrationUserView/m3_marriage.php" style="color:white;text-decoration:none;">Pendaftaran Perkahwinan</a></button>
+            <a href=""></a><button class=" btn btn-primary h6"><a href="../ManageMarriageConsultationUserView/m4_userHomepage.php" style="color:white;text-decoration:none;">Khidmat nasihat</a></button>
+            <a href=""></a> <button class=" btn btn-primary h6"><a href="../ManageIncentiveApplicationUserView/m5_userMainPage.php" style="color:white;text-decoration:none;">Insentif Khas Pasangan Pengantin</a></button>
+            <a href=""></a><button class=" btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
           </div>
         </div>
-      </div>
     </nav>
-
-    <!-- navbar -->
+    <!-- title bar -->
     <nav class="p-1 mb-1 bg-primary text-white justify-content-center fixed-top">
       <div class="h-span-container">
         <button class="navbar-button" id="hey">&#9776;</button>
         <h4 class=".float-start">e-Munakahat</h4>
-        <img src="img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
-        <img src="img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
+        <img src="../assets/img/jata-pahang.png" alt="jata-pahang" class="imglogo-upper-interface">
+        <img src="../assets/img/Logo-KPM-BI-font-putih.png" alt="logo-persekutuan-malaysia" class="img-upper-interface">
         <div class="timedatebox">
           <span id="date"></span>&nbsp;<span id="time"></span>
         </div>
@@ -63,19 +82,14 @@ include('../database/connection.php');
       </div>
     </nav>
 
-
-
     <!-- content -->
     <div class="content">
       <div class="p-2 mb-2 bg-primary text-white">
         <span class="h6 text-uppercase">Pendaftaran Perkahwinan > Daftar Baru</span>
       </div>
-
-
-      <!-- slip permohonan online , blh click button borang 4,5 untuk jump ke content tu-->
+      <!-- slip permohonan online , blh click button borang 4,5 untuk jump ke content tu terus-->
       <div class="content-of-module">
         <div style="padding: 20px 0px 20px 6px">
-
           <button class=" btn btn-primary"><a href="#slip">
               <h6 style="color:aliceblue;">Slip Permohonan Online</h6>
             </a></button>
@@ -89,10 +103,8 @@ include('../database/connection.php');
               <h6 style="color:aliceblue;">Senarai Semak</h6>
             </a></button>
 
-
           <!-- downloadFile -->
-          <button onclick="downloadFile()"><img class=" img-printer " src=" img/printer.png" alt="print not function"></button>
-
+          <button onclick="downloadFile()"><img class=" img-printer " src="../assets/img/print.png" alt="print not function"></button>
           <script>
             function downloadFile() {
               var filename = 'Borang Pendaftaran Nikah.php';
@@ -113,7 +125,7 @@ include('../database/connection.php');
         </div>
       </div>
 
-
+      <!-- form yang pertama: Slip Pendaftaran Perkahwinan -->
       <div class="content-of-module">
         <div class="p-2 mb-2 bg-info text-white">
           <h5 id="slip">Slip Pendaftaran Perkahwinan</h5>
@@ -122,7 +134,7 @@ include('../database/connection.php');
         <div style="padding: 0px 0px 0px 7px">
           <span>
             <!-- &nbsp; for blank space-->
-            <p><b>No.Kad Pengenalan :</b> 011023000000 &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Umur : </b>21 Tahun</p>
+            <p><b>No.Kad Pengenalan :</b>011023080302 &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Umur : </b>21 Tahun</p>
             <p><b>Nama Pemohon :</b> ALI BIN ABU &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Bangsa : </b>Melayu</p>
             <p><b>Tarikh Lahir :</b> 23-10-2001 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Warganegara : </b>WARGANEHARA</p>
             <p><b>Taraf Pendidikan :</b> IJAZAH &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>No.Telefon : </b>01112345678</p>
@@ -131,10 +143,8 @@ include('../database/connection.php');
             <p><b>Pendapatan :</b> RM 20000.00 </p>
             <p><b>Alamat :</b> 333,TAMAN SDW,JALAN 12,26600,KUANTAN,PAHANG</p>
             <p><b>Status Sebelum Perkahwinan :</b> TERUNA</p>
-
           </span>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Maklumat Pasangan</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -147,10 +157,8 @@ include('../database/connection.php');
             <p><b>Pendapatan :</b> RM 20000.00 </p>
             <p><b>Alamat :</b> 55,TAMAN SDW,JALAN 12,26600,KUANTAN,PAHANG</p>
             <p><b>Status Sebelum Perkahwinan :</b>TERUNA</p>
-
           </span>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Maklumat Perkahwinan</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -159,7 +167,6 @@ include('../database/connection.php');
             <p><b>Tarikh Mohon :</b> 23-3-2023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Pemberian lain : </b>-</p>
           </span>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Maklumat Cadangan Majlis Akad Nikah</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -168,11 +175,9 @@ include('../database/connection.php');
             <p><b>Jenis Mas Kahwin :</b> TUNAI &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Negeri : </b>PAHANG</p>
           </span>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Maklumat Wali</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
-
             <p><b>No.Kad Pengenalan Wali :</b> 710420070001 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Umur Wali : </b>59 Tahun</p>
             <p><b>Nama Wali :</b> ABDUL BIN SALI &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>No.Telefon Wali : </b>0112345678</p>
             <p><b>Tarikh Lahir Wali :</b> 20-04-1971 &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Alamat Wali : </b>KUANTAN,PAHANG</p>
@@ -183,13 +188,11 @@ include('../database/connection.php');
             <br>
             <p><b>Persetujuan Dan Pengakuan Wali :</b></p>
             <p style="width:1100px">Saya ,Dengan ini,Sesungguhnya Bersetuju Terhadap Perkahwinan Yang Dicadangkan Ini Dan Saya Sesungguhnya Mengaku Bahawa Segala Maklumat Yang Terkandung Di (Maklumat Wali) Adalah Benar Dan Sekiranya Maklumat Ini Palsu,Maka Saya Boleh Didakwa Dan Disabitkan Di Bawah Seksyen 38 Enakmen Undang-Undang Keluarga Islam 2005.</p>
-
             <p class="float-hub;padding: 0px 0px 0px 7px"><b>Tarikh : </b><input type="date" id="start" name="waliDate" value="2023-01-01" min="2023-06-01" max="2023-12-31"></p>
             <br>
             <p class="float-hub;padding: 0px 0px 0px 9px"><b>..................................<br>(Tandatangan Wali)</b></p>
           </span>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Maklumat Saksi</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -215,7 +218,6 @@ include('../database/connection.php');
             <p class="float-hub;padding: 0px 0px 0px 9px"><b>......................................<br>(Tandatangan Saksi 2)</b></p>
           </span>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Pengakuan Pemohon</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -224,7 +226,6 @@ include('../database/connection.php');
               <br>
               &nbsp;&nbsp;&nbsp; <input type="radio" name="status" value="Teruna" checked="checked"> Teruna <input type="radio" name="status" value="Duda"> Duda <input type="radio" name="status" value="Beristeri"> Beristeri
               <input type="radio" name="status" value="Dara"> Dara <input type="radio" name="status" value="Janda"> Janda/Balu <input type="radio" name="status" value="Thayyib"> Thayyib
-
               <br><br>
               2. Nombor Surat perakuan cerai (jika duda/janda/balu):
               <br><br>
@@ -236,8 +237,6 @@ include('../database/connection.php');
               <br><br>
               3. Saya mengaku bahawa segala maklumat dan butiran yang dinyatakan dalam borang ini adalah benar dan sekiranya palsu, maka saya telah melakukan satu kesalahan dan boleh disabitkan di bawah seksyen 38 enakmen undang-undang keluarga islam 2005.
             </p>
-
-
             <p class="float-hub;padding: 0px 0px 0px 7px"><b>Tarikh : </b><input type="date" id="start" name="saksi1Date" value="2023-01-01" min="2023-06-01" max="2023-12-31"></p>
             <br>
             <p class="float-hub;padding: 0px 0px 0px 9px"><b>..........................................<br>(Tandatangan Pemohon)</b></p>
@@ -249,8 +248,7 @@ include('../database/connection.php');
         </div>
       </div>
 
-
-      <!-- borang 4 -->
+      <!-- form yang kedua borang 4 -->
       <div class="content-of-module">
         <div class="p-2 mb-2 bg-info text-white">
           <h5 id="borang4">Persetujuan Dan Wakalah Wali (Borang 4)</h5>
@@ -268,7 +266,6 @@ include('../database/connection.php');
             <p class="float-hub;padding: 0px 0px 0px 9px"><b>..................................<br>(Tandatangan Wali)</b></p>
           </span>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Wakalah Wali</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <p style="width:1100px ">Saya <input type="text"> No.kad pengenalan <input type="text"> adalah <input type="text"> kepada <b id="blue">Aliyah binti abdul</b> <br><br> dengan ini mewakilikan kepada <input type="text"> No.kad pengenalan <input type="text"> sebagai <input type="text"> <br><br>(Jawatan)untuk mengakadnikahkan <input type="text"> (Hubungan) Saya <b id="blue">Ali Bin Abu</b> dengan Mas kahwinnya <b id="blue">Rm 20000.00</b></p>
@@ -279,14 +276,10 @@ include('../database/connection.php');
           <p class="float-hub;padding: 0px 0px 0px 7px">Saya dengan ini menerima wakalah wali di atas,</p>
           <br>
           <p class="float-hub;padding: 0px 0px 0px 9px"><b>..............................................<br>(Tandatangan Penerima Wali)</b></p>
-
           </span>
         </div>
-
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Saksi Wakalah Wali</b></div>
         <div>
-
           <p><b>Nama Saksi 1 :</b> SITI BINTI AHMAD </p>
           <p><b>No.Kad Pengenalan Saksi 1 :</b> 980902079383</p>
           <p><b>No.Telefon Saksi 1 :</b> 016263748532</p>
@@ -295,7 +288,6 @@ include('../database/connection.php');
           <br>
           <p style="float:left class;padding: 0px 0px 0px 9px"><b>......................................<br>(Tandatangan Saksi 1)</b></p>
           <br><br>
-
           <p><b>Nama Saksi 2 :</b> SHAIRUL BIN GUHDEF</p>
           <p><b>No.Kad Pengenalan Saksi 2 :</b> 670902947222</p>
           <p><b>No.Telefon Saksi 2 :</b> 012324654784</p>
@@ -305,7 +297,6 @@ include('../database/connection.php');
           <p class="float-hub;padding: 0px 0px 0px 9px"><b>......................................<br>(Tandatangan Saksi 2)</b></p>
           <br>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Pengesahan Wakalah Wali</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -318,8 +309,7 @@ include('../database/connection.php');
         </div>
       </div>
 
-
-      <!-- borang5-->
+      <!--form yang ketiga borang5-->
       <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
       <div class="content-of-module">
         <div class="p-2 mb-2 bg-info text-white">
@@ -328,7 +318,6 @@ include('../database/connection.php');
         <div class="p-2 mb-2 bg-secondary text-white"><b>Surat Perakuan Nikah</b></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
-
             <p style="width:1100px">
               Nombor <b id="blue">180/89</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tarikh Akad Nikah H/M <b id="blue">5.2.2023</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombor Kebenaran Berkahwin <b id="blue"> 47/89</b>
               <br>
@@ -338,12 +327,10 @@ include('../database/connection.php');
               <br>
               umur <b id="blue">21</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No.kad pengenalan <b id="blue"> 011111110111</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alamat <b id="blue">333, Taman teja Kuantan ,pahang.</b>
               <br><br>
-
               Nama pengantin Perempuan <b id="blue">Aliya Binti Abdul</b>
               <br>
               umur <b id="blue">21</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No.kad pengenalan <b id="blue">010222020220</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alamat <b id="blue">55, Taman teja Kuantan ,pahang.</b>
               <br><br>
-
               Nama Wali <b id="blue">Abdul Bin Sali</b>
               <br>
               Umur <b id="blue">57 </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No.kad Pengenalan 710430071611 <b id="blue">710430071611 </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alamat <b id="blue">55, Taman teja Kuantan ,pahang</b>
@@ -365,18 +352,16 @@ include('../database/connection.php');
             </p><br><br>
             <p class="float-hub;padding: 0px 0px 0px 9px"><b>............................................<br>(Tandatangan Pendaftar)</b></p>
           </span>
-
         </div>
       </div>
 
-
+      <!-- form yang keempat : senarai semak need to uplaod document here-->
       <div class="content-of-module">
         <div class=" p-2 mb-2 bg-info text-white">
           <h5 id="senarai">Senarai Semak</h5>
         </div>
-
         <div class="p-2 mb-2 bg-secondary text-white"><b>Dokumen yang perlu muat naik</b> &nbsp;<button>
-            <img class=" img-upload " src=" img/upload.png" alt="upload documents not function">
+            <img class=" img-upload " src=" ../assets/img/upload.png" alt="upload documents not function">
           </button></div>
         <div style="padding: 0px 0px 0px 7px">
           <span>
@@ -385,49 +370,41 @@ include('../database/connection.php');
                 <input type="checkbox" id="scales" name="dokumen">
                 <label for="scales">checkSlip Permohonan Online (Pendaftaran Perkahwinan) [P4-01-01] </label> <br> <input type="file" required>
               </div>
-
               <div>
                 <input type="checkbox" id="horns" name="dokumen">
                 <label for="horns">checkBorang 3A/3B (Kebenaran Berkahwin)/ Borang 4 (Persetujuan Dan Wakalah Wali) Asal </label> <br> <input type="file" required>
               </div>
-
               <div>
                 <input type="checkbox" id="scales" name="dokumen">
                 <label for="scales">checkBorang 5 (Catatan Akad Nikah) Asal</label> <br> <input type="file" required>
               </div>
-
               <div>
                 <input type="checkbox" id="horns" name="dokumen">
                 <label for="horns">checkGambar Berukuran Passport (Latar Belakang Putih) 1 Keping Bagi Pengantin Lelaki Bersongkok</label> <br> <input type="file" required>
               </div>
-
               <div>
                 <input type="checkbox" id="horns" name="dokumen">
                 <label for="horns">checkGambar Berukuran Passport (Latar Belakang Putih) 1 Keping Bagi Pengantin Perempuan Bertudung Gelap</label> <br> <input type="file" required>
               </div>
-
               <div>
                 <input type="checkbox" id="scales" name="dokumen">
                 <label for="scales">checkSalinan Kad Pengenalan Saksi-Saksi Perkahwinan</label> <br> <input type="file" required>
               </div>
-
               <div>
                 <input type="checkbox" id="horns" name="dokumen">
                 <label for="horns">checkBayaran Pendaftaran RM 45.00</label> <br> <input type="file" required>
               </div>
             </fieldset>
-
           </span>
-          <a href="m3_marriageStatusB.php"><button style="float:right">simpan</button></a>
-          <a href="m3_marriageStatusA.php"><button style="float:right">Hantar</button></a>
-
+          <a href="../ManageMarriageRegistrationUserView/m3_marriageStatusB.php"><button style="float:right">simpan</button></a>
+          <a href="../ManageMarriageRegistrationUserView/m3_marriageStatusA.php"><button style="float:right">Hantar</button></a>
         </div>
       </div>
       <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
       </section>
 
-
-      <script src="javascript.js" defer></script>
+      <!-- external link to js file -->
+      <script src="../assets/js/javascript.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

@@ -1,5 +1,5 @@
 
-  function validateForm() {
+  function forgetpasswordData() {
     var icNumber = document.getElementById("icnum").value;
     var email = document.getElementById("email").value;
   

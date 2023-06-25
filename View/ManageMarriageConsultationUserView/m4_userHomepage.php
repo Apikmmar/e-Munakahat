@@ -29,11 +29,20 @@
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
+                      
                     <button class="btn btn-primary h6" id="profil">Laman Utama</button>
                     <button class="btn btn-primary h6" id="permohonan">Maklumat Permohonan</button>
                     <button class="btn btn-primary h6" id="mohonkahwin">Borang Permohonan</button>
                     <button class="btn btn-primary h6" id="feedback">Ulasan</button>
                     <button class="btn btn-primary h6" style="background-color:#000;" id="exit">Keluar</button>
+
+                    <button class="btn btn-primary h6" id="userloginmainpage">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Kursus Pra-Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6" onclick="window.location.href='../ManageLoginView/m1_login.php'">Keluar</button>
                     </div>
                 </div>
             </div>
@@ -106,7 +115,7 @@
         </div>
     </div>
 
-    <script src="javascript.js" defer></script>
+    <script src="../assets/js/javascript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>

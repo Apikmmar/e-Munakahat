@@ -1,6 +1,22 @@
 <?php
     session_start();
-    require '../../database/connection.php';
+    if (isset($_SESSION['icnum'])) {
+        require '../../database/connection.php';
+
+        $user_IC = $_SESSION['icnum'];
+
+        $sql = "SELECT User_Name FROM user_registration_info WHERE User_IC = :user_ic";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':user_ic', $user_IC, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            $user_Name = $result['User_Name'];
+	    }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,19 +40,19 @@
                 <br>
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
-                        <span>ID :<p></p></span>
-                        <span>Nama :<p></p></span>
+                        <span><?php echo "Username: $user_Name "; ?></span><br>
+                        <span><?php echo "IC Number: $user_IC "; ?></span><br>
                     </div>
                 </div>
                 <br><br>
                 <div class="d-flex justify-content-center">
                     <div class="list-group" style="width: 16rem;">
-                        <button class="btn btn-primary h6">Profil</button>
-                        <button class="btn btn-primary h6" id="marriageapply">Permohonan Berkahwin</button>
-                        <button class="btn btn-primary h6">Pendaftaran Perkahwinan</button>
-                        <button class="btn btn-primary h6">Khidmat Nasihat</button>
-                        <button class="btn btn-primary h6">Insentif Khas Pasangan Pengantin</button>
-                        <button class="btn btn-dark h6">Keluar</button>
+                        <button class="btn btn-primary h6" id="userloginmainpage">Profil</button>
+                        <button class="btn btn-primary h6" id="userprepcoursemainpage">Permohonan Berkahwin</button>
+                        <button class="btn btn-primary h6" id="usermarriagemainpage">Pendaftaran Perkahwinan</button>
+                        <button class="btn btn-primary h6" id="userconsultationmainpage">Khidmat Nasihat</button>
+                        <button class="btn btn-primary h6" id="userincentivemainpage">Insentif Khas Pasangan Pengantin</button>
+                        <button class="btn btn-dark h6" id="Keluar" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?logout=true'">Keluar</button>
                     </div>
                 </div>
             </div>

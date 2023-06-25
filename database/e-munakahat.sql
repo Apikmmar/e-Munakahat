@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 12:12 PM
+-- Generation Time: Jun 16, 2023 at 06:44 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 
 --
 -- Table structure for table `applicant_partner_info`
---
+--  
 
 CREATE TABLE `applicant_partner_info` (
   `Partner_IC` varchar(12) NOT NULL,
@@ -43,6 +43,13 @@ CREATE TABLE `applicant_partner_info` (
   `Partner_MarriageStatus` varchar(15) DEFAULT NULL,
   `Partner_IslamStatus` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `applicant_partner_info`
+--
+
+INSERT INTO `applicant_partner_info` (`Partner_IC`, `Partner_Name`, `Partner_DOB`, `Partner_Gender`, `Partner_Race`, `Partner_Address`, `Partner_Age`, `Partner_Nationality`, `Partner_Edu`, `Partner_JobSector`, `Partner_JobPosition`, `Partner_Salary`, `Partner_MarriageStatus`, `Partner_IslamStatus`) VALUES
+('0404040404', 'Judy', '2023-06-02', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -103,6 +110,13 @@ CREATE TABLE `hiv_test_result` (
   `Test_ClinicStaffPos` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `hiv_test_result`
+--
+
+INSERT INTO `hiv_test_result` (`Test_ID`, `Test_Date`, `Test_ClinicName`, `Test_Result`, `Test_ClinicStaffName`, `Test_ClinicStaffPos`) VALUES
+('001', '2023-06-01', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -141,6 +155,15 @@ CREATE TABLE `marriagecard_application` (
   `Staff_IC` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `marriagecard_application`
+--
+
+INSERT INTO `marriagecard_application` (`CardApplicationNo`, `CardApplicationCode`, `Card_Delivery_Method`, `Card_Pickup_Date`, `Card_Pickup_Venue`, `Card_Delivery_Address`, `CardApplication_Status`, `cardAccept_Date`, `MC_PaymentNo`, `Staff_IC`) VALUES
+(1, 'CARD2023-001', 'COD', '2023-06-01', 'kuantan', 'kuantan', 'Untuk Diluluskan', NULL, '121212', '0202020202'),
+(2, 'CARD2023-002', 'pick up', '2023-06-01', 'kuantan', 'kuantan', 'Untuk Diluluskan', NULL, '121212', '0202020202'),
+(3, 'CARD2023-003', 'COD', '2023-06-01', 'kuantan', 'kuantan', 'Untuk Diluluskan', NULL, '121212', '0202020202');
+
 -- --------------------------------------------------------
 
 --
@@ -178,9 +201,19 @@ CREATE TABLE `marriage_prep_course` (
   `MPC_Date` int(11) NOT NULL,
   `MPC_Time` int(11) NOT NULL,
   `MPC_Capacity` int(11) NOT NULL,
-  `Staff_IC` varchar(12) NOT NULL,
-  `Attendance_ID` varchar(10) NOT NULL
+  `Staff_IC` varchar(12) DEFAULT NULL,
+  `Attendance_ID` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `marriage_prep_course`
+--
+
+INSERT INTO `marriage_prep_course` (`MPC_SiriTaklimat`, `MPC_PenganjurName`, `MPC_Address`, `MPC_Date`, `MPC_Time`, `MPC_Capacity`, `Staff_IC`, `Attendance_ID`) VALUES
+('22', '2', '2', 2, 2, 2, NULL, NULL),
+('619c782bbe', '5', '5', 5, 5, 5, NULL, NULL),
+('76f96f3416', '7', '7', 7, 7, 7, NULL, NULL),
+('e94ca27f65', '7', '7', 7, 7, 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -201,6 +234,15 @@ CREATE TABLE `marriage_registration` (
   `User_IC` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `marriage_registration`
+--
+
+INSERT INTO `marriage_registration` (`RegistrationNo`, `Registration_Type`, `Registration_Date`, `Registration_Status`, `Accept_Date`, `Staff_IC`) VALUES
+(1, 'KTN2M3/2023-001', '2023-01-01', 'Untuk Diluluskan', NULL, '0101010101'),
+(2, 'KTN2M3/2023-002', '2023-01-01', 'Untuk Diluluskan', NULL, '0101010101'),
+(3, 'KTN2M3/2023-003', '2023-01-02', 'Untuk Diluluskan', NULL, '0101010101');
+
 -- --------------------------------------------------------
 
 --
@@ -215,6 +257,13 @@ CREATE TABLE `mc_payment_info` (
   `MC_Payment_Date` date NOT NULL,
   `MC_Payment_Receipt` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mc_payment_info`
+--
+
+INSERT INTO `mc_payment_info` (`MC_PaymentNo`, `MC_Bank_Name`, `MC_Bank_Acc`, `MC_Payment_Amount`, `MC_Payment_Date`, `MC_Payment_Receipt`) VALUES
+('121212', 'ambank', '123', 30, '2023-06-01', '131313');
 
 -- --------------------------------------------------------
 
@@ -242,6 +291,13 @@ CREATE TABLE `mr_payment_info` (
   `MR_Payment_Date` date NOT NULL,
   `MR_Payment_Receipt` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mr_payment_info`
+--
+
+INSERT INTO `mr_payment_info` (`MR_PaymentNo`, `MR_Bank_Name`, `MR_Bank_Acc`, `MR_Payment_Amount`, `MR_Payment_Date`, `MR_Payment_Receipt`) VALUES
+('001', 'ambank', '88812345678', 20, '2023-06-01', '001');
 
 -- --------------------------------------------------------
 
@@ -274,6 +330,18 @@ CREATE TABLE `staff_registration_info` (
   `Staff_AccessCategory` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `staff_registration_info`
+--
+
+INSERT INTO `staff_registration_info` (`Staff_IC`, `Staff_Name`, `Staff_Password`, `Staff_PhoneNo`, `Staff_Gender`, `Staff_Email`, `Staff_Position`, `Staff_PAID`, `Staff_AccessCategory`) VALUES
+('020111020425', 'ammar', 'admin@123', 107730425, 'Lelaki', 'a@gmail.com', 'Staff', 'AA1234', 'admin');
+
+
+INSERT INTO `staff_registration_info` (`Staff_IC`, `Staff_Name`, `Staff_Password`, `Staff_PhoneNo`, `Staff_Gender`, `Staff_Email`, `Staff_Position`, `Staff_PAID`, `Staff_AccessCategory`) VALUES
+('0101010101', 'admin', 'adminpwd', 0, '', '', '', '', ''),
+('011023080204', 'abby', '123', 123, 'f', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -305,6 +373,13 @@ CREATE TABLE `user_registration_info` (
   `Partner_ID` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `user_registration_info`
+--
+
+INSERT INTO `user_registration_info` (`User_IC`, `User_Name`, `User_DOB`, `User_Gender`, `User_Race`, `User_Address`, `User_AddressInIC`, `User_Age`, `User_Nationality`, `User_HomeHP`, `User_HP`, `User_Edu`, `User_JobSector`, `User_JobPosition`, `User_JobAddress`, `User_JobHP`, `User_Salary`, `User_MarriageStatus`, `User_IslamStatus`, `User_Password`, `User_Email`, `Partner_ID`) VALUES
+('020111020425', 'AFIQ', '2002-01-11', 'Lelaki', 'Melayu', '11111', '11111', 21, 'Warganegara', 0, 2147483647, 'Ijazah', 'Sektor Swasta', '', '11111', 0, 0, '', '', 'Apik@020111', 'b@gmail.com', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -324,6 +399,13 @@ CREATE TABLE `wali_info` (
   `Wali_MarriageDate` date NOT NULL,
   `Wali_IslamStatus` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `wali_info`
+--
+
+INSERT INTO `wali_info` (`Wali_IC`, `Wali_Name`, `Wali_DOB`, `Wali_Gender`, `Wali_Hubungan`, `Wali_Age`, `Wali_HP`, `Wali_NoSijilNikah`, `Wali_Pelulus`, `Wali_MarriageDate`, `Wali_IslamStatus`) VALUES
+('0202020202', 'abudul', '2023-06-08', '', '', 0, '', '', '', '0000-00-00', '');
 
 --
 -- Indexes for dumped tables

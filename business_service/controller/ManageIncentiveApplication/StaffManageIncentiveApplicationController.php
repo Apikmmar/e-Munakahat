@@ -1,8 +1,14 @@
 <?php
+// Create connection
+session_start();
+$conn = mysqli_connect('localhost', 'root', '', 'e-munakahat');
+// Check connection
+if (!$conn) {
+    echo 'Connection error: ' . mysqli_connect_error();
+}
 
-require_once "../database/connection.php";
 
-class StaffMarriageApplication
+class IncentiveApplication
 {
     private $conn;
 
@@ -12,42 +18,47 @@ class StaffMarriageApplication
         $this->conn = $conn;
     }
 
-    public function staffIA_update($applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan,$namawaris,$hubunganwaris,$notelwaris)
+    public function staffIA_update($IA_ID, $status)
     {
-        $stmt = $this->conn->prepare("INSERT INTO incentive_application(IA_ApplyDate, IA_Status, IA_BankAccount	, IA_BankName, IA_POB, IA_PartnerPOB) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $applydate, $status, $akuanbank, $namabank, $tempatlahir, $tempatlahirpasangan);
 
-        if ($stmt->execute() === TRUE) {
-            echo "<script>alert('INCENTIVE APPLICATION IS SAVED')</script>";
-        } else {
-            echo "Error creating incentive application: " . $stmt->error;
-        }
+        $updateSql = "UPDATE incentive_application SET IA_Status = '$status' WHERE IA_ID = '$IA_ID'";
+        $update = mysqli_query($this->conn, $updateSql);
+        echo $IA_ID;
+        echo $status;
 
-        $stmt->close();
+        $successMessage = "Berjaya ubah status.";
+        header("Location: ../../../View/ManageIncentiveApplicationStaffView/m5_staffMainPage.php?success=" . urlencode($successMessage));
+        exit;
     }
+
+    public function staffIA_delete($IA_ID)
+    {
+
+        $deleteSql = "delete from incentive_application WHERE IA_ID = '$IA_ID'";
+        $delete = mysqli_query($this->conn, $deleteSql);
+
+        $successMessage = "Berjaya delete.";
+        header("Location: ../../../View/ManageIncentiveApplicationStaffView/m5_staffMainPage.php?success=" . urlencode($successMessage));
+        exit;
+    }
+
+
 
     public function closeConnection()
     {
         $this->conn->close();
     }
 }
-
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['namawaris']) && isset($_POST['hubunganwaris']) && isset($_POST['notelwaris'])) {
-        $namawaris = $_POST['namawaris'];
-        $hubunganwaris = $_POST['hubunganwaris'];
-        $notelwaris = $_POST['notelwaris'];
-        $pendapatanpasangan = $_SESSION['pendapatanpasangan'];
-        $tempatlahirpasangan = $_SESSION['tempatlahirpasangan'];
-        $tempatlahir = $_SESSION['tempatlahir']=
-        $akuanbank = $_SESSION['akuanbank'];
-        $namabank = $_SESSION['namabank'];
-        $applydate = date("d-m-Y");
-        $status = "Dalam Proses";
+    $status = $_POST['status'];
+    $IA_ID = $_SESSION['IA_ID'];
 
-        $db = new UserMarriageApplication();
-        $db->userIA_create($MA_Address, $MA_State, $MA_MasKahwin, $MA_Category, $MA_Nation, $MA_ApplyDate);
-        $db->closeConnection();
-    }
+    $db = new IncentiveApplication();
+    $db->staffIA_update($IA_ID, $status);
+    $db->closeConnection();
+}else{
+    $IA_ID = $_GET['IA_ID'];
+    $db = new IncentiveApplication();
+    $db->staffIA_delete($IA_ID);
+    $db->closeConnection();
 }

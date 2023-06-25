@@ -1,4 +1,4 @@
-function validateForm() {
+function changepasswordData() {
     var icNumber = document.getElementById("icnum").value;
     var oldPassword = document.getElementById("password").value;
     var newPassword = document.getElementById("newpassword").value;

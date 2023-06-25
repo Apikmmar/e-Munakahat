@@ -1,6 +1,27 @@
 <?php
     session_start();
-    require '../../database/connection.php';
+    if (isset($_SESSION['icnum'])) {
+        require '../../database/connection.php';
+
+        $user_IC = $_SESSION['icnum'];
+
+        $sql = "SELECT User_Name, User_Gender, User_HP, User_Address, User_Edu, User_JobSector FROM user_registration_info WHERE User_IC = :user_ic";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':user_ic', $user_IC, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            $user_Name = $result['User_Name'];
+            $user_Address = $result['User_Address'];
+            $user_JobSector = $result['User_JobSector'];
+            $user_Gender = $result['User_Gender'];
+            $user_HP = $result['User_HP'];
+            $user_Edu = $result['User_Edu'];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +45,8 @@
                 <br>
                 <div class="p-2 mb-1 bg-info text-white">
                     <div class="userdata">
-                        <span>Username: <p></p></span><br>
-                        <span>IC Number: <p></p></span><br>
+                        <span><?php echo "Username: $user_Name "; ?></span><br>
+                        <span><?php echo "IC Number: $user_IC "; ?></span><br>
                     </div>
                 </div>
                 <br><br>
@@ -35,7 +56,7 @@
                         <button class="btn btn-primary h6" id="daftarcourse">Daftar Kursus</button>
                         <button class="btn btn-primary h6" id="tangguhkursus">Tangguh Kursus</button>
                         <button class="btn btn-primary h6" id="printslippermohonan">Cetak Slip Permohonan</button>
-                        <button class="btn btn-dark h6" id="usermainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-dark h6" id="userloginmainpage">Kembali Ke e-Munakahat</button>
                     </div>
                 </div>
             </div>
@@ -76,32 +97,32 @@
                                     <div style="padding-top: 15px;">
                                         <div>
                                             <label>No Kad Pengenalan:</label>
-                                            <p style="margin: 0; display: inline;">no ic</p>
+                                            <p style="margin: 0; display: inline;"><?php echo $user_IC; ?></p>
                                         </div>
                                         <div style="padding-top: 10px;">
                                             <label>Nama Pemohon:</label>
-                                            <p style="margin: 0; display: inline;">nama pemohon</p>
+                                            <p style="margin: 0; display: inline;"><?php echo $user_Name; ?></p>
                                         </div>
                                         <div style="padding-top: 10px;">
                                             <label>Alamat Surat Menyurat:</label>
-                                            <p style="margin: 0; display: inline;">alamat pemohon</p>
+                                            <p style="margin: 0; display: inline;"><?php echo $user_Address; ?></p>
                                         </div>
                                         <div style="padding-top: 10px;">
                                             <label>Sektor Pekerjaan:</label>
-                                            <p style="margin: 0; display: inline;">work sector</p>
+                                            <p style="margin: 0; display: inline;"><?php echo $user_JobSector; ?></p>
                                         </div>
                                     </div>
                                     <div id="inputformpadding">
                                         <div>
-                                            <label>Negeri:</label><br>
+                                            <label>Negeri *:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
                                         </div>
                                         <div style="padding-top: 10px;">
-                                            <label>Daerah:</label><br>
+                                            <label>Daerah *:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan daerah" required>
                                         </div>
                                         <div style="padding-top: 10px;">
-                                            <label>Kebenaran jabatan agama negeri:</label><br>
+                                            <label>Kebenaran jabatan agama negeri *:</label><br>
                                             <input type="text" class="form-control form-control-sm" id="inputboxstyle" placeholder="Masukkan negeri" required>
                                         </div>
                                     </div>
@@ -110,24 +131,24 @@
                                     <div style="padding-top: 15px;">
                                         <div>
                                             <label>Jantina:</label>
-                                            <p style="margin: 0; display: inline;">jantina</p>
+                                            <p style="margin: 0; display: inline;"><?php echo $user_Gender; ?></p>
                                         </div>
                                         <div style="padding-top: 10px;">
                                             <label>No. Telefon:</label>
-                                            <p style="margin: 0; display: inline;">no fon</p>
+                                            <p style="margin: 0; display: inline;"><?php echo $user_HP; ?></p>
                                         </div>
                                         <div style="padding-top: 10px;">
                                             <label>Tahap pendidikan:</label>
-                                            <p style="margin: 0; display: inline;">tahap pendidikan</p>
+                                            <p style="margin: 0; display: inline;"><?php echo $user_Edu; ?></p>
                                         </div>
                                     </div>
                                     <div id="inputformpadding" style="padding-top: 35px;">
-                                        <label>Resit pembayaran(RM80.00):</label><br>
+                                        <label>Resit pembayaran(RM80.00) *:</label><br>
                                         <input class="form-control form-control-sm" id="inputboxstyle" type="file" required>
                                     </div>
                                     <div id="inputformpadding">
                                         <div>
-                                            <label>Cadangan Tarikh Akad Nikah:</label><br>
+                                            <label>Cadangan Tarikh Akad Nikah *:</label><br>
                                             <input type="text" class="form-control form-control-sm datepicker" id="inputboxstyle" placeholder="Select date" required>
                                         </div>
                                     </div>

@@ -1,6 +1,22 @@
 <?php
     session_start();
-    require '../../database/connection.php';
+    if (isset($_SESSION['icnum'])) {
+        require '../../database/connection.php';
+
+        $Staff_IC = $_SESSION['icnum'];
+
+        $sql = "SELECT Staff_Name FROM Staff_registration_info WHERE Staff_IC = :Staff_ic";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':Staff_ic', $Staff_IC, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            $Staff_Name = $result['Staff_Name'];
+	    }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +52,7 @@
                         <button class="btn btn-secondary h6" id="staffprepcoursemainpage">Laman Utama</button>
                         <button class="btn btn-success h6" id="regcourseven">Maklumat Taklimat</button>
                         <button class="btn btn-success h6" id="appcourseapp">Maklumat Peserta</button>
-                        <button class="btn btn-dark h6" id="staffmainpage">Kembali Ke e-Munakahat</button>
+                        <button class="btn btn-dark h6" id="staffloginmainpage">Kembali Ke e-Munakahat</button>
                     </div>
                 </div>
             </div>
